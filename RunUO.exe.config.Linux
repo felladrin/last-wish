@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<configuration>
+	<!-- Type "locate libz" on terminal to find libz installed on your system. -->
+	<dllmap dll="libz" target="/lib/x86_64-linux-gnu/libz.so.1" />
+</configuration>
