@@ -39,7 +39,7 @@ namespace Server.Misc
 		 */
 
 		public static readonly string Address = null;
-		public static readonly string ServerName = "RunUO TC";
+		public static readonly string ServerName = "Last Wish";
 
 		public static readonly bool AutoDetect = true;
 
