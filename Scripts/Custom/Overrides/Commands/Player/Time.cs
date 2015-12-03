@@ -20,7 +20,7 @@ namespace Server.Commands
             int currentHour, currentMinute;
             Items.Clock.GetTime(from.Map, from.X, from.Y, out currentHour, out currentMinute);
             from.SendMessage("Game current time is {0}", System.DateTime.Parse(currentHour + ":" + currentMinute).ToString("HH:mm"));
-            from.SendMessage("Server local time is {0}", System.DateTime.Now.ToString("HH:mm"));
+            from.SendMessage("Server local time is {0}", System.DateTime.UtcNow.ToString("HH:mm"));
         }
     }
 }
