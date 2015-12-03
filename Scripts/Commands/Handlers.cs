@@ -45,7 +45,7 @@ namespace Server.Commands
 
 			Register( "Stuck", AccessLevel.Counselor, new CommandEventHandler( Stuck_OnCommand ) );
 
-			Register( "Help", AccessLevel.Player, new CommandEventHandler( Help_OnCommand ) );
+			// Register( "Help", AccessLevel.Player, new CommandEventHandler( Help_OnCommand ) );
 
 			Register( "Save", AccessLevel.Administrator, new CommandEventHandler( Save_OnCommand ) );
 			Register( "BackgroundSave", AccessLevel.Administrator, new CommandEventHandler( BackgroundSave_OnCommand ) );

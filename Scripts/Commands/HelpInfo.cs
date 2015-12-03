@@ -25,12 +25,12 @@ namespace Server.Commands
 		[CallPriority( 100 )]
 		public static void Initialize()
 		{
-			CommandSystem.Register( "HelpInfo", AccessLevel.Player, new CommandEventHandler( HelpInfo_OnCommand ) );
+			CommandSystem.Register( "Help", AccessLevel.Player, new CommandEventHandler( HelpInfo_OnCommand ) );
 
 			FillTable();
 		}
 
-		[Usage( "HelpInfo [<command>]" )]
+		[Usage( "Help [<command>]" )]
 		[Description( "Gives information on a specified command, or when no argument specified, displays a gump containing all commands" )]
 		private static void HelpInfo_OnCommand( CommandEventArgs e )
 		{
