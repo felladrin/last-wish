@@ -1,13 +1,12 @@
 # Last Wish
 
-An open source Ultima Online RunUO Freeshard hoping to fulfill one last wish of my friends.
+An open source Ultima Online RunUO Freeshard hoping to fulfill one last wish.
 
 Anyone is free to join and even run their own version of Last Wish.
 
 It follows the original Ultima Online concept, with just some special scripts to make it a little more friendly.
 
-The shards targets [UO Client 7.0.15.1](<http://sourceforge.net/projects/ultimaonlineclient70151> "(Publish 51, June 15 2011)"), which can be downloaded for free on [Sourceforge](http://sourceforge.net/projects/ultimaonlineclient70151).  
-And to connect, [Razor](http://www.uogamers.com/razor/) is recommended.
+The shard targets [UO Client 7.0.15.1](<http://sourceforge.net/projects/ultimaonlineclient70151> "(Publish 51, June 15 2011)"), which can be downloaded for free on [Sourceforge](http://sourceforge.net/projects/ultimaonlineclient70151).  And we recommend [Razor](http://www.uogamers.com/razor/) for connecting.
 
 ## Running the server on Windows
 
