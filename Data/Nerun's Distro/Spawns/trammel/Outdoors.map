@@ -498,8 +498,8 @@ overridemaxtime 10
 ##
 ## Old Haven - north
 ##
-*|zombie:skeleton|spellbinder|||||3650|2509|0|2|5|10|60|60|1|70|20|0|0|0|0
-*|spellbinder:zombie:skeleton||||||3598|2450|16|2|5|10|10|10|1|4|0|0|0|0|0
+*|zombie:skeleton||||||3650|2509|0|2|5|10|60|60|1|70|20|0|0|0|0
+*|zombie:skeleton||||||3598|2450|16|2|5|10|10|10|1|4|0|0|0|0|0
 ##
 ## Old Haven - south
 ##
