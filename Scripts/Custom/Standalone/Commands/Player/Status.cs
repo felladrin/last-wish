@@ -35,10 +35,10 @@ namespace Server.Gumps
             AddAlphaRegion(x, y, width, height);
         }
 
-        public static string FormatTimeSpan(TimeSpan ts)
-        {
-            return String.Format("{0:D2}:{1:D2}:{2:D2}:{3:D2}", ts.Days, ts.Hours % 24, ts.Minutes % 60, ts.Seconds % 60);
-        }
+        public static string FormatTimeSpan( TimeSpan ts )
+		{
+			return String.Format( "{0:D2}:{1:D2}:{2:D2}:{3:D2}", ts.Days, ts.Hours % 24, ts.Minutes % 60, ts.Seconds % 60 );
+		}
 
         public static string FormatByteAmount(long totalBytes)
         {
@@ -83,7 +83,7 @@ namespace Server.Gumps
 
             AddImageTiled(405, 37, 190, 17, 5154);
             AddLabel(407, 36, 2100, "Uptime :");
-            AddHtml(485, 37, 109, 17, "<div align=\"right\" color=\"2100\">" + FormatTimeSpan(DateTime.Now - Clock.ServerStart) + "</div>", false, false);
+            AddHtml(485, 37, 109, 17, "<div align=\"right\" color=\"2100\">" + FormatTimeSpan(DateTime.UtcNow - Clock.ServerStart) + "</div>", false, false);
 
             AddImageTiled(600, 37, 185, 17, 5154);
             AddLabel(602, 36, 2100, "Memory in use :");
