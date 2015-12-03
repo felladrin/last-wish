@@ -10,5 +10,6 @@
 /Server/obj/
 /Backups
 /Saves
+/docs
 *.user
 *.suo
