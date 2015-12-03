@@ -39,3 +39,9 @@ Type `[admin` to open the shard admin panel. Navigate to *Administer >> World Bu
 Type `[spawnmaps` to open the spawner panel. Select the places you want to populate then click *Apply* on the second page.
 
 That's it! Now your shard is ready to receive players!
+
+## Shard Features
+
+* Global Chat System
+* Private Message System
+* Enabled Facets: Trammel, Felucca, Ilshenar, Malas, Tokuno, Ter Mur
