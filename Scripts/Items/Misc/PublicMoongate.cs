@@ -116,6 +116,7 @@ namespace Server.Items
 			count += MoonGen( PMList.Ilshenar );
 			count += MoonGen( PMList.Malas );
 			count += MoonGen( PMList.Tokuno );
+			count += MoonGen( PMList.TerMur );
 
 			World.Broadcast( 0x35, true, "{0} moongates generated.", count );
 		}
@@ -286,14 +287,21 @@ namespace Server.Items
 					new PMEntry( new Point3D(  270,  628, 15 ), 1063414 )  // Homare-Jima
 				} );
 
+		public static readonly PMList TerMur =
+			new PMList( 1113602, 1113604, Map.TerMur, new PMEntry[]
+				{
+					new PMEntry( new Point3D( 852,  3526, -43 ), 1113603 ), // Royal City
+					new PMEntry( new Point3D(  926, 3989, -36 ), 1112572 )  // Holy City
+				} );
+
 		public static readonly PMList[] UORLists		= new PMList[] { Trammel, Felucca };
 		public static readonly PMList[] UORListsYoung	= new PMList[] { Trammel };
 		public static readonly PMList[] LBRLists		= new PMList[] { Trammel, Felucca, Ilshenar };
 		public static readonly PMList[] LBRListsYoung	= new PMList[] { Trammel, Ilshenar };
 		public static readonly PMList[] AOSLists		= new PMList[] { Trammel, Felucca, Ilshenar, Malas };
 		public static readonly PMList[] AOSListsYoung	= new PMList[] { Trammel, Ilshenar, Malas };
-		public static readonly PMList[] SELists			= new PMList[] { Trammel, Felucca, Ilshenar, Malas, Tokuno };
-		public static readonly PMList[] SEListsYoung	= new PMList[] { Trammel, Ilshenar, Malas, Tokuno };
+		public static readonly PMList[] SELists			= new PMList[] { Trammel, Felucca, Ilshenar, Malas, Tokuno, TerMur };
+		public static readonly PMList[] SEListsYoung	= new PMList[] { Trammel, Ilshenar, Malas, Tokuno, TerMur };
 		public static readonly PMList[] RedLists		= new PMList[] { Felucca };
 		public static readonly PMList[] SigilLists		= new PMList[] { Felucca };
 	}
