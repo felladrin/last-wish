@@ -981,8 +981,10 @@ namespace Server.Mobiles
 
 				Mobile from = this;
 
-				#region Ethics
-				Ethics.Ethic ethic = Ethics.Ethic.Find( from );
+                MaxFollowersIntelBased.Evaluate(from);
+
+                #region Ethics
+                Ethics.Ethic ethic = Ethics.Ethic.Find( from );
 				#endregion
 
 				for ( int i = items.Count - 1; i >= 0; --i )
