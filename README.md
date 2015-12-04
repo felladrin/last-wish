@@ -26,6 +26,8 @@ Here's all commands you need to execute in order to have the server ready:
     cp RunUO.exe.config.Linux RunUO.exe.config
     mono RunUO.exe
 
+If you want to run it as a background task use `nohup mono RunUO.exe >> console.log &` . Then, before logging out, type: `disown` to detach the proccess from the terminal.
+
 ## First administrative actions to take in-game
 
 On the first launch, RunUO will ask you to create an administrator account. Do it, then login. Once there, the first thing you'll want to do is to decorate and populate the world.
