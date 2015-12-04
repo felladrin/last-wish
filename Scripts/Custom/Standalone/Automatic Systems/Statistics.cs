@@ -1,5 +1,5 @@
 ﻿//   ___|========================|___
-//   \  |  Written by Felladrin  |  /   Shard Statistics - Current version: 1.3 (September 10, 2013)
+//   \  |  Written by Felladrin  |  /   Shard Statistics - Current version: 1.4 (December 3, 2015)
 //    > |      August 2013       | <
 //   /__|========================|__\   Description: Collects and displays shard statistics.
 
