@@ -1,11 +1,7 @@
-// created by BondD
+// Created by BondD
 using System;
-using System.Diagnostics;
 using System.Collections;
-using System.Net;
-
 using Server.Network;
-using Server.Mobiles;
 using Server.Accounting;
 using Server.Guilds;
 using Server.Items;
@@ -19,11 +15,18 @@ namespace Server.Gumps
         public static void Initialize()
         {
             CommandSystem.Register("Status", AccessLevel.Player, new CommandEventHandler(Status_OnCommand));
+            EventSink.Login += new LoginEventHandler(Status_OnLogin);
         }
 
         [Usage("Status")]
         [Description("Show the server status, including a list of all players online")]
         private static void Status_OnCommand(CommandEventArgs e)
+        {
+            e.Mobile.CloseGump(typeof(StatusGump));
+            e.Mobile.SendGump(new StatusGump(e.Mobile, 0, null, null));
+        }
+
+        private static void Status_OnLogin(LoginEventArgs e)
         {
             e.Mobile.CloseGump(typeof(StatusGump));
             e.Mobile.SendGump(new StatusGump(e.Mobile, 0, null, null));
