@@ -52,7 +52,10 @@ namespace Server.Items
 		{
 			base.GetContextMenuEntries( from, list );
 			SetSecureLevelEntry.AddTo( from, this, list );
-		}
+
+            if (ContainerRenamePrompt.HasAccess(from, this))
+                list.Add(new ContainerRenameEntry(from, this));
+        }
 
 		public override bool TryDropItem( Mobile from, Item dropped, bool sendFullMessage )
 		{
