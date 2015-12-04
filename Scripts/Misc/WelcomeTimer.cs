@@ -30,7 +30,7 @@ namespace Server.Misc
 					"Welcome to Last Wish.",
                     "Type [status to see a list of online players.",
                     "Type [c <message> to speak in global chat.",
-                    "If you have any doubt about the game, feel free to ask on global chat or forum.",
+                    "If you have any questions about the game, feel free to ask on global chat ([c) or using the [Forum.",
                     "Play fair and enjoy!"
                 } );
 
