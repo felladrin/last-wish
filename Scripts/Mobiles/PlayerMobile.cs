@@ -2642,7 +2642,9 @@ namespace Server.Mobiles
 
 		public override void OnWarmodeChanged()
 		{
-			if ( !Warmode )
+            AutoSheatheWeapon.From(this);
+
+            if ( !Warmode )
 				Timer.DelayCall( TimeSpan.FromSeconds( 10 ), new TimerCallback( RecoverAmmo ) );
 		}
 
