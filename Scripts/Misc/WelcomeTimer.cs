@@ -26,10 +26,13 @@ namespace Server.Misc
 					"A bag of PowerScrolls has been placed in your bank box."
 				} :
 			new string[]
-				{	//Yes, this message is a pathetic message, It's suggested that you change it.
-					"Welcome to this shard.",
-					"Please enjoy your stay."
-				} );
+				{
+					"Welcome to Last Wish.",
+                    "Type [status to see a list of online players.",
+                    "Type [c <message> to speak in global chat.",
+                    "If you have any doubt about the game, feel free to ask on global chat or forum.",
+                    "Play fair and enjoy!"
+                } );
 
 		public WelcomeTimer( Mobile m ) : this( m, m_Messages.Length )
 		{
