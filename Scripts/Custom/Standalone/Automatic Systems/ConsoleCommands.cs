@@ -1,17 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Text;
-using Server;
 using System.Threading;
-using Server.Commands;
 using System.Diagnostics;
-using Server.Gumps;
 using Server.Network;
-using Server.Mobiles;
 using Server.Accounting;
 using Server.Engines.Help;
-using System.IO;
 
 namespace Server.Misc
 {
@@ -23,8 +17,11 @@ namespace Server.Misc
         public static bool paging;
         public static void Initialize()
         {
-            EventSink.ServerStarted += new ServerStartedEventHandler(EventSink_ServerStarted);
-            EventSink.Speech += new SpeechEventHandler(OnSpeech);
+            if (!Core.Unix)
+            {
+                EventSink.ServerStarted += new ServerStartedEventHandler(EventSink_ServerStarted);
+                EventSink.Speech += new SpeechEventHandler(OnSpeech);
+            }
         }
         public static void EventSink_ServerStarted()
         {
@@ -65,7 +62,7 @@ namespace Server.Misc
             int paG;
             if (w == 1)
             {
-            up:
+                up:
                 try { paG = Convert.ToInt32(Console.ReadLine()); }
                 catch { Console.WriteLine("Thats not a number,try again."); goto up; }
                 Console.WriteLine("Type your response");
@@ -229,7 +226,7 @@ namespace Server.Misc
                             paging = true;
                             ArrayList list = PageQueue.List;
                             PageEntry e;
-                            for (int i = 0; i < list.Count; )
+                            for (int i = 0; i < list.Count;)
                             {
                                 e = (PageEntry)list[i];
                                 if (e.Sender.Deleted || e.Sender.NetState == null)
