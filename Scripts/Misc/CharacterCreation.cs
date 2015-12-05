@@ -21,19 +21,48 @@ namespace Server.Misc
 
 			if ( pack == null )
 			{
-				pack = new Backpack();
+				pack = new StrongBackpack();
 				pack.Movable = false;
 
 				m.AddItem( pack );
 			}
 
-			PackItem( new RedBook( "a book", m.Name, 20, true ) );
-			PackItem( new Gold( 1000 ) ); // Starting gold can be customized here
-			PackItem( new Dagger() );
-			PackItem( new Candle() );
-		}
+            PackItem(new Gold(Utility.Random(999, 1111)));
+            PackItem(new Dagger());
+            PackItem(new Lantern());
+            PackItem(new RedBook("Journal", m.Name, 20, true));
+            PackItem(new BreadLoaf(5));
+            PackItem(new Pitcher(BeverageType.Water));
+            // PackItem(new Brush());
 
-		private static Item MakeNewbie( Item item )
+            /* Checks if already has a house. If not, we give him a deed.
+            Account a = m.Account as Account;
+
+            int houses = 0;
+
+            if (a != null)
+            {
+                for (int i = 0; i < a.Length; ++i)
+                {
+                    Mobile mob = a[i];
+
+                    if (mob != null)
+                        houses += Multis.BaseHouse.GetHouses(mob).Count;
+                }
+            }
+
+            if (houses == 0)
+            {
+                PackItem(new Multis.Deeds.FieldStoneHouseDeed());
+            }
+            
+            // PackItem(new VendorRentalContract());
+            // PackItem(new InteriorDecorator());
+            // PackItem(new Server.ACC.YS.YardShovel());
+            */
+        }
+
+        private static Item MakeNewbie( Item item )
 		{
 			if ( !Core.AOS )
 				item.LootType = LootType.Newbied;
@@ -689,12 +718,14 @@ namespace Server.Misc
 			if( TestCenter.Enabled )
 				FillBankbox( newChar );
 
+            /*
 			if ( young )
 			{
 				NewPlayerTicket ticket = new NewPlayerTicket();
 				ticket.Owner = newChar;
 				newChar.BankBox.DropItem( ticket );
 			}
+            */
 
 			CityInfo city = GetStartLocation( args, young );
 
@@ -738,9 +769,9 @@ namespace Server.Misc
 			}
 		}
 
-		private static readonly CityInfo m_NewHavenInfo = new CityInfo( "New Haven", "The Bountiful Harvest Inn", 3503, 2574, 14, Map.Trammel );
+		private static readonly CityInfo m_NewHavenInfo = new CityInfo("Luna", "Paladin's Stopover", 997, 525, -30, Map.Malas);
 
-		private static CityInfo GetStartLocation( CharacterCreatedEventArgs args, bool isYoung )
+        private static CityInfo GetStartLocation( CharacterCreatedEventArgs args, bool isYoung )
 		{
 			if( Core.ML )
 			{

@@ -32,7 +32,7 @@ namespace Server.Commands
 
             SendEffects(m);
 
-            CityInfo city = new CityInfo("Haven Island", "New Haven", 3503, 2574, 14, Map.Trammel);
+            CityInfo city = new CityInfo("Luna", "Center", 989, 520, -50, Map.Malas);
 
             m.MoveToWorld(city.Location, city.Map);
 
