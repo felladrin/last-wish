@@ -994,9 +994,12 @@ namespace Server.Items
 			else if( from == targ )
 			{
 				if( from.Thirst < 20 )
-					from.Thirst += 1;
+					from.Thirst += Utility.Random(3,6);
 
-				if( ContainsAlchohol )
+                if( from.Thirst > 20 )
+                    from.Thirst = 20;
+
+                if ( ContainsAlchohol )
 				{
 					int bac = 0;
 
@@ -1018,7 +1021,9 @@ namespace Server.Items
 
 				from.PlaySound( Utility.RandomList( 0x30, 0x2D6 ) );
 
-				if( m_Poison != null )
+                Misc.DrinkDecayTimer.ApplyThirstStatMod(from);
+
+                if ( m_Poison != null )
 					from.ApplyPoison( m_Poisoner, m_Poison );
 
 				--Quantity;

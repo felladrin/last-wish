@@ -104,7 +104,7 @@ namespace Server.Items
 
 			int iHunger = from.Hunger + fillFactor;
 
-			if ( from.Stam < from.StamMax )
+            if ( from.Stam < from.StamMax )
 				from.Stam += Utility.Random( 6, 3 ) + fillFactor / 5;
 
 			if ( iHunger >= 20 )
@@ -124,9 +124,11 @@ namespace Server.Items
 					from.SendLocalizedMessage( 500870 ); // After eating the food, you feel much less hungry.
 				else
 					from.SendLocalizedMessage( 500871 ); // You feel quite full after consuming the food.
-			}
+            }
 
-			return true;
+            Misc.FoodDecayTimer.ApplyHungerStatMod(from);
+
+            return true;
 		}
 
 		public override void Serialize( GenericWriter writer )
