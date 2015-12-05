@@ -10,8 +10,8 @@ namespace Server.Misc
 	{
 		private static class Settings
 		{
-			public const bool Enabled = false;
-			public const bool KickOnFailure = true; // It will also kick clients running without assistants
+			public static bool Enabled = false;
+			public static bool KickOnFailure = true; // It will also kick clients running without assistants
 
 			public static readonly TimeSpan HandshakeTimeout = TimeSpan.FromSeconds(30.0);
 			public static readonly TimeSpan DisconnectDelay = TimeSpan.FromSeconds(15.0);
