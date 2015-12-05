@@ -23,7 +23,7 @@ namespace Server
         public class Config
         {
             public static bool Enabled = true;                            // Is this system enabled?
-            public static bool ConsoleReport = true;                      // Should we report statistics on console?
+            public static bool ConsoleReport = false;                     // Should we report statistics on console?
             public static int Interval = 5;                               // What's the statistics update interval, in minutes?
             public static AccessLevel CanSeeStats = AccessLevel.Player;   // What's the level required to see statistics in-game?
             public static AccessLevel CanUpdateStats = AccessLevel.Seer;  // What's the level required to update statistics in-game?
