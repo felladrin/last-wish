@@ -22,8 +22,8 @@ namespace Server.Misc
 	{
 		private static int MaxAccountsPerIP = 10;
 		private static bool AutoAccountCreation = true;
-		private static bool RestrictDeletion = false;
-		private static TimeSpan DeleteDelay = TimeSpan.FromDays( 7.0 );
+		private static bool RestrictDeletion = true;
+		private static TimeSpan DeleteDelay = TimeSpan.FromHours( 1.0 );
 
 		public static PasswordProtection ProtectPasswords = PasswordProtection.NewCrypt;
 
