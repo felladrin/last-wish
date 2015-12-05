@@ -79,11 +79,11 @@ namespace Server.Custom
                                     {
                                         pm.PlaySound(gold.GetDropSound());
                                     }
-
-                                    return true;
                                 }
                             }
                         }
+
+                        return true;
                     }
                 }
             }
