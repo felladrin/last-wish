@@ -25,6 +25,7 @@ using Server.Engines.Craft;
 using Server.Spells.Spellweaving;
 using Server.Engines.PartySystem;
 using Server.Engines.MLQuests;
+using Server.Poker;
 
 namespace Server.Mobiles
 {
@@ -201,9 +202,16 @@ namespace Server.Mobiles
 		private List<Mobile> m_AllFollowers;
 		private List<Mobile> m_RecentlyReported;
 
-		#region Getters & Setters
+        private PokerGame m_PokerGame; //Edit for Poker System
+        public PokerGame PokerGame
+        {
+            get { return m_PokerGame; }
+            set { m_PokerGame = value; }
+        }
 
-		public List<Mobile> RecentlyReported
+        #region Getters & Setters
+
+        public List<Mobile> RecentlyReported
 		{
 			get
 			{
@@ -3987,7 +3995,16 @@ namespace Server.Mobiles
 
 		protected override bool OnMove( Direction d )
 		{
-			if( !Core.SE )
+            if (m_PokerGame != null) //Start Edit For Poker
+            {
+                if (!HasGump(typeof(PokerLeaveGump)))
+                {
+                    SendGump(new PokerLeaveGump(this, m_PokerGame));
+                    return false;
+                }
+            } //End Edit For Poker
+
+            if ( !Core.SE )
 				return base.OnMove( d );
 
 			if( AccessLevel != AccessLevel.Player )
