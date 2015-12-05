@@ -21,6 +21,9 @@ namespace Server.Mobiles
             {
                 PlayerMobile pm = e.Mobile as PlayerMobile;
 
+                if (pm.Stam < 4)
+                    return;
+
                 int steps;
 
                 if (pm.Skills.Focus.Value < 20)
@@ -35,12 +38,7 @@ namespace Server.Mobiles
                     steps = 3;
 
                 if ((pm.StepsTaken % steps) == 0)
-                {
                     --pm.Stam;
-
-                    if (pm.Stam == 1)
-                        pm.PlaySound(pm.Female ? 816 : 1090);
-                }
             }
         }
     }
