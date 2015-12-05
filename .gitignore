@@ -11,6 +11,9 @@
 /Backups
 /Saves
 /docs
+/web
 /Forums
 *.user
 *.suo
+delta-recursion.log
+throttle.log
