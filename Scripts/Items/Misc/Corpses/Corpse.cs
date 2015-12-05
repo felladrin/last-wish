@@ -916,7 +916,10 @@ namespace Server.Items
 			if ( !base.CheckLift( from, item, ref reject ) )
 				return false;
 
-			return CanLoot( from,item );
+            if (Server.Custom.AutoSplit.Gold(from, item))
+                return false;
+
+            return CanLoot( from,item );
 		}
 
 		public override void OnItemUsed( Mobile from, Item item )
