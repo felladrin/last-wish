@@ -1,13 +1,12 @@
 ﻿//   ___|========================|___
 //   \  |  Written by Felladrin  |  /
-//    > |       July 2013        | <    [TinyChat] - Current version: 1.1 (August 8, 2013)
+//    > |       July 2013        | <    [TinyChat] - Current version: 1.2 (December 5, 2015)
 //   /__|========================|__\
 
 using System.Collections.Generic;
 using Server.Network;
 using Server.Gumps;
 using Server.Mobiles;
-using Server.Accounting;
 
 namespace Server.Commands
 {
@@ -23,7 +22,8 @@ namespace Server.Commands
 
         public static void Initialize()
         {
-            CommandSystem.Register("Chat", AccessLevel.Player, new CommandEventHandler(toggleChat_OnCommand));
+            CommandSystem.Register("ChatToggle", AccessLevel.Player, new CommandEventHandler(toggleChat_OnCommand));
+            CommandSystem.Register("ChatHistory", AccessLevel.Player, new CommandEventHandler(displayChat_OnCommand));
             CommandSystem.Register("C", AccessLevel.Player, new CommandEventHandler(chat_OnCommand));
 
             if (openOnLogin)
@@ -34,8 +34,8 @@ namespace Server.Commands
             history = new List<string>();
         }
 
-        [Usage("Chat")]
-        [Description("Enables or Disables the Global Chat.")]
+        [Usage("ChatToggle")]
+        [Description("Enables or Disables the Chat.")]
         public static void toggleChat_OnCommand(CommandEventArgs e)
         {
             PlayerMobile pm = e.Mobile as PlayerMobile;
@@ -60,8 +60,20 @@ namespace Server.Commands
             }
         }
 
+        [Usage("ChatHistory")]
+        [Description("Opens the Chat History.")]
+        public static void displayChat_OnCommand(CommandEventArgs e)
+        {
+            if (e.Mobile.HasGump(typeof(ChatHistoryGump)))
+            {
+                e.Mobile.CloseGump(typeof(ChatHistoryGump));
+            }
+
+            e.Mobile.SendGump(new ChatHistoryGump(generateHistoryHTML()));
+        }
+
         [Usage("C <message>")]
-        [Description("Broadcasts a message to all players online.")]
+        [Description("Broadcasts a message to all players online. If no message is provided, it opens the Chat History.")]
         private static void chat_OnCommand(CommandEventArgs e)
         {
             if (e.ArgString.Length == 0)
@@ -86,7 +98,7 @@ namespace Server.Commands
                 history.RemoveAt(0);
             }
 
-            history.Add(string.Format("[{0}] {1}: {2}", System.DateTime.Now.ToString("HH:mm"), sender.Name, message));
+            history.Add(string.Format("[{0}] {1}: {2}", System.DateTime.UtcNow.ToString("HH:mm"), sender.Name, message));
 
             string historyHTML = generateHistoryHTML();
 
