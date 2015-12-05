@@ -134,6 +134,19 @@
     <Compile Include="Custom\Requires Scripts Changes\Automatic Systems\AutoSplit.cs" />
     <Compile Include="Custom\Requires Scripts Changes\Automatic Systems\FoodDecay.cs" />
     <Compile Include="Custom\Requires Scripts Changes\Commands\Player\Time.cs" />
+    <Compile Include="Custom\Requires Scripts Changes\Poker Texas Holdem\Card.cs" />
+    <Compile Include="Custom\Requires Scripts Changes\Poker Texas Holdem\Deck.cs" />
+    <Compile Include="Custom\Requires Scripts Changes\Poker Texas Holdem\Enums.cs" />
+    <Compile Include="Custom\Requires Scripts Changes\Poker Texas Holdem\Gumps\PokerBetGump.cs" />
+    <Compile Include="Custom\Requires Scripts Changes\Poker Texas Holdem\Gumps\PokerJoinGump.cs" />
+    <Compile Include="Custom\Requires Scripts Changes\Poker Texas Holdem\Gumps\PokerLeaveGump.cs" />
+    <Compile Include="Custom\Requires Scripts Changes\Poker Texas Holdem\Gumps\PokerTableGump.cs" />
+    <Compile Include="Custom\Requires Scripts Changes\Poker Texas Holdem\HandRanker.cs" />
+    <Compile Include="Custom\Requires Scripts Changes\Poker Texas Holdem\JackpotBoard.cs" />
+    <Compile Include="Custom\Requires Scripts Changes\Poker Texas Holdem\PlayerStructure.cs" />
+    <Compile Include="Custom\Requires Scripts Changes\Poker Texas Holdem\PokerDealer.cs" />
+    <Compile Include="Custom\Requires Scripts Changes\Poker Texas Holdem\PokerGame.cs" />
+    <Compile Include="Custom\Requires Scripts Changes\Poker Texas Holdem\PokerPlayer.cs" />
     <Compile Include="Custom\Standalone\Automatic Systems\Announce Login Logout Death.cs" />
     <Compile Include="Custom\Standalone\Automatic Systems\AutoDefend.cs" />
     <Compile Include="Custom\Standalone\Automatic Systems\AutoIgniteLights.cs" />
@@ -3509,6 +3522,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Custom\Requires Scripts Changes\Poker Texas Holdem\README.md" />
     <None Include="Custom\Standalone\Nerun%27s Distro\SA\Mobiles\UnderWorld\IronBeetle\IronBeetle.cs.off" />
   </ItemGroup>
   <ItemGroup>
