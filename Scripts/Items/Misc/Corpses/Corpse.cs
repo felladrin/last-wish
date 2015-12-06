@@ -393,7 +393,7 @@ namespace Server.Items
 		}
 
 		private static TimeSpan m_DefaultDecayTime = TimeSpan.FromMinutes( 7.0 );
-		private static TimeSpan m_BoneDecayTime = TimeSpan.FromMinutes( 7.0 );
+		private static TimeSpan m_BoneDecayTime = TimeSpan.FromDays( 1.0 );
 
 		private Timer m_DecayTimer;
 		private DateTime m_DecayTime;
