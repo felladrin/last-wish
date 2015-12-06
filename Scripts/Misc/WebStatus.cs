@@ -44,7 +44,7 @@ namespace Server.Misc
 			if (_Listener == null)
 			{
 				_Listener = new HttpListener();
-				_Listener.Prefixes.Add("http://*:80/status/");
+				_Listener.Prefixes.Add("http://*:2594/status/");
 				_Listener.Start();
 			}
 			else if (!_Listener.IsListening)
