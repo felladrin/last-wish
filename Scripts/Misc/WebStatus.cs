@@ -13,7 +13,7 @@ namespace Server.Misc
 {
 	public class StatusPage : Timer
 	{
-		public static readonly bool Enabled = false;
+		public static readonly bool Enabled = Core.Unix;
 
 		private static HttpListener _Listener;
 
@@ -122,7 +122,7 @@ namespace Server.Misc
 				op.WriteLine("   tr.even td { background: #DDD; color: #222; }");
 				op.WriteLine("   </style>");
 				op.WriteLine("   <body>");
-				op.WriteLine("      <h1>RunUO Server Status</h1>");
+				op.WriteLine("      <h1>" + ServerList.ServerName + " Server Status</h1>");
 				op.WriteLine("      <h3>Online clients</h3>");
 				op.WriteLine("      <table cellpadding=\"0\" cellspacing=\"0\">");
 				op.WriteLine("         <tr class=\"ruo-header\"><td>Name</td><td>Location</td><td>Kills</td><td>Karma/Fame</td></tr>");
@@ -180,7 +180,18 @@ namespace Server.Misc
 
 				op.WriteLine("         <tr>");
 				op.WriteLine("      </table>");
-				op.WriteLine("   </body>");
+                op.WriteLine("   <h3>Shard Statistics</h3>");
+                op.WriteLine("   <b>Shard Age:</b> {0:n0} days, {1:n0} hours and {2:n0} minutes<br/>", Statistics.ShardAge.Days, Statistics.ShardAge.Hours, Statistics.ShardAge.Minutes);
+                op.WriteLine("   <b>Total Game Time:</b> {0:n0} hours and {1:n0} minutes<br/>", Statistics.TotalGameTime.TotalHours, Statistics.TotalGameTime.Minutes);
+                op.WriteLine("   <b>Last Restart:</b> {0}<br/>", Statistics.LastRestart);
+                op.WriteLine("   <b>Uptime:</b> {0:n0} days, {1:n0} hours and {2:n0} minutes<br/>", Statistics.Uptime.Days, Statistics.Uptime.Hours, Statistics.Uptime.Minutes);
+                op.WriteLine("   <b>Active Accounts:</b> {0:n0} [{1:n0} Players Online]<br/>", Statistics.ActiveAccounts, Statistics.PlayersOnline);
+                op.WriteLine("   <b>Active Staff Members:</b> {0:n0} [{1:n0} Staff Online]<br/>", Statistics.ActiveStaffMembers, Statistics.StaffOnline);
+                op.WriteLine("   <b>Active Parties:</b> {0:n0} [{1:n0} Players in Parties]<br/>", Statistics.ActiveParties, Statistics.PlayersInParty);
+                op.WriteLine("   <b>Active Guilds:</b> {0:n0}<br/>", Statistics.ActiveGuilds);
+                op.WriteLine("   <b>Player Houses:</b> {0:n0}<br/>", Statistics.PlayerHouses);
+                op.WriteLine("   <b>Player Gold:</b> {0:n0}<br/>", Statistics.PlayerGold);
+                op.WriteLine("   </body>");
 				op.WriteLine("</html>");
 			}
 
