@@ -1,18 +1,15 @@
 //   ___|========================|___
-//   \  |  Written by Felladrin  |  /	[IntelliSpawner] - Current version: 1.1 (July 7, 2013)
+//   \  |  Written by Felladrin  |  /	[IntelliSpawner] - Current version: 1.2 (December 6, 2015)
 //    > |       June 2013        | <
-//   /__|========================|__\	Based on RunUO's Spawner.
+//   /__|========================|__\	Based on RunUO Spawner.
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Text;
-using Server;
 using Server.Commands;
 using Server.Items;
-using Server.Network;
 using Server.Multis;
 using CPA = Server.CommandPropertyAttribute;
 
@@ -42,6 +39,7 @@ namespace Server.Mobiles
         private int m_Team;
         private int m_HomeRange;
         private int m_WalkingRange;
+        private int m_TriggerRange;
         private int m_Count;
         private TimeSpan m_MinDelay;
         private TimeSpan m_MaxDelay;
@@ -182,14 +180,14 @@ namespace Server.Mobiles
         public int HomeRange
         {
             get { return m_HomeRange; }
-            set { m_HomeRange = value; InvalidateProperties(); }
+            set { m_HomeRange = value; UpdateTriggerRange(); InvalidateProperties(); }
         }
 
         [CommandProperty(AccessLevel.GameMaster)]
         public int WalkingRange
         {
             get { return m_WalkingRange; }
-            set { m_WalkingRange = value; InvalidateProperties(); }
+            set { m_WalkingRange = value; UpdateTriggerRange(); InvalidateProperties(); }
         }
 
         [CommandProperty(AccessLevel.GameMaster)]
@@ -434,7 +432,7 @@ namespace Server.Mobiles
             InvalidateProperties();
         }
 
-        public int GetTriggerRange()
+        private void UpdateTriggerRange()
         {
             int triggerRange = 0;
 
@@ -452,7 +450,17 @@ namespace Server.Mobiles
                 triggerRange = 50;
             }
 
-            return triggerRange;
+            m_TriggerRange = triggerRange;
+        }
+
+        public int GetTriggerRange()
+        {
+            if (m_TriggerRange == 0)
+            {
+                UpdateTriggerRange();
+            }
+
+            return m_TriggerRange;
         }
 
         public void OnTick()
@@ -522,7 +530,7 @@ namespace Server.Mobiles
 
         public override void OnMovement(Mobile m, Point3D oldLocation)
         {
-            if (!m_Running && m.InRange(GetWorldLocation(), GetTriggerRange()) && ValidTrigger(m))
+            if (!m_Running && ValidTrigger(m) && m.InRange(GetWorldLocation(), GetTriggerRange()))
             {
                 m_Running = true;
                 Respawn();
