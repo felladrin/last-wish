@@ -450,7 +450,10 @@ namespace Server.Items
 				m_Healer.CheckSkill( secondarySkill, 0.0, 120.0 );
 				m_Healer.CheckSkill( primarySkill, 0.0, 120.0 );
 			}
-		}
+
+            if (m_Healer.Alive)
+                BloodyBandage.GiveBandage(m_Healer, m_Patient);
+        }
 
 		private class InternalTimer : Timer
 		{
