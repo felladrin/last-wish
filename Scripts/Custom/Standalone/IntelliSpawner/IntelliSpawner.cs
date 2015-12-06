@@ -530,7 +530,7 @@ namespace Server.Mobiles
 
         public override void OnMovement(Mobile m, Point3D oldLocation)
         {
-            if (!m_Running && ValidTrigger(m) && m.InRange(GetWorldLocation(), GetTriggerRange()))
+            if (!m_Running && m.InRange(GetWorldLocation(), GetTriggerRange()) && ValidTrigger(m))
             {
                 m_Running = true;
                 Respawn();
