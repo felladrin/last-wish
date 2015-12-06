@@ -158,9 +158,9 @@
     <Compile Include="Custom\Standalone\Automatic Systems\Kudos.cs" />
     <Compile Include="Custom\Requires Scripts Changes\Automatic Systems\MaxFollowersIntelBased.cs" />
     <Compile Include="Custom\Standalone\Automatic Systems\PlayMusicOnLogin.cs" />
-    <Compile Include="Custom\Standalone\Automatic Systems\RunningFatigue.cs" />
     <Compile Include="Custom\Standalone\Automatic Systems\Statistics.cs" />
     <Compile Include="Custom\Standalone\Automatic Systems\UniqueNames.cs" />
+    <Compile Include="Custom\Standalone\Automatic Systems\WebStatusCustom.cs" />
     <Compile Include="Custom\Standalone\BugTracker\AddCommentGump.cs" />
     <Compile Include="Custom\Standalone\BugTracker\AddIssueGump.cs" />
     <Compile Include="Custom\Standalone\BugTracker\AssignGump.cs" />
@@ -194,6 +194,7 @@
     <Compile Include="Custom\Standalone\Commands\Player\PasswordChanger.cs" />
     <Compile Include="Custom\Standalone\Commands\Player\PraySin.cs" />
     <Compile Include="Custom\Standalone\Commands\Player\Recall.cs" />
+    <Compile Include="Custom\Standalone\Commands\Player\Changelog.cs" />
     <Compile Include="Custom\Standalone\Commands\Player\Site.cs" />
     <Compile Include="Custom\Standalone\Commands\Player\Status.cs" />
     <Compile Include="Custom\Standalone\Forum\Gumps\AccessLevelGump.cs" />
