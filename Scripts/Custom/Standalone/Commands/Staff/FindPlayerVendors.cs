@@ -45,7 +45,6 @@ namespace Server.Gumps
             e.Mobile.SendGump(new FindPlayerVendorsGump(e.Mobile, list, 1));
         }
         private ArrayList m_List;
-        private int m_DefaultIndex;
         private int m_Page;
         private Mobile m_From;
 

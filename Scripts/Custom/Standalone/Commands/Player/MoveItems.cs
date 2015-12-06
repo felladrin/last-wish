@@ -12,13 +12,9 @@
 // If you have XmlSpawner2, find the if(xx is Questholder) blocks that are commented out and uncomment them or players will use this command to store items in questholder (if you use questholders) and thus have a blessed container.
 
 using System;
-using Server;
 using Server.Multis;
 using Server.Items;
 using Server.Targeting;
-using Server.Mobiles;
-using Server.Accounting;
-using System.Collections;
 using Server.Network;
 
 
@@ -26,8 +22,6 @@ namespace Server.Commands
 {
     public class MoveItems
     {
-        private Type MoveItemsType;
-
         public static void Initialize()
         {
             CommandSystem.Register("MoveItems", AccessLevel.Player, new CommandEventHandler(MoveItems_OnCommand));
@@ -65,7 +59,6 @@ namespace Server.Commands
         private class PackFromTarget : Target
         {
             private bool zackly;
-            private Type MoveItemsType;
 
             public PackFromTarget(Mobile from, bool isex)
                 : base(-1, true, TargetFlags.None)

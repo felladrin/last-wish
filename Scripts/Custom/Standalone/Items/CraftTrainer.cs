@@ -21,21 +21,14 @@ During the StudyTime delay, the bool value Studying is set to true. While Studyi
 	cannot doubleclick the item for a new gump.
 */
 
-using System; 
-using Server; 
-using Server.Gumps; 
-using Server.Network; 
-using Server.Mobiles;
-using Server.Items;
+using System;
+using Server.Gumps;
+using Server.Network;
 
-namespace Server.Items 
-{    
-	public class CraftTrainer : Item 
+namespace Server.Items
+{
+    public class CraftTrainer : Item 
 	{
-		private StudyTimer m_StudyTimer;
-		private Mobile m_From;
-		private CraftTrainer m_Trainer;
-
 		private int m_StudyTime;
 		private int m_Ouch;
 		private double m_MinSkill;
@@ -134,7 +127,7 @@ namespace Server.Items
 
 namespace Server.Items
 {
-	public class CraftTrainerGump : Gump 
+    public class CraftTrainerGump : Gump 
 	{ 
 		private Mobile m_From;
 		private CraftTrainer m_Trainer;

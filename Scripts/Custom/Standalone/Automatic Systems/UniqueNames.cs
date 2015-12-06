@@ -80,8 +80,6 @@ namespace Server.Misc
 
         public class NameChangeGump : Gump
         {
-            Item m_Sender;
-
             public void AddBlackAlpha(int x, int y, int width, int height)
             {
                 AddImageTiled(x, y, width, height, 2624);

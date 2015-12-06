@@ -45,7 +45,6 @@ namespace Server.Items
             private const int GreenHue = 0x40;
             private const int RedHue = 0x20;
             private ArrayList m_List;
-            private int m_DefaultIndex;
             private int m_Page;
             private Mobile m_From;
 

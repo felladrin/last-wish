@@ -40,7 +40,6 @@ namespace Server.Gumps
         }
 
         private ArrayList m_List;
-        private int m_DefaultIndex;
         private int m_Page;
         private Mobile m_From;
 
