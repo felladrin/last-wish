@@ -6,7 +6,6 @@
 using System;
 using System.Collections.Generic;
 using Server.Commands;
-using Server.Gumps;
 using Server.Network;
 using Server.Spells;
 
@@ -16,7 +15,7 @@ namespace Server.Gumps
     {
         public static class Config
         {
-            public static TimeSpan UseDelay = TimeSpan.FromMinutes(30); // How long players need to wait before using the command again?
+            public static TimeSpan UseDelay = TimeSpan.FromMinutes(1); // How long players need to wait before using the command again?
         }
 
         public static void Initialize()
