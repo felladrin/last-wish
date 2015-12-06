@@ -56,8 +56,27 @@ namespace Server.Items
 			else
 			{
 				BaseHouse house = BaseHouse.FindHouseAt( from );
+                
+                #region VendorTile
+                Sector sector = from.Map.GetSector(from.Location);
+                foreach (Item i in sector.Items)
+                {
+                    if (i is VendorTile && i.Location.X == from.Location.X && i.Location.Y == from.Location.Y)
+                    {
+                        Mobile v = new PlayerVendor(from, house);
 
-				if ( house == null )
+                        v.Direction = from.Direction & Direction.Mask;
+                        v.MoveToWorld(from.Location, from.Map);
+
+                        v.SayTo(from, 503246); // Ah! it feels good to be working again.
+
+                        this.Delete();
+                        return;
+                    }
+                }
+                #endregion
+
+                if ( house == null )
 				{
 					from.SendLocalizedMessage( 503240 ); // Vendors can only be placed in houses.	
 				}
