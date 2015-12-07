@@ -28,12 +28,12 @@ namespace Server.Custom.Quests.LordBritishsBooks
 
             AddSpeech("Welcome, young one.");
             AddSpeech("... A bald man? Yes, yes. I think I've seen him a couple of times.");
-            AddSpeech("He would come here everyday, always at the sun's highest spot. No clue what was he doing, though.");
+            AddSpeech("He would come here everyday, always at the sun's peak. No clue what was he doing, though.");
             AddSpeech("What was his name? ... Er...");
             AddSpeech("... Something with B... I really can't remember, I'm sorry.");
-            AddSpeech("Er... I've noticed he would write a few papers here at the church.");
+            AddSpeech("Uh... I've noticed he would write a few papers here at the church.");
             AddSpeech("I think he forgot some of these papers around here.");
-            AddSpeech("Feel free to look around. May the peace be with you.");
+            AddSpeech("Feel free to look around. May peace be with you.");
         }
 
         public LBBpriest(Serial serial)
