@@ -27,7 +27,7 @@ namespace Server.Custom.Quests.LordBritishsBooks
             AddSpeech("You're looking for...?");
             AddSpeech("... A bald man? Hmm...");
             AddSpeech("Well, you know, we recieve lots of citizen around everyday. but if I can remember...");
-            AddSpeech("There is Jeffrey, a bald drunk beggar who always come here and ask me for some gold!");
+            AddSpeech("There is Jeffrey, a bald drunk beggar who always comes here and ask me for some gold!");
             AddSpeech("Argh, I hate him!");
             AddSpeech("... I've sold a good ammount of blank books to a pale man. Always wearing that black robe.");
             AddSpeech("Ack, that fish smell he always had... It was terrible.");
