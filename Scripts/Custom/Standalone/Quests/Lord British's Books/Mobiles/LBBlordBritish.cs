@@ -22,10 +22,10 @@ namespace Server.Custom.Quests.LordBritishsBooks
             AddItem(new LordBritishSuit());
 
             AddSpeech("Thank you for coming, noble adventurer.");
-            AddSpeech("I have an important mission for you and all your friends:");
+            AddSpeech("I have an important mission for you and all of your friends:");
             AddSpeech("A few of my most important books have disappeared from my personal library!");
             AddSpeech("These books have secret information, which if in wrong hands...");
-            AddSpeech("... Could bring the chaos for this world!");
+            AddSpeech("... Could bring the chaos to this world!");
             AddSpeech("The problem is: I have no clue on who might have done this.");
             AddSpeech("Your mission, young adventurer, is to discover who is this thief, and bring back my THREE BOOKS.");
             AddSpeech("If you retrieve the head of this bandit, I will gift you and your friends a special reward!");
@@ -34,8 +34,8 @@ namespace Server.Custom.Quests.LordBritishsBooks
             AddSpeech("And remember: Every single piece of clue, as small as it can be, might be very valuable.");
             AddSpeech("Consider everything you might hear or find. I'm sure I can count on your logic!");
             AddSpeech("Ah... And one more thing.");
-            AddSpeech("If you find the books, please... PLEASE. Don't open them. Don't read them.");
-            AddSpeech("Don't do anything with them, except returning to me. They are very, VERY dangerous.");
+            AddSpeech("If you find the books, please... Don't open them. Don't read them.");
+            AddSpeech("As soon as you've found them, return them to me immediately. They are very, VERY dangerous.");
             AddSpeech("Good luck!");
         }
 
