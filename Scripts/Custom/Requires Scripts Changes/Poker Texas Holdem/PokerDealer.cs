@@ -6,6 +6,7 @@ using Server.Commands;
 using Server.Gumps;
 using Server.Items;
 using Server.Mobiles;
+using Server.Targeting;
 
 namespace Server.Poker
 {
@@ -79,6 +80,13 @@ namespace Server.Poker
 				else m_MaxPlayers = value;
 			}
 		}
+
+        // tissemand edit, helps a bit while debugging :|
+        [CommandProperty(AccessLevel.Counselor)]
+        public int CurrentSeatCount
+        {
+            get { return m_Seats.Count; }
+        }
 		[CommandProperty( AccessLevel.Seer )]
 		public bool Active
 		{
@@ -137,8 +145,8 @@ namespace Server.Poker
 
 			MaxPlayers = maxPlayers;
 			m_Seats = new List<Point3D>();
-			m_Rake = 0.10;		//10% rake default
-			m_RakeMax = 5000;	//5k maximum rake default
+			m_Rake = 0.02;		//2% rake default
+			m_RakeMax = 3;	//3gp maximum rake default
 			m_Game = new PokerGame( this );
 		}
 
@@ -286,58 +294,60 @@ namespace Server.Poker
 			}
 		}
 
+        // tissemand add:
+        private class DealerTarget : Target
+        {            
+            public DealerTarget()
+                : base(10, false, TargetFlags.None)
+            {
+            }
+
+            protected override void OnTarget(Mobile from, object target)
+            {
+                if ( !(target is PokerDealer) )
+                {
+                    from.SendMessage("That isn't a poker dealer!");
+                    return;
+                }
+                
+                PokerDealer dealer = (PokerDealer)target;
+                if (dealer.AddPokerSeat(from, from.Location))
+                {
+                    // add a stool just because :3
+                    Stool stool = new Stool();
+                    stool.Visible = false;
+                    stool.Movable = false;
+                    stool.MoveToWorld(from.Location, from.Map);
+
+                    from.SendMessage(0x22, "A new seat was successfully created.");
+                }
+                else
+                    from.SendMessage(0x22, "There is no more room at that table for another seat. Try increasing the value of MaxPlayers first.");                
+            }
+        }
+
+        // tissemand edit:
 		public static void AddPokerSeat_OnCommand( CommandEventArgs e )
 		{
 			Mobile from = e.Mobile;
 
 			if ( from == null )
 				return;
+            
+            from.SendMessage(0x22, "Please select the dealer.");
 
-			string args = e.ArgString.ToLower();
-			string[] argLines = args.Split( ' ' );
-			int x = 0, y = 0, z = 0;
-
-			try
-			{
-				x = Convert.ToInt32( argLines[0] );
-				y = Convert.ToInt32( argLines[1] );
-				z = Convert.ToInt32( argLines[2] );
-			}
-			catch { from.SendMessage( 0x22, "Usage: [AddPokerSeat <x> <y> <z>" ); return;  }
-
-			bool success = false;
-			foreach ( Mobile m in from.GetMobilesInRange( 0 ) )
-			{
-				if ( m is PokerDealer )
-				{
-					Point3D seat = new Point3D( x, y, z );
-
-					if ( ((PokerDealer)m).AddPokerSeat( from, seat ) != -1 )
-					{
-						from.SendMessage( 0x22, "A new seat was successfully created." );
-						success = true;
-						break;
-					}
-					else
-					{
-						from.SendMessage( 0x22, "There is no more room at that table for another seat. Try increasing the value of MaxPlayers first." );
-						success = true;
-						break;
-					}
-				}
-			}
-
-			if ( !success )
-				from.SendMessage( 0x22, "No poker dealers were found in range. (Try standing on top of the dealer)" );
+            from.Target = new DealerTarget();
+            
 		}
 
-		public int AddPokerSeat( Mobile from, Point3D seat )
+        // tisseemand edit... why was this return type of int? bool has better logic imo
+		public bool AddPokerSeat( Mobile from, Point3D seat )
 		{
 			if ( m_Seats.Count >= m_MaxPlayers )
-				return -1;
+				return false;
 
 			m_Seats.Add( seat );
-			return 0;
+			return true;
 		}
 
 		public bool SeatTaken( Point3D seat )
