@@ -146,7 +146,7 @@ namespace Server.Poker
 			MaxPlayers = maxPlayers;
 			m_Seats = new List<Point3D>();
 			m_Rake = 0.02;		//2% rake default
-			m_RakeMax = 10;	//10gp maximum rake default
+			m_RakeMax = 3;	//3gp maximum rake default
 			m_Game = new PokerGame( this );
 		}
 
