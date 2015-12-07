@@ -122,8 +122,8 @@ namespace Server.Custom
                 op.WriteLine("   <link crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css' rel='stylesheet'>");
                 op.WriteLine("   <body>");
                 op.WriteLine("      <h1>{0} Shard Status</h1>", Encode(ServerList.ServerName));
-                op.WriteLine("      <h3>Players Online: {0}</h3>", Statistics.PlayersOnline);
-                if (Statistics.PlayersOnline > 0)
+                op.WriteLine("      <h3>Characters Online: {0}</h3>", NetState.Instances.Count);
+                if (NetState.Instances.Count > 0)
                 {
                     op.WriteLine("      <table class='u-full-width'>");
                     op.WriteLine("         <thead><tr><th>Name</th><th>Title</th><th>Location</th><th>Karma/Fame</th></tr></thead>");
