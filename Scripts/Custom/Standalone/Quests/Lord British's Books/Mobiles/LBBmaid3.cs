@@ -31,8 +31,8 @@ namespace Server.Custom.Quests.LordBritishsBooks
             AddSpeech("Did you know? Some of our Lord British valious items were stolen! How come?!");
             AddSpeech("That never happened before...");
             AddSpeech("I think the guards might have done this... They're everywhere, after all.");
-            AddSpeech("Er... Ah! Forget what I said! I shouldn't be accusing anyone like this, without proofs!");
-            AddSpeech("Anyway... No, I don't know nothing about who made this. I'm sorry...");
+            AddSpeech("Er... Ah! Forget what I said! I shouldn't be accusing anyone like this, how rude of me!");
+            AddSpeech("Anyway... No, I don't know who could have done this. I'm sorry...");
         }
 
         public LBBmaid3(Serial serial)
