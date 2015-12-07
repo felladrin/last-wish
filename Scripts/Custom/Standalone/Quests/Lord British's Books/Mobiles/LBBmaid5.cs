@@ -31,8 +31,8 @@ namespace Server.Custom.Quests.LordBritishsBooks
             AddSpeech("And you know what? That happened! Finally!");
             AddSpeech("I mean... Not that I wanted that to happen. No. Not at all.");
             AddSpeech("But I adviced them! I told them to be more cautious with our king's possessions!");
-            AddSpeech("And did they hear me?! NO! Of course not! No one would pay attention to that!");
-            AddSpeech("'Aaah, but it's already very secure inside the castle'... Argh!");
+            AddSpeech("And did they hear me?! NO! Of course not! No one would pay attention to me!");
+            AddSpeech("'Oooh, but it's very secure inside the castle'... Pfft!");
             AddSpeech("Maybe they'll learn it now!");
             AddSpeech("By the way, I have no clue on who might have done this.");
         }
