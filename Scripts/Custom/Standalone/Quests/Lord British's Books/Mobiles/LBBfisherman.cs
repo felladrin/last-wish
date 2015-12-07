@@ -35,10 +35,10 @@ namespace Server.Custom.Quests.LordBritishsBooks
             AddSpeech("Ah, yes! The fella you're describing have been around here sometimes.");
             AddSpeech("Pretty rich guy, yes? He bought a boat AND a fishing pole!");
             AddSpeech("HAHAHA! FANTASTIC!");
-            AddSpeech("Oh, er... *caham* Last time I saw him, he drove his boat to the south, from the docks.");
+            AddSpeech("Oh, er... *cahem* Last time I saw him, he drove his boat straight south, from the docks.");
             AddSpeech("... Or was it to the east? ...");
             AddSpeech("HAHAHA! I DON'T KNOW!");
-            AddSpeech("Oh, er... *caham* Will you buy something? No? Have a nice day, then.");
+            AddSpeech("Oh, er... *cahem* Will you buy something? No? Have a nice day, then.");
             AddSpeech("");
             AddSpeech("");
             AddSpeech("HAHAHA!");
