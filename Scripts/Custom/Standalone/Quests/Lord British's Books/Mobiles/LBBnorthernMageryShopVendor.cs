@@ -30,11 +30,11 @@ namespace Server.Custom.Quests.LordBritishsBooks
             AddItem(new Robe(0x258));
 
             AddSpeech("Welcome, fellow brother. What do you seek for today's journey?");
-            AddSpeech("If I sold reagents to... A bald guy? Black robe?");
-            AddSpeech("No, I'm sorry... I don't remember anyone like this aroud here in these last days.");
+            AddSpeech("If I sold reagents to... A bald guy, wearing a black robe?");
+            AddSpeech("No, I'm sorry... I don't remember anyone like this coming here lately.");
             AddSpeech("We recieve lots of customers here, everyday, but I don't think I would miss a face.");
             AddSpeech("Then, he definitely didn't come here. I hope that helps.");
-            AddSpeech("Have a good journey. may the peace be with you!");
+            AddSpeech("Have a good journey. may peace be with you!");
         }
 
         public LBBnorthernMageryShopVendor(Serial serial)
