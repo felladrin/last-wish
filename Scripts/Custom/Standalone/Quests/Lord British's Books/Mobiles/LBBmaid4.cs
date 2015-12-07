@@ -28,11 +28,11 @@ namespace Server.Custom.Quests.LordBritishsBooks
 
             AddSpeech("Er... Hi there...");
             AddSpeech("You know... This is very weird, isn't it?");
-            AddSpeech("Yesterday, it all was fine, and now... Everyone's worried...");
+            AddSpeech("Yesterday, it was all fine, and now... Everyone's worried...");
             AddSpeech("I'm worried too... Argh...");
             AddSpeech("*looks to both sides*");
             AddSpeech("Sorry, where was I?");
-            AddSpeech("Ah, the theft. I wish I know who made this. I'm worried they blame me! I could get killed!");
+            AddSpeech("Ah, the theft. I wish I knew who made this. I'm worried they'll blame me! I could get killed!");
             AddSpeech("Sorry that I can't help you...");
         }
 
