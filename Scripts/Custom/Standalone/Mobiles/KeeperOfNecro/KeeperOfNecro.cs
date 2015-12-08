@@ -1,16 +1,14 @@
-using System;
-using System.Collections;
-using Server;
 using Server.Items;
+using System.Collections.Generic;
 
 namespace Server.Mobiles
 {
-	public class KeeperOfNecro : BaseVendor
+    public class KeeperOfNecro : BaseVendor
 	{
-		private ArrayList m_SBInfos = new ArrayList();
-		protected override ArrayList SBInfos{ get { return m_SBInfos; } }
+        private List<SBInfo> m_SBInfos = new List<SBInfo>();
+        protected override List<SBInfo> SBInfos { get { return m_SBInfos; } }
 
-		[Constructable]
+        [Constructable]
 		public KeeperOfNecro() : base( "the Keeper of Necro" )
 		{
 			SetSkill( SkillName.Fencing, 75.0, 85.0 );
