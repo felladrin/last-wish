@@ -24,7 +24,10 @@ namespace Server.Mobiles
 
 		public override void InitOutfit()
 		{
-			AddItem( new DeathShroud() );
+			DeathShroud deathShroud = new DeathShroud();
+				deathShroud.Hue = 1;
+			
+			AddItem( deathShroud );
 			AddItem( new ThighBoots() );
 		}
 
