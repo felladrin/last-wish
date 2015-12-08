@@ -411,6 +411,8 @@
     <Compile Include="Custom\Standalone\Addons\Trees\PearTreeAddon.cs" />
     <Compile Include="Custom\Standalone\Addons\Trees\Trees.cs" />
     <Compile Include="Custom\Standalone\Mobiles\Complete Customizable Vendor.cs" />
+    <Compile Include="Custom\Standalone\Mobiles\KeeperOfNecro\KeeperOfNecro.cs" />
+    <Compile Include="Custom\Standalone\Mobiles\KeeperOfNecro\SBKeeperOfNecro.cs" />
     <Compile Include="Custom\Standalone\Mobiles\Peacemaker.cs" />
     <Compile Include="Custom\Standalone\Mobiles\Random Quest Generator\QuestGiver.cs" />
     <Compile Include="Custom\Standalone\Mobiles\Random Quest Generator\QuestScroll.cs" />
