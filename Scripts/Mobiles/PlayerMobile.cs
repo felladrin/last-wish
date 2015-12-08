@@ -4244,7 +4244,7 @@ namespace Server.Mobiles
 		private long m_NextMovementTime;
 		private bool m_HasMoved;
 
-		public virtual bool UsesFastwalkPrevention{ get{ return ( AccessLevel < AccessLevel.Counselor ); } }
+		public virtual bool UsesFastwalkPrevention{ get{ return ( AccessLevel < AccessLevel.Counselor ) && ( Race != Race.Gargoyle ); } }
 
 		public override int ComputeMovementSpeed( Direction dir, bool checkTurning )
 		{
