@@ -6,7 +6,7 @@ Anyone is free to join and even run their own version of Last Wish.
 
 It follows the original Ultima Online concept, with just some special scripts to make it a little more friendly.
 
-The shard targets [UO Client 7.0.15.1](<http://sourceforge.net/projects/ultimaonlineclient70151> "(Publish 51, June 15 2011)"), which can be downloaded for free on [Sourceforge](http://sourceforge.net/projects/ultimaonlineclient70151).  And we recommend [Razor](http://www.uogamers.com/razor/) for connecting.
+The shard targets UO Client 7.0.15.1 (Download: [Installer](http://felladrin.com/download/UOClassicSetup_7_0_15_1.exe) or [Portable](http://felladrin.com/download/UOClassicSetup_7_0_15_1.zip)). And we recommend [UOS](http://felladrin.com/download/UOS_1_0_5.exe) for connecting.
 
 ## Running the server on Windows
 
