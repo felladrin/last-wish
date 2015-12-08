@@ -37,11 +37,11 @@ namespace Server.Mobiles
 				Add( new GenericBuyInfo( typeof( MindRotScroll ), 200, 20, 0x2267, 0 ) );
 				Add( new GenericBuyInfo( typeof( StrangleScroll ), 500, 20, 0x226A, 0 ) );
 				Add( new GenericBuyInfo( typeof( VengefulSpiritScroll ), 700, 20, 0x226D, 0 ) );
-				Add( new GenericBuyInfo( typeof( BatWing ), 3, 500, 0xF78, 0 ) );
-				Add( new GenericBuyInfo( typeof( DaemonBlood ), 6, 500, 0xF7D, 0 ) );
-				Add( new GenericBuyInfo( typeof( PigIron ), 5, 500, 0xF8A, 0 ) );
-				Add( new GenericBuyInfo( typeof( NoxCrystal ), 6, 500, 0xF8E, 0 ) );
-				Add( new GenericBuyInfo( typeof( GraveDust ), 3, 500, 0xF8F, 0 ) );
+				Add( new GenericBuyInfo( typeof( BatWing ), 3, 300, 0xF78, 0 ) );
+				Add( new GenericBuyInfo( typeof( DaemonBlood ), 6, 300, 0xF7D, 0 ) );
+				Add( new GenericBuyInfo( typeof( PigIron ), 5, 300, 0xF8A, 0 ) );
+				Add( new GenericBuyInfo( typeof( NoxCrystal ), 6, 300, 0xF8E, 0 ) );
+				Add( new GenericBuyInfo( typeof( GraveDust ), 3, 300, 0xF8F, 0 ) );
 			}
 		}
 
