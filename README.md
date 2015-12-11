@@ -1,6 +1,8 @@
-# Last Wish
+![Last Wish](http://i.imgur.com/EaqBWW9.png)
 
-An open source Ultima Online RunUO Freeshard hoping to fulfill one last wish.
+**An open source RunUO Freeshard hoping to fulfill one last wish.**
+
+Live Shard Website: <https://felladrin.github.io/last-wish/>
 
 Anyone is free to join and even run their own version of Last Wish.
 
@@ -41,9 +43,3 @@ Type `[admin` to open the shard admin panel. Navigate to *Administer >> World Bu
 Type `[spawnmaps` to open the spawner panel. Select the places you want to populate then click *Apply* on the second page.
 
 That's it! Now your shard is ready to receive players!
-
-## Shard Features
-
-* Global Chat System
-* Private Message System
-* Enabled Facets: Trammel, Felucca, Ilshenar, Malas, Tokuno, Ter Mur
