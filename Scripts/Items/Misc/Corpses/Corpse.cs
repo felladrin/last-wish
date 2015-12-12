@@ -1204,7 +1204,13 @@ namespace Server.Items
 
 		public override void OnDoubleClick( Mobile from )
 		{
-			Open( from, Core.AOS );
+            if (Server.Engines.Dueling.DuelController.IsInDuel(m_Owner) && m_Owner != from)
+            {
+                from.SendMessage("This person is currently in a duel, you may not loot them!");
+                return;
+            }
+
+            Open( from, Core.AOS );
 		}
 
 		public override bool CheckContentDisplay( Mobile from )
