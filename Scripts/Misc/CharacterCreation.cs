@@ -770,7 +770,7 @@ namespace Server.Misc
 			}
 		}
 
-		private static readonly CityInfo m_NewHavenInfo = new CityInfo("Luna", "Paladin's Stopover", 997, 525, -30, Map.Malas);
+        private static readonly CityInfo m_NewHavenInfo = new CityInfo("Lake Shire", "Center", 1199, 1133, -25, Map.Ilshenar);
 
         private static CityInfo GetStartLocation( CharacterCreatedEventArgs args, bool isYoung )
 		{
