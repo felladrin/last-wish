@@ -1002,12 +1002,15 @@ namespace Server.Mobiles
 
 		public override string ApplyNameSuffix( string suffix )
 		{
-			if ( IsParagon && !GivesMLMinorArtifact )
-			{
-				if ( suffix.Length == 0 )
-					suffix = "(Paragon)";
+            // Added custom paragon titles
+            string[] titles = new string[] {"Champion", "Hero", "Tyrant", "Enraged", "Fallen", "Holy", "Immaculate", "Vindicator", "Impairer", "Implacable", "Merciless"};
+
+            if ( IsParagon && !GivesMLMinorArtifact )
+            {
+                if ( suffix.Length == 0 )
+					suffix = "(" + titles[Utility.Random(titles.Length)] + ")";
 				else
-					suffix = String.Concat( suffix, " (Paragon)" );
+					suffix = String.Concat( suffix, " (" + titles[Utility.Random(titles.Length)] + ")");
 			}
 
 			return base.ApplyNameSuffix( suffix );
