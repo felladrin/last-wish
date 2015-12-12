@@ -3915,7 +3915,14 @@ namespace Server.Mobiles
 
 		public override bool NewGuildDisplay { get { return Server.Guilds.Guild.NewGuildSystem; } }
 
-		public override void GetProperties( ObjectPropertyList list )
+        // Added to change health status under the name.
+        public override void OnHitsChange(int oldValue)
+        {
+            base.OnHitsChange(oldValue);
+            InvalidateProperties();
+        }
+
+        public override void GetProperties( ObjectPropertyList list )
 		{
 			base.GetProperties( list );
 
