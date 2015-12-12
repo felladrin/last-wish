@@ -41,9 +41,9 @@ namespace Server.Items
 		{
 			private Item m_Blood;
 
-			public InternalTimer( Item blood ) : base( TimeSpan.FromSeconds( 5.0 ) )
+			public InternalTimer( Item blood ) : base( TimeSpan.FromMinutes( 1.0 ) )
 			{
-				Priority = TimerPriority.OneSecond;
+				Priority = TimerPriority.OneMinute;
 
 				m_Blood = blood;
 			}
