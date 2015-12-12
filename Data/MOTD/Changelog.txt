@@ -20,4 +20,91 @@
 
 [*]12/12/2015
 Victor
-- Added Message Of The Day System.
+- Added [Duel command.
+- Added [Changelog command.
+- Changed to display health status and tiles under char name.
+- Changed paragons tiles and creation rules.
+- Changed character start location and [Recall point to Lake Shire (Malas).
+- Changed to make blood remain 1 minute on ground.
+- Changed Light Cycle for darker nights.
+
+[*]12/8/2015
+Adrian
+- Added Keeper Of Necro NPC (Necromancer Vendor).
+- Changed to allow gargoyles fly at full speed.
+
+[*]12/6/2015
+Victor
+- Added Vendor Tile, to create a shopping mall made by players.
+- Added items: Linked Gates and Linked Bags.
+- Added item: Fishing Net.
+- Added Yard & Garden System.
+- Added Reagent Harvest System.
+- Added item Piano.
+- Added Tarot Poker System.
+- Added Hair Change Tools.
+- Added Fences and Gates System.
+- Added item: Tent.
+- Added Global Donation Box.
+- Added Bloody Bandages System.
+- Added [Sleep command and also some Bed Addons.
+
+[*]12/5/2015
+Victor
+- Now players corpse bones will decay only after 1 day.
+- Added [Convoke command.
+- Added Poker Texas Holdem System.
+- Removed Monster Loot Rights.
+- Added Auto Split Gold System.
+- Added Hunger/Thirst System.
+- Added [BoatControl command.
+- Added commands [ChatToggle [ChatHistory.
+- Added Auto-Defend System.
+- Added Issue/Bug Tracker System.
+- Added [Where command.
+- Added [AddToParty command.
+
+[*]12/4/2015
+Victor
+- Added [Forum command.
+- Removed time restriction for deleting characters.
+
+[*]12/3/2015
+Victor
+- Added Container Rename System.
+- Now Max Followers is based on Character Intelligence.
+- Added Auto Sheathe Weapon System.
+- Added [Dismantle command.
+- Added Kudos - Exchangeable Game Time Reward System.
+- Added Bank Interest System.
+- Now a random music is played when the player login.
+- Added [Statistics command.
+- Added [Equip command.
+- Added Unique Name System.
+- Now lights are auto ignited/doused depending on the world time.
+- Now the pets are disconnected with the player, wherever they are.
+- Now the server announce when plaeyers login, logout o die.
+- Added [Recall command.
+- Added command [Event.
+- Added command [MoveItems.
+- Added [Notoriety command.
+- Added [MyHouses command.
+- Added [Dump command.
+- Added [Look command.
+- Added [Pray and [Sin command.
+- Added commands to chat with Alliance ([A) and Guid ([G).
+- Added "all release" speech command.
+- Added [Status command.
+- Added [Site command.
+- Added custom [Time command.
+- Added [ChangeCharacter command.
+- Added [Password command.
+- Added [AFK command.
+- Added emote ("[e") command.
+- Added Tiny Chat System.
+- Added Simple Instant Messenger System.
+
+[*]12/2/2015
+Victor
+- Populated the World.
+- Added Ter Mur location and moongates.
