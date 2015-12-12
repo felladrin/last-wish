@@ -24,7 +24,7 @@ Here's all commands you need to execute in order to have the server ready:
     apt-get install mono-complete git
     git clone --depth 1 https://github.com/felladrin/last-wish.git
     cd last-wish
-    dmcs -optimize+ -unsafe -t:exe -out:RunUO.exe -win32icon:Server/runuo.ico -nowarn:219,414 -d:MONO -recurse:Server/*.cs
+    dmcs -optimize+ -unsafe -t:exe -out:RunUO.exe -win32icon:Server/runuo.ico -nowarn:219,414 -d:MONO -recurse:Server/*.cs -reference:System.Runtime.Remoting.dll,OrbServerSDK.dll,UOArchitectInterface.dll
     cp RunUO.exe.config.Linux RunUO.exe.config
     mono RunUO.exe
 
