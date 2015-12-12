@@ -20,7 +20,7 @@ namespace Joeku.MOTD
 		public const int Version = 100;
 		public const string ReleaseDate = "December 4, 2007";
 
-		public static readonly string FilePath = Path.Combine( Core.BaseDirectory, @"Data\MOTD" );
+		public static readonly string FilePath = Path.Combine( Core.BaseDirectory, @"Data/MOTD" );
 		public static MOTD_Info[] Info = new MOTD_Info[]
 		{
 			// new MOTD_Info( "News" ),
