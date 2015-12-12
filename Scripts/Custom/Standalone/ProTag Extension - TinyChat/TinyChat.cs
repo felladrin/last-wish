@@ -18,7 +18,7 @@ namespace Server.Commands
 
         private static bool reverseMode = true;
 
-        private static bool openOnLogin = false;
+        private static bool openOnLogin = true;
 
         public static void Initialize()
         {
