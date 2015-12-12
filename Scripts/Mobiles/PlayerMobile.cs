@@ -3919,7 +3919,39 @@ namespace Server.Mobiles
 		{
 			base.GetProperties( list );
 
-			if ( Map == Faction.Facet )
+            if (AccessLevel > AccessLevel.Player)
+            {
+                list.Add(1060847, "{0}\t{1}", "Shard", Enum.GetName(typeof(AccessLevel), AccessLevel));
+            }
+            else
+            {
+                string skillTitle = Titles.GetSkillTitle(this);
+                string titleStart = skillTitle.Substring(0, skillTitle.IndexOf(' '));
+                string titleEnd = skillTitle.Substring(skillTitle.IndexOf(' ') + 1);
+                list.Add(1060847, "{0}\t{1}", titleStart, titleEnd);
+            }
+
+            // Added to change health status under the name.
+            if (!Blessed && Hits != HitsMax && Hits != 0)
+            {
+                /*
+                if (Hits == HitsMax)
+                    list.Add("<basefont color=#00FF00>Healthy<basefont color=White>");
+                else
+                */
+                if (Hits > HitsMax * 0.8)
+                    list.Add("<basefont color=#FFFF00>Slightly Injured<basefont color=White>");
+                else if (Hits > HitsMax * 0.6)
+                    list.Add("<basefont color=#FFCC00>Injured<basefont color=White>");
+                else if (Hits > HitsMax * 0.4)
+                    list.Add("<basefont color=#FF9900>Badly Injured<basefont color=White>");
+                else if (Hits > HitsMax * 0.2)
+                    list.Add("<basefont color=#FF6600>Deadly Injured<basefont color=White>");
+                else
+                    list.Add("<basefont color=#FF0000>Almost Dead<basefont color=White>");
+            }
+
+            if ( Map == Faction.Facet )
 			{
 				PlayerState pl = PlayerState.Find( this );
 
