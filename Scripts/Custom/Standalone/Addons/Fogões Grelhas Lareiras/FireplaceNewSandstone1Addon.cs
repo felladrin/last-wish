@@ -4,13 +4,10 @@
 // AddonGenerator script by Arya               //
 //                                             //
 /////////////////////////////////////////////////
-using System;
-using Server;
-using Server.Items;
 
 namespace Server.Items
 {
-	public class FireplaceNewSandstone1Addon : BaseAddon
+    public class FireplaceNewSandstone1Addon : BaseAddon
 	{
 		public override BaseAddonDeed Deed
 		{

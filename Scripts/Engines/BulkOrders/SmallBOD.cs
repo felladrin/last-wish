@@ -1,13 +1,11 @@
 using System;
-using System.Collections;
-using Server;
 using Server.Items;
 using System.Collections.Generic;
 using Server.Mobiles;
 
 namespace Server.Engines.BulkOrders
 {
-	[TypeAlias( "Scripts.Engines.BulkOrders.SmallBOD" )]
+    [TypeAlias( "Scripts.Engines.BulkOrders.SmallBOD" )]
 	public abstract class SmallBOD : Item
 	{
 		private int m_AmountCur, m_AmountMax;

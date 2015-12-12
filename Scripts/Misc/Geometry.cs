@@ -1,9 +1,8 @@
 using System;
-using Server;
 
 namespace Server.Misc
 {
-	public delegate void DoEffect_Callback( Point3D p, Map map );
+    public delegate void DoEffect_Callback( Point3D p, Map map );
 	
 	public static class Geometry
 	{

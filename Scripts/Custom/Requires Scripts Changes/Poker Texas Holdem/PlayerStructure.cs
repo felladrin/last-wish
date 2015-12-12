@@ -1,11 +1,8 @@
-using System;
 using System.Collections.Generic;
-
-using Server;
 
 namespace Server.Poker
 {
-	public class PlayerStructure
+    public class PlayerStructure
 	{
 		private List<PokerPlayer> m_Players;
 		private List<PokerPlayer> m_Round;

@@ -7,15 +7,12 @@
 //                                         //
 // For putting up with a 'tard like me :)  //
 //=========================================//
-using System; 
-using Server; 
-using Server.Multis; 
-using Server.Network; 
-using Server.Mobiles; 
+using System;
+using Server.Mobiles;
 
-namespace Server.Items 
-{ 
-	public class SecureTent : BaseContainer
+namespace Server.Items
+{
+    public class SecureTent : BaseContainer
 	{ 
 		private Mobile m_Player; 
 

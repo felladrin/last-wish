@@ -1,10 +1,8 @@
-using System;
-using Server;
 using Server.Network;
 
 namespace Server.Items
 {
-	public class DartBoard : AddonComponent
+    public class DartBoard : AddonComponent
 	{
 		public override bool NeedsWall{ get{ return true; } }
 		public override Point3D WallPosition{ get{ return this.East ? new Point3D( -1, 0, 0 ) : new Point3D( 0, -1, 0 ); } }

@@ -1,9 +1,6 @@
-using System;
-using Server;
-
 namespace Server.Items
 {
-	public class DarkBrownTreeAddon : BaseAddon
+    public class DarkBrownTreeAddon : BaseAddon
 	{
 		public override BaseAddonDeed Deed{ get{ return new DarkBrownTreeDeed(); } }
 

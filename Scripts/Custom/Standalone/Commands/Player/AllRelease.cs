@@ -3,11 +3,7 @@
 // Description: By using the "all release" command ingame, players can release all their tamed pets at once.
 // This is especially useful when training taming. Note that the mount the player is riding, will NOT be released.
 
-using System;
-using Server;
-using Server.Items;
 using Server.Mobiles;
-using Server.Gumps;
 
 namespace Server.Misc
 {

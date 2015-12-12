@@ -1,7 +1,5 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using Server;
 using Server.Items;
 using Server.Mobiles;
 using Server.Targeting;
@@ -17,7 +15,7 @@ using Server.Spells.Seventh;
 
 namespace Server.Factions
 {
-	public enum GuardAI
+    public enum GuardAI
 	{
 		Bless	= 0x01, // heal, cure, +stats
 		Curse	= 0x02, // poison, -stats

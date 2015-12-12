@@ -4,19 +4,12 @@
 // AddonGenerator script by Arya
 //
 /////////////////////////////////////////////////
-using System;
-using System.IO;
-using System.Text;
-using System.Collections;
 
-using Server;
 using Server.Items;
-using Server.Mobiles;
-using Server.Custom.PvpToolkit;
 
 namespace Server.Custom.PvpToolkit.Arena.Multis
 {
-	public class ArenaAddon : BaseAddon
+    public class ArenaAddon : BaseAddon
 	{
 		public override BaseAddonDeed Deed
 		{

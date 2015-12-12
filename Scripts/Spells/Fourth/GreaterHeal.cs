@@ -1,12 +1,10 @@
-using System;
-using Server;
 using Server.Targeting;
 using Server.Network;
 using Server.Mobiles;
 
 namespace Server.Spells.Fourth
 {
-	public class GreaterHealSpell : MagerySpell
+    public class GreaterHealSpell : MagerySpell
 	{
 		private static SpellInfo m_Info = new SpellInfo(
 				"Greater Heal", "In Vas Mani",

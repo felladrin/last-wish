@@ -1,12 +1,11 @@
 using System;
 using System.Collections;
-using Server;
 using Server.Gumps;
 using Server.Network;
 
 namespace Server.Engines.ConPVP
 {
-	public class LadderItem : Item
+    public class LadderItem : Item
 	{
 		private LadderController m_Ladder;
 

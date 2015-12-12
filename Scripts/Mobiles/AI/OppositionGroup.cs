@@ -1,10 +1,9 @@
 using System;
-using Server;
 using Server.Mobiles;
 
 namespace Server
 {
-	public class OppositionGroup
+    public class OppositionGroup
 	{
 		private Type[][] m_Types;
 

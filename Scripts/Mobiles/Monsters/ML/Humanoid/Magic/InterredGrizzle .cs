@@ -1,11 +1,6 @@
-using System;
-using System.Collections;
-using Server;
-using Server.Items;
-
 namespace Server.Mobiles
 {
-	[CorpseName("an interred grizzle corpse")]
+    [CorpseName("an interred grizzle corpse")]
 	public class InterredGrizzle  : BaseCreature
 	{
 		[Constructable]

@@ -1,16 +1,8 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Server;
 using Server.Items;
-using Server.Mobiles;
-using Server.Targeting;
-using Server.Spells;
-using Server.Spells.Fourth;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a dragon corpse" )]
+    [CorpseName( "a dragon corpse" )]
 	public class StygianDragon : BaseCreature
 	{
 	        public override bool AlwaysMurderer { get { return true; } }

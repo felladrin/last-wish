@@ -1,11 +1,9 @@
-using System;
-using Server;
 using Server.Mobiles;
 using Server.Regions;
 
 namespace Server.Engines.Doom
 {
-	public class LampRoomRegion : BaseRegion
+    public class LampRoomRegion : BaseRegion
 	{
 		private LeverPuzzleController Controller;
 

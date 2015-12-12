@@ -1,11 +1,10 @@
 using System;
-using Server;
 using Server.Gumps;
 using Server.Items;
 
 namespace Server.Engines.Craft
 {
-	public class QueryMakersMarkGump : Gump
+    public class QueryMakersMarkGump : Gump
 	{
 		private int m_Quality;
 		private Mobile m_From;

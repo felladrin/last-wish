@@ -1,22 +1,21 @@
 using System;
 using System.Drawing;
-using System.Collections;
 using System.Drawing.Imaging;
 using System.Drawing.Drawing2D;
 
 namespace Server.Engines.Reports
 {
-	// Modified from MS sample
+    // Modified from MS sample
 
-	//*********************************************************************
-	//
-	// BarGraph Class
-	//
-	// This class uses GDI+ to render Bar Chart.
-	//
-	//*********************************************************************
+    //*********************************************************************
+    //
+    // BarGraph Class
+    //
+    // This class uses GDI+ to render Bar Chart.
+    //
+    //*********************************************************************
 
-	public class BarRegion
+    public class BarRegion
 	{
 		public int m_RangeFrom, m_RangeTo;
 		public string m_Name;

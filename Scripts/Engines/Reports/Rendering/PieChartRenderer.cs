@@ -1,22 +1,21 @@
 using System;
 using System.Collections;
 using System.Drawing;
-using System.Drawing.Imaging;
 using System.Drawing.Drawing2D;
 
 namespace Server.Engines.Reports
 {
-	// Modified from MS sample
+    // Modified from MS sample
 
-	//*********************************************************************
-	//
-	// PieChart Class
-	//
-	// This class uses GDI+ to render Pie Chart.
-	//
-	//*********************************************************************
+    //*********************************************************************
+    //
+    // PieChart Class
+    //
+    // This class uses GDI+ to render Pie Chart.
+    //
+    //*********************************************************************
 
-	public class PieChartRenderer : ChartRenderer
+    public class PieChartRenderer : ChartRenderer
 	{
 		private const int	_bufferSpace = 125;
 		private ArrayList	_chartItems;

@@ -1,10 +1,6 @@
-using System;
-using Server;
-using Server.Items;
-
 namespace Server.Mobiles
 {
-	[CorpseName( "a dragon corpse" )]
+    [CorpseName( "a dragon corpse" )]
 	public class SerpentineDragon : BaseCreature
 	{
 		[Constructable]

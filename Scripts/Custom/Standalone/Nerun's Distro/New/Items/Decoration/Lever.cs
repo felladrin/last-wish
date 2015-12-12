@@ -1,12 +1,9 @@
 // By Nerun
 
-using System;
-using Server;
-using Server.Network;
 
 namespace Server.Items
 {
-	public class Lever : Item
+    public class Lever : Item
 	{
 		[Constructable]
 		public Lever() : base( Utility.RandomList( 0x108C, 0x108D, 0x108E, 0x1093, 0x1094, 0x1095, 0x108F, 0x1090, 0x1091, 0x1092 ) )

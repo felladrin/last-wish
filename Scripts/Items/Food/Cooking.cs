@@ -1,11 +1,9 @@
 using System;
 using Server.Targeting;
-using Server.Items;
-using Server.Network;
 
 namespace Server.Items
 {
-	public class UtilityItem
+    public class UtilityItem
 	{
 		static public int RandomChoice( int itemID1, int itemID2 )
 		{

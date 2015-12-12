@@ -1,12 +1,11 @@
 using System;
 using System.Collections.Generic;
-using Server;
 using Server.Items;
 using Server.Network;
 
 namespace Server.Mobiles
 {
-	public abstract class BaseGuildmaster : BaseVendor
+    public abstract class BaseGuildmaster : BaseVendor
 	{
 		private List<SBInfo> m_SBInfos = new List<SBInfo>();
 		protected override List<SBInfo> SBInfos{ get { return m_SBInfos; } }

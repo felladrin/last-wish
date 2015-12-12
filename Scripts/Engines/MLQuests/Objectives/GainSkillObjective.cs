@@ -1,12 +1,10 @@
 using System;
-using Server;
-using Server.Engines.MLQuests;
 using Server.Mobiles;
 using Server.Gumps;
 
 namespace Server.Engines.MLQuests.Objectives
 {
-	public enum GainSkillObjectiveFlags : byte
+    public enum GainSkillObjectiveFlags : byte
 	{
 		None		= 0x00,
 		UseReal		= 0x01,

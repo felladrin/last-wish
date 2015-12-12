@@ -1,13 +1,12 @@
 using System;
 using Server.Targeting;
 using Server.Items;
-using Server.Network;
 using Server.Misc;
 using Server.Mobiles;
 
 namespace Server.Spells.Sixth
 {
-	public class ParalyzeFieldSpell : MagerySpell
+    public class ParalyzeFieldSpell : MagerySpell
 	{
 		private static SpellInfo m_Info = new SpellInfo(
 				"Paralyze Field", "In Ex Grav",

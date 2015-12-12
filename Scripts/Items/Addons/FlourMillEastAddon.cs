@@ -1,12 +1,10 @@
 using System;
-using System.Collections;
-using Server;
 using Server.Network;
 using System.Collections.Generic;
 
 namespace Server.Items
 {
-	public interface IFlourMill
+    public interface IFlourMill
 	{
 		int MaxFlour{ get; }
 		int CurFlour{ get; set; }

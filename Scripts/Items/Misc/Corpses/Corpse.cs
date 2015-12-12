@@ -1,7 +1,5 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using Server;
 using Server.ContextMenus;
 using Server.Engines.PartySystem;
 using Server.Engines.Quests;
@@ -14,7 +12,7 @@ using Server.Network;
 
 namespace Server.Items
 {
-	public interface IDevourer
+    public interface IDevourer
 	{
 		bool Devour( Corpse corpse );
 	}

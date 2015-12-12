@@ -1,15 +1,13 @@
 using System;
 using System.Collections.Generic;
-using Server;
 using Server.Items;
-using Server.Mobiles;
 using Server.Network;
 using Server.Spells.Ninjitsu;
 using Server.Spells.Bushido;
 
 namespace Server.Spells
 {
-	public abstract class SpecialMove
+    public abstract class SpecialMove
 	{
 		public virtual int BaseMana{ get{ return 0; } }
 

@@ -1,16 +1,12 @@
 using System;
-using Server;
 using Server.Mobiles;
 using Server.Items;
 using Server.Multis;
-using Server.Spells;
-using Server.Spells.Sixth;
-using Server.Guilds;
 using Server.Gumps;
 
 namespace Server.Regions
 {
-	public class HouseRegion : BaseRegion
+    public class HouseRegion : BaseRegion
 	{
 		public static readonly int HousePriority = Region.DefaultPriority + 1;
 

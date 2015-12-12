@@ -1,12 +1,10 @@
-using System;
-using Server;
 using Server.Items;
 using Server.Targeting;
 using Server.Network;
 
 namespace Server.Engines.Plants
 {
-	public class PlantBowl : Item
+    public class PlantBowl : Item
 	{
 		public override int LabelNumber { get { return 1060834; } } // a plant bowl
 

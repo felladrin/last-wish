@@ -3,8 +3,6 @@ using System.Net;
 using System.Text;
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
-using Server;
 using Server.Items;
 using Server.Prompts;
 using Server.Network;
@@ -15,7 +13,7 @@ using Server.Misc;
 
 namespace Server.Gumps
 {
-	public enum AdminGumpPage
+    public enum AdminGumpPage
 	{
 		Information_General,
 		Information_Perf,

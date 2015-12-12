@@ -1,16 +1,11 @@
 using System;
 using System.Collections.Generic;
-using System.Text;
-
-using Server;
 using Server.Spells;
-using Server.Gumps;
-using Server.Multis;
-using Server.Mobiles;
 using Server.Factions;
 
-namespace Server {
-	public sealed class StormsEye : PowerFactionItem {
+namespace Server
+{
+    public sealed class StormsEye : PowerFactionItem {
 		public override string DefaultName {
 			get {
 				return "storms eye";

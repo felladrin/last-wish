@@ -1,5 +1,4 @@
 using System;
-using Server;
 using Server.Items;
 using Server.Guilds;
 using Server.Multis;
@@ -8,7 +7,6 @@ using Server.Mobiles;
 using Server.Targeting;
 using Server.Engines.PartySystem;
 using Server.Misc;
-using Server.Spells.Bushido;
 using Server.Spells.Necromancy;
 using Server.Spells.Ninjitsu;
 using System.Collections.Generic;
@@ -17,7 +15,7 @@ using Server.Spells.Fifth;
 
 namespace Server
 {
-	public class DefensiveSpell
+    public class DefensiveSpell
 	{
 		public static void Nullify( Mobile from )
 		{
@@ -47,7 +45,7 @@ namespace Server
 
 namespace Server.Spells
 {
-	public enum TravelCheckType
+    public enum TravelCheckType
 	{
 		RecallFrom,
 		RecallTo,

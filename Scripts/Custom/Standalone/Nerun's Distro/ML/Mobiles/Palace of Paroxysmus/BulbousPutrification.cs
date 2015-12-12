@@ -1,10 +1,6 @@
-using System;
-using Server;
-using Server.Items;
-
 namespace Server.Mobiles
 {
-	[CorpseName( "a bulbous putrification corpse" )]
+    [CorpseName( "a bulbous putrification corpse" )]
 	public class BulbousPutrification : BaseCreature
 	{
 		[Constructable]

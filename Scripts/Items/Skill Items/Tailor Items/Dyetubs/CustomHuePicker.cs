@@ -1,11 +1,9 @@
-using System;
-using Server;
 using Server.Gumps;
 using Server.Network;
 
 namespace Server.Items
 {
-	public class CustomHueGroup
+    public class CustomHueGroup
 	{
 		private int m_Name;
 		private string m_NameString;

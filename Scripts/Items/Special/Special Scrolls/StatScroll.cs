@@ -1,12 +1,9 @@
 using System;
-using Server;
 using Server.Mobiles;
-using Server.Gumps;
-using Server.Network;
 
 namespace Server.Items
 {
-	public class StatCapScroll : SpecialScroll
+    public class StatCapScroll : SpecialScroll
 	{
 		public override int Message { get { return 1049469; } } /* Using a scroll increases the maximum amount of a specific skill or your maximum statistics.
 																* When used, the effect is not immediately seen without a gain of points with that skill or statistics.

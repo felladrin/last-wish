@@ -1,12 +1,10 @@
 using System;
 using System.Collections;
-using Server.Network;
-using Server.Mobiles;
 using Server.Targeting;
 
 namespace Server.Spells.Necromancy
 {
-	public class CorpseSkinSpell : NecromancerSpell
+    public class CorpseSkinSpell : NecromancerSpell
 	{
 		private static SpellInfo m_Info = new SpellInfo(
 				"Corpse Skin", "In Agle Corp Ylem",

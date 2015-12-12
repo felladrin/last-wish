@@ -1,11 +1,9 @@
-using System;
-using Server;
 using Server.Commands;
 using Server.Commands.Generic;
 
 namespace Server.Items
 {
-	public class ToggleItem : Item
+    public class ToggleItem : Item
 	{
 		public class ToggleCommand : BaseCommand
 		{

@@ -1,12 +1,9 @@
 using System;
-using System.Collections;
-using System.IO;
-using Server;
 using Server.Items;
 
 namespace Server.Mobiles
 {
-	public class Jamal : Fisherman
+    public class Jamal : Fisherman
 	{
 		[Constructable]
 		public Jamal() : base()

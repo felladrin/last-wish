@@ -1,11 +1,9 @@
 using System;
 using Server.Mobiles;
-using Server.Network;
-using Server.Targeting;
 
 namespace Server.Spells.Eighth
 {
-	public class FireElementalSpell : MagerySpell
+    public class FireElementalSpell : MagerySpell
 	{
 		private static SpellInfo m_Info = new SpellInfo(
 				"Fire Elemental", "Kal Vas Xen Flam",

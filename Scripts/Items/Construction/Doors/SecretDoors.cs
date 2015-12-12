@@ -1,8 +1,6 @@
-using System;
-
 namespace Server.Items
 {
-	public class SecretStoneDoor1 : BaseDoor
+    public class SecretStoneDoor1 : BaseDoor
 	{
 		[Constructable]
 		public SecretStoneDoor1( DoorFacing facing ) : base( 0xE8 + (2 * (int)facing), 0xE9 + (2 * (int)facing), 0xED, 0xF4, BaseDoor.GetOffset( facing ) )

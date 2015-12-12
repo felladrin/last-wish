@@ -4,13 +4,10 @@
 // AddonGenerator script by Arya               //
 //                                             //
 /////////////////////////////////////////////////
-using System;
-using Server;
-using Server.Items;
 
 namespace Server.Items
 {
-	public class GrillNewAddon : BaseAddon
+    public class GrillNewAddon : BaseAddon
 	{
 		public override BaseAddonDeed Deed
 		{

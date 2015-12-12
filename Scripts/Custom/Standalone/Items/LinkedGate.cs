@@ -1,14 +1,11 @@
 using System;
-using Server;
 using Server.Mobiles;
 using Server.Items;
-using System.Collections;
-using System.Reflection;
 using Server.Network;
 
 namespace Server.Lokai
 {
-	public class LinkedGate : Moongate
+    public class LinkedGate : Moongate
 	{
 		private LinkedGate mateGate;
 		public LinkedGate MateGate { get { return mateGate; } set { mateGate = value; } }

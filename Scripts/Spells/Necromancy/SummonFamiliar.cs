@@ -1,14 +1,12 @@
 using System;
 using System.Collections;
 using Server.Network;
-using Server.Items;
-using Server.Targeting;
 using Server.Gumps;
 using Server.Mobiles;
 
 namespace Server.Spells.Necromancy
 {
-	public class SummonFamiliarSpell : NecromancerSpell
+    public class SummonFamiliarSpell : NecromancerSpell
 	{
 		private static SpellInfo m_Info = new SpellInfo(
 				"Summon Familiar", "Kal Xen Bal",

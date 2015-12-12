@@ -2,14 +2,13 @@ using System;
 using System.IO;
 using System.Collections;
 using System.Collections.Generic;
-using Server;
 using Server.Items;
 using Server.Engines.Quests.Haven;
 using Server.Engines.Quests.Necro;
 
 namespace Server.Commands
 {
-	public class DecorateMag
+    public class DecorateMag
 	{
 		public static void Initialize()
 		{

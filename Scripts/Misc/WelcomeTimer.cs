@@ -1,12 +1,11 @@
 using System;
-using Server.Network;
 
 namespace Server.Misc
 {
-	/// <summary>
-	/// This timer spouts some welcome messages to a user at a set interval. It is used on character creation and login.
-	/// </summary>
-	public class WelcomeTimer : Timer
+    /// <summary>
+    /// This timer spouts some welcome messages to a user at a set interval. It is used on character creation and login.
+    /// </summary>
+    public class WelcomeTimer : Timer
 	{
 		private Mobile m_Mobile;
 		private int m_State, m_Count;

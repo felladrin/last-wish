@@ -1,5 +1,4 @@
 using System;
-using Server;
 using Server.Network;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,7 +9,7 @@ using Server.Mobiles;
 
 namespace Server.Misc
 {
-	public enum TreasuresOfTokunoEra
+    public enum TreasuresOfTokunoEra
 	{
 		None,
 		ToTOne,
@@ -185,7 +184,7 @@ namespace Server.Misc
 
 namespace Server.Mobiles
 {
-	public class IharaSoko : BaseVendor
+    public class IharaSoko : BaseVendor
 	{
 		public override bool IsActiveVendor { get { return false; } }
 		public override bool IsInvulnerable { get { return true; } }
@@ -294,7 +293,7 @@ namespace Server.Mobiles
 
 namespace Server.Gumps
 {
-	public class ItemTileButtonInfo : ImageTileButtonInfo
+    public class ItemTileButtonInfo : ImageTileButtonInfo
 	{
 		private Item m_Item;
 
@@ -404,7 +403,7 @@ namespace Server.Gumps
 
 namespace Server.Gumps
 {
-	public class ToTRedeemGump : BaseImageTileButtonsGump
+    public class ToTRedeemGump : BaseImageTileButtonsGump
 	{
 		public class TypeTileButtonInfo : ImageTileButtonInfo
 		{

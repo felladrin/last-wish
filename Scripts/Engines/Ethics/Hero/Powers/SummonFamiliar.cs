@@ -1,11 +1,9 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
 using Server.Mobiles;
 
 namespace Server.Ethics.Hero
 {
-	public sealed class SummonFamiliar : Power
+    public sealed class SummonFamiliar : Power
 	{
 		public SummonFamiliar()
 		{

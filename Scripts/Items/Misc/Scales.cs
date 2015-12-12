@@ -1,10 +1,9 @@
 using System;
-using Server.Network;
 using Server.Targeting;
 
 namespace Server.Items
 {
-	public class Scales : Item
+    public class Scales : Item
 	{
 		[Constructable]
 		public Scales() : base( 0x1852 )

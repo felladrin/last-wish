@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using Server.Mobiles;
 using Server.Items;
 using Server.Network;
@@ -9,7 +8,7 @@ using Server.Engines.MLQuests.Definitions;
 
 namespace Server.Engines.MLQuests.Mobiles
 {
-	public abstract class DoneQuestCollector : BaseCreature, IRaceChanger
+    public abstract class DoneQuestCollector : BaseCreature, IRaceChanger
 	{
 		public override bool IsInvulnerable { get { return true; } }
 

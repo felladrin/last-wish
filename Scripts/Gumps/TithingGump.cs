@@ -1,11 +1,9 @@
-using System;
-using Server;
 using Server.Items;
 using Server.Network;
 
 namespace Server.Gumps
 {
-	public class TithingGump : Gump
+    public class TithingGump : Gump
 	{
 		private Mobile m_From;
 		private int m_Offer;

@@ -1,15 +1,12 @@
 using System;
 using System.Collections.Generic;
-using Server;
 using Server.Accounting;
-using Server.Gumps;
 using Server.Items;
-using Server.Mobiles;
 using Server.Network;
 
 namespace Server.Gumps
 {
-	public class HouseRaffleManagementGump : Gump
+    public class HouseRaffleManagementGump : Gump
 	{
 		public enum SortMethod
 		{

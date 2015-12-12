@@ -1,10 +1,9 @@
 using System;
-using Server;
 using Server.Network;
 
 namespace Server.Items
 {
-	public enum SpikeTrapType
+    public enum SpikeTrapType
 	{
 		WestWall,
 		NorthWall,

@@ -2,18 +2,13 @@
 // Version 0.99I By Nerun
 // Version 1.0 By Obsidian Fire (Gump Fixes)
 
-using Server;
-using Server.Items;
-using Server.Multis;
-using Server.Network;
-using System;
 
 namespace Server.Items
 {
 
-//----------------------------------------------------------------------------------------------------------- [Level 1] -----------------------------
-// Large, Medium and Small Crate
-	[FlipableAttribute( 0xE3E, 0xE3F )] 
+    //----------------------------------------------------------------------------------------------------------- [Level 1] -----------------------------
+    // Large, Medium and Small Crate
+    [FlipableAttribute( 0xE3E, 0xE3F )] 
 	public class TreasureLevel1 : BaseTreasureChestMod 
 	{ 
 		public override int DefaultGumpID{ get{ return 0x44; } }

@@ -1,5 +1,4 @@
 using System;
-using Server;
 using Server.Mobiles;
 using Server.Gumps;
 using Server.Targeting;
@@ -7,7 +6,7 @@ using Server.Regions;
 
 namespace Server
 {
-	public class HonorVirtue
+    public class HonorVirtue
 	{
 		
 		private static readonly TimeSpan UseDelay = TimeSpan.FromMinutes( 5.0 ); 

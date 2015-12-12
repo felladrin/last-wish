@@ -1,11 +1,8 @@
-using System;
-using Server;
-using Server.Misc;
 using Server.Items;
 
-namespace Server.Mobiles 
-{ 
-	[CorpseName( "a human corpse" )] 
+namespace Server.Mobiles
+{
+    [CorpseName( "a human corpse" )] 
 	public class HumanBrigand : BaseCreature 
 	{ 
 		public override bool AlwaysMurderer{ get{ return true; } }

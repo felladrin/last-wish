@@ -1,14 +1,6 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Server;
-using Server.Items;
-using Server.ContextMenus;
-using Server.Gumps;
-
 namespace Server.Mobiles
 {
-	[CorpseName( "a sphynx corpse" )]
+    [CorpseName( "a sphynx corpse" )]
 	public class Sphynx : BaseCreature
 	{
 		[Constructable]

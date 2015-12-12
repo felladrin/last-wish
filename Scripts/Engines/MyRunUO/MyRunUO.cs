@@ -3,9 +3,7 @@ using System.IO;
 using System.Text;
 using System.Collections;
 using System.Collections.Generic;
-using Server;
 using Server.Misc;
-using Server.Items;
 using Server.Guilds;
 using Server.Mobiles;
 using Server.Accounting;
@@ -13,7 +11,7 @@ using Server.Commands;
 
 namespace Server.Engines.MyRunUO
 {
-	public class MyRunUO : Timer
+    public class MyRunUO : Timer
 	{
 		private static double CpuInterval = 0.1; // Processor runs every 0.1 seconds
 		private static double CpuPercent = 0.25; // Processor runs for 25% of Interval, or ~25ms. This should take around 25% cpu

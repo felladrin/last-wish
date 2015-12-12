@@ -1,7 +1,5 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using Server;
 using Server.Gumps;
 using Server.Misc;
 using Server.Multis;
@@ -10,7 +8,7 @@ using Server.Prompts;
 
 namespace Server.Mobiles
 {
-	public class VendorRentalDuration
+    public class VendorRentalDuration
 	{
 		public static readonly VendorRentalDuration[] Instances = new VendorRentalDuration[]
 			{

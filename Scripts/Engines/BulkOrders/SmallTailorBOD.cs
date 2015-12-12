@@ -1,12 +1,10 @@
 using System;
 using System.Collections.Generic;
-using Server;
 using Server.Engines.Craft;
-using Server.Items;
 
 namespace Server.Engines.BulkOrders
 {
-	public class SmallTailorBOD : SmallBOD
+    public class SmallTailorBOD : SmallBOD
 	{
 		public static double[] m_TailoringMaterialChances = new double[]
 			{

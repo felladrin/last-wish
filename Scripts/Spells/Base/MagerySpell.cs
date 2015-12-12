@@ -1,10 +1,9 @@
 using System;
-using Server;
 using Server.Items;
 
 namespace Server.Spells
 {
-	public abstract class MagerySpell : Spell
+    public abstract class MagerySpell : Spell
 	{
 		public MagerySpell( Mobile caster, Item scroll, SpellInfo info )
 			: base( caster, scroll, info )

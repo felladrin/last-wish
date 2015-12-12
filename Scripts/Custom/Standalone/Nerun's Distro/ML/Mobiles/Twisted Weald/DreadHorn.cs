@@ -1,10 +1,6 @@
-using System;
-using Server;
-using Server.Items;
-
 namespace Server.Mobiles
 {
-	[CorpseName( "a dread horn corpse" )]
+    [CorpseName( "a dread horn corpse" )]
 	
 	public class DreadHorn : BaseCreature
 	{

@@ -1,12 +1,10 @@
 using System;
 using System.Collections.Generic;
-
-using Server;
 using Server.Gumps;
 
 namespace Server.Poker
 {
-	public class PokerPlayer
+    public class PokerPlayer
 	{
 		private int m_Gold;
 		private int m_Bet;

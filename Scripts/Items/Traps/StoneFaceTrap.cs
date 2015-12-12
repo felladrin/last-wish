@@ -1,10 +1,8 @@
 using System;
-using Server;
-using Server.Network;
 
 namespace Server.Items
 {
-	public enum StoneFaceTrapType
+    public enum StoneFaceTrapType
 	{
 		NorthWestWall,
 		NorthWall,

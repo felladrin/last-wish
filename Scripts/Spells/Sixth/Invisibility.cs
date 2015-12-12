@@ -1,12 +1,11 @@
 using System;
 using System.Collections.Generic;
-using Server;
 using Server.Targeting;
 using Server.Items;
 
 namespace Server.Spells.Sixth
 {
-	public class InvisibilitySpell : MagerySpell
+    public class InvisibilitySpell : MagerySpell
 	{
 		private static SpellInfo m_Info = new SpellInfo(
 				"Invisibility", "An Lor Xen",

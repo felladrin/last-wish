@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using Server;
 using Server.Commands;
 using Server.Engines.Craft;
 using Server.Network;
@@ -9,7 +8,7 @@ using Server.Targeting;
 
 namespace Server.Items
 {
-	public enum SpellbookType
+    public enum SpellbookType
 	{
 		Invalid = -1,
 		Regular,

@@ -14,8 +14,6 @@ if( ContainerRenamePrompt.HasAccess( from, this ) )
 	list.Add( new ContainerRenameEntry( from, this ));
 */
 
-using System;
-using Server;
 using Server.Multis;
 using Server.ContextMenus;
 using Server.Prompts;

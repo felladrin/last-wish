@@ -1,15 +1,6 @@
-using System;
-using System.Collections;
-using Server;
-using Server.Gumps;
-using Server.Multis;
-using Server.Network;
-using Server.ContextMenus;
-using Server.Engines.PartySystem;
-
 namespace Server.Items
 {
-	[Flipable]
+    [Flipable]
 	public class ParagonChest : LockableContainer
 	{
 		private static int[] m_ItemIDs = new int[]

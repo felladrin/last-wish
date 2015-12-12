@@ -1,10 +1,8 @@
-using System;
 using Server.Targeting;
-using Server.Network;
 
 namespace Server.Spells.Second
 {
-	public class CureSpell : MagerySpell
+    public class CureSpell : MagerySpell
 	{
 		private static SpellInfo m_Info = new SpellInfo(
 				"Cure", "An Nox",

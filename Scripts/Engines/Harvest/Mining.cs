@@ -1,12 +1,11 @@
 using System;
-using Server;
 using Server.Items;
 using Server.Mobiles;
 using Server.Targeting;
 
 namespace Server.Engines.Harvest
 {
-	public class Mining : HarvestSystem
+    public class Mining : HarvestSystem
 	{
 		private static Mining m_System;
 

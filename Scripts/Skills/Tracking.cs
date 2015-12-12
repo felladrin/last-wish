@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using Server;
 using Server.Gumps;
 using Server.Network;
 using Server.Spells.Necromancy;
@@ -8,7 +7,7 @@ using Server.Spells;
 
 namespace Server.SkillHandlers
 {
-	public class Tracking
+    public class Tracking
 	{
 		public static void Initialize()
 		{

@@ -1,15 +1,11 @@
 using System;
 using System.Collections.Generic;
-using Server;
-using Server.Mobiles;
 using Server.Spells;
-using Server.Items;
 using Server.Regions;
 using System.Collections;
-using Server.SkillHandlers;
 using Server.Gumps;
 
-namespace Server.Items 
+namespace Server.Items
 {
     public enum RegionFlag : uint
     {

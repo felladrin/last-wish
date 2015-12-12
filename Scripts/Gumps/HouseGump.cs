@@ -1,15 +1,12 @@
 using System;
-using System.Reflection;
 using System.Collections;
 using Server.Network;
 using Server.Prompts;
 using Server.Multis;
-using Server.Multis.Deeds;
-using Server.Items;
 
 namespace Server.Gumps
 {
-	public class HouseListGump : Gump
+    public class HouseListGump : Gump
 	{
 		private BaseHouse m_House;
 
@@ -732,7 +729,7 @@ namespace Server.Gumps
 
 namespace Server.Prompts
 {
-	public class RenamePrompt : Prompt
+    public class RenamePrompt : Prompt
 	{
 		private BaseHouse m_House;
 

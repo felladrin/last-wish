@@ -1,10 +1,8 @@
-using System;
-using Server;
 using Server.Items;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a Shimmering Effusion corpse" )]
+    [CorpseName( "a Shimmering Effusion corpse" )]
 	public class ShimmeringEffusion : BaseCreature
 	{
 		[Constructable]

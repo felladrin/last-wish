@@ -1,13 +1,10 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Text;
-using Server;
 using Server.Commands;
 using Server.Items;
-using Server.Network;
 using Server.Multis;
 using CPA = Server.CommandPropertyAttribute;
 
@@ -32,7 +29,7 @@ using CPA = Server.CommandPropertyAttribute;
 
 namespace Server.Mobiles
 {
-	public class Spawner : Item, ISpawner
+    public class Spawner : Item, ISpawner
 	{
 		private int m_Team;
 		private int m_HomeRange;

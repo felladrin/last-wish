@@ -1,15 +1,13 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
-using Server;
 using Server.Commands;
 using Server.Network;
 using Server.Targeting;
 
 namespace Server.Gumps
 {
-	public class AddGump : Gump
+    public class AddGump : Gump
 	{
 		private string m_SearchString;
 		private Type[] m_SearchResults;

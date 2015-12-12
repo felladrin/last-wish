@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Server;
 using Server.Gumps;
 using Server.Items;
 using Server.Multis;
@@ -9,7 +8,7 @@ using Server.Targeting;
 
 namespace Server.Commands.Generic
 {
-	public class DesignInsertCommand : BaseCommand
+    public class DesignInsertCommand : BaseCommand
 	{
 		public static void Initialize()
 		{

@@ -1,11 +1,8 @@
-using System;
 using Server.Items;
-using Server;
-using Server.Misc;
 
 namespace Server.Mobiles
 {
-	public class GenericGuard : BaseCreature
+    public class GenericGuard : BaseCreature
 	{ 
 		[Constructable]
 		public GenericGuard () : base( AIType.AI_Animal, FightMode.None, 10, 1, 0.2, 0.4 )

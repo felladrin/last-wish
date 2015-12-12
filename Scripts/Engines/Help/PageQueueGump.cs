@@ -1,13 +1,12 @@
 using System;
 using System.IO;
 using System.Collections;
-using Server;
 using Server.Network;
 using Server.Gumps;
 
 namespace Server.Engines.Help
 {
-	public class MessageSentGump : Gump
+    public class MessageSentGump : Gump
 	{
 		private string m_Name, m_Text;
 		private Mobile m_Mobile;

@@ -1,15 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-using Server;
-using Server.Gumps;
-using Server.Multis;
-using Server.Mobiles;
 using Server.Factions;
 
-namespace Server {
-	public sealed class GemOfEmpowerment : PowerFactionItem {
+namespace Server
+{
+    public sealed class GemOfEmpowerment : PowerFactionItem {
 		public override string DefaultName {
 			get {
 				return "gem of empowerment";

@@ -1,13 +1,10 @@
 using System;
-using Server;
-using Server.Engines.MLQuests;
 using Server.Mobiles;
 using Server.Gumps;
-using System.Collections.Generic;
 
 namespace Server.Engines.MLQuests.Objectives
 {
-	public abstract class BaseObjective
+    public abstract class BaseObjective
 	{
 		public virtual bool IsTimed { get { return false; } }
 		public virtual TimeSpan Duration { get { return TimeSpan.Zero; } }

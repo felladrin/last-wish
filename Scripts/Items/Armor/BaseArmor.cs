@@ -1,16 +1,14 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using Server.Network;
 using Server.Engines.Craft;
 using Server.Factions;
 using AMA = Server.Items.ArmorMeditationAllowance;
 using AMT = Server.Items.ArmorMaterialType;
-using ABT = Server.Items.ArmorBodyType;
 
 namespace Server.Items
 {
-	public abstract class BaseArmor : Item, IScissorable, IFactionItem, ICraftable, IWearableDurability
+    public abstract class BaseArmor : Item, IScissorable, IFactionItem, ICraftable, IWearableDurability
 	{
 		#region Factions
 		private FactionItem m_FactionState;

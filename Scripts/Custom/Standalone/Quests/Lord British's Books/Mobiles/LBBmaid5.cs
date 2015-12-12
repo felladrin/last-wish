@@ -1,7 +1,4 @@
-﻿using System;
-using Server;
-using Server.Mobiles;
-using Server.Items;
+﻿using Server.Items;
 
 namespace Server.Custom.Quests.LordBritishsBooks
 {

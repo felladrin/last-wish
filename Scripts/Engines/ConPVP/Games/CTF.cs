@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Server;
 using Server.Items;
 using Server.Mobiles;
 using Server.Network;
@@ -10,7 +9,7 @@ using Server.Gumps;
 
 namespace Server.Engines.ConPVP
 {
-	public sealed class CTFBoard : Item
+    public sealed class CTFBoard : Item
 	{
 		public CTFTeamInfo m_TeamInfo;
 

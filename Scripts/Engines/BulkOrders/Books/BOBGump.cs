@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using Server;
 using Server.Gumps;
 using Server.Items;
 using Server.Mobiles;
@@ -8,7 +7,7 @@ using Server.Prompts;
 
 namespace Server.Engines.BulkOrders
 {
-	public class BOBGump : Gump
+    public class BOBGump : Gump
 	{
 		private PlayerMobile m_From;
 		private BulkOrderBook m_Book;

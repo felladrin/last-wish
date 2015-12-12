@@ -1,12 +1,9 @@
-using System;
-using System.Collections;
-using Server;
 using Server.Guilds;
 using System.Collections.Generic;
 
 namespace Server.Gumps
 {
-	public abstract class GuildMobileListGump : Gump
+    public abstract class GuildMobileListGump : Gump
 	{
 		protected Mobile m_Mobile;
 		protected Guild m_Guild;

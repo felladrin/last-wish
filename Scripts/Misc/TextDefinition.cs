@@ -1,12 +1,11 @@
 using System;
 using System.Globalization;
-using Server;
 using Server.Gumps;
 using Server.Network;
 
 namespace Server
 {
-	[Parsable]
+    [Parsable]
 	public class TextDefinition
 	{
 		private int m_Number;

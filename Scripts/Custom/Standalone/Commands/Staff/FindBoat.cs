@@ -3,12 +3,8 @@
 //
 using System;
 using System.Collections;
-using Server;
-using Server.Items;
 using Server.Network;
-using Server.Prompts;
 using Server.Multis;
-using Server.Targeting;
 using Server.Commands;
 
 namespace Server.Gumps

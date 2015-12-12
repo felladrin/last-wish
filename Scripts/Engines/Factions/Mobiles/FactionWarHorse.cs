@@ -1,10 +1,8 @@
-using System;
-using Server;
 using Server.Mobiles;
 
 namespace Server.Factions
 {
-	[CorpseName( "a war horse corpse" )]
+    [CorpseName( "a war horse corpse" )]
 	public class FactionWarHorse : BaseMount
 	{
 		private Faction m_Faction;

@@ -1,12 +1,10 @@
 using System;
 using System.Collections;
-using Server;
-using Server.Mobiles;
 using Server.Network;
 
 namespace Server.Items
 {
-	public class OrangePetals : Item
+    public class OrangePetals : Item
 	{
 		public override int LabelNumber { get { return 1053122; } } // orange petals
 

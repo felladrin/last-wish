@@ -1,11 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Server;
 
 namespace Server.Misc
 {
-	[Flags]
+    [Flags]
 	public enum IHSFlags
 	{
 		None		= 0x00,

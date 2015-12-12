@@ -1,16 +1,13 @@
 using System;
-using System.Collections;
-using Server;
 using Server.Items;
 using Server.Mobiles;
-using Server.Network;
 using Server.Regions;
 using Server.Commands;
 using System.Collections.Generic;
 
 namespace Server.Engines.Doom
 {
-	public enum GauntletSpawnerState
+    public enum GauntletSpawnerState
 	{
 		InSequence,
 		InProgress,

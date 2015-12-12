@@ -22,10 +22,7 @@ using System;
 using System.IO;
 using System.Collections;
 using System.Collections.Generic;
-
-using Server;
 using Server.Misc;
-using Server.Items;
 using Server.Gumps;
 using Server.Regions;
 using Server.Mobiles;
@@ -33,7 +30,7 @@ using Server.Commands;
 
 namespace Server.Engines.Dueling
 {
-	public class DuelController
+    public class DuelController
 	{
 		public static readonly string Version = "2.1.3";
 		private static readonly string SaveDirectory = Path.Combine(Core.BaseDirectory, "Saves/Onsite Dueling");

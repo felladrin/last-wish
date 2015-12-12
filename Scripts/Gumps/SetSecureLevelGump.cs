@@ -1,12 +1,10 @@
-using System;
-using Server;
 using Server.Multis;
 using Server.Network;
 using Server.Guilds;
 
 namespace Server.Gumps
 {
-	public interface ISecurable
+    public interface ISecurable
 	{
 		SecureLevel Level{ get; set; }
 	}

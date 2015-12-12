@@ -1,13 +1,10 @@
-using System;
-using Server.Misc;
 using Server.Items;
 using Server.Targeting;
-using Server.Network;
 using Server.Mobiles;
 
 namespace Server.Spells.Sixth
 {
-	public class DispelSpell : MagerySpell
+    public class DispelSpell : MagerySpell
 	{
 		private static SpellInfo m_Info = new SpellInfo(
 				"Dispel", "An Ort",

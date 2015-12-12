@@ -1,9 +1,8 @@
-using System;
 using Server.Network;
 
 namespace Server
 {
-	public class CurrentExpansion
+    public class CurrentExpansion
 	{
 		private static readonly Expansion Expansion = Expansion.HS;
 

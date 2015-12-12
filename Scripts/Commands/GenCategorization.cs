@@ -3,12 +3,11 @@ using System.IO;
 using System.Xml;
 using System.Collections;
 using System.Reflection;
-using Server;
 using Server.Items;
 
 namespace Server.Commands
 {
-	public class Categorization
+    public class Categorization
 	{
 		private static CategoryEntry m_RootItems, m_RootMobiles;
 

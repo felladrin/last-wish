@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using Server;
 using Server.Multis;
 using Server.Targeting;
 using Server.ContextMenus;
@@ -8,7 +6,7 @@ using Server.Gumps;
 
 namespace Server.Items
 {
-	public interface IDyable
+    public interface IDyable
 	{
 		bool Dye( Mobile from, DyeTub sender );
 	}

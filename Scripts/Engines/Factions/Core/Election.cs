@@ -1,13 +1,11 @@
 using System;
 using System.Net;
-using System.Collections;
-using Server;
 using Server.Mobiles;
 using System.Collections.Generic;
 
 namespace Server.Factions
 {
-	public class Election
+    public class Election
 	{
 		public static readonly TimeSpan PendingPeriod = TimeSpan.FromDays( 5.0 );
 		public static readonly TimeSpan CampaignPeriod = TimeSpan.FromDays( 1.0 );

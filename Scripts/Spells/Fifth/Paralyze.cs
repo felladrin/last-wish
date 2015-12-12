@@ -1,12 +1,11 @@
 using System;
 using Server.Mobiles;
 using Server.Targeting;
-using Server.Network;
 using Server.Spells.Chivalry;
 
 namespace Server.Spells.Fifth
 {
-	public class ParalyzeSpell : MagerySpell
+    public class ParalyzeSpell : MagerySpell
 	{
 		private static SpellInfo m_Info = new SpellInfo(
 				"Paralyze", "An Ex Por",

@@ -1,11 +1,9 @@
 using System;
 using Server.Mobiles;
-using Server.Network;
-using Server.Targeting;
 
 namespace Server.Spells.Eighth
 {
-	public class EarthElementalSpell : MagerySpell
+    public class EarthElementalSpell : MagerySpell
 	{
 		private static SpellInfo m_Info = new SpellInfo(
 				"Earth Elemental", "Kal Vas Xen Ylem",

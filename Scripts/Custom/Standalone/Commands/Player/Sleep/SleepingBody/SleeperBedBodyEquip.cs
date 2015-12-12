@@ -8,16 +8,13 @@
 //  Modified for RunUO 2.0, removed shard specific customizations (wing layers, etc.)
 //  Eni
 //   - changed script to implement the new hair system (sleepers have hair again)
-using System;
 using System.IO;
-using System.Collections;
 using System.Collections.Generic;
-using Server;
 using Server.Items;
 
 namespace Server.Network
 {
-	public sealed class SleeperBedBodyEquip : Packet
+    public sealed class SleeperBedBodyEquip : Packet
 	{
 		public SleeperBedBodyEquip( Mobile beholder, SleeperBedBody beheld ) : base( 0x89 )
 		{

@@ -1,14 +1,11 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using Server;
-using Server.Multis;
 using Server.Gumps;
 using Server.ContextMenus;
 
 namespace Server.Multis
 {
-	public class HouseSign : Item
+    public class HouseSign : Item
 	{
 		private BaseHouse m_Owner;
 		private Mobile m_OrgOwner;

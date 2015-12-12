@@ -1,11 +1,10 @@
 using System;
 using System.IO;
-using Server;
 using Server.Accounting;
 
 namespace Server.Commands
 {
-	public class CommandLogging
+    public class CommandLogging
 	{
 		private static StreamWriter m_Output;
 		private static bool m_Enabled = true;

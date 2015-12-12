@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections;
-using Server.Network;
-using Server.Targeting;
-using Server.Items;
-
-namespace Server.Items
+﻿namespace Server.Items
 {
 
     public class DivineFemaleHide : BaseGMJewel

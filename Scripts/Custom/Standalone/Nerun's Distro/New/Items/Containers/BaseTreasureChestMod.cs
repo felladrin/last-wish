@@ -1,14 +1,11 @@
 // Treasure Chest Pack - Version 0.99H
 // By Nerun
 
-using Server;
-using Server.Items;
-using Server.Network;
 using System;
 
 namespace Server.Items
 {
-	public abstract class BaseTreasureChestMod : LockableContainer
+    public abstract class BaseTreasureChestMod : LockableContainer
 	{
 		private ChestTimer m_DeleteTimer;
 		//public override bool Decays { get{ return true; } }

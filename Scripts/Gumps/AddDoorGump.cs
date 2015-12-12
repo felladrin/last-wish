@@ -1,12 +1,11 @@
 using System;
-using Server;
 using Server.Items;
 using Server.Network;
 using Server.Commands;
 
 namespace Server.Gumps
 {
-	public class AddDoorGump : Gump
+    public class AddDoorGump : Gump
 	{
 		private int m_Type;
 

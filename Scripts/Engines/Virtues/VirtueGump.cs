@@ -1,13 +1,11 @@
 using System;
 using System.Collections.Generic;
-using Server;
 using Server.Gumps;
-using Server.Mobiles;
 using Server.Network;
 
 namespace Server
 {
-	public delegate void OnVirtueUsed( Mobile from );
+    public delegate void OnVirtueUsed( Mobile from );
 
 	public class VirtueGump : Gump
 	{

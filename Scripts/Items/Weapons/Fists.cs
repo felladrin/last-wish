@@ -1,10 +1,8 @@
 using System;
-using Server.Items;
-using Server.Network;
 
 namespace Server.Items
 {
-	public class Fists : BaseMeleeWeapon
+    public class Fists : BaseMeleeWeapon
 	{
 		public static void Initialize()
 		{

@@ -1,11 +1,8 @@
-using System;
-using Server;
 using Server.Mobiles;
-using Server.Engines.Quests;
 
 namespace Server.Engines.Quests.Hag
 {
-	public class MagicFlute : Item
+    public class MagicFlute : Item
 	{
 		public override int LabelNumber{ get{ return 1055051; } } // magic flute
 

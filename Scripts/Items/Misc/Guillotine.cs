@@ -1,12 +1,9 @@
 using System;
-using Server;
-using Server.Items;
-using Server.Mobiles;
 using Server.Network;
 
 namespace Server.Items
 {
-	public class Guillotine : Item
+    public class Guillotine : Item
 	{
 		[Constructable]
 		public Guillotine()

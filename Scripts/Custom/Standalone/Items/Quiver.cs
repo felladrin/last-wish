@@ -1,8 +1,6 @@
-using System;
-
 namespace Server.Items
 {
-	[Flipable( 0x2B02, 0x2B03 )]
+    [Flipable( 0x2B02, 0x2B03 )]
 	public class Quiver : BaseMiddleTorso
 	{
 		[Constructable]

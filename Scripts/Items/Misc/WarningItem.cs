@@ -1,12 +1,10 @@
 using System;
-using Server;
 using Server.Network;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace Server.Items
 {
-	public class WarningItem : Item
+    public class WarningItem : Item
 	{
 		private string m_WarningString;
 		private int m_WarningNumber;

@@ -1,5 +1,4 @@
 using System;
-using Server;
 using Server.Gumps;
 using Server.Mobiles;
 using Server.Targeting;
@@ -7,7 +6,7 @@ using Server.Network;
 
 namespace Server
 {
-	public class SacrificeVirtue
+    public class SacrificeVirtue
 	{
 		private static TimeSpan GainDelay = TimeSpan.FromDays( 1.0 );
 		private static TimeSpan LossDelay = TimeSpan.FromDays( 7.0 );

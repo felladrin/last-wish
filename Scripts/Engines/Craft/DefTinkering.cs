@@ -1,12 +1,11 @@
 using System;
-using Server;
 using Server.Items;
 using Server.Factions;
 using Server.Targeting;
 
 namespace Server.Engines.Craft
 {
-	public class DefTinkering : CraftSystem
+    public class DefTinkering : CraftSystem
 	{
 		public override SkillName MainSkill
 		{

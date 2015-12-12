@@ -1,11 +1,10 @@
 using System;
-using Server.Mobiles;
 using Server.Network;
 using Server.Items;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a ki-rin corpse" )]
+    [CorpseName( "a ki-rin corpse" )]
 	public class Kirin : BaseMount
 	{
 		public override bool AllowFemaleRider{ get{ return false; } }

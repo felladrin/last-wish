@@ -1,13 +1,11 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using Server;
 using Server.Items;
 using Server.Mobiles;
 
 namespace Server.Movement
 {
-	public class MovementImpl : IMovementImpl
+    public class MovementImpl : IMovementImpl
 	{
 		private const int PersonHeight = 16;
 		private const int StepHeight = 2;

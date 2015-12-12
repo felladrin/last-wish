@@ -1,13 +1,11 @@
-using System;
-using Server;
 using Server.Multis;
 using Server.Gumps;
 using Server.Network;
 using Server.Engines.VeteranRewards;
 
 namespace Server.Items
-{	
-	public class StoneAnkhComponent : AddonComponent
+{
+    public class StoneAnkhComponent : AddonComponent
 	{
 		public override bool ForceShowProperties{ get{ return ObjectPropertyList.Enabled; } }
 

@@ -1,12 +1,11 @@
 using System;
 using Server.Targeting;
-using Server.Network;
 using Server.Mobiles;
 using Server.Items;
 
 namespace Server.SkillHandlers
 {
-	public class Provocation
+    public class Provocation
 	{
 		public static void Initialize()
 		{

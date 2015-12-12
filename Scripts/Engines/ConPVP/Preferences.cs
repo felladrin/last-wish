@@ -1,13 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Server;
 using Server.Gumps;
 using Server.Network;
 
 namespace Server.Engines.ConPVP
 {
-	public class PreferencesController : Item
+    public class PreferencesController : Item
 	{
 		private Preferences m_Preferences;
 

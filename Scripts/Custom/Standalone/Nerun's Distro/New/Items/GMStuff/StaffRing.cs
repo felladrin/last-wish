@@ -1,13 +1,10 @@
 // By Nerun
 
-using System;
-using Server.Network;
-using Server.Items;
 
 namespace Server.Items
 {
 
-	public class StaffRing : BaseRing
+    public class StaffRing : BaseRing
 	{
 		[Constructable]
 		public StaffRing() : base( 0x108a )

@@ -1,11 +1,9 @@
 using System;
-using Server;
-using Server.Gumps;
 using Server.Network;
 
 namespace Server.Gumps
 {
-	public class GoGump : Gump
+    public class GoGump : Gump
 	{
 		public static readonly LocationTree Felucca = new LocationTree( "felucca.xml", Map.Felucca );
 		public static readonly LocationTree Trammel = new LocationTree( "trammel.xml", Map.Trammel );

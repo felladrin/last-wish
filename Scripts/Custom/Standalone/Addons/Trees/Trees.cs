@@ -1,12 +1,6 @@
-
-using System;
-using Server;
-using Server.Items;
-
-
 namespace Server.Items
 {
-	public class CedarTree : BaseAddon
+    public class CedarTree : BaseAddon
 	{
 		[Constructable]
 		public CedarTree()

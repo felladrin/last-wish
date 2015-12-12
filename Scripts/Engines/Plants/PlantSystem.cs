@@ -1,12 +1,11 @@
 using System;
 using System.Collections;
-using Server;
 using Server.Items;
 using System.Collections.Generic;
 
 namespace Server.Engines.Plants
 {
-	public enum PlantHealth
+    public enum PlantHealth
 	{
 		Dying,
 		Wilted,

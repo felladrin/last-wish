@@ -4,17 +4,12 @@
 // AddonGenerator script by Arya
 //
 /////////////////////////////////////////////////
-using System;
-using System.Collections;
-using Server;
-using Server.Items;
 using Server.Network;
-using Server.Mobiles;
 using Server.Gumps;
 
 namespace Server.Items
 {
-	public class PianoAddon : BaseAddon
+    public class PianoAddon : BaseAddon
 	{
 		public override BaseAddonDeed Deed
 		{

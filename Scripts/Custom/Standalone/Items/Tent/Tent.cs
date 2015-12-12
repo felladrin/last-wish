@@ -7,9 +7,6 @@
 //                                         //
 // For putting up with a 'tard like me :)  //
 //=========================================//
-using System;
-using Server;
-using Server.Items;
 
 namespace Server.Items
 {

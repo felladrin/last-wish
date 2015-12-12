@@ -1,15 +1,13 @@
 using System;
 using System.Collections.Generic;
-using Server;
 using Server.Engines.MLQuests.Objectives;
 using Server.Mobiles;
-using Server.Network;
 using Server.Engines.MLQuests.Gumps;
 using Server.Engines.MLQuests.Rewards;
 
 namespace Server.Engines.MLQuests
 {
-	[Flags]
+    [Flags]
 	public enum MLQuestInstanceFlags : byte
 	{
 		None		= 0x00,

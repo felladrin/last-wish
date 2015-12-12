@@ -2,17 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
-using Server;
 using Server.Commands.Generic;
 using Server.Network;
-using Server.Menus;
-using Server.Menus.Questions;
-using Server.Targeting;
 using CPA = Server.CommandPropertyAttribute;
 
 namespace Server.Gumps
 {
-	public class StackEntry
+    public class StackEntry
 	{
 		public object m_Object;
 		public PropertyInfo m_Property;

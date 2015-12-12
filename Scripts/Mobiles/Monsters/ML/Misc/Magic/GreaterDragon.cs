@@ -1,10 +1,8 @@
-using System;
-using Server;
 using Server.Items;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a dragon corpse" )]
+    [CorpseName( "a dragon corpse" )]
 	public class GreaterDragon : BaseCreature
 	{
 		public override bool StatLossAfterTame { get { return true; } }

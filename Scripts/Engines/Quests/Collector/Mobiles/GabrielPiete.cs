@@ -1,12 +1,9 @@
-using System;
-using Server;
 using Server.Mobiles;
 using Server.Items;
-using Server.Engines.Quests;
 
 namespace Server.Engines.Quests.Collector
 {
-	public class GabrielPiete : BaseQuester
+    public class GabrielPiete : BaseQuester
 	{
 		[Constructable]
 		public GabrielPiete() : base( "the renowned minstrel" )

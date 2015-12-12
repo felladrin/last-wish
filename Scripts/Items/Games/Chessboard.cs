@@ -1,9 +1,6 @@
-using System;
-using System.Collections;
-
 namespace Server.Items
 {
-	public class Chessboard : BaseBoard
+    public class Chessboard : BaseBoard
 	{
 		public override int LabelNumber{ get{ return 1016450; } } // a chessboard
 

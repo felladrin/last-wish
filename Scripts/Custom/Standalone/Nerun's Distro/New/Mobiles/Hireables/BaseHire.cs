@@ -1,16 +1,12 @@
 using System;
-using Server;
 using Server.Items;
 using Server.ContextMenus;
-using Server.Misc;
-using Server.Mobiles;
-using Server.Network;
 using System.Collections.Generic;
 using System.Collections;
 
 namespace Server.Mobiles
 {
-	public class BaseHire : BaseCreature
+    public class BaseHire : BaseCreature
 	{
 		private int m_Pay = 1;
 		private bool m_IsHired;

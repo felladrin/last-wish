@@ -1,15 +1,13 @@
 using System;
 using System.Collections.Generic;
-using Server;
 using Server.Gumps;
 using Server.Mobiles;
-using Server.Network;
 using Server.Engines.MLQuests.Objectives;
 using Server.Engines.MLQuests.Rewards;
 
 namespace Server.Engines.MLQuests.Gumps
 {
-	public enum ButtonPosition : byte
+    public enum ButtonPosition : byte
 	{
 		Left,
 		Right

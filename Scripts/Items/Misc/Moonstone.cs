@@ -1,11 +1,10 @@
 using System;
-using Server;
 using Server.Network;
 using Server.Mobiles;
 
 namespace Server.Items
 {
-	public enum MoonstoneType
+    public enum MoonstoneType
 	{
 		Felucca, Trammel
 	}

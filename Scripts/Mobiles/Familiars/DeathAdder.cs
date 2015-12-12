@@ -1,9 +1,6 @@
-using System;
-using Server;
-
 namespace Server.Mobiles
 {
-	[CorpseName( "a death adder corpse" )]
+    [CorpseName( "a death adder corpse" )]
 	public class DeathAdder : BaseFamiliar
 	{
 		public DeathAdder()

@@ -1,18 +1,12 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using Server;
 using Server.Mobiles;
-using Server.Network;
-using Server.Items;
-using Server.Targeting;
 using Server.Gumps;
 using Server.Spells.Necromancy;
-using Server.Regions;
 
 namespace Server.Spells.Chivalry
 {
-	public class NobleSacrificeSpell : PaladinSpell
+    public class NobleSacrificeSpell : PaladinSpell
 	{
 		private static SpellInfo m_Info = new SpellInfo(
 				"Noble Sacrifice", "Dium Prostra",

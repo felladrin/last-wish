@@ -1,11 +1,8 @@
-using System;
-using Server;
-using Server.Mobiles;
 using Server.Gumps;
 
 namespace Server.Forums
 {
-	public class HelpGump : Gump
+    public class HelpGump : Gump
 	{
 		public HelpGump() : base( 0, 0 )
 		{

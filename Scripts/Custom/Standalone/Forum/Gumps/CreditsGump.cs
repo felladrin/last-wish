@@ -1,12 +1,8 @@
-using System;
-using Server;
-using System.IO;
-using Server.Mobiles;
 using Server.Gumps;
 
 namespace Server.Forums
 {
-	public class CreditsGump : Gump
+    public class CreditsGump : Gump
 	{
 		public CreditsGump() : base( 0, 0 )
 		{

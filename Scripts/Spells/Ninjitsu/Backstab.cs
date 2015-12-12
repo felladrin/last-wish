@@ -1,14 +1,9 @@
 using System;
-using System.Collections;
-using Server.Network;
-using Server.Items;
-using Server.Mobiles;
-using Server.Targeting;
 using Server.SkillHandlers;
 
 namespace Server.Spells.Ninjitsu
 {
-	public class Backstab : NinjaMove
+    public class Backstab : NinjaMove
 	{
 		public Backstab()
 		{

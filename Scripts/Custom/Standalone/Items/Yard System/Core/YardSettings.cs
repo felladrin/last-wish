@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Server.ACC.YS
+﻿namespace Server.ACC.YS
 {
     public class YardSettings
     {

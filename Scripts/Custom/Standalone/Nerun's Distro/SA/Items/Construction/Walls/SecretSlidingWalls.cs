@@ -1,8 +1,6 @@
-using System;
-
 namespace Server.Items
 {
-	public class SecretShadowWallNS : BaseSliding
+    public class SecretShadowWallNS : BaseSliding
 	{
 		[Constructable]
 		public SecretShadowWallNS() : base( 0x363A, 0x3619 )

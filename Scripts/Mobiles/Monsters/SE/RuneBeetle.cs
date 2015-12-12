@@ -2,11 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Server.Items;
-using Server.Targeting;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a rune beetle corpse" )]
+    [CorpseName( "a rune beetle corpse" )]
 	public class RuneBeetle : BaseCreature
 	{
 		public override WeaponAbility GetWeaponAbility()

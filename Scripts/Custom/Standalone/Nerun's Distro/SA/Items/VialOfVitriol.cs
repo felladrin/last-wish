@@ -1,8 +1,6 @@
-using System;
-
 namespace Server.Items
 {
-	public class VialOfVitriol : Item
+    public class VialOfVitriol : Item
 	{
 		public override int LabelNumber{ get{ return 1113331; } } // vial of vitriol
 

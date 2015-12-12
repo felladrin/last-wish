@@ -1,11 +1,9 @@
 using System;
-using Server;
 using Server.Mobiles;
-using Server.Spells;
 
 namespace Server.Items
 {
-	public class ClockworkAssembly : Item
+    public class ClockworkAssembly : Item
 	{
 		public override string DefaultName
 		{

@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using Server.Network;
 using Server.Mobiles;
 using Server.Targeting;
 using Server.Items;
@@ -9,7 +8,7 @@ using Server.Engines.Quests.Necro;
 
 namespace Server.Spells.Necromancy
 {
-	public class AnimateDeadSpell : NecromancerSpell
+    public class AnimateDeadSpell : NecromancerSpell
 	{
 		private static SpellInfo m_Info = new SpellInfo(
 				"Animate Dead", "Uus Corp",

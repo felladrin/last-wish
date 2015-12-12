@@ -1,11 +1,6 @@
-using System;
-using Server.Items;
-using Server.Targeting;
-using System.Collections;
-
 namespace Server.Mobiles
 {
-	[CorpseName( "a stone slith corpse" )]
+    [CorpseName( "a stone slith corpse" )]
 	public class StoneSlith : BaseCreature
 	{
 		[Constructable]

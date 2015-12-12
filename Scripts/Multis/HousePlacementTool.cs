@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using Server;
 using Server.Gumps;
 using Server.Multis;
 using Server.Mobiles;
@@ -9,7 +8,7 @@ using Server.Targeting;
 
 namespace Server.Items
 {
-	public class HousePlacementTool : Item
+    public class HousePlacementTool : Item
 	{
 		public override int LabelNumber{ get{ return 1060651; } } // a house placement tool
 

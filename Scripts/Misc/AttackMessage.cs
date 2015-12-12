@@ -1,12 +1,10 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using Server;
 using Server.Network;
 
 namespace Server.Misc
 {
-	public class AttackMessage
+    public class AttackMessage
 	{
 		private const string AggressorFormat = "You are attacking {0}!";
 		private const string AggressedFormat = "{0} is attacking you!";

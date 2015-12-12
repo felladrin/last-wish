@@ -1,11 +1,6 @@
-using System;
-using Server.Items;
-using Server.Targeting;
-using System.Collections;
-
 namespace Server.Mobiles
 {
-	[CorpseName( "a rotworm corpse" )]
+    [CorpseName( "a rotworm corpse" )]
 	public class RotWorm : BaseCreature
 	{
 		[Constructable]

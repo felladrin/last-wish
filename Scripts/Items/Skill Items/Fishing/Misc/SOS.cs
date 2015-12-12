@@ -1,10 +1,9 @@
 using System;
-using Server.Network;
 using Server.Gumps;
 
 namespace Server.Items
 {
-	[Flipable( 0x14ED, 0x14EE )]
+    [Flipable( 0x14ED, 0x14EE )]
 	public class SOS : Item
 	{
 		public override int LabelNumber

@@ -1,10 +1,9 @@
 using System;
-using Server;
 using Server.Items;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a shadow knight corpse" )]
+    [CorpseName( "a shadow knight corpse" )]
 	public class ShadowKnight : BaseCreature
 	{
 		public override WeaponAbility GetWeaponAbility()

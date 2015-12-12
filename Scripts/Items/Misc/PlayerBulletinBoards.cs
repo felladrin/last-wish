@@ -1,7 +1,5 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using Server;
 using Server.Gumps;
 using Server.Multis;
 using Server.Prompts;
@@ -11,7 +9,7 @@ using Server.ContextMenus;
 
 namespace Server.Items
 {
-	public class PlayerBBSouth : BasePlayerBB
+    public class PlayerBBSouth : BasePlayerBB
 	{
 		public override int LabelNumber{ get{ return 1062421; } } // bulletin board (south)
 

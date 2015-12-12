@@ -1,15 +1,11 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Globalization;
 using System.Reflection;
 using System.Reflection.Emit;
-using System.Text;
-using Server;
 
 namespace Server.Commands.Generic
 {
-	public interface IConditional
+    public interface IConditional
 	{
 		bool Verify( object obj );
 	}

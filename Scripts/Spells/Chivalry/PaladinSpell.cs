@@ -1,11 +1,9 @@
 using System;
-using Server;
-using Server.Spells;
 using Server.Network;
 
 namespace Server.Spells.Chivalry
 {
-	public abstract class PaladinSpell : Spell
+    public abstract class PaladinSpell : Spell
 	{
 		public abstract double RequiredSkill{ get; }
 		public abstract int RequiredMana{ get; }

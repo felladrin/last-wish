@@ -1,11 +1,9 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
 using Server.Mobiles;
 
 namespace Server.Ethics
 {
-	public class PlayerCollection : System.Collections.ObjectModel.Collection<Player>
+    public class PlayerCollection : System.Collections.ObjectModel.Collection<Player>
 	{
 	}
 

@@ -1,16 +1,11 @@
 ﻿using System;
 using System.IO;
-using System.Text;
 using System.Collections;
-
-using Server;
-using Server.Gumps;
-using Server.Mobiles;
 using Server.Commands;
 
 namespace Server.Forums
 {
-	public class ForumCore
+    public class ForumCore
 	{
 		private static ArrayList m_Threads; //Thread Collection
 		//private static ArrayList m_PosterHolder;//Long Post Collection Holder

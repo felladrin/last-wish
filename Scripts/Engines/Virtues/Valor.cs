@@ -1,15 +1,11 @@
 using System;
-using System.Collections;
-using Server;
-using Server.Items;
-using Server.Gumps;
 using Server.Mobiles;
 using Server.Targeting;
 using Server.Engines.CannedEvil;
 
 namespace Server
 {
-	public class ValorVirtue
+    public class ValorVirtue
 	{
 		private static TimeSpan LossDelay = TimeSpan.FromDays( 7.0 );
 		private const int LossAmount = 250;

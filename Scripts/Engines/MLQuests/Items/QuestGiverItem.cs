@@ -1,13 +1,12 @@
 using System;
 using System.Collections.Generic;
-using Server;
 using Server.Items;
 using Server.Mobiles;
 using Server.Network;
 
 namespace Server.Engines.MLQuests.Items
 {
-	public abstract class QuestGiverItem : Item, IQuestGiver
+    public abstract class QuestGiverItem : Item, IQuestGiver
 	{
 		private List<MLQuest> m_MLQuests;
 

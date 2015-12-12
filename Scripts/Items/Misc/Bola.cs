@@ -1,13 +1,11 @@
 using System;
-using System.Collections;
-using Server;
 using Server.Mobiles;
 using Server.Network;
 using Server.Targeting;
 
 namespace Server.Items
 {
-	public class Bola : Item
+    public class Bola : Item
 	{
 		[Constructable]
 		public Bola() : this( 1 )

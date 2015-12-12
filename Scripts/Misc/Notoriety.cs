@@ -1,20 +1,15 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using Server;
 using Server.Items;
 using Server.Guilds;
 using Server.Multis;
 using Server.Mobiles;
 using Server.Engines.PartySystem;
 using Server.Factions;
-using Server.Spells.Necromancy;
-using Server.Spells.Ninjitsu;
-using Server.Spells;
 
 namespace Server.Misc
 {
-	public class NotorietyHandlers
+    public class NotorietyHandlers
 	{
 		public static void Initialize()
 		{

@@ -1,5 +1,4 @@
 using System;
-using Server;
 using Server.Items;
 using Server.Mobiles;
 using Server.Network;
@@ -7,7 +6,7 @@ using System.Collections.Generic;
 
 namespace Server.Factions
 {
-	public class Sigil : BaseSystemController
+    public class Sigil : BaseSystemController
 	{
 		public const int OwnershipHue = 0xB;
 

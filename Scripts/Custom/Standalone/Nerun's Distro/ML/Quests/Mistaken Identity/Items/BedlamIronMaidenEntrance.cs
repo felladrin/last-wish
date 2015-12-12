@@ -1,9 +1,8 @@
 // By Nerun
-using System;
 
 namespace Server.Items
 {
-	public class BedlamIronMaiden : Item
+    public class BedlamIronMaiden : Item
 	{
 		[Constructable]
 		public BedlamIronMaiden() : base( 0x124D )

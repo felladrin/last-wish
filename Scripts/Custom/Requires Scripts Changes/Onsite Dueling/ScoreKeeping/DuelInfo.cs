@@ -20,11 +20,10 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Server.Engines.Dueling
 {
-	public class DuelInfo
+    public class DuelInfo
 	{
 		private TimeSpan m_DuelTime;
 		private List<Mobile> m_AgainstList;

@@ -1,11 +1,10 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using Server.Targeting;
 
 namespace Server.Spells.Spellweaving
 {
-	public class GiftOfRenewalSpell : ArcanistSpell
+    public class GiftOfRenewalSpell : ArcanistSpell
 	{
 		private static SpellInfo m_Info = new SpellInfo(
 				"Gift of Renewal", "Olorisstra",

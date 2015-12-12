@@ -1,12 +1,10 @@
 using System;
 using System.Collections.Generic;
-using Server;
 using Server.Items;
-using Server.Network;
 
 namespace Server.Mobiles
 {
-	public class GenericBuyInfo : IBuyItemInfo
+    public class GenericBuyInfo : IBuyItemInfo
 	{
 		private class DisplayCache : Container
 		{

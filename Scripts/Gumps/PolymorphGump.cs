@@ -1,13 +1,10 @@
-using System;
-using Server;
 using Server.Network;
-using Server.Targets;
 using Server.Spells;
 using Server.Spells.Seventh;
 
 namespace Server.Gumps
 {
-	public class PolymorphEntry
+    public class PolymorphEntry
 	{
 		public static readonly PolymorphEntry Chicken =		new PolymorphEntry( 8401, 0xD0, 1015236, 15, 10 );
 		public static readonly PolymorphEntry Dog =			new PolymorphEntry( 8405, 0xD9, 1015237, 17, 10 );

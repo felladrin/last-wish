@@ -1,8 +1,6 @@
-using System;
-
 namespace Server.Engines.BulkOrders
 {
-	public class BOBFilter
+    public class BOBFilter
 	{
 		private int m_Type;
 		private int m_Quality;

@@ -1,14 +1,10 @@
 using System;
-using Server;
-using Server.Misc;
 using Server.Items;
-using Server.Targeting;
-using System.Collections;
 using Server.Network;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a boura corpse" )]
+    [CorpseName( "a boura corpse" )]
 	public class HighPlainsBoura: BaseCreature
 	{
 		private bool m_Stunning;

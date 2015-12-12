@@ -3,7 +3,6 @@ using System.IO;
 using System.Text;
 using System.Reflection;
 using System.Collections;
-using Server;
 using Server.Items;
 using Server.Engines.BulkOrders;
 using Server.Commands.Generic;
@@ -11,7 +10,7 @@ using System.Collections.Generic;
 
 namespace Server.Commands
 {
-	public class Docs
+    public class Docs
 	{
 		public static void Initialize()
 		{

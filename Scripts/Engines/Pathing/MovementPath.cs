@@ -1,6 +1,4 @@
 using System;
-using Server;
-using Server.Mobiles;
 using Server.Targeting;
 using Server.PathAlgorithms;
 using Server.PathAlgorithms.SlowAStar;
@@ -9,7 +7,7 @@ using Server.Commands;
 
 namespace Server
 {
-	public sealed class MovementPath
+    public sealed class MovementPath
 	{
 		private Map m_Map;
 		private Point3D m_Start;

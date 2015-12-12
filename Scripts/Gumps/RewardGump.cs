@@ -1,14 +1,13 @@
 using System;
-using Server;
 using Server.Network;
 
 namespace Server.Gumps
 {
-	/*
+    /*
 	 * A generic version of the EA Clean Up Britannia reward gump.
 	 */
 
-	public interface IRewardEntry
+    public interface IRewardEntry
 	{
 		int Price { get; }
 		int ItemID { get; }

@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using Server.Commands;
-using Server.Misc;
-using System.IO;
 
 namespace Server.Engines.Tracker
 {
-	public sealed class TrackerPersistance : Item
+    public sealed class TrackerPersistance : Item
 	{
 		private static TrackerPersistance m_Instance;
 

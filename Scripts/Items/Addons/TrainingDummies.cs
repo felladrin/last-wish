@@ -1,9 +1,8 @@
 using System;
-using Server;
 
 namespace Server.Items
 {
-	[Flipable( 0x1070, 0x1074 )]
+    [Flipable( 0x1070, 0x1074 )]
 	public class TrainingDummy : AddonComponent
 	{
 		private double m_MinSkill;

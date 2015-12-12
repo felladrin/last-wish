@@ -1,16 +1,13 @@
 using System;
-using Server;
 using Server.Gumps;
 using Server.Network;
 using Server.Mobiles;
-using System.Collections;
-using Server.Targets;
 using Server.Factions;
 using System.Collections.Generic;
 
 namespace Server.Guilds
 {
-	public class GuildRosterGump : BaseGuildListGump<PlayerMobile>
+    public class GuildRosterGump : BaseGuildListGump<PlayerMobile>
 	{
 		#region Comparers
 		private class NameComparer : IComparer<PlayerMobile>

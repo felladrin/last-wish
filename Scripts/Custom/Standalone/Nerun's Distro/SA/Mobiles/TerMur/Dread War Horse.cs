@@ -1,11 +1,8 @@
-using System;
-using Server;
 using Server.Items;
-using Server.Mobiles;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a dread war horse corpse" )]
+    [CorpseName( "a dread war horse corpse" )]
 	public class DreadWarHorse : BaseMount
 	{
 		[Constructable]

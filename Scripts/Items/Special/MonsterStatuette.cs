@@ -1,14 +1,11 @@
-using System;
-using Server;
 using Server.Multis;
 using Server.Gumps;
-using Server.Items;
 using Server.Network;
 using Server.Engines.VeteranRewards;
 
 namespace Server.Items
 {
-	public enum MonsterStatuetteType
+    public enum MonsterStatuetteType
 	{
 		Crocodile,
 		Daemon,

@@ -1,11 +1,6 @@
-using Server;
-using System;
-using Server.Misc;
-using Server.Mobiles;
-
 namespace Server.Items
 {
-	public class DarkenedSky : Kama
+    public class DarkenedSky : Kama
 	{
 		public override int InitMinHits { get { return 255; } }
 		public override int InitMaxHits { get { return 255; } }

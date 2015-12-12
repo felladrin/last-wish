@@ -1,13 +1,10 @@
 using System;
-using System.Collections.Generic;
-
-using Server;
 using Server.Gumps;
 using Server.Network;
 
 namespace Server.Poker
 {
-	public class PokerBetGump : Gump
+    public class PokerBetGump : Gump
 	{
 		private const int COLOR_WHITE = 0xFFFFFF;
 		private const int COLOR_YELLOW = 0xFFFF00;

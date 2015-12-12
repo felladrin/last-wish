@@ -1,11 +1,6 @@
-using System;
-using Server.Items;
-using Server.Targeting;
-using System.Collections;
-
 namespace Server.Mobiles
 {
-	[CorpseName( "an undead guardian corpse" )]
+    [CorpseName( "an undead guardian corpse" )]
 	public class UndeadGuardian : BaseCreature
 	{
 		[Constructable]

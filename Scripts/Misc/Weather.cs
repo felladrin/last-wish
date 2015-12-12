@@ -1,13 +1,11 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using Server;
 using Server.Items;
 using Server.Network;
 
 namespace Server.Misc
 {
-	public class Weather
+    public class Weather
 	{
 		private static Map[] m_Facets;
 		private static Dictionary<Map, List<Weather>> m_WeatherByFacet = new Dictionary<Map, List<Weather>>();

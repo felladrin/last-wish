@@ -1,12 +1,9 @@
 ﻿using System;
-
-using Server;
 using Server.Gumps;
-using Server.Mobiles;
 
 namespace Server.Forums
 {
-	public class ThreadGump : Gump
+    public class ThreadGump : Gump
 	{
         private Mobile m_Player;
         private ThreadEntry m_ThreadEntry;

@@ -1,13 +1,8 @@
-using System;
-using System.Collections;
 using Server.Items;
-using Server.ContextMenus;
-using Server.Misc;
-using Server.Network;
 
-namespace Server.Mobiles 
+namespace Server.Mobiles
 {
-	public class HireThief : BaseHire 
+    public class HireThief : BaseHire 
 	{
 		[Constructable] 
 		public HireThief()

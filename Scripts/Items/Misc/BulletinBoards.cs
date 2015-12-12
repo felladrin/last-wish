@@ -1,13 +1,10 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Text;
-using Server;
 using Server.Network;
 
 namespace Server.Items
 {
-	[Flipable( 0x1E5E, 0x1E5F )]
+    [Flipable( 0x1E5E, 0x1E5F )]
 	public class BulletinBoard : BaseBulletinBoard
 	{
 		[Constructable]

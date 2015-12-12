@@ -1,10 +1,9 @@
 using System;
-using Server.Targeting;
 using Server.Mobiles;
 
 namespace Server.Spells.Spellweaving
 {
-	public abstract class ArcaneSummon<T> : ArcanistSpell where T : BaseCreature
+    public abstract class ArcaneSummon<T> : ArcanistSpell where T : BaseCreature
 	{
 		public abstract int Sound { get; }
 

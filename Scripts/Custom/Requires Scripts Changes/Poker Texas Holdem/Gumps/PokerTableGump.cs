@@ -1,12 +1,10 @@
 using System;
-using System.Collections.Generic;
 
 using Server.Gumps;
-using Server.Mobiles;
 
 namespace Server.Poker
 {
-	public class PokerTableGump : Gump
+    public class PokerTableGump : Gump
 	{
 		private const int RED = 38;
 		private const int BLACK = 0;

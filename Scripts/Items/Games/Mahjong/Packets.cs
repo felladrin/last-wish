@@ -1,10 +1,8 @@
-using System;
-using Server;
 using Server.Network;
 
 namespace Server.Engines.Mahjong
 {
-	public sealed class MahjongJoinGame : Packet
+    public sealed class MahjongJoinGame : Packet
 	{
 		public MahjongJoinGame( MahjongGame game ) : base( 0xDA )
 		{

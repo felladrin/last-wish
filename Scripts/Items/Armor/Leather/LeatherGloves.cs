@@ -1,9 +1,8 @@
 using System;
-using Server.Items;
 
 namespace Server.Items
 {
-	[Flipable]
+    [Flipable]
 	public class LeatherGloves : BaseArmor, IArcaneEquip
 	{
 		public override int BasePhysicalResistance{ get{ return 2; } }

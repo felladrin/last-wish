@@ -1,9 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Net;
-using System.Net.Sockets;
-using Server;
 using Server.Accounting;
 using Server.Engines.Help;
 using Server.Items;
@@ -15,7 +12,7 @@ using Server.Spells;
 
 namespace Server.Commands.Generic
 {
-	public class TargetCommands
+    public class TargetCommands
 	{
 		public static void Initialize()
 		{

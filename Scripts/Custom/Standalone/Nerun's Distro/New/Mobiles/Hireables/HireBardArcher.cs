@@ -1,13 +1,8 @@
-using System;
-using System.Collections;
 using Server.Items;
-using Server.ContextMenus;
-using Server.Misc;
-using Server.Network;
 
-namespace Server.Mobiles 
+namespace Server.Mobiles
 {
-	public class HireBardArcher : BaseHire 
+    public class HireBardArcher : BaseHire 
 	{
 		[Constructable] 
 		public HireBardArcher() :  base( AIType.AI_Archer ) 

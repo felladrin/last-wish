@@ -1,12 +1,9 @@
 using System;
 using System.Collections.Generic;
-using Server.Network;
-using Server.Items;
-using Server.Targeting;
 
 namespace Server.Spells.Eighth
 {
-	public class EarthquakeSpell : MagerySpell
+    public class EarthquakeSpell : MagerySpell
 	{
 		private static SpellInfo m_Info = new SpellInfo(
 				"Earthquake", "In Vas Por",

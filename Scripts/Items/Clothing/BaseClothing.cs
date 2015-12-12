@@ -1,13 +1,12 @@
 using System;
 using System.Collections.Generic;
-using Server;
 using Server.Engines.Craft;
 using Server.Factions;
 using Server.Network;
 
 namespace Server.Items
 {
-	public enum ClothingQuality
+    public enum ClothingQuality
 	{
 		Low,
 		Regular,

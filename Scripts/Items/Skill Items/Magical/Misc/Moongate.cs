@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using Server.Misc;
 using Server.Mobiles;
 using Server.Network;
@@ -8,7 +7,7 @@ using Server.Regions;
 
 namespace Server.Items
 {
-	[DispellableFieldAttribute]
+    [DispellableFieldAttribute]
 	public class Moongate : Item
 	{
 		private Point3D m_Target;

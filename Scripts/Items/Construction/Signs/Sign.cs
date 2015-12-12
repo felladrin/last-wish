@@ -1,9 +1,6 @@
-using System;
-using Server;
-
 namespace Server.Items
 {
-	public enum SignFacing
+    public enum SignFacing
 	{
 		North,
 		West

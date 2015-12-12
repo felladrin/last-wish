@@ -1,7 +1,4 @@
 using System;
-using System.Collections;
-using Server;
-using Server.Items;
 using Server.Gumps;
 using Server.Network;
 using Server.Targeting;
@@ -9,7 +6,7 @@ using Server.Mobiles;
 
 namespace Server.Engines.ConPVP
 {
-	public class ParticipantGump : Gump
+    public class ParticipantGump : Gump
 	{
 		private Mobile m_From;
 		private DuelContext m_Context;

@@ -1,5 +1,4 @@
 using System;
-using Server;
 using Server.Gumps;
 using Server.Network;
 using Server.Accounting;
@@ -9,7 +8,7 @@ using Server.Mobiles;
 
 namespace Server.Items
 {
-	public class SoulStone : Item, ISecurable
+    public class SoulStone : Item, ISecurable
 	{
 		public override int LabelNumber { get { return 1030899; } } // soulstone
 

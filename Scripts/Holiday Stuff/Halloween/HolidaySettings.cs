@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Server.Items;
 
 namespace Server.Events.Halloween
 {
-	class HolidaySettings
+    class HolidaySettings
 	{
 		public static DateTime StartHalloween { get { return new DateTime( 2012, 10, 24 ); } } // YY MM DD
 		public static DateTime FinishHalloween { get { return new DateTime( 2012, 11, 15 ); } }

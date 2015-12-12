@@ -1,17 +1,15 @@
 using System;
 using System.Text;
 using System.Collections.Generic;
-using Server;
 using Server.Prompts;
 using Server.Gumps;
 using Server.Network;
 using Server.Items;
-using Server.Misc;
 using Server.Commands;
 
 namespace Server.Mobiles
 {
-	public interface ITownCrierEntryList
+    public interface ITownCrierEntryList
 	{
 		List<TownCrierEntry> Entries{ get; }
 		TownCrierEntry GetRandomEntry();

@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Server;
 using Server.Items;
 using Server.Gumps;
 using Server.Mobiles;
@@ -10,7 +9,7 @@ using Server.ContextMenus;
 
 namespace Server.Engines.Quests
 {
-	public delegate void QuestCallback();
+    public delegate void QuestCallback();
 
 	public abstract class QuestSystem
 	{

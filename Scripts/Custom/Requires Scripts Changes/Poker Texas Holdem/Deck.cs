@@ -1,11 +1,9 @@
 using System;
 using System.Collections.Generic;
 
-using Server;
-
 namespace Server.Poker
 {
-	public class Deck
+    public class Deck
 	{
 		private Stack<Card> m_Deck;
 		private List<Card> m_UsedCards;

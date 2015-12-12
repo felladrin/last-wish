@@ -11,20 +11,13 @@
 //   - changed script to implement the new hair system (sleepers have hair again)
 //   - added support for players lying awake in bed
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using Server;
-using Server.Engines.PartySystem;
-using Server.Misc;
-using Server.Guilds;
-using Server.Mobiles;
 using Server.Network;
-using Server.ContextMenus;
 using Server.Multis;
 
 namespace Server.Items
 {
-	public class SleeperBedBody : Container 
+    public class SleeperBedBody : Container 
 	{
 		private Mobile m_Owner;
 		private string m_SleeperBedBodyName;	

@@ -1,12 +1,10 @@
 using System;
-using System.Collections;
-using Server;
 using Server.Items;
 using Server.Targeting;
 
 namespace Server.Mobiles
 {
-	public abstract class BaseMount : BaseCreature, IMount
+    public abstract class BaseMount : BaseCreature, IMount
 	{
 		private Mobile m_Rider;
 		private Item m_InternalItem;

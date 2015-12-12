@@ -1,14 +1,12 @@
 using System;
-using Server;
 using Server.Mobiles;
 using Server.Gumps;
 using Server.Network;
 using Server.Factions;
-using Server.Prompts;
 
 namespace Server.Guilds
 {
-	public class GuildInfoGump : BaseGuildGump
+    public class GuildInfoGump : BaseGuildGump
 	{
 		private bool m_IsResigning;
 

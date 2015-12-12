@@ -1,12 +1,10 @@
 using System;
 using System.IO;
-using System.Collections;
-using Server;
 using Server.Regions;
 
 namespace Server
 {
-	public class TreasureRegion : BaseRegion
+    public class TreasureRegion : BaseRegion
 	{
 		private const int Range = 5; // No house may be placed within 5 tiles of the treasure
 

@@ -1,11 +1,9 @@
-using System;
 using System.Collections.Generic;
-using Server;
 using Server.Accounting;
 
 namespace Server.Engines.Chat
 {
-	public class ChatUser
+    public class ChatUser
 	{
 		private Mobile m_Mobile;
 		private Channel m_Channel;

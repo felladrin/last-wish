@@ -1,14 +1,12 @@
 using System;
 using System.Collections.Generic;
-using Server.Network;
 using Server.Items;
-using Server.Targeting;
 using Server.Mobiles;
 using Server.Spells.Necromancy;
 
 namespace Server.Spells.Chivalry
 {
-	public class DispelEvilSpell : PaladinSpell
+    public class DispelEvilSpell : PaladinSpell
 	{
 		private static SpellInfo m_Info = new SpellInfo(
 				"Dispel Evil", "Dispiro Malas",

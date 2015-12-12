@@ -1,12 +1,10 @@
-using System;
-using Server;
 using Server.Gumps;
 using Server.Mobiles;
 using Server.Network;
 
 namespace Server.Factions
 {
-	public class VoteGump : FactionGump
+    public class VoteGump : FactionGump
 	{
 		private PlayerMobile m_From;
 		private Election m_Election;

@@ -1,6 +1,4 @@
 using System;
-using Server;
-using System.Collections;
 using System.Collections.Generic;
 using Server.Items;
 using Server.Mobiles;
@@ -12,8 +10,8 @@ using Server.Commands.Generic;
 
 namespace Server.Guilds
 {
-	#region Ranks
-	[Flags]
+    #region Ranks
+    [Flags]
 	public enum RankFlags
 	{
 		None				= 0x00000000,

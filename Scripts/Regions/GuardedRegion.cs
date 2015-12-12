@@ -1,15 +1,12 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Xml;
-using Server;
 using Server.Commands;
 using Server.Mobiles;
-using Server.Spells;
 
 namespace Server.Regions
 {
-	public class GuardedRegion : BaseRegion
+    public class GuardedRegion : BaseRegion
 	{
 		private static object[] m_GuardParams = new object[1];
 		private Type m_GuardType;

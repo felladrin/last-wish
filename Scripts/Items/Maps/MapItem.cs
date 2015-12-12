@@ -1,14 +1,11 @@
 using System;
-using System.IO;
-using System.Collections;
 using System.Collections.Generic;
-using Server;
 using Server.Network;
 using Server.Engines.Craft;
 
 namespace Server.Items
 {
-	[Flipable( 0x14EB, 0x14EC )]
+    [Flipable( 0x14EB, 0x14EC )]
 	public class MapItem : Item, ICraftable
 	{
 		private Rectangle2D m_Bounds;

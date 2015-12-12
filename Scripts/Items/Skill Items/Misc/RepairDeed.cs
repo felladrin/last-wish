@@ -1,13 +1,11 @@
 using System;
-using Server;
-using Server.Targeting;
 using Server.Engines.Craft;
 using Server.Mobiles;
 using Server.Regions;
 
 namespace Server.Items
 {
-	public class RepairDeed : Item
+    public class RepairDeed : Item
 	{
 		private class RepairSkillInfo
 		{

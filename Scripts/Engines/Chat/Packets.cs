@@ -1,10 +1,9 @@
 using System;
-using Server;
 using Server.Network;
 
 namespace Server.Engines.Chat
 {
-	public sealed class ChatMessagePacket : Packet
+    public sealed class ChatMessagePacket : Packet
 	{
 		public ChatMessagePacket( Mobile who, int number, string param1, string param2 ) : base( 0xB2 )
 		{

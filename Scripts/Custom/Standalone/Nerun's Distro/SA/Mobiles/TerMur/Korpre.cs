@@ -1,12 +1,8 @@
-using System;
-using Server;
-using System.Collections;
 using Server.Items;
-using Server.Targeting;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a slimey corpse" )]
+    [CorpseName( "a slimey corpse" )]
 	public class Korpre : BaseCreature
 	{
 		[Constructable]

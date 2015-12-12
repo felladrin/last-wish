@@ -1,11 +1,9 @@
-using System;
-using System.Text;
 using Server.Gumps;
 using Server.Network;
 
 namespace Server.Items
 {
-	public class SpecialHairDye : Item
+    public class SpecialHairDye : Item
 	{
 		public override string DefaultName
 		{

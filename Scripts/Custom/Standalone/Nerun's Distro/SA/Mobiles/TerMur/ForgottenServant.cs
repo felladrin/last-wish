@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections;
-using Server.Items;
-using Server.ContextMenus;
-using Server.Misc;
-using Server.Network;
+﻿using Server.Items;
 
 namespace Server.Mobiles
 {
-	public class ForgottenServant : BaseCreature
+    public class ForgottenServant : BaseCreature
 	{
 		public override bool ClickTitle{ get{ return false; } }
 

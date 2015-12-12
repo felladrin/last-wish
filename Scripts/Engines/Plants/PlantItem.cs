@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Server;
 using Server.Gumps;
 using Server.Items;
 using Server.Multis;
@@ -10,7 +9,7 @@ using Server.Network;
 
 namespace Server.Engines.Plants
 {
-	public enum PlantStatus
+    public enum PlantStatus
 	{
 		BowlOfDirt		= 0,
 		Seed			= 1,

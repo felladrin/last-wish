@@ -1,10 +1,6 @@
-using System;
-using Server;
-using Server.Items;
-
 namespace Server.Mobiles
 {
-	[CorpseName( "a flurry corpse" )]
+    [CorpseName( "a flurry corpse" )]
 	public class Flurry : BaseCreature
 	{
 		public override double DispelDifficulty{ get{ return 117.5; } }

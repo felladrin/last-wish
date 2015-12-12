@@ -1,11 +1,9 @@
-using System;
-using Server;
 using Server.Items;
 using Server.Mobiles;
 
 namespace Server.Engines.Quests.Necro
 {
-	public class KronusScrollBox : MetalBox
+    public class KronusScrollBox : MetalBox
 	{
 		[Constructable]
 		public KronusScrollBox()

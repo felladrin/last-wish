@@ -1,15 +1,11 @@
-using System;
-using System.Collections;
 using Server.Targeting;
-using Server.Network;
-using Server.Spells;
 using Server.Spells.First;
 using Server.Spells.Second;
 using Server.Spells.Fourth;
 
 namespace Server.Mobiles
 {
-	public class HealerAI : BaseAI
+    public class HealerAI : BaseAI
 	{
 		private static NeedDelegate m_Cure = new NeedDelegate( NeedCure );
 		private static NeedDelegate m_GHeal = new NeedDelegate( NeedGHeal );

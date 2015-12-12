@@ -2,11 +2,10 @@ using System;
 using Server.Gumps;
 using Server.Mobiles;
 using Server.Network;
-using Server.Poker;
 
 namespace Server.Poker
 {
-	public class PokerJoinGump : Gump
+    public class PokerJoinGump : Gump
 	{
 		private PokerGame m_Game;
 

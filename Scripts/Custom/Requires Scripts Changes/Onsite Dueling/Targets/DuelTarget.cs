@@ -18,16 +18,13 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 */
 
-using System;
-using System.Collections.Generic;
 
-using Server;
 using Server.Mobiles;
 using Server.Targeting;
 
 namespace Server.Engines.Dueling
 {
-	public class DuelTarget : Target
+    public class DuelTarget : Target
 	{
 		private Mobile m_Mobile;
 		private Duel m_Duel;

@@ -1,12 +1,11 @@
 using System;
 using System.Collections;
-using Server.Network;
 using Server.Mobiles;
 using Server.Targeting;
 
 namespace Server.Spells.Necromancy
 {
-	public class BloodOathSpell : NecromancerSpell
+    public class BloodOathSpell : NecromancerSpell
 	{
 		private static SpellInfo m_Info = new SpellInfo(
 				"Blood Oath", "In Jux Mani Xen",

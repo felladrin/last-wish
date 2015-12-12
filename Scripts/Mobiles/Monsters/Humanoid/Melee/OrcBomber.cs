@@ -1,12 +1,10 @@
 using System;
-using System.Collections;
 using Server.Items;
-using Server.Targeting;
 using Server.Misc;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "an orcish corpse" )]
+    [CorpseName( "an orcish corpse" )]
 	public class OrcBomber : BaseCreature
 	{
 		public override InhumanSpeech SpeechType{ get{ return InhumanSpeech.Orc; } }

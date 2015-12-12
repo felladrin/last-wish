@@ -1,13 +1,9 @@
 using System;
 using System.Collections;
-using Server.Network;
-using Server.Items;
-using Server.Mobiles;
-using Server.Targeting;
 
 namespace Server.Spells.Bushido
 {
-	public class HonorableExecution : SamuraiMove
+    public class HonorableExecution : SamuraiMove
 	{
 		public HonorableExecution()
 		{

@@ -1,12 +1,9 @@
-using System;
-using System.Collections;
-using Server;
 using Server.Items;
 using Server.Multis.Deeds;
 
 namespace Server.Multis
 {
-	public class SmallOldHouse : BaseHouse
+    public class SmallOldHouse : BaseHouse
 	{
 		public static Rectangle2D[] AreaArray = new Rectangle2D[]{ new Rectangle2D(-3,-3,7,7 ), new Rectangle2D( -1, 4, 3, 1 ) };
 

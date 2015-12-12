@@ -1,11 +1,7 @@
-using System;
-using Server;
-
-
 namespace Server.Items
 {
 
-	public class NiporailemsTreasure : Item
+    public class NiporailemsTreasure : Item
 	{
 
 		public override int LabelNumber{ get{ return 1112113; } }   //  Niporailem's Treasure   

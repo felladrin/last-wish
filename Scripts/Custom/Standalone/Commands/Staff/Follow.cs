@@ -5,7 +5,6 @@
 
 using System;
 using System.Collections;
-using Server;
 using Server.Mobiles;
 using Server.Gumps;
 using Server.Targeting;
@@ -13,7 +12,7 @@ using Server.Network;
 
 namespace Server.Commands
 {
-	public class Follow
+    public class Follow
 	{
 		public static Hashtable Collection = new Hashtable();
 

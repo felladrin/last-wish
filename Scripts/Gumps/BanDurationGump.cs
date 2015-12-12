@@ -1,18 +1,10 @@
 using System;
-using System.Net;
-using System.Text;
 using System.Collections;
-using System.Diagnostics;
-using Server;
-using Server.Items;
-using Server.Prompts;
-using Server.Network;
 using Server.Accounting;
-using Server.Commands;
 
 namespace Server.Gumps
 {
-	public class BanDurationGump : Gump
+    public class BanDurationGump : Gump
 	{
 		private ArrayList m_List;
 

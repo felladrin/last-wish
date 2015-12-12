@@ -1,9 +1,6 @@
-using System;
-using Server;
-
 namespace Server.Items
 {
-	public class PresetMap : MapItem
+    public class PresetMap : MapItem
 	{
 		private int m_LabelNumber;
 

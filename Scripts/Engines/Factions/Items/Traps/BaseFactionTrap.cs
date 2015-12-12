@@ -1,12 +1,10 @@
 using System;
-using Server;
 using Server.Items;
 using Server.Network;
-using Server.Regions;
 
 namespace Server.Factions
 {
-	public enum AllowedPlacing
+    public enum AllowedPlacing
 	{
 		Everywhere,
 

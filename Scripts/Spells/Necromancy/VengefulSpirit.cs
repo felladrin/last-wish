@@ -1,13 +1,10 @@
 using System;
-using System.Collections;
-using Server.Network;
-using Server.Items;
 using Server.Targeting;
 using Server.Mobiles;
 
 namespace Server.Spells.Necromancy
 {
-	public class VengefulSpiritSpell : NecromancerSpell
+    public class VengefulSpiritSpell : NecromancerSpell
 	{
 		private static SpellInfo m_Info = new SpellInfo(
 				"Vengeful Spirit", "Kal Xen Bal Beh",

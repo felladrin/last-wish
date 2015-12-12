@@ -3,9 +3,6 @@
 //          by            //
 //         Liacs          //
 ////////////////////////////
-using System;
-using Server;
-using Server.Items;
 
 namespace Server.Items
 {

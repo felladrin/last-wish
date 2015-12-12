@@ -9,11 +9,10 @@
 **************************************/
 
 using System;
-using Server;
 
 namespace Joeku.MOTD
 {
-	public class MOTD_Info
+    public class MOTD_Info
 	{
 		public string Name;
 		public int NameWidth;

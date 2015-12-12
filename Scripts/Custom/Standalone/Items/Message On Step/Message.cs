@@ -1,10 +1,8 @@
 using System;
-using Server;
-using Server.Mobiles;
 
 namespace Server.Items
 {
-	public class MsgSender : Item
+    public class MsgSender : Item
 	{
 		private bool m_Active;
 		private string m_Message;

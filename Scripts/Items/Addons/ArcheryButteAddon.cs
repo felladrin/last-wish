@@ -1,11 +1,10 @@
 using System;
 using System.Collections;
-using Server;
 using Server.Network;
 
 namespace Server.Items
 {
-	[FlipableAttribute( 0x100A/*East*/, 0x100B/*South*/ )]
+    [FlipableAttribute( 0x100A/*East*/, 0x100B/*South*/ )]
 	public class ArcheryButte : AddonComponent
 	{
 		private double m_MinSkill;

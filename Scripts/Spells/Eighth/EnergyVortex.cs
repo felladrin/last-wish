@@ -1,11 +1,10 @@
 using System;
 using Server.Mobiles;
-using Server.Network;
 using Server.Targeting;
 
 namespace Server.Spells.Eighth
 {
-	public class EnergyVortexSpell : MagerySpell
+    public class EnergyVortexSpell : MagerySpell
 	{
 		private static SpellInfo m_Info = new SpellInfo(
 				"Energy Vortex", "Vas Corp Por",

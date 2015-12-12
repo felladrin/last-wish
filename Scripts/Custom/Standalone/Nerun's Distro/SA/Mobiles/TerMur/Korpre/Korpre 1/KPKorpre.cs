@@ -1,16 +1,11 @@
-using System;
-using System.Collections; 
-using Server;
-using Server.Items;
 using Server.Mobiles;
-using Server.Gumps;
 using Server.Network;
 using Server.Targeting;
 
 
 namespace Server.Commands
-{ 
-	public class KPKorpreSystem
+{
+    public class KPKorpreSystem
 	{ 
 
 		public static void Initialize()

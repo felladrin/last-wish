@@ -1,12 +1,11 @@
 using System;
-using Server;
 using Server.Gumps;
 using Server.Network;
 using Server.Mobiles;
 
 namespace Server.Guilds
 {
-	public class WarDeclarationGump : BaseGuildGump
+    public class WarDeclarationGump : BaseGuildGump
 	{
 		private Guild m_Other;
 

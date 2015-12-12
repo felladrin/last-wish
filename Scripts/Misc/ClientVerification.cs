@@ -1,5 +1,4 @@
 using System;
-using Server;
 using System.Diagnostics;
 using System.IO;
 using Server.Network;
@@ -8,7 +7,7 @@ using Server.Mobiles;
 
 namespace Server.Misc
 {
-	public class ClientVerification
+    public class ClientVerification
 	{
 		private enum OldClientResponse
 		{

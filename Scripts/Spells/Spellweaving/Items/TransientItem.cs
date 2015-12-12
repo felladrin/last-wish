@@ -1,11 +1,8 @@
 using System;
-using System.Collections.Generic;
-using Server;
-using Server.Mobiles;
 
 namespace Server.Items
 {
-	public class TransientItem : Item
+    public class TransientItem : Item
 	{
 		private TimeSpan m_LifeSpan;
 

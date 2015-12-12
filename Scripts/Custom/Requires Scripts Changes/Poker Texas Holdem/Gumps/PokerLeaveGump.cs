@@ -1,11 +1,9 @@
-using System;
 using Server.Gumps;
-using Server.Mobiles;
 using Server.Network;
 
 namespace Server.Poker
 {
-	public class PokerLeaveGump : Gump
+    public class PokerLeaveGump : Gump
 	{
 		private PokerGame m_Game;
 

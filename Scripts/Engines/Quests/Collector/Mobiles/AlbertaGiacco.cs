@@ -1,12 +1,9 @@
-using System;
-using Server;
 using Server.Mobiles;
 using Server.Items;
-using Server.Engines.Quests;
 
 namespace Server.Engines.Quests.Collector
 {
-	public class AlbertaGiacco : BaseQuester
+    public class AlbertaGiacco : BaseQuester
 	{
 		[Constructable]
 		public AlbertaGiacco() : base( "the respected painter" )

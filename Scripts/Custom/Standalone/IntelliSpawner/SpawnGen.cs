@@ -1,16 +1,10 @@
 // This is a MOD of Nerun's Distro SpawnGen (Engine r117) that works with default runuo proximity spawners.
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
-using Server;
 using Server.Mobiles;
-using Server.Items;
-using Server.Network;
 using Server.Commands;
-using Server.Regions;
 
 namespace Server
 {

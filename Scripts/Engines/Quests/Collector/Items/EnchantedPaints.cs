@@ -1,12 +1,9 @@
-using System;
-using Server;
 using Server.Mobiles;
 using Server.Targeting;
-using Server.Engines.Quests;
 
 namespace Server.Engines.Quests.Collector
 {
-	public class EnchantedPaints : QuestItem
+    public class EnchantedPaints : QuestItem
 	{
 		[Constructable]
 		public EnchantedPaints() : base( 0xFC1 )

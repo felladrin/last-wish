@@ -1,11 +1,9 @@
-using System;
-using Server;
 using Server.Gumps;
 using Server.Network;
 
 namespace Server.Items
 {
-	public class VanityAddon : BaseAddonContainer
+    public class VanityAddon : BaseAddonContainer
 	{
 		public override BaseAddonContainerDeed Deed { get { return new VanityDeed(); } }
 		public override int LabelNumber { get { return 1074027; } } // Vanity

@@ -1,18 +1,12 @@
 // Created by Tru.
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Reflection;
-using Server;
-using Server.Items;
 using Server.Mobiles;
-using Server.Network;
-using Server.Targeting;
-using Server.Regions;
 
 namespace Server.Commands
 {
-	public class CloneMe
+    public class CloneMe
 	{
 		public static void Initialize()
 		{
@@ -98,7 +92,7 @@ namespace Server.Commands
 
 namespace Server.Mobiles
 {
-	[CorpseName( "Corpse" )]
+    [CorpseName( "Corpse" )]
 	public class Cloner : BaseCreature
 	{
 		private DateTime m_ExpireTime;

@@ -1,13 +1,10 @@
-using System;
-using Server.Items;
-using Server.Network;
 using Server.Targeting;
 using Server.Engines.Craft;
 using Server.Mobiles;
 
 namespace Server.Items
 {
-	public abstract class BaseOre : Item
+    public abstract class BaseOre : Item
 	{
 		private CraftResource m_Resource;
 

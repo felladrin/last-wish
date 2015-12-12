@@ -1,5 +1,4 @@
 using System;
-using Server;
 using Server.Misc;
 using Server.Targeting;
 using Server.Items;
@@ -7,7 +6,7 @@ using Server.Network;
 
 namespace Server.SkillHandlers
 {
-	public class Begging
+    public class Begging
 	{
 		public static void Initialize()
 		{

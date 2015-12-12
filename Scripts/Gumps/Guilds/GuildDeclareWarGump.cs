@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using Server;
 using Server.Guilds;
 using Server.Network;
 using Server.Factions;
@@ -8,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Server.Gumps
 {
-	public class GuildDeclareWarGump : GuildListGump
+    public class GuildDeclareWarGump : GuildListGump
 	{
 		public GuildDeclareWarGump( Mobile from, Guild guild, List<Guild> list )
 			: base( from, guild, true, list )

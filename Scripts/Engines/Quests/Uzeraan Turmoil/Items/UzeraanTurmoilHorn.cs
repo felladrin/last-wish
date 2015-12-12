@@ -1,12 +1,8 @@
-using System;
-using Server;
-using Server.Items;
 using Server.Mobiles;
-using Server.Engines.Quests;
 
 namespace Server.Engines.Quests.Haven
 {
-	public class UzeraanTurmoilHorn : HornOfRetreat
+    public class UzeraanTurmoilHorn : HornOfRetreat
 	{
 		public override bool ValidateUse( Mobile from )
 		{

@@ -1,9 +1,8 @@
 using System;
-using Server;
 
 namespace Server.Items
 {
-	[PropertyObject]
+    [PropertyObject]
 	public class TalismanAttribute
 	{
 		private Type m_Type;

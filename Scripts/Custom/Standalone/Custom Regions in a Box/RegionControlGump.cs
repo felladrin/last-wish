@@ -1,12 +1,9 @@
-using System;
-using Server;
-using Server.Gumps;
 using Server.Items;
 using Server.Network;
 
 namespace Server.Gumps
 {
-	public class RegionControlGump : Gump
+    public class RegionControlGump : Gump
 	{
 		RegionControl m_Controller;
 		public RegionControlGump( RegionControl r )	: base( 25, 25 )

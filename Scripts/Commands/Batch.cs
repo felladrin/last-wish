@@ -1,15 +1,13 @@
 using System;
 using System.Reflection;
 using System.Collections;
-using Server;
 using Server.Gumps;
 using Server.Network;
-using Server.Commands;
 using Server.Commands.Generic;
 
 namespace Server.Commands
 {
-	public class Batch : BaseCommand
+    public class Batch : BaseCommand
 	{
 		private BaseCommandImplementor m_Scope;
 		private string m_Condition;

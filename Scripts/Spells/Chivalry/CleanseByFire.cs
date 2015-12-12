@@ -1,12 +1,9 @@
 using System;
-using System.Collections;
-using Server.Network;
-using Server.Items;
 using Server.Targeting;
 
 namespace Server.Spells.Chivalry
 {
-	public class CleanseByFireSpell : PaladinSpell
+    public class CleanseByFireSpell : PaladinSpell
 	{
 		private static SpellInfo m_Info = new SpellInfo(
 				"Cleanse By Fire", "Expor Flamus",

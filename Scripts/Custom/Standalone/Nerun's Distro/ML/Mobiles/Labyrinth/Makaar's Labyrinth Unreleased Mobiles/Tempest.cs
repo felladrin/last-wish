@@ -1,10 +1,6 @@
-using System;
-using Server;
-using Server.Items;
-
 namespace Server.Mobiles
 {
-	[CorpseName( "the remains of Tempest" )]
+    [CorpseName( "the remains of Tempest" )]
 	public class Tempest : BaseCreature
 	{
 		public override double DispelDifficulty{ get{ return 117.5; } }

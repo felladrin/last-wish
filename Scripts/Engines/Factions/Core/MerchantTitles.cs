@@ -1,8 +1,6 @@
-using System;
-
 namespace Server.Factions
 {
-	public enum MerchantTitle
+    public enum MerchantTitle
 	{
 		None,
 		Scribe,

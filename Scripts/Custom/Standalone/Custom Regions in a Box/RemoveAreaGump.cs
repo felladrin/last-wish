@@ -1,13 +1,10 @@
 using System;
-using Server;
-using Server.Gumps;
 using Server.Items;
-using System.Collections;
 using Server.Network;
 
 namespace Server.Gumps
 {
-	public class RemoveAreaGump : Gump
+    public class RemoveAreaGump : Gump
 	{
 		RegionControl m_Control;
 

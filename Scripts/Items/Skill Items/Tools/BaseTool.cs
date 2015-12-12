@@ -1,11 +1,10 @@
 using System;
-using Server;
 using Server.Network;
 using Server.Engines.Craft;
 
 namespace Server.Items
 {
-	public enum ToolQuality
+    public enum ToolQuality
 	{
 		Low,
 		Regular,

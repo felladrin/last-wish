@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Server.Engines.MLQuests
 {
-	public class QuestArea
+    public class QuestArea
 	{
 		private TextDefinition m_Name; // So we can add custom names, different from the Region name
 		private string m_RegionName;

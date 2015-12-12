@@ -1,13 +1,12 @@
 using System;
 using System.Collections;
-using Server;
 using Server.Network;
 using Server.Targeting;
 using Server.Spells;
 
 namespace Server.Items
 {
-	public class FireHorn : Item
+    public class FireHorn : Item
 	{
 		public override int LabelNumber{ get{ return 1060456; } } // fire horn
 

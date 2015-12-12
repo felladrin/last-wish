@@ -1,12 +1,10 @@
 using System;
-using System.Collections;
-using Server;
 using Server.Factions;
 using Server.Multis;
 
 namespace Server.Items
 {
-	public enum PlankSide{ Port, Starboard }
+    public enum PlankSide{ Port, Starboard }
 
 	public class Plank : Item, ILockable
 	{

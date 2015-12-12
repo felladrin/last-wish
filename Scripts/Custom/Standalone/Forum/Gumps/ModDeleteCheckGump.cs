@@ -1,11 +1,8 @@
-using System;
-using Server;
-using Server.Mobiles;
 using Server.Gumps;
 
 namespace Server.Forums
 {
-	public class ModDeleteCheckGump : Gump
+    public class ModDeleteCheckGump : Gump
     {
         public enum Buttons
         {

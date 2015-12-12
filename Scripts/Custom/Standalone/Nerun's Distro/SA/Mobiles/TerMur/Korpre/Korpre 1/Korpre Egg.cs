@@ -1,13 +1,9 @@
-using System; 
-using System.Collections;
-using Server.Items; 
-using Server.Mobiles; 
-using Server.Misc;
-using Server.Network;
+using System;
+using Server.Mobiles;
 
-namespace Server.Items 
-{ 
-   	public class KorpreEgg: Item 
+namespace Server.Items
+{
+    public class KorpreEgg: Item 
    	{ 
 		public bool m_AllowEvolution;
 		public Timer m_EvolutionTimer;

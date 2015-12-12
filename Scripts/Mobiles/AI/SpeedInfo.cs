@@ -1,12 +1,11 @@
 using System;
 using System.Collections.Generic;
-using Server;
 using Server.Mobiles;
 using Server.Factions;
 
 namespace Server
 {
-	public class SpeedInfo
+    public class SpeedInfo
 	{
 		// Should we use the new method of speeds?
 		private static bool Enabled = true;

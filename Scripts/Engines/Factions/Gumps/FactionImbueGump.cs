@@ -1,14 +1,11 @@
-using System;
-using Server;
 using Server.Items;
 using Server.Gumps;
-using Server.Mobiles;
 using Server.Network;
 using Server.Engines.Craft;
 
 namespace Server.Factions
 {
-	public class FactionImbueGump : FactionGump
+    public class FactionImbueGump : FactionGump
 	{
 		private Item m_Item;
 		private Mobile m_Mobile;

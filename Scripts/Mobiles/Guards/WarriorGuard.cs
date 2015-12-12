@@ -1,13 +1,9 @@
 using System;
-using System.Collections;
-using Server.Misc;
 using Server.Items;
-using Server.Mobiles;
-using Server.Targeting;
 
 namespace Server.Mobiles
 {
-	public class WarriorGuard : BaseGuard
+    public class WarriorGuard : BaseGuard
 	{
 		private Timer m_AttackTimer, m_IdleTimer;
 

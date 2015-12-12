@@ -1,13 +1,11 @@
 using System;
-using System.Collections;
-using Server;
 using Server.Network;
 using Server.Targeting;
 using System.Collections.Generic;
 
 namespace Server.Items
 {
-	public class CrystalRechargeInfo
+    public class CrystalRechargeInfo
 	{
 		public static readonly CrystalRechargeInfo[] Table = new CrystalRechargeInfo[]
 			{

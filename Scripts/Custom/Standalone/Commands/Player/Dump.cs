@@ -11,13 +11,8 @@
 //  Modified for RunUO 2.0, removed shard specific customizations (wing layers, etc.), commented out xmlspawner questholder check.
 // If you have XmlSpawner2, find the if(xx is Questholder) blocks that are commented out and uncomment them or players will use this command to store items in questholder (if you use questholders) and thus have a blessed container.
 
-using System;
-using Server;
 using Server.Items;
 using Server.Targeting;
-using Server.Mobiles;
-using Server.Accounting;
-using System.Collections;
 using Server.Network;
 
 

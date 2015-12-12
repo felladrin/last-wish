@@ -1,10 +1,8 @@
-using System;
-using System.Collections;
 using Server.Items;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a ronin corpse" )]
+    [CorpseName( "a ronin corpse" )]
 	public class Ronin : BaseCreature
 	{
 		public override bool ClickTitle{ get{ return false; } }

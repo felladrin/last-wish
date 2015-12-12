@@ -1,17 +1,11 @@
 using System;
-using Server;
-using Server.Multis;
 using Server.Mobiles;
-using Server.Regions;
 using Server.Targeting;
-using System.Collections;
 using Server.Network;
-using System.Text;
-using Server.Items;
 
 namespace Server.Items
 {
-	public class QuestScroll : Item
+    public class QuestScroll : Item
 	{
 		///// CONFIGURE THE LOCATIONS HERE ///////////////////////////////////////////////////////////////
 		// MAKE SURE YOU ADD THE X & Y & MAP TO THE "SECTION - LCXY1" LOWER IN THE SCRIPT ////////////////

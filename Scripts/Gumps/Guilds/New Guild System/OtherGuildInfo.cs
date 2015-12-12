@@ -1,14 +1,12 @@
 using System;
-using Server;
 using Server.Mobiles;
 using Server.Gumps;
 using Server.Network;
 using Server.Factions;
-using Server.Prompts;
 
 namespace Server.Guilds
 {
-	public class OtherGuildInfo : BaseGuildGump
+    public class OtherGuildInfo : BaseGuildGump
 	{
 		private Guild m_Other;
 		public OtherGuildInfo( PlayerMobile pm, Guild g, Guild otherGuild ) : base( pm, g, 10, 40 )

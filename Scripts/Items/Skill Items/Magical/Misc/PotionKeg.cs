@@ -1,10 +1,8 @@
 using System;
-using Server;
-using Server.Items;
 
 namespace Server.Items
 {
-	public class PotionKeg : Item
+    public class PotionKeg : Item
 	{
 		private PotionEffect m_Type;
 		private int m_Held;

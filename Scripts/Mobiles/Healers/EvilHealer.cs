@@ -1,9 +1,6 @@
-using System;
-using Server;
-
 namespace Server.Mobiles
 {
-	public class EvilHealer : BaseHealer
+    public class EvilHealer : BaseHealer
 	{
 		public override bool CanTeach{ get{ return true; } }
 

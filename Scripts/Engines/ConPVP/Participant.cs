@@ -1,12 +1,10 @@
 using System;
 using System.Text;
-using Server;
-using Server.Items;
 using Server.Mobiles;
 
 namespace Server.Engines.ConPVP
 {
-	public class Participant
+    public class Participant
 	{
 		private DuelContext m_Context;
 		private DuelPlayer[] m_Players;

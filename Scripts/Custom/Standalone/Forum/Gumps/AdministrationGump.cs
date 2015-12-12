@@ -1,11 +1,8 @@
-using System;
-using Server;
-using Server.Mobiles;
 using Server.Gumps;
 
 namespace Server.Forums
 {
-	public class AdministrationGump : Gump
+    public class AdministrationGump : Gump
 	{
         private string m_Break = "<br>";
 

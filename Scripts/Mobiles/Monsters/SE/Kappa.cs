@@ -1,12 +1,10 @@
 using System;
 using System.Collections;
-using Server;
-using Server.Network;
 using Server.Items;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a kappa corpse" )]
+    [CorpseName( "a kappa corpse" )]
 	public class Kappa : BaseCreature
 	{
 

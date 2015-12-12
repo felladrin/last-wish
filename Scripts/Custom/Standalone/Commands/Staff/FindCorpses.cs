@@ -1,7 +1,6 @@
 //Original Version 1 - 12/27/2004 By Igon.   Updated to Version 1.1 by Shai'Tan Malkier 10/6/2007.
 
 using System;
-using Server;
 using Server.Mobiles;
 using Server.Targeting;
 using System.Collections;

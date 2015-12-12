@@ -1,13 +1,8 @@
-using System;
-using System.Collections;
 using Server.Items;
-using Server.ContextMenus;
-using Server.Misc;
-using Server.Network;
 
-namespace Server.Mobiles 
+namespace Server.Mobiles
 {
-	public class HireMage : BaseHire
+    public class HireMage : BaseHire
 	{
 		[Constructable]
 		public HireMage() : base( AIType.AI_Mage ) 

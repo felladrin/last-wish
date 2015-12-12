@@ -1,11 +1,9 @@
 using System;
-using Server.Mobiles;
-using Server.Network;
 using Server.Items;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a unicorn corpse" )]
+    [CorpseName( "a unicorn corpse" )]
 	public class Unicorn : BaseMount
 	{
 		public override bool AllowMaleRider{ get{ return false; } }

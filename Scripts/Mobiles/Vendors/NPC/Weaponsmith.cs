@@ -1,11 +1,10 @@
 using System;
 using System.Collections.Generic;
-using Server;
 using Server.Engines.BulkOrders;
 
 namespace Server.Mobiles
 {
-	public class Weaponsmith : BaseVendor
+    public class Weaponsmith : BaseVendor
 	{
 		private List<SBInfo> m_SBInfos = new List<SBInfo>();
 		protected override List<SBInfo> SBInfos{ get { return m_SBInfos; } }

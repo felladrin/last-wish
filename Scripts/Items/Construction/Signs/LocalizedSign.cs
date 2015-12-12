@@ -1,9 +1,6 @@
-using System;
-using Server;
-
 namespace Server.Items
 {
-	public class LocalizedSign : Sign
+    public class LocalizedSign : Sign
 	{
 		private int m_LabelNumber;
 

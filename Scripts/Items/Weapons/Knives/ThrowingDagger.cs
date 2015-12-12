@@ -1,10 +1,9 @@
 using System;
 using Server.Targeting;
-using Server.Network;
 
 namespace Server.Items
 {
-	[FlipableAttribute( 0xF52, 0xF51 )]
+    [FlipableAttribute( 0xF52, 0xF51 )]
 	public class ThrowingDagger : Item
 	{
 		public override string DefaultName

@@ -1,14 +1,12 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
-using Server;
 using Server.Network;
 using Server.Commands;
 
 namespace Server.Gumps
 {
-	public class SetListOptionGump : Gump
+    public class SetListOptionGump : Gump
 	{
 		protected PropertyInfo m_Property;
 		protected Mobile m_Mobile;

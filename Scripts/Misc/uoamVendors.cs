@@ -2,14 +2,13 @@ using System;
 using System.Collections;
 using System.IO;
 using Server.Mobiles;
-using Server.Items;
 using Server.Commands;
 
 // Version 0.8
 
 namespace Server
 {
-	public class UOAMVendorGenerator
+    public class UOAMVendorGenerator
 	{
 		private static int m_Count;
 

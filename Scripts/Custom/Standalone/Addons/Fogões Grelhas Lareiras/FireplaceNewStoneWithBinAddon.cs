@@ -4,13 +4,10 @@
 // AddonGenerator script by Arya               //
 //                                             //
 /////////////////////////////////////////////////
-using System;
-using Server;
-using Server.Items;
 
 namespace Server.Items
 {
-	public class FireplaceNewStoneWithBinAddon : BaseAddon
+    public class FireplaceNewStoneWithBinAddon : BaseAddon
 	{
 		public override BaseAddonDeed Deed
 		{

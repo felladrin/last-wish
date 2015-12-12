@@ -1,9 +1,8 @@
 using System;
-using Server.Items;
 
 namespace Server.Items
 {
-	[Flipable]
+    [Flipable]
 	public class LeafGloves : BaseArmor, IArcaneEquip
 	{
 		public override Race RequiredRace { get { return Race.Elf; } }

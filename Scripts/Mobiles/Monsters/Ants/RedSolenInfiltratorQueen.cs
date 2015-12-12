@@ -1,11 +1,8 @@
-using System;
-using System.Collections;
 using Server.Items;
-using Server.Targeting;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a solen infiltrator corpse" )] // TODO: Corpse name?
+    [CorpseName( "a solen infiltrator corpse" )] // TODO: Corpse name?
 	public class RedSolenInfiltratorQueen : BaseCreature
 	{
 		[Constructable]

@@ -21,14 +21,11 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Text;
-
-using Server;
 using Server.Gumps;
 
 namespace Server.Engines.Dueling
 {
-	public class DuelScoreBoardGump : Gump
+    public class DuelScoreBoardGump : Gump
 	{
 		private const int LabelHue = 61;
 		private List<DuelRankData> m_DuelRankData = new List<DuelRankData>();

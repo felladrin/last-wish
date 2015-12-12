@@ -1,9 +1,8 @@
 using System;
-using Server;
 
 namespace Server.Misc
 {
-	public class RenameRequests
+    public class RenameRequests
 	{
 		public static void Initialize()
 		{

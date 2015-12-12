@@ -1,11 +1,9 @@
 using System;
-using Server;
-using Server.Items;
 using Server.Mobiles;
 
 namespace Server.Items
 {
-	public class StoneWallAndVineAddon : BaseAddon
+    public class StoneWallAndVineAddon : BaseAddon
 	{
 		[ Constructable ]
 		public StoneWallAndVineAddon()

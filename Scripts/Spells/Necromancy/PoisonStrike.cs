@@ -1,13 +1,12 @@
 using System;
 using System.Collections.Generic;
-using Server.Network;
 using Server.Items;
 using Server.Targeting;
 using Server.Mobiles;
 
 namespace Server.Spells.Necromancy
 {
-	public class PoisonStrikeSpell : NecromancerSpell
+    public class PoisonStrikeSpell : NecromancerSpell
 	{
 		private static SpellInfo m_Info = new SpellInfo(
 				"Poison Strike", "In Vas Nox",

@@ -1,9 +1,6 @@
-using System; 
-using Server.Items; 
-
-namespace Server.Items 
-{ 
-   	public class Korpre2Dust: Item 
+namespace Server.Items
+{
+    public class Korpre2Dust: Item 
    	{ 
 		[Constructable]
 		public Korpre2Dust() : this( 1 )

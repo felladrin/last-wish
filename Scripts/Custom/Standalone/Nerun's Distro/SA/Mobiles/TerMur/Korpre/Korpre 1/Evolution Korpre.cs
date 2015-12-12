@@ -1,14 +1,12 @@
 using System;
-using System.Collections; 
-using Server.Mobiles;
 using Server.Items;
-using Server.Network; 
+using Server.Network;
 using Server.Targeting;
 using Server.Gumps;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a korpre corpse" )]
+    [CorpseName( "a korpre corpse" )]
 	public class EvolutionKorpre : BaseCreature
 	{
 		private Timer m_KorpreMatingTimer;

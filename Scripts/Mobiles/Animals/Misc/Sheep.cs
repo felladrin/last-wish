@@ -1,12 +1,10 @@
 using System;
-using Server;
 using Server.Items;
-using Server.Mobiles;
 using Server.Network;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a sheep corpse" )]
+    [CorpseName( "a sheep corpse" )]
 	public class Sheep : BaseCreature, ICarvable
 	{
 		private DateTime m_NextWoolTime;

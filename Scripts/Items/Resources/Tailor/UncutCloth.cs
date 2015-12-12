@@ -1,10 +1,8 @@
-using System;
-using Server.Items;
 using Server.Network;
 
 namespace Server.Items
 {
-	[FlipableAttribute( 0x1765, 0x1767 )]
+    [FlipableAttribute( 0x1765, 0x1767 )]
 	public class UncutCloth : Item, IScissorable, IDyable, ICommodity
 	{
 		int ICommodity.DescriptionNumber { get { return LabelNumber; } }

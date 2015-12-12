@@ -1,13 +1,11 @@
 using System;
-using Server;
 using Server.Mobiles;
-using Server.PathAlgorithms;
 using CalcMoves = Server.Movement.Movement;
 using MoveImpl = Server.Movement.MovementImpl;
 
 namespace Server.PathAlgorithms.SlowAStar
 {
-	public struct PathNode
+    public struct PathNode
 	{
 		public int x, y, z;
 		public int g, h;

@@ -1,9 +1,6 @@
-using System;
-using Server;
-
 namespace Server.Items
 {
-	public abstract class BaseGMJewel : Item
+    public abstract class BaseGMJewel : Item
 	{
 		private AccessLevel m_AccessLevel;
 

@@ -1,11 +1,9 @@
-using System;
-using System.Collections;
 using Server.Items;
 using Server.Network;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a solen warrior corpse" )]
+    [CorpseName( "a solen warrior corpse" )]
 	public class BlackSolenWarrior : BaseCreature
 	{
 		private bool m_BurstSac;

@@ -1,10 +1,7 @@
-using System;
-using Server;
-
 namespace Server.Items
 {
-	//[Flipable(0xDFC,0xDFD)]
-	public class CutHair : Item
+    //[Flipable(0xDFC,0xDFD)]
+    public class CutHair : Item
 	{
 		[Constructable]
 		public CutHair() : base( 0xDFE )

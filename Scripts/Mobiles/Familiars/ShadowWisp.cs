@@ -1,13 +1,9 @@
 using System;
 using System.Collections;
-using Server;
-using Server.Items;
-using Server.Gumps;
-using Server.Network;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a shadow wisp corpse" )]
+    [CorpseName( "a shadow wisp corpse" )]
 	public class ShadowWispFamiliar : BaseFamiliar
 	{
 		public ShadowWispFamiliar()

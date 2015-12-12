@@ -1,11 +1,10 @@
-using Server;
 using System;
 using Server.Misc;
 using Server.Mobiles;
 
 namespace Server.Items
 {
-	public abstract class BasePigmentsOfTokuno : Item, IUsesRemaining
+    public abstract class BasePigmentsOfTokuno : Item, IUsesRemaining
 	{
 		private static Type[] m_Glasses = new Type[]
 		{

@@ -1,12 +1,9 @@
-using System;
 using System.Collections;
-using Server;
 using Server.Gumps;
-using Server.Mobiles;
 
 namespace Server.Forums
 {
-	public class AccountListingGump : Gump
+    public class AccountListingGump : Gump
 	{
         private int m_Page;
         private ArrayList m_List;

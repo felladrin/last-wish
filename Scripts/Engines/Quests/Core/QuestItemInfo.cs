@@ -1,10 +1,8 @@
-using System;
-using Server;
 using Server.Gumps;
 
 namespace Server.Engines.Quests
 {
-	public class QuestItemInfo
+    public class QuestItemInfo
 	{
 		private object m_Name;
 		private int m_ItemID;

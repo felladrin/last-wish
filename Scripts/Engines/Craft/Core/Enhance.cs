@@ -1,11 +1,10 @@
 using System;
-using Server;
 using Server.Targeting;
 using Server.Items;
 
 namespace Server.Engines.Craft
 {
-	public enum EnhanceResult
+    public enum EnhanceResult
 	{
 		None,
 		NotInBackpack,

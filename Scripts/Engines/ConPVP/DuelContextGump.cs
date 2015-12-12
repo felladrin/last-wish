@@ -1,12 +1,10 @@
 using System;
-using System.Collections;
-using Server;
 using Server.Gumps;
 using Server.Network;
 
 namespace Server.Engines.ConPVP
 {
-	public class DuelContextGump : Gump
+    public class DuelContextGump : Gump
 	{
 		private Mobile m_From;
 		private DuelContext m_Context;

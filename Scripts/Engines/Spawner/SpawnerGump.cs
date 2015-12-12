@@ -1,12 +1,11 @@
 using System;
-using System.Collections;
 using Server.Network;
 using Server.Gumps;
 using System.Collections.Generic;
 
 namespace Server.Mobiles
 {
-	public class SpawnerGump : Gump
+    public class SpawnerGump : Gump
 	{
 		private Spawner m_Spawner;
 

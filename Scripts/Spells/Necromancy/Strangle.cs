@@ -1,12 +1,10 @@
 using System;
 using System.Collections;
-using Server.Network;
-using Server.Items;
 using Server.Targeting;
 
 namespace Server.Spells.Necromancy
 {
-	public class StrangleSpell : NecromancerSpell
+    public class StrangleSpell : NecromancerSpell
 	{
 		private static SpellInfo m_Info = new SpellInfo(
 				"Strangle", "In Bal Nox",

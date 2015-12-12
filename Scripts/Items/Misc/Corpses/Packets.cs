@@ -1,13 +1,10 @@
-using System;
 using System.IO;
-using System.Collections;
 using System.Collections.Generic;
-using Server;
 using Server.Items;
 
 namespace Server.Network
 {
-	public sealed class CorpseEquip : Packet
+    public sealed class CorpseEquip : Packet
 	{
 		public CorpseEquip( Mobile beholder, Corpse beheld ) : base( 0x89 )
 		{

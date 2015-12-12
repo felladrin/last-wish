@@ -1,13 +1,11 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using Server;
 using Server.Items;
 using Server.Targeting;
 
 namespace Server.Engines.Harvest
 {
-	public abstract class HarvestSystem
+    public abstract class HarvestSystem
 	{
 		private List<HarvestDefinition> m_Definitions;
 
@@ -486,7 +484,7 @@ namespace Server.Engines.Harvest
 
 namespace Server
 {
-	public interface IChopable
+    public interface IChopable
 	{
 		void OnChop( Mobile from );
 	}

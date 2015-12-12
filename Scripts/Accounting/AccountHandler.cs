@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
-using Server;
 using Server.Accounting;
 using Server.Commands;
 using Server.Engines.Help;
@@ -11,7 +10,7 @@ using Server.Regions;
 
 namespace Server.Misc
 {
-	public enum PasswordProtection
+    public enum PasswordProtection
 	{
 		None,
 		Crypt,

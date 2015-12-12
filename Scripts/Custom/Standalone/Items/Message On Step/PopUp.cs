@@ -9,10 +9,7 @@
 //use [add popup
 //use [set name "Your PopUp information goes here."
 
-using System;
-using Server.Items;
 using Server.Gumps;
-using Server.Accounting;
 using Server.Mobiles;
 
 namespace Server.Items

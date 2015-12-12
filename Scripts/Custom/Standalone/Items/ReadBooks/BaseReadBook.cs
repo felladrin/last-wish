@@ -17,13 +17,10 @@
  * Please mail bugs, suggestions, questions, etc. to mail@irian.de
  */
 using System;
-using Server;
 using Server.Gumps;
 using Server.Network;
 using Server.ContextMenus;
 using Server.Targeting;
-using Server.Misc;
-using Server.Commands;
 using System.Collections;
 
 namespace Server.Items

@@ -1,11 +1,8 @@
-using System;
-using System.Collections;
-using Server;
 using Server.Items;
 
 namespace Server.Mobiles
 {
-	public class Georgio : HumanBrigand
+    public class Georgio : HumanBrigand
 	{				
 		public override bool InitialInnocent{ get{ return true; } }
 		

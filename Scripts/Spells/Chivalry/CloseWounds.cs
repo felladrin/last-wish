@@ -1,13 +1,11 @@
 using System;
-using System.Collections;
 using Server.Network;
-using Server.Items;
 using Server.Mobiles;
 using Server.Targeting;
 
 namespace Server.Spells.Chivalry
 {
-	public class CloseWoundsSpell : PaladinSpell
+    public class CloseWoundsSpell : PaladinSpell
 	{
 		private static SpellInfo m_Info = new SpellInfo(
 				"Close Wounds", "Obsu Vulni",

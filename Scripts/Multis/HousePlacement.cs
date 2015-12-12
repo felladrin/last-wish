@@ -1,16 +1,11 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using Server;
-using Server.Guilds;
-using Server.Items;
-using Server.Misc;
 using Server.Regions;
 using Server.Spells;
 
 namespace Server.Multis
 {
-	public enum HousePlacementResult
+    public enum HousePlacementResult
 	{
 		Valid,
 		BadRegion,

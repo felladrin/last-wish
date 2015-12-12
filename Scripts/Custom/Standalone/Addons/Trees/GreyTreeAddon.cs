@@ -1,9 +1,6 @@
-using System;
-using Server;
-
 namespace Server.Items
 {
-	public class GreyTreeAddon : BaseAddon
+    public class GreyTreeAddon : BaseAddon
 	{
 		public override BaseAddonDeed Deed{ get{ return new GreyTreeDeed(); } }
 

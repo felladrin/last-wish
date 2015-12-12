@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using Server;
 using Server.Items;
 using Server.Mobiles;
 using Server.Spells;
@@ -9,7 +8,7 @@ using Server.Spells.Ninjitsu;
 
 namespace Server.Spells.Ninjitsu
 {
-	public class MirrorImage : NinjaSpell
+    public class MirrorImage : NinjaSpell
 	{
 		private static Dictionary<Mobile, int> m_CloneCount = new Dictionary<Mobile, int>();
 
@@ -122,7 +121,7 @@ namespace Server.Spells.Ninjitsu
 
 namespace Server.Mobiles
 {
-	public class Clone : BaseCreature
+    public class Clone : BaseCreature
 	{
 		private Mobile m_Caster;
 
@@ -239,7 +238,7 @@ namespace Server.Mobiles
 
 namespace Server.Mobiles
 {
-	public class CloneAI : BaseAI
+    public class CloneAI : BaseAI
 	{
 		public CloneAI( Clone m ) : base ( m )
 		{

@@ -1,14 +1,11 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using Server;
-using Server.Items;
 using Server.Gumps;
 using Server.Network;
 
 namespace Server.Mobiles
 {
-	public class CustomHairstylist : BaseVendor
+    public class CustomHairstylist : BaseVendor
 	{
 		private List<SBInfo> m_SBInfos = new List<SBInfo>();
 		protected override List<SBInfo> SBInfos{ get { return m_SBInfos; } }

@@ -1,9 +1,6 @@
-using System;
-using Server;
-
 namespace Server.Misc
 {
-	public class RaceDefinitions
+    public class RaceDefinitions
 	{
 		public static void Configure()
 		{

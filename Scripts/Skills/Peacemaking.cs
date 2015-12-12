@@ -1,12 +1,11 @@
 using System;
 using Server.Targeting;
-using Server.Network;
 using Server.Mobiles;
 using Server.Items;
 
 namespace Server.SkillHandlers
 {
-	public class Peacemaking
+    public class Peacemaking
 	{
 		public static void Initialize()
 		{

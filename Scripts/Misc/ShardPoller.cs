@@ -1,16 +1,14 @@
 using System;
 using System.Net;
 using System.Collections.Generic;
-using System.Text;
 using System.Text.RegularExpressions;
-using Server;
 using Server.Gumps;
 using Server.Network;
 using Server.Prompts;
 
 namespace Server.Misc
 {
-	public class ShardPoller : Item
+    public class ShardPoller : Item
 	{
 		private string m_Title;
 

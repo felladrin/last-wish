@@ -1,8 +1,5 @@
 using System;
-using System.Text;
-using System.Collections;
 using Server.Network;
-using Server.Targeting;
 using Server.Mobiles;
 using Server.Spells;
 using Server.Spells.Necromancy;
@@ -15,7 +12,7 @@ using Server.Spells.Spellweaving;
 
 namespace Server.Items
 {
-	public interface ISlayer
+    public interface ISlayer
 	{
 		SlayerName Slayer { get; set; }
 		SlayerName Slayer2 { get; set; }

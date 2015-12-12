@@ -1,10 +1,9 @@
 using System;
 using System.Collections;
-using Server;
 
 namespace Server.Engines.ConPVP
 {
-	public class LadderController : Item
+    public class LadderController : Item
 	{
 		private Ladder m_Ladder;
 

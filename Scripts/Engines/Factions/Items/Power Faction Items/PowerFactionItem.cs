@@ -1,14 +1,11 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
-
-using Server;
 using Server.Mobiles;
 using Server.Factions;
 using System.IO;
 
-namespace Server {
-	public abstract class PowerFactionItem : Item {
+namespace Server
+{
+    public abstract class PowerFactionItem : Item {
 		public abstract bool Use( Mobile mob );
 
 		private sealed class DestructionTimer : Timer {

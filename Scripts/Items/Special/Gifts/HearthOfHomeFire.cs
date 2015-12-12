@@ -1,11 +1,9 @@
-using System;
-using Server;
 using Server.Gumps;
 using Server.Network;
 
 namespace Server.Items
 {
-	public class HearthOfHomeFire : BaseAddon
+    public class HearthOfHomeFire : BaseAddon
 	{
 		public override BaseAddonDeed Deed{ get{ return new HearthOfHomeFireDeed(); } }
 

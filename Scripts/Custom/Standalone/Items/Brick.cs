@@ -4,7 +4,6 @@
 //   /__|========================|__\	[Bricks] - Current version: 1.1 (August 04, 2013)
 
 using System.Collections;
-using Server;
 using Server.Items;
 using Server.Commands;
 using Server.Targeting;

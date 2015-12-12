@@ -1,14 +1,12 @@
 using System;
 using System.Collections;
-using Server;
 using Server.Mobiles;
 using Server.Items;
 using Server.Accounting;
-using System.Collections.Generic;
 
 namespace Server.Misc
 {
-	public class interestTimer : Timer
+    public class interestTimer : Timer
 	{
 		public static void Initialize()
 		{

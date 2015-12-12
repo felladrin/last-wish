@@ -1,9 +1,6 @@
-using System;
-using Server;
-
 namespace Server.Items
 {
-	public class PearTreeAddon : BaseAddon
+    public class PearTreeAddon : BaseAddon
 	{
 		public override BaseAddonDeed Deed{ get{ return new PearTreeDeed(); } }
 

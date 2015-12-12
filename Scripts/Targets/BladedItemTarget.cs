@@ -1,5 +1,3 @@
-using System;
-using Server;
 using Server.Targeting;
 using Server.Items;
 using Server.Engines.Harvest;
@@ -9,7 +7,7 @@ using Server.Engines.Quests.Hag;
 
 namespace Server.Targets
 {
-	public class BladedItemTarget : Target
+    public class BladedItemTarget : Target
 	{
 		private Item m_Item;
 

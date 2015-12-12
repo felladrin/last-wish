@@ -1,5 +1,4 @@
 using System;
-using Server;
 using Server.Items;
 using Server.Mobiles;
 using Server.Network;
@@ -7,7 +6,7 @@ using Server.Accounting;
 
 namespace Server.Misc
 {
-	public class CharacterCreation
+    public class CharacterCreation
 	{
 		public static void Initialize()
 		{

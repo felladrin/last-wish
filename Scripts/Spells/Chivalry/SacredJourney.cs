@@ -1,5 +1,4 @@
 using System;
-using Server;
 using Server.Items;
 using Server.Multis;
 using Server.Mobiles;
@@ -8,7 +7,7 @@ using Server.Targeting;
 
 namespace Server.Spells.Chivalry
 {
-	public class SacredJourneySpell : PaladinSpell
+    public class SacredJourneySpell : PaladinSpell
 	{
 		private static SpellInfo m_Info = new SpellInfo(
 				"Sacred Journey", "Sanctum Viatas",

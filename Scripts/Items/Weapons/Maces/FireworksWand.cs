@@ -1,10 +1,8 @@
 using System;
-using Server.Network;
-using Server.Items;
 
 namespace Server.Items
 {
-	public class FireworksWand : MagicWand
+    public class FireworksWand : MagicWand
 	{
 		public override int LabelNumber{ get{ return 1041424; } } // a fireworks wand
 

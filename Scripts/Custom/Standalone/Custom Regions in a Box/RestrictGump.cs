@@ -1,6 +1,4 @@
 using System;
-using Server;
-using Server.Gumps;
 using Server.Spells;
 using Server.Network;
 using System.Collections;
@@ -13,7 +11,7 @@ public enum RestrictType
 
 namespace Server.Gumps
 {
-	public abstract class RestrictGump : Gump
+    public abstract class RestrictGump : Gump
 	{
 		BitArray m_Restricted;
 

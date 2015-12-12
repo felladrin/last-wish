@@ -1,9 +1,8 @@
-using System;
 using System.Collections.Generic;
 
 namespace Server.Factions
 {
-	public abstract class BaseMonolith : BaseSystemController
+    public abstract class BaseMonolith : BaseSystemController
 	{
 		private Town m_Town;
 		private Faction m_Faction;

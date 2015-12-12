@@ -1,10 +1,8 @@
-using System;
-using System.Collections;
 using Server.Items;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a plant corpse" )]
+    [CorpseName( "a plant corpse" )]
 	public class Anlorvaglem : BaseCreature
 	{
 		[Constructable]

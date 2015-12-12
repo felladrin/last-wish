@@ -1,12 +1,11 @@
 using System;
-using Server.Network;
 using Server.Prompts;
 using Server.Multis;
 using Server.Regions;
 
 namespace Server.Items
 {
-	[FlipableAttribute( 0x1f14, 0x1f15, 0x1f16, 0x1f17 )]
+    [FlipableAttribute( 0x1f14, 0x1f15, 0x1f16, 0x1f17 )]
 	public class RecallRune : Item
 	{
 		private string m_Description;

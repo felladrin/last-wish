@@ -1,11 +1,8 @@
-using System;
-using System.Collections;
-using Server;
 using Server.Network;
 
 namespace Server.Items
 {
-	public class BaseShield : BaseArmor
+    public class BaseShield : BaseArmor
 	{
 		public override ArmorMaterialType MaterialType{ get{ return ArmorMaterialType.Plate; } }
 

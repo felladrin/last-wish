@@ -1,14 +1,11 @@
 using System;
-using System.Collections;
-using Server;
-using Server.Items;
 using Server.Gumps;
 using Server.Mobiles;
 using Server.Targeting;
 
 namespace Server
 {
-	public class JusticeVirtue
+    public class JusticeVirtue
 	{
 		private static TimeSpan LossDelay = TimeSpan.FromDays( 7.0 );
 		private const int LossAmount = 950;

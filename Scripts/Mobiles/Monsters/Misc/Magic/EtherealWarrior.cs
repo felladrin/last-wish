@@ -1,11 +1,9 @@
 using System;
-using Server;
-using Server.Items;
 using Server.Gumps;
 
-namespace Server.Mobiles 
-{ 
-	[CorpseName( "an ethereal warrior corpse" )] 
+namespace Server.Mobiles
+{
+    [CorpseName( "an ethereal warrior corpse" )] 
 	public class EtherealWarrior : BaseCreature 
 	{ 
 		public override bool InitialInnocent{ get{ return true; } }

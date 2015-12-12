@@ -1,12 +1,10 @@
 using System;
-using Server.Misc;
 using Server.Network;
-using System.Collections.Generic;
 using Server.Mobiles;
 
 namespace Server.Items
 {
-	public class DeceitBrazier : Item
+    public class DeceitBrazier : Item
 	{
 		private static Type[] m_Creatures = new Type[]
 			{

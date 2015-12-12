@@ -1,11 +1,9 @@
 using System;
 using Server.Items;
-using Server.Targeting;
-using System.Collections;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "the corpse of niporailem" )]
+    [CorpseName( "the corpse of niporailem" )]
 	public class Niporailem : BaseCreature
 	{
 		[Constructable]

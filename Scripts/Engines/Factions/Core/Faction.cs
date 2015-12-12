@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Server;
 using Server.Items;
 using Server.Guilds;
 using Server.Mobiles;
@@ -13,7 +12,7 @@ using Server.Commands.Generic;
 
 namespace Server.Factions
 {
-	[CustomEnum( new string[]{ "Minax", "Council of Mages", "True Britannians", "Shadowlords" } )]
+    [CustomEnum( new string[]{ "Minax", "Council of Mages", "True Britannians", "Shadowlords" } )]
 	public abstract class Faction : IComparable
 	{
 		public int ZeroRankOffset;

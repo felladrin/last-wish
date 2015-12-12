@@ -1,9 +1,8 @@
 using System;
-using Server;
 
 namespace Server.Items
 {
-	[Flipable( 0x1EC0, 0x1EC3 )]
+    [Flipable( 0x1EC0, 0x1EC3 )]
 	public class PickpocketDip : AddonComponent
 	{
 		private double m_MinSkill;

@@ -1,12 +1,9 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Net;
-using System.Security;
 using System.Security.Cryptography;
 using System.Text;
 using System.Xml;
-using Server;
 using Server.Misc;
 using Server.Mobiles;
 using Server.Multis;
@@ -14,7 +11,7 @@ using Server.Network;
 
 namespace Server.Accounting
 {
-	public class Account : IAccount, IComparable, IComparable<Account>
+    public class Account : IAccount, IComparable, IComparable<Account>
 	{
 		public static readonly TimeSpan YoungDuration = TimeSpan.FromHours( 40.0 );
 

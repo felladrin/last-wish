@@ -1,13 +1,11 @@
 // By Neon
 // Improved By Dddie
 
-using System; 
-using Server; 
-using Server.Network; 
+using Server.Network;
 
-namespace Server.Items 
-{ 
-   public class MagicCrystalBall : Item 
+namespace Server.Items
+{
+    public class MagicCrystalBall : Item 
    { 
       [Constructable] 
       public MagicCrystalBall() : base( 0xE2E ) 

@@ -1,12 +1,11 @@
 using System;
-using Server.Mobiles;
 using Server.Items;
 using Server.Spells;
 using Server.Engines.VeteranRewards;
 
 namespace Server.Mobiles
 {
-	public class EtherealMount : Item, IMount, IMountItem, Engines.VeteranRewards.IRewardItem
+    public class EtherealMount : Item, IMount, IMountItem, Engines.VeteranRewards.IRewardItem
 	{
 		private int m_MountedID;
 		private int m_RegularID;

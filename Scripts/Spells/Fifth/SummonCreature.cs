@@ -1,11 +1,9 @@
 using System;
 using Server.Mobiles;
-using Server.Network;
-using Server.Targeting;
 
 namespace Server.Spells.Fifth
 {
-	public class SummonCreatureSpell : MagerySpell
+    public class SummonCreatureSpell : MagerySpell
 	{
 		private static SpellInfo m_Info = new SpellInfo(
 				"Summon Creature", "Kal Xen",

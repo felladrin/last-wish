@@ -1,14 +1,12 @@
 using System;
-using System.Collections;
 using System.Text;
-using Server;
 using Server.Mobiles;
 using Server.Targeting;
 using Server.Items;
 
 namespace Server.SkillHandlers
 {
-	public class ForensicEvaluation
+    public class ForensicEvaluation
 	{
 		public static void Initialize()
 		{

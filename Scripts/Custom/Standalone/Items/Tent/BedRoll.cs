@@ -8,10 +8,7 @@
 // For putting up with a 'tard like me :)  //
 //=========================================//
 using System;
-using Server;
-using Server.Items;
 using Server.Mobiles;
-using Server.Network;
 using Server.Gumps;
 
 namespace Server.Items

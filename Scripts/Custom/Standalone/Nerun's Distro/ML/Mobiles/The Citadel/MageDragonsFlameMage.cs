@@ -1,11 +1,6 @@
-using System;
-using Server;
-using Server.Items;
-using Server.Misc;
-
 namespace Server.Mobiles
 {
-	[CorpseName( "a black order mage corpse" )] 
+    [CorpseName( "a black order mage corpse" )] 
 	public class MageDragonsFlameMage : DragonsFlameMage
 	{	
 		public override bool AlwaysMurderer{ get{ return true; } }

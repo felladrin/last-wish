@@ -1,12 +1,11 @@
 using System;
-using Server;
 using Server.Mobiles;
 using Server.Network;
 using Server.Targeting;
 
 namespace Server.SkillHandlers
 {
-	public class Anatomy
+    public class Anatomy
 	{
 		public static void Initialize()
 		{

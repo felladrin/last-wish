@@ -1,8 +1,6 @@
-using System;
-
 namespace Server.Poker
 {
-	public enum PlayerAction
+    public enum PlayerAction
 	{
 		None,
 		Bet,

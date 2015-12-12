@@ -18,14 +18,12 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 */
 
-using System;
 using Server.Engines.Dueling;
-using Server.Items;
 using Server.Mobiles;
 
 namespace Server.Items
 {
-	[Flipable(0x2311, 0x2312)]
+    [Flipable(0x2311, 0x2312)]
 	public class DuelingScoreboard : Item
 	{
 		public override string DefaultName { get { return "Dueling Scoreboard"; } }

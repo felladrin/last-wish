@@ -1,10 +1,8 @@
 using System;
-using Server;
-using Server.Targeting;
 
 namespace Server.Items
 {
-	public class IDWand : BaseWand
+    public class IDWand : BaseWand
 	{
 		public override TimeSpan GetUseDelay{ get{ return TimeSpan.Zero; } }
 

@@ -1,15 +1,12 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using Server;
-using Server.Items;
 using Server.Engines.Harvest;
 using Server.ContextMenus;
 using Server.Network;
 
 namespace Server.Items
 {
-	public interface IAxe
+    public interface IAxe
 	{
 		bool Axe( Mobile from, BaseAxe axe );
 	}

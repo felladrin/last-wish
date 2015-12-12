@@ -1,13 +1,10 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
-using Server;
 using Server.Items;
 using Server.Mobiles;
 
 namespace Server.Engines.MLQuests.Items
 {
-	public class MLQuestTeleporter : Teleporter
+    public class MLQuestTeleporter : Teleporter
 	{
 		private Type m_QuestType;
 		private TextDefinition m_Message;

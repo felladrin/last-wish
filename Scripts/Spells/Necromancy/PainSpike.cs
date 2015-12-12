@@ -1,12 +1,10 @@
 using System;
 using System.Collections;
-using Server.Network;
-using Server.Items;
 using Server.Targeting;
 
 namespace Server.Spells.Necromancy
 {
-	public class PainSpikeSpell : NecromancerSpell
+    public class PainSpikeSpell : NecromancerSpell
 	{
 		private static SpellInfo m_Info = new SpellInfo(
 				"Pain Spike", "In Sar",

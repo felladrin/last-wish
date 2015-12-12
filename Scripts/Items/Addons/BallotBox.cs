@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using Server;
 using Server.Multis;
 using Server.Gumps;
 using Server.Network;
@@ -9,7 +7,7 @@ using System.Collections.Generic;
 
 namespace Server.Items
 {
-	public class BallotBox : AddonComponent
+    public class BallotBox : AddonComponent
 	{
 		public static readonly int MaxTopicLines = 6;
 

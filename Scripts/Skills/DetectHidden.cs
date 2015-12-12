@@ -1,14 +1,12 @@
 using System;
-using Server.Items;
 using Server.Factions;
 using Server.Mobiles;
 using Server.Multis;
 using Server.Targeting;
-using Server.Regions;
 
 namespace Server.SkillHandlers
 {
-	public class DetectHidden
+    public class DetectHidden
 	{
 		public static void Initialize()
 		{

@@ -1,10 +1,6 @@
-using System;
-using System.IO;
-using Server;
-
 namespace Server.Misc
 {
-	public class Strandedness
+    public class Strandedness
 	{
 		private static Point2D[] m_Felucca = new Point2D[]
 			{

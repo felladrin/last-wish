@@ -1,13 +1,11 @@
 using System;
-using System.Collections;
-using Server;
 using Server.Spells;
 using Server.Mobiles;
 using Server.Network;
 
 namespace Server.Engines.Doom
 {
-	public class LampRoomBox : Item
+    public class LampRoomBox : Item
 	{
 		private LeverPuzzleController m_Controller;
 		private Mobile m_Wanderer;

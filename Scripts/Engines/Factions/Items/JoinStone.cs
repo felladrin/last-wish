@@ -1,11 +1,9 @@
-using System;
-using Server;
 using Server.Mobiles;
 using Server.Network;
 
 namespace Server.Factions
 {
-	public class JoinStone : BaseSystemController
+    public class JoinStone : BaseSystemController
 	{
 		private Faction m_Faction;
 

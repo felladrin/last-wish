@@ -1,8 +1,6 @@
 using System;
 using System.IO;
-using System.Collections;
 using System.Collections.Generic;
-using Server;
 using Server.Mobiles;
 using Server.Network;
 using Server.Targeting;
@@ -10,7 +8,7 @@ using Server.ContextMenus;
 
 namespace Server.Items
 {
-	public class TreasureMap : MapItem
+    public class TreasureMap : MapItem
 	{
 		private int m_Level;
 		private bool m_Completed;

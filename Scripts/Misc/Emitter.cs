@@ -1,13 +1,11 @@
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Reflection;
 using System.Reflection.Emit;
-using Emit = System.Reflection.Emit;
 
 namespace Server
 {
-	public class AssemblyEmitter
+    public class AssemblyEmitter
 	{
 		private string m_AssemblyName;
 

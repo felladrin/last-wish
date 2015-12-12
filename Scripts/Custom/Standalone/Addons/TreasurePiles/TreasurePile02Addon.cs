@@ -4,13 +4,10 @@
 // AddonGenerator script by Arya
 //
 /////////////////////////////////////////////////
-using System;
-using Server;
-using Server.Items;
 
 namespace Server.Items
 {
-	public class TreasurePile02Addon : BaseAddon
+    public class TreasurePile02Addon : BaseAddon
 	{
 		public override BaseAddonDeed Deed
 		{

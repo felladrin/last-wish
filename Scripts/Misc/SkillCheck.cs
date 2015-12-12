@@ -1,11 +1,10 @@
 using System;
-using Server;
 using Server.Mobiles;
 using Server.Factions;
 
 namespace Server.Misc
 {
-	public class SkillCheck
+    public class SkillCheck
 	{
 		private static readonly bool AntiMacroCode = !Core.ML;		//Change this to false to disable anti-macro code
 

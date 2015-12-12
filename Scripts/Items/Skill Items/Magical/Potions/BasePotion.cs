@@ -1,11 +1,10 @@
 using System;
-using Server;
 using Server.Engines.Craft;
 using System.Collections.Generic;
 
 namespace Server.Items
 {
-	public enum PotionEffect
+    public enum PotionEffect
 	{
 		Nightsight,
 		CureLesser,

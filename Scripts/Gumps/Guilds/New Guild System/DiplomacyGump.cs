@@ -1,14 +1,11 @@
-using System;
-using Server;
 using Server.Gumps;
 using Server.Network;
 using Server.Mobiles;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace Server.Guilds
 {
-	public enum GuildDisplayType
+    public enum GuildDisplayType
 	{
 		All,
 		AwaitingAction,

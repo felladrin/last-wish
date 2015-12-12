@@ -1,11 +1,10 @@
 using System;
-using Server;
 using Server.Mobiles;
 using System.Collections.Generic;
 
 namespace Server.Factions
 {
-	public class PlayerState : IComparable
+    public class PlayerState : IComparable
 	{
 		private Mobile m_Mobile;
 		private Faction m_Faction;

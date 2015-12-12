@@ -1,13 +1,11 @@
 using System;
-using Server;
-using Server.Engines.MLQuests;
 using Server.Mobiles;
 using Server.Gumps;
 using Server.Items;
 
 namespace Server.Engines.MLQuests.Objectives
 {
-	public class CollectObjective : BaseObjective
+    public class CollectObjective : BaseObjective
 	{
 		private int m_DesiredAmount;
 		private Type m_AcceptedType;

@@ -1,15 +1,12 @@
 using System;
 using System.Collections.Generic;
-using Server;
 using Server.Gumps;
-using Server.Items;
 using Server.Mobiles;
-using Server.Network;
 using Server.Targeting;
 
 namespace Server.Items
 {
-	public class Bandage : Item, IDyable
+    public class Bandage : Item, IDyable
 	{
 		public static int Range = ( Core.AOS ? 2 : 1 ); 
 

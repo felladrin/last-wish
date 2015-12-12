@@ -1,11 +1,10 @@
 using System;
-using Server;
 using Server.Targeting;
 using Server.Engines.Harvest;
 
 namespace Server.Items
 {
-	public class ProspectorsTool : BaseBashing, IUsesRemaining
+    public class ProspectorsTool : BaseBashing, IUsesRemaining
 	{
 		private int m_UsesRemaining;
 

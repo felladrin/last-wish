@@ -1,13 +1,10 @@
 using System;
-using System.Collections;
-using Server;
 using Server.Network;
-using Server.Factions;
 using Server.Mobiles;
 
 namespace Server.Factions
 {
-	public class Keywords
+    public class Keywords
 	{
 		public static void Initialize()
 		{

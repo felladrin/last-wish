@@ -1,11 +1,9 @@
 using System;
-using Server;
 using Server.Gumps;
-using Server.Misc;
 
 namespace Server.Items
 {
-	public class HouseRaffleDeed : Item
+    public class HouseRaffleDeed : Item
 	{
 		private HouseRaffleStone m_Stone;
 		private Point3D m_PlotLocation;

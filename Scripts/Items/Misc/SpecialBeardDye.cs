@@ -1,11 +1,9 @@
-using System;
-using System.Text;
 using Server.Gumps;
 using Server.Network;
 
 namespace Server.Items
 {
-	public class SpecialBeardDye : Item
+    public class SpecialBeardDye : Item
 	{
 		public override int LabelNumber{ get{ return 1041087; } } // Special Beard Dye
 

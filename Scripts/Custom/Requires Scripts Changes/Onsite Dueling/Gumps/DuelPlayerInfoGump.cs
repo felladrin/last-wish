@@ -20,19 +20,15 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Text;
-
-using Server;
 using Server.Gumps;
 using Server.Commands;
 using Server.Targeting;
 using Server.Mobiles;
-using Server.Engines.Dueling;
 
 namespace Server.Engines.Dueling
 {
-	public class DuelPlayerInfoGump : Gump
+    public class DuelPlayerInfoGump : Gump
 	{
 		public static void Initialize()
 		{

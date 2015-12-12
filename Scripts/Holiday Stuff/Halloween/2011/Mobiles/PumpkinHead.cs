@@ -1,12 +1,10 @@
 ﻿using System;
-using Server;
 using Server.Items;
 using Server.Items.Holiday;
-using Server.Mobiles;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a killer pumpkin corpse" )]
+    [CorpseName( "a killer pumpkin corpse" )]
 	public class PumpkinHead : BaseCreature
 	{
 		public override bool AutoDispel { get { return true; } }

@@ -1,12 +1,11 @@
 using System;
 using System.Xml;
-using Server;
 using Server.Regions;
 using Server.Mobiles;
 
 namespace Server.Engines.Quests
 {
-	public class QuestOfferRegion : BaseRegion
+    public class QuestOfferRegion : BaseRegion
 	{
 		private Type m_Quest;
 

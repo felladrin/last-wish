@@ -1,10 +1,9 @@
 ﻿using System;
-using Server;
 using Server.Mobiles;
 
 namespace Server.Items
 {
-	public class HalloweenPumpkin : Item
+    public class HalloweenPumpkin : Item
 	{
 		private static readonly string[] m_Staff =
 		{

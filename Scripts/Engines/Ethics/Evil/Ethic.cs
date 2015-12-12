@@ -1,11 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Server.Factions;
 
 namespace Server.Ethics.Evil
 {
-	public sealed class EvilEthic : Ethic
+    public sealed class EvilEthic : Ethic
 	{
 		public EvilEthic()
 		{

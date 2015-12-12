@@ -1,13 +1,12 @@
 using System;
 using System.Collections;
-using Server;
 using Server.Network;
 using Server.Spells;
 using Server.Mobiles;
 
 namespace Server.Items
 {
-	public abstract class WeaponAbility
+    public abstract class WeaponAbility
 	{
 		public virtual int BaseMana{ get{ return 0; } }
 

@@ -1,13 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-
-using Server;
 using Server.Mobiles;
 
 namespace Server.Poker
 {
-	public class GameBackup //Provides a protection for players so that if server crashes, they will be refunded money
+    public class GameBackup //Provides a protection for players so that if server crashes, they will be refunded money
 	{
 		public static List<PokerGame> PokerGames; //List of all poker games with players
 	}

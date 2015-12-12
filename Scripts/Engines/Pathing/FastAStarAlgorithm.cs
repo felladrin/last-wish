@@ -1,14 +1,11 @@
-using System;
 using System.Collections;
-using Server;
 using Server.Mobiles;
-using Server.PathAlgorithms;
 using CalcMoves = Server.Movement.Movement;
 using MoveImpl = Server.Movement.MovementImpl;
 
 namespace Server.PathAlgorithms.FastAStar
 {
-	public struct PathNode
+    public struct PathNode
 	{
 		public int cost, total;
 		public int parent, next, prev;

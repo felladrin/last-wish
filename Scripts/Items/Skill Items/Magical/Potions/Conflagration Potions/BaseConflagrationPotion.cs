@@ -1,14 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Server;
-using Server.Network;
 using Server.Targeting;
 using Server.Spells;
 
 namespace Server.Items
 {
-	public abstract class BaseConflagrationPotion : BasePotion
+    public abstract class BaseConflagrationPotion : BasePotion
 	{
 		public abstract int MinDamage{ get; }
 		public abstract int MaxDamage{ get; }

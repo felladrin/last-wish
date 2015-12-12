@@ -1,11 +1,10 @@
 using System;
-using System.Collections;
 using Server.Gumps;
 using Server.Network;
 
 namespace Server.Engines.ConPVP
 {
-	public class PickRulesetGump : Gump
+    public class PickRulesetGump : Gump
 	{
 		private Mobile m_From;
 		private DuelContext m_Context;

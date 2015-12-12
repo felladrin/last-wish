@@ -1,12 +1,11 @@
 using System;
-using Server;
 using Server.Mobiles;
 using Server.Targeting;
 using Server.Items;
 
 namespace Server.Engines.Craft
 {
-	public class Repair
+    public class Repair
 	{
 		public Repair()
 		{

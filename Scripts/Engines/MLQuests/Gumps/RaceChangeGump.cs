@@ -1,7 +1,5 @@
 using System;
 using System.Collections.Generic;
-using Server;
-using Server.Engines.MLQuests.Mobiles;
 using Server.Gumps;
 using Server.Items;
 using Server.Mobiles;
@@ -12,7 +10,7 @@ using Server.Spells.Seventh;
 
 namespace Server.Engines.MLQuests.Gumps
 {
-	public interface IRaceChanger
+    public interface IRaceChanger
 	{
 		bool CheckComplete( PlayerMobile from );
 		void ConsumeNeeded( PlayerMobile from );

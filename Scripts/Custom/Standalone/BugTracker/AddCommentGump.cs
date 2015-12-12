@@ -1,9 +1,8 @@
-using System;
 using Server.Gumps;
 
 namespace Server.Engines.Tracker
 {
-	public class AddCommentGump : Gump
+    public class AddCommentGump : Gump
 	{
 		private int m_Page;
 		private TrackerEntry m_Entry;

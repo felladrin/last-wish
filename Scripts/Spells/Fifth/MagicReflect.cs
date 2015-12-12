@@ -1,12 +1,9 @@
 using System;
 using System.Collections;
-using Server;
-using Server.Targeting;
-using Server.Network;
 
 namespace Server.Spells.Fifth
 {
-	public class MagicReflectSpell : MagerySpell
+    public class MagicReflectSpell : MagerySpell
 	{
 		private static SpellInfo m_Info = new SpellInfo(
 				"Magic Reflection", "In Jux Sanct",

@@ -18,13 +18,11 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 */
 
-using System;
-using Server;
 using Server.Gumps;
 
 namespace Server.Engines.Dueling
 {
-	public class DuelConfigGump : Gump
+    public class DuelConfigGump : Gump
 	{
 		private Duel m_Duel;
 		private bool m_DeclinesDuels;

@@ -1,12 +1,10 @@
 using System;
-using System.Collections.Generic;
-using Server;
 using Server.Mobiles;
 using Server.Network;
 
 namespace Server
 {
-	public class BuffInfo
+    public class BuffInfo
 	{
 		public static bool Enabled { get { return Core.ML; } }
 

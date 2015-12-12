@@ -1,17 +1,13 @@
 using System;
-using System.Collections;
 using System.Text;
-using Server;
 using Server.Items;
 using Server.Mobiles;
-using Server.Network;
-using Server.Targeting;
 using Server.Gumps;
 using System.Collections.Generic;
 
 namespace Server.Engines.ConPVP
 {
-	public sealed class DDBoard : Item
+    public sealed class DDBoard : Item
 	{
 		public DDTeamInfo m_TeamInfo;
 

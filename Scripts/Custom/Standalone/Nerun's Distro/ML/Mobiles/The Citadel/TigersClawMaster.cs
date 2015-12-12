@@ -1,10 +1,8 @@
-using System;
-using Server;
 using Server.Items;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a black order master corpse" )] 
+    [CorpseName( "a black order master corpse" )] 
 	public class TigersClawMaster : TigersClawThief
 	{	
 		public override bool AlwaysMurderer{ get{ return true; } }

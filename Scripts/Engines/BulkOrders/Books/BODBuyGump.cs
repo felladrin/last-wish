@@ -1,12 +1,10 @@
-using System;
-using Server;
 using Server.Items;
 using Server.Gumps;
 using Server.Mobiles;
 
 namespace Server.Engines.BulkOrders
 {
-	public class BODBuyGump : Gump
+    public class BODBuyGump : Gump
 	{
 		private PlayerMobile m_From;
 		private BulkOrderBook m_Book;

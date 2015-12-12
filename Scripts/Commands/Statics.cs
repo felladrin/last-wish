@@ -1,16 +1,14 @@
 using System;
 using System.IO;
 using System.Collections;
-using Server;
 using Server.Gumps;
 using Server.Items;
 using Server.Commands;
-using Server.Targeting;
 using System.Collections.Generic;
 
 namespace Server
 {
-	public class Statics
+    public class Statics
 	{
 		public static void Initialize()
 		{

@@ -8,12 +8,10 @@
 *Revision Date: 12/04/07              *
 **************************************/
 
-using System;
-using Server;
 
 namespace Joeku.MOTD
 {
-	public class MOTD_HelpInfo
+    public class MOTD_HelpInfo
 	{
 		public string Name;
 		public int NameWidth;

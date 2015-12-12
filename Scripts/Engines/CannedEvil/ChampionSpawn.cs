@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using Server;
 using Server.Gumps;
 using Server.Items;
 using Server.Mobiles;
@@ -9,7 +7,7 @@ using System.Collections.Generic;
 
 namespace Server.Engines.CannedEvil
 {
-	public class ChampionSpawn : Item
+    public class ChampionSpawn : Item
 	{
 		[CommandProperty( AccessLevel.GameMaster )]
 		public int SpawnSzMod

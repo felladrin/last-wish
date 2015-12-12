@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using Server;
-using Server.Gumps;
-using Server.Network;
 using Server.Misc;
 
 namespace Server.Engines.Tracker
 {
-	public sealed class TrackerGump : TrackerTemplateGump<TrackerEntry>
+    public sealed class TrackerGump : TrackerTemplateGump<TrackerEntry>
 	{
 		private static TrackerColumn[] m_Columns = new TrackerColumn[]
 			{

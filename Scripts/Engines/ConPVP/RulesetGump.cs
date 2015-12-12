@@ -1,12 +1,11 @@
 using System;
 using System.Collections;
-using Server;
 using Server.Gumps;
 using Server.Network;
 
 namespace Server.Engines.ConPVP
 {
-	public class RulesetGump : Gump
+    public class RulesetGump : Gump
 	{
 		private Mobile m_From;
 		private Ruleset m_Ruleset;

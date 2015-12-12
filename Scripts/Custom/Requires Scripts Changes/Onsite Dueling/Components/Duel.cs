@@ -20,16 +20,13 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 using System;
 using System.Collections.Generic;
-
-using Server;
 using Server.Items;
 using Server.Mobiles;
-using Server.Targeting;
 using Server.Spells.Necromancy;
 
 namespace Server.Engines.Dueling
 {
-	public class Duel
+    public class Duel
 	{
 		private bool m_Started;
 		public bool Started { get { return m_Started; } set { m_Started = value; } }

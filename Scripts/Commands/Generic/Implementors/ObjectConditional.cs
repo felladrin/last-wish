@@ -1,14 +1,9 @@
 using System;
-using System.Reflection;
-using System.Collections;
 using System.Collections.Generic;
-using Server;
-using Server.Targeting;
-using CPA = Server.CommandPropertyAttribute;
 
 namespace Server.Commands.Generic
 {
-	public sealed class ObjectConditional
+    public sealed class ObjectConditional
 	{
 		private static readonly Type typeofItem = typeof( Item );
 		private static readonly Type typeofMobile = typeof( Mobile );

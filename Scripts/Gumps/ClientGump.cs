@@ -1,6 +1,4 @@
 using System;
-using System.Net;
-using Server;
 using Server.Accounting;
 using Server.Mobiles;
 using Server.Network;
@@ -10,7 +8,7 @@ using Server.Commands.Generic;
 
 namespace Server.Gumps
 {
-	public class ClientGump : Gump
+    public class ClientGump : Gump
 	{
 		private NetState m_State;
 

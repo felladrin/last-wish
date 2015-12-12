@@ -1,17 +1,15 @@
 using System;
-using System.Reflection;
 using System.Collections;
 using System.Collections.Generic;
 using Server.Network;
 using Server.Prompts;
 using Server.Mobiles;
 using Server.Multis;
-using Server.Multis.Deeds;
 using Server.Items;
 
 namespace Server.Gumps
 {
-	public enum HouseGumpPageAOS
+    public enum HouseGumpPageAOS
 	{
 		Information,
 		Security,

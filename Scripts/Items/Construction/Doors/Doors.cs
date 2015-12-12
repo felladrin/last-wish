@@ -1,8 +1,6 @@
-using System;
-
 namespace Server.Items
 {
-	public enum DoorFacing
+    public enum DoorFacing
 	{
 		WestCW,
 		EastCCW,

@@ -6,8 +6,6 @@
  * If the noises bother your players, set IsNoisy to false, and the cards will pipe down.
  * */
 
-using System;
-using Server;
 using Server.Network;
 using Server.Gumps;
 

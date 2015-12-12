@@ -1,12 +1,8 @@
-using System;
-using System.Collections;
 using Server.Items;
-using Server.Targeting;
-using Server.Misc;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a goblin mage corpse" )]
+    [CorpseName( "a goblin mage corpse" )]
 	public class GrayGoblinMage : BaseCreature
 	{
 		[Constructable]

@@ -1,10 +1,6 @@
-using System;
-using Server;
-using Server.Items;
-
 namespace Server.Mobiles
 {
-	[CorpseName( "a dryad corpse" )]
+    [CorpseName( "a dryad corpse" )]
 	public class DryadA : BaseCreature
 	{
 		public override bool InitialInnocent{ get{ return true; } }

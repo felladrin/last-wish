@@ -1,14 +1,12 @@
 using System;
-using Server;
 using Server.Mobiles;
 using Server.Gumps;
 using Server.Network;
-using Server.Factions;
 using Server.Misc;
 
 namespace Server.Guilds
 {
-	public abstract class BaseGuildGump : Gump
+    public abstract class BaseGuildGump : Gump
 	{
 		private Guild m_Guild;
 		private PlayerMobile m_Player;

@@ -1,10 +1,9 @@
 using System;
-using Server;
 using Server.Items;
 
 namespace Server.Engines.BulkOrders
 {
-	public delegate Item ConstructCallback( int type );
+    public delegate Item ConstructCallback( int type );
 
 	public sealed class RewardType
 	{

@@ -1,5 +1,4 @@
 using System;
-using System.IO;
 using Server.Gumps;
 using Server.Guilds;
 using Server.Network;
@@ -8,7 +7,7 @@ using Server.Multis;
 
 namespace Server.Items
 {
-	public class Guildstone : Item, IAddon, IChopable
+    public class Guildstone : Item, IAddon, IChopable
 	{
 		private Guild m_Guild;
 		private string m_GuildName;

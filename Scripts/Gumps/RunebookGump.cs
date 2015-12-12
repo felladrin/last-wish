@@ -1,10 +1,7 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using Server;
 using Server.Items;
 using Server.Network;
-using Server.Spells;
 using Server.Spells.Fourth;
 using Server.Spells.Seventh;
 using Server.Spells.Chivalry;
@@ -12,7 +9,7 @@ using Server.Prompts;
 
 namespace Server.Gumps
 {
-	public class RunebookGump : Gump
+    public class RunebookGump : Gump
 	{
 		private Runebook m_Book;
 

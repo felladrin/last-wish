@@ -1,13 +1,10 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using Server;
 using Server.Items;
 using Server.ContextMenus;
 
 namespace Server.Mobiles
 {
-	public abstract class BaseFamiliar : BaseCreature
+    public abstract class BaseFamiliar : BaseCreature
 	{
 		public BaseFamiliar()
 			: base( AIType.AI_Melee, FightMode.Closest, 10, 1, .1, .1 )

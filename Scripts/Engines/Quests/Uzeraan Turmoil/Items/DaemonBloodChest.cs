@@ -1,12 +1,9 @@
-using System;
-using Server;
 using Server.Items;
 using Server.Mobiles;
-using Server.Engines.Quests;
 
 namespace Server.Engines.Quests.Haven
 {
-	public class DaemonBloodChest : MetalChest
+    public class DaemonBloodChest : MetalChest
 	{
 		[Constructable]
 		public DaemonBloodChest()

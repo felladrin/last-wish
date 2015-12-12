@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using Server;
 using Server.ContextMenus;
 using Server.Gumps;
 using Server.Items;
@@ -9,7 +8,7 @@ using Server.Targeting;
 
 namespace Server.Mobiles
 {
-	public class AnimalTrainer : BaseVendor
+    public class AnimalTrainer : BaseVendor
 	{
 		private List<SBInfo> m_SBInfos = new List<SBInfo>();
 		protected override List<SBInfo> SBInfos{ get { return m_SBInfos; } }

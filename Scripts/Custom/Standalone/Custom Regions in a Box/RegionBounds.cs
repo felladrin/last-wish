@@ -1,13 +1,11 @@
 using System;
-using Server;
-using System.Collections;
 using Server.Regions;
 using Server.Targeting;
 using Server.Items;
 
 namespace Server.Commands
 {
-	public class RegionBounds
+    public class RegionBounds
 	{
 		public static void Initialize() 
 		{

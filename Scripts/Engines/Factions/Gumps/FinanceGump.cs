@@ -1,15 +1,13 @@
 using System;
-using Server;
 using Server.Gumps;
 using Server.Mobiles;
 using Server.Multis;
 using Server.Network;
-using Server.Targeting;
 using System.Collections.Generic;
 
 namespace Server.Factions
 {
-	public class FinanceGump : FactionGump
+    public class FinanceGump : FactionGump
 	{
 		private PlayerMobile m_From;
 		private Faction m_Faction;

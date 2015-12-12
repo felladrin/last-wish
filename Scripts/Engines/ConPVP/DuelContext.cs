@@ -1,9 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Reflection;
-using System.Text;
-using Server;
 using Server.Commands;
 using Server.Engines.PartySystem;
 using Server.Factions;
@@ -21,7 +18,7 @@ using Server.Spells.Spellweaving;
 
 namespace Server.Engines.ConPVP
 {
-	public delegate void CountdownCallback( int count );
+    public delegate void CountdownCallback( int count );
 
 	public class DuelContext
 	{

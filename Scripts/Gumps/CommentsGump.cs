@@ -1,7 +1,5 @@
 using System;
 using System.Collections.Generic;
-using Server;
-using Server.Mobiles;
 using Server.Accounting;
 using Server.Network;
 using Server.Prompts;
@@ -10,7 +8,7 @@ using Server.Commands;
 
 namespace Server.Gumps
 {
-	public class CommentsGump : Gump
+    public class CommentsGump : Gump
 	{
 		public static void Initialize()
 		{

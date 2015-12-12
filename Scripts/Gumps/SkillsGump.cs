@@ -1,13 +1,11 @@
 using System;
 using System.Collections;
-using Server;
-using Server.Gumps;
 using Server.Network;
 using Server.Commands;
 
 namespace Server.Gumps
 {
-	public class EditSkillGump : Gump
+    public class EditSkillGump : Gump
 	{
 		public static readonly bool OldStyle = PropsConfig.OldStyle;
 

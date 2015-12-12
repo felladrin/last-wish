@@ -1,17 +1,10 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using Server;
-using Server.Misc;
 using Server.Spells;
-using Server.Spells.Third;
-using Server.Spells.Sixth;
 using Server.Items;
-using Server.Targeting;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a changeling corpse" )]
+    [CorpseName( "a changeling corpse" )]
 	public class Changeling : BaseCreature
 	{
 		public virtual string DefaultName{ get{ return "a changeling"; } }

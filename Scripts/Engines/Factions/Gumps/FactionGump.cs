@@ -1,11 +1,8 @@
-using System;
-using Server;
 using Server.Gumps;
-using Server.Network;
 
 namespace Server.Factions
 {
-	public abstract class FactionGump : Gump
+    public abstract class FactionGump : Gump
 	{
 		public virtual int ButtonTypes{ get{ return 10; } }
 

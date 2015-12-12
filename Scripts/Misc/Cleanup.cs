@@ -1,13 +1,12 @@
 using System;
 using System.Collections.Generic;
-using Server;
 using Server.Items;
 using Server.Multis;
 using Server.Mobiles;
 
 namespace Server.Misc
 {
-	public class Cleanup
+    public class Cleanup
 	{
 		public static void Initialize()
 		{

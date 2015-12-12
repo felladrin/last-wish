@@ -1,12 +1,10 @@
 using System;
-using System.Collections;
 using Server.Items;
-using Server.Targeting;
 using Server.Network;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a plague beast corpse" )]
+    [CorpseName( "a plague beast corpse" )]
 	public class PlagueBeast : BaseCreature, IDevourer
 	{
 		private int m_DevourTotal;

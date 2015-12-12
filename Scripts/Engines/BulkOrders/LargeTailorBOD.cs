@@ -1,13 +1,8 @@
-using System;
-using System.Collections;
-using Server;
-using Server.Items;
-using Mat = Server.Engines.BulkOrders.BulkMaterialType;
 using System.Collections.Generic;
 
 namespace Server.Engines.BulkOrders
 {
-	public class LargeTailorBOD : LargeBOD
+    public class LargeTailorBOD : LargeBOD
 	{
 		public static double[] m_TailoringMaterialChances = new double[]
 			{

@@ -1,10 +1,9 @@
 using System;
-using Server.Network;
 using Server.Engines.Craft;
 
 namespace Server.Items
 {
-	public class BaseQuiver : Container, ICraftable
+    public class BaseQuiver : Container, ICraftable
 	{
 		public override int DefaultGumpID{ get{ return 0x108; } }
 		public override int DefaultMaxItems{ get{ return 1; } }

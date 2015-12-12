@@ -1,13 +1,6 @@
-using System;
-using Server;
-using System.Collections;
-using Server.Targeting;
-using Server.Mobiles;
-using Server.Items;
-
 namespace Server.Items
 {
-	public class HairGrowthElixir : Item
+    public class HairGrowthElixir : Item
 	{
 		[Constructable]
 		public HairGrowthElixir() : base( 0xE26 )

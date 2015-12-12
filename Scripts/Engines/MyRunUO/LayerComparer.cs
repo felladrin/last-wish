@@ -1,9 +1,8 @@
-using System;
 using System.Collections;
 
 namespace Server.Engines.MyRunUO
 {
-	public class LayerComparer : IComparer
+    public class LayerComparer : IComparer
 	{
 		private static Layer PlateArms = (Layer)255;
 		private static Layer ChainTunic = (Layer)254;

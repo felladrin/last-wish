@@ -1,8 +1,6 @@
-using System;
-
 namespace Server.Items
 {
-	public abstract class Hair : Item
+    public abstract class Hair : Item
 	{
 		/*
 		

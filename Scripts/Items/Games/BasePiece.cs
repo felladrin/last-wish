@@ -1,9 +1,6 @@
-using System;
-using Server;
-
 namespace Server.Items
 {
-	public class BasePiece : Item
+    public class BasePiece : Item
 	{
 		private BaseBoard m_Board;
 

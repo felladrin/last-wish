@@ -1,11 +1,10 @@
 using System;
-using Server;
 using Server.Gumps;
 using Server.Network;
 
 namespace Server.Items
 {
-	public abstract class StValentinesBear : Item
+    public abstract class StValentinesBear : Item
 	{
 		public override string DefaultName
 		{

@@ -1,5 +1,4 @@
 using System;
-using Server.Targeting;
 
 namespace Server.Commands
 {

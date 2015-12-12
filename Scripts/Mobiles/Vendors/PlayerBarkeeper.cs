@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using Server;
 using Server.Items;
 using Server.Gumps;
 using Server.Prompts;
@@ -10,7 +9,7 @@ using Server.Multis;
 
 namespace Server.Mobiles
 {
-	public class ChangeRumorMessagePrompt : Prompt
+    public class ChangeRumorMessagePrompt : Prompt
 	{
 		private PlayerBarkeeper m_Barkeeper;
 		private int m_RumorIndex;

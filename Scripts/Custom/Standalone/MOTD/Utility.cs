@@ -11,14 +11,13 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text.RegularExpressions;
 using Server;
 using Server.Accounting;
 using Server.Commands;
 
 namespace Joeku.MOTD
 {
-	public class MOTD_Utility
+    public class MOTD_Utility
 	{
 		public static void EventSink_OnLogin( LoginEventArgs e )
 		{

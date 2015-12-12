@@ -1,10 +1,9 @@
 using System;
-using Server;
 using Server.Targeting;
 
 namespace Server.Items
 {
-	public class CupidsArrow : Item
+    public class CupidsArrow : Item
 	{
 		// TODO: Check messages
 

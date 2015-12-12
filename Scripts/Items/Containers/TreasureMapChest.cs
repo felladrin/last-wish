@@ -1,15 +1,13 @@
 using System;
 using System.Collections.Generic;
-using Server;
 using Server.ContextMenus;
 using Server.Engines.PartySystem;
 using Server.Gumps;
-using Server.Multis;
 using Server.Network;
 
 namespace Server.Items
 {
-	public class TreasureMapChest : LockableContainer
+    public class TreasureMapChest : LockableContainer
 	{
 		public override int LabelNumber{ get{ return 3000541; } }
 

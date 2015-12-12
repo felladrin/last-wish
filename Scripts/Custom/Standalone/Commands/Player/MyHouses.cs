@@ -3,15 +3,11 @@
 //Re-write by DxMonkey - AKA - Tresdni
 //www.ultimaeclipse.com
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using Server;
 using Server.Items;
 using Server.Multis;
-using Server.Targeting;
 using Server.Accounting;
 using Server.Commands;
-using Server.Spells;
 
 namespace Server.Gumps
 {

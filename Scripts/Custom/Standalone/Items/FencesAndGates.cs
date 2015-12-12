@@ -1,11 +1,10 @@
 using System;
 using Server.Targeting;
-using Server.Items;
 
 namespace Server.Items
 {
 
-	[FlipableAttribute( 0xFB5, 0xFB4 )]
+    [FlipableAttribute( 0xFB5, 0xFB4 )]
 	public class FencingHammer : Item
 	{
 

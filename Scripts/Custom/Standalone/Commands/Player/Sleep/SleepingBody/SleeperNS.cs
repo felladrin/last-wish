@@ -1,16 +1,8 @@
-using System;
-using System.Collections;
-using Server;
-using Server.Network;
-using Server.Mobiles;
-using Server.Gumps;
-using Server.Multis;
-
 namespace Server.Items
 {
-	// version 1.1.1 Bed coordinates of 0,0,0 will cause npc to sleep and wake at it's current location.
-	// version 1.0 initial release.
-	public class SleeperNSAddon: SleeperBaseAddon
+    // version 1.1.1 Bed coordinates of 0,0,0 will cause npc to sleep and wake at it's current location.
+    // version 1.0 initial release.
+    public class SleeperNSAddon: SleeperBaseAddon
 	{
 		public override BaseAddonDeed Deed
 		{

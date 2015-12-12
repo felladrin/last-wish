@@ -1,14 +1,7 @@
-using System;
-using Server;
-using System.Collections;
-using Server.Targeting;
-using Server.Mobiles;
-using Server.Items;
-
 namespace Server.Items
 {
-	//[Flipable(0x1372,0x1373)]
-	public class Brush : Item
+    //[Flipable(0x1372,0x1373)]
+    public class Brush : Item
 	{
 		[Constructable]
 		public Brush() : base( 0x1372 )

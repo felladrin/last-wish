@@ -1,12 +1,9 @@
 using System;
-using System.Collections;
-using Server.Misc;
 using Server.Items;
-using Server.Mobiles;
 
 namespace Server.Mobiles
 {
-	public class ArcherGuard : BaseGuard
+    public class ArcherGuard : BaseGuard
 	{
 		private Timer m_AttackTimer, m_IdleTimer;
 

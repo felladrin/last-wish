@@ -1,6 +1,6 @@
 /*
 
-$Id: //depot/c%23/RunUO Core Scripts/RunUO Core Scripts/Customs/Engines/Onsite Duel System/Timers/TimeoutTimer.cs#2 $
+$Id: //depot/c%23/RunUO Core Scripts/RunUO Core Scripts/Customs/Engines/Onsite Duel System/Timers/LogoutTimeoutTimer.cs#2 $
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -19,19 +19,16 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
 using System;
-using System.Collections.Generic;
-
-using Server;
-using Server.Mobiles;
 
 namespace Server.Engines.Dueling
 {
-    public class TimeoutTimer : Timer
+    public class LogoutTimeoutTimer : Timer
     {
         internal Mobile m_Mobile;
         internal Duel m_Duel;
 
-        public TimeoutTimer( Duel duel, Mobile m ) : base( TimeSpan.FromSeconds( 15.0 ) )
+        public LogoutTimeoutTimer( Mobile m, Duel duel )
+            : base(TimeSpan.FromSeconds(30.0))
         {
             m_Mobile = m;
             m_Duel = duel;
@@ -39,21 +36,13 @@ namespace Server.Engines.Dueling
 
         protected override void OnTick()
         {
-            m_Mobile.CloseGump( typeof( DuelAcceptGump ) );
-            m_Mobile.SendMessage("You've decided not to join the duel.");
-            m_Duel.SpotsRemaing++;
-            m_Duel.Broadcast( m_Mobile.Name + " declined to join the duel." );
-            CheckTarget();
-            Stop();
-        }
+            if (m_Duel != null && m_Duel.Started && !m_Mobile.Alive)
+                m_Mobile.Kill();
 
-        private void CheckTarget()
-        {
-            if( !( m_Duel.Creator.Target is DuelTarget ) )
-            {
-                m_Duel.Creator.SendMessage( "Please select another player to join the duel." );
-                m_Duel.Creator.Target = new DuelTarget( m_Duel.Creator, m_Duel );
-            }
+            if (DuelController.DuelStartTimeoutTable.ContainsKey(m_Mobile.Serial))
+                DuelController.DuelStartTimeoutTable.Remove(m_Mobile.Serial);
+
+            Stop();
         }
     }
 }

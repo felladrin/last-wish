@@ -1,12 +1,11 @@
 using System;
-using Server;
 using Server.Items;
 using Server.Gumps;
 using Server.Network;
 
 namespace Server.Engines.Plants
 {
-	public class MainPlantGump : Gump
+    public class MainPlantGump : Gump
 	{
 		private PlantItem m_Plant;
 

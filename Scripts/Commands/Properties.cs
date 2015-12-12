@@ -1,9 +1,6 @@
 using System;
 using System.Reflection;
-using System.Collections;
-using Server;
 using Server.Targeting;
-using Server.Items;
 using Server.Gumps;
 using CPA = Server.CommandPropertyAttribute;
 using Server.Commands;
@@ -11,7 +8,7 @@ using Server.Commands.Generic;
 
 namespace Server.Commands
 {
-	public enum PropertyAccess
+    public enum PropertyAccess
 	{
 		Read		= 0x01,
 		Write		= 0x02,
@@ -579,7 +576,7 @@ namespace Server.Commands
 
 namespace Server
 {
-	public abstract class PropertyException : ApplicationException
+    public abstract class PropertyException : ApplicationException
 	{
 		protected Property m_Property;
 

@@ -1,8 +1,5 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using Server;
-using Server.Items;
 using Server.Multis;
 using Server.Network;
 using Server.ContextMenus;
@@ -10,7 +7,7 @@ using Server.Gumps;
 
 namespace Server.Items
 {
-	public abstract class BaseBoard : Container, ISecurable
+    public abstract class BaseBoard : Container, ISecurable
 	{
 		private SecureLevel m_Level;
 

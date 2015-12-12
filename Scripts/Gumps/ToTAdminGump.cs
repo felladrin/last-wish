@@ -1,15 +1,11 @@
 using System;
-using Server;
-using Server.Gumps;
 using Server.Misc;
-using Server.Items;
 using Server.Network;
 using Server.Commands;
-using Server.Mobiles;
 
 namespace Server.Gumps
 {
-	public class ToTAdminGump : Gump
+    public class ToTAdminGump : Gump
 	{
 		private int m_ToTEras;
 		private static string[] m_ToTInfo = 

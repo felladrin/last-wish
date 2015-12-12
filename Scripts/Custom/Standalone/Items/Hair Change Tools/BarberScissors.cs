@@ -1,13 +1,6 @@
-using System;
-using Server;
-using System.Collections;
-using Server.Targeting;
-using Server.Mobiles;
-using Server.Items;
-
 namespace Server.Items
 {
-	public class BarberScissors : Item
+    public class BarberScissors : Item
 	{
 		[Constructable]
 		public BarberScissors() : base( 0xDFC )

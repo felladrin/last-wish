@@ -1,13 +1,11 @@
 using System;
-using Server;
 using Server.Network;
-using Server.Mobiles;
 using Server.Engines.PartySystem;
 using Server.Guilds;
 
 namespace Server.Misc
 {
-	public static partial class MapUO
+    public static partial class MapUO
 	{
 		private static class Settings
 		{

@@ -1,9 +1,8 @@
 using System;
-using System.Text;
 
 namespace Server.Engines.Tracker
 {
-	public class CommentEntry : IEquatable<CommentEntry>
+    public class CommentEntry : IEquatable<CommentEntry>
 	{
 		private TrackerEntry m_Issue;
 		private int m_CommentID;

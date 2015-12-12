@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Server;
 using Server.Gumps;
 using Server.Items;
 using Server.Spells;
@@ -14,7 +13,7 @@ using Server.Engines.VeteranRewards;
 
 namespace Server.Mobiles
 {
-	public enum StatueType
+    public enum StatueType
 	{
 		Marble,
 		Jade,

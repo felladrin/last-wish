@@ -1,17 +1,12 @@
 /*
  *  Inspired by http://www.runuo.com/forums/custom-script-releases/100339-runuo-2-0-world-save-gump.html
  *
- */  
+ */
 
-using System;
-using System.Collections;
 using Server.Network;
-using Server.Mobiles;
-using Server.Items;
-using Server.Misc;
 using Server.Commands;
 
-namespace Server.Gumps 
+namespace Server.Gumps
 {
     public class GoodByeGump : Gump
     {

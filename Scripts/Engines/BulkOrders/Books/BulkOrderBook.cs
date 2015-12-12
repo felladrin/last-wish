@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Server;
 using Server.Gumps;
 using Server.Multis;
 using Server.Prompts;
@@ -11,7 +10,7 @@ using Server.Items;
 
 namespace Server.Engines.BulkOrders
 {
-	public class BulkOrderBook : Item, ISecurable
+    public class BulkOrderBook : Item, ISecurable
 	{
 		private ArrayList m_Entries;
 		private BOBFilter m_Filter;

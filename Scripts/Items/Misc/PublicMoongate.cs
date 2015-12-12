@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using Server;
 using Server.Commands;
 using Server.Gumps;
 using Server.Mobiles;
@@ -9,7 +8,7 @@ using Server.Spells;
 
 namespace Server.Items
 {
-	public class PublicMoongate : Item
+    public class PublicMoongate : Item
 	{
 		public override bool ForceShowProperties{ get{ return ObjectPropertyList.Enabled; } }
 

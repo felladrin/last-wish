@@ -1,10 +1,9 @@
 using System;
-using Server;
 using Server.Items;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a sand vortex corpse" )]
+    [CorpseName( "a sand vortex corpse" )]
 	public class SandVortex : BaseCreature
 	{
 		[Constructable]

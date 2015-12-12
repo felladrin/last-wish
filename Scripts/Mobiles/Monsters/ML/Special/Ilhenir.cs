@@ -1,15 +1,13 @@
 using System;
 using System.Collections;
-using Server;
 using Server.Items;
-using Server.Spells;
 using Server.Network;
 using System.Collections.Generic;
 using Server.Engines.CannedEvil;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a corpse of Ilhenir" )]
+    [CorpseName( "a corpse of Ilhenir" )]
 	public class Ilhenir : BaseChampion
 	{
 		public override ChampionSkullType SkullType { get { return ChampionSkullType.Pain; } }

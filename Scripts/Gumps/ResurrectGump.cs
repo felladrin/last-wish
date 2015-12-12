@@ -1,14 +1,11 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using Server;
 using Server.Items;
 using Server.Network;
 using Server.Mobiles;
 
 namespace Server.Gumps
 {
-	public enum ResurrectMessage
+    public enum ResurrectMessage
 	{
 		ChaosShrine = 0,
 		VirtueShrine = 1,

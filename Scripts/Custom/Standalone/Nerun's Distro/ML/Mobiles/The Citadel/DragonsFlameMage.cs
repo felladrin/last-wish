@@ -1,13 +1,9 @@
 using System;
-using System.Collections;
 using Server.Items;
-using Server.ContextMenus;
-using Server.Misc;
-using Server.Network;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a black order mage corpse" )] 
+    [CorpseName( "a black order mage corpse" )] 
       public class DragonsFlameMage : BaseCreature
 	{
 		private DateTime m_DecayTime;

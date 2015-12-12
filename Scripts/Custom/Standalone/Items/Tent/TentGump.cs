@@ -7,12 +7,8 @@
 //                                         //
 // For putting up with a 'tard like me :)  //
 //=========================================//
-using System;
-using Server;
-using Server.Gumps;
 using Server.Network;
 using Server.Items;
-using Server.Mobiles;
 
 namespace Server.Gumps
 {

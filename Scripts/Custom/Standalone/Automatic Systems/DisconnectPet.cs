@@ -1,10 +1,8 @@
-using System;
-using Server;
 using System.Collections.Generic;
 
 namespace Server.Mobiles
 {
-	public abstract class DecoPet
+    public abstract class DecoPet
 	{
 		public static void Initialize()
 		{

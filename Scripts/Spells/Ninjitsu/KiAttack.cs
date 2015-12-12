@@ -1,13 +1,10 @@
 using System;
 using System.Collections;
-using Server.Network;
 using Server.Items;
-using Server.Mobiles;
-using Server.Targeting;
 
 namespace Server.Spells.Ninjitsu
 {
-	public class KiAttack : NinjaMove
+    public class KiAttack : NinjaMove
 	{
 		public KiAttack()
 		{

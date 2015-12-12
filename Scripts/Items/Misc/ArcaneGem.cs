@@ -1,12 +1,9 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using Server;
 using Server.Targeting;
 
 namespace Server.Items
 {
-	public class ArcaneGem : Item
+    public class ArcaneGem : Item
 	{
 		public override string DefaultName
 		{

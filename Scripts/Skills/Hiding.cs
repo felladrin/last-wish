@@ -1,12 +1,10 @@
 using System;
-using Server.Targeting;
-using Server.Items;
 using Server.Network;
 using Server.Multis;
 
 namespace Server.SkillHandlers
 {
-	public class Hiding
+    public class Hiding
 	{
 		private static bool m_CombatOverride;
 

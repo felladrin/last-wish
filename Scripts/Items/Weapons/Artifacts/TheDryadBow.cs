@@ -1,9 +1,6 @@
-using System;
-using Server;
-
 namespace Server.Items
 {
-	public class TheDryadBow : Bow
+    public class TheDryadBow : Bow
 	{
 		public override int LabelNumber{ get{ return 1061090; } } // The Dryad Bow
 		public override int ArtifactRarity{ get{ return 11; } }

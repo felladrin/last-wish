@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using Server;
 using Server.Network;
 using Server.Targeting;
 using Server.Factions;
@@ -9,7 +7,7 @@ using System.Collections.Generic;
 
 namespace Server.Engines.PartySystem
 {
-	public class Party : IParty
+    public class Party : IParty
 	{
 		private Mobile m_Leader;
 		private List<PartyMemberInfo> m_Members;

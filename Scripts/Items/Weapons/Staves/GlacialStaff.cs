@@ -1,10 +1,6 @@
-using System;
-using Server.Network;
-using Server.Items;
-
 namespace Server.Items
 {
-	public class GlacialStaff : BlackStaff
+    public class GlacialStaff : BlackStaff
 	{
 		//TODO: Pre-AoS stuff
 		public override int LabelNumber{ get{ return 1017413; } } // Glacial Staff

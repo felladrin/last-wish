@@ -1,12 +1,11 @@
 using System;
-using Server;
 using Server.Mobiles;
 using Server.Targeting;
 using Server.Network;
 
 namespace Server.Items
 {
-	public class GreenThorns : Item
+    public class GreenThorns : Item
 	{
 		public override int LabelNumber { get { return 1060837; } } // green thorns
 

@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using Server;
 using Server.Network;
 using Server.Mobiles;
 using Server.Targeting;
@@ -8,7 +7,7 @@ using Server.Engines.Craft;
 
 namespace Server.Items
 {
-	public delegate void InstrumentPickedCallback( Mobile from, BaseInstrument instrument );
+    public delegate void InstrumentPickedCallback( Mobile from, BaseInstrument instrument );
 
 	public enum InstrumentQuality
 	{

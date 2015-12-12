@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using Server.Mobiles;
 using Server.Gumps;
@@ -7,7 +6,7 @@ using Server.Targeting;
 
 namespace Server.Spells.Spellweaving
 {
-	public class GiftOfLifeSpell : ArcanistSpell
+    public class GiftOfLifeSpell : ArcanistSpell
 	{
 		private static SpellInfo m_Info = new SpellInfo(
 				"Gift of Life", "Illorae",

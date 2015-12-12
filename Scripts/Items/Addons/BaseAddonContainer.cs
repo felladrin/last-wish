@@ -1,13 +1,10 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using Server;
 using Server.Multis;
-using Server.Regions;
 
 namespace Server.Items
 {
-	public abstract class BaseAddonContainer : BaseContainer, IChopable, IAddon
+    public abstract class BaseAddonContainer : BaseContainer, IChopable, IAddon
 	{
 		public override bool DisplayWeight { get { return false; } }
 

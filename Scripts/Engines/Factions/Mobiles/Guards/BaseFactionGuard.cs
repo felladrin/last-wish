@@ -1,7 +1,5 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using Server;
 using Server.Items;
 using Server.Mobiles;
 using Server.Network;
@@ -9,7 +7,7 @@ using Server.Factions.AI;
 
 namespace Server.Factions
 {
-	public abstract class BaseFactionGuard : BaseCreature
+    public abstract class BaseFactionGuard : BaseCreature
 	{
 		private Faction m_Faction;
 		private Town m_Town;

@@ -1,12 +1,10 @@
-using System;
-
 namespace Server.Items
 {
-	/// <summary>
-	/// The highly skilled warrior can use this special attack to make two quick swings in succession.
-	/// Landing both blows would be devastating! 
-	/// </summary>
-	public class DoubleStrike : WeaponAbility
+    /// <summary>
+    /// The highly skilled warrior can use this special attack to make two quick swings in succession.
+    /// Landing both blows would be devastating! 
+    /// </summary>
+    public class DoubleStrike : WeaponAbility
 	{
 		public DoubleStrike()
 		{

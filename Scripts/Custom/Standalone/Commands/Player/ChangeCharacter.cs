@@ -6,11 +6,6 @@
  * * Fixed bug of wrong character being logged in.
  */
 using System;
-using System.Collections.Generic;
-using Server;
-using Server.Accounting;
-using Server.Commands;
-using Server.Mobiles;
 using Server.Network;
 using Server.Gumps;
 

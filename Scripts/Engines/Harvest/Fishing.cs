@@ -1,5 +1,4 @@
 using System;
-using Server;
 using Server.Items;
 using Server.Mobiles;
 using Server.Network;
@@ -9,7 +8,7 @@ using System.Collections.Generic;
 
 namespace Server.Engines.Harvest
 {
-	public class Fishing : HarvestSystem
+    public class Fishing : HarvestSystem
 	{
 		private static Fishing m_System;
 

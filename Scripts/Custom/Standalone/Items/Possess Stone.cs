@@ -6,12 +6,9 @@
 //
 // 5/2005 : Admin Oak : SylvanDreams.Com
 //
-using System;
-using Server;
 using System.Collections;
 using Server.Accounting;
 using Server.Mobiles;
-using Server.Gumps;
 using Server.Targeting;
 
 namespace Server.Items

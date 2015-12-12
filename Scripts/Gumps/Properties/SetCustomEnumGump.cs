@@ -2,13 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
-using Server;
 using Server.Network;
 using Server.Commands;
 
 namespace Server.Gumps
 {
-	public class SetCustomEnumGump : SetListOptionGump
+    public class SetCustomEnumGump : SetListOptionGump
 	{
 		private string[] m_Names;
 

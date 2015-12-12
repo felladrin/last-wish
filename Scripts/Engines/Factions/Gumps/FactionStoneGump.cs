@@ -1,5 +1,3 @@
-using System;
-using Server;
 using Server.Gumps;
 using Server.Mobiles;
 using Server.Network;
@@ -7,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Server.Factions
 {
-	public class FactionStoneGump : FactionGump
+    public class FactionStoneGump : FactionGump
 	{
 		private PlayerMobile m_From;
 		private Faction m_Faction;

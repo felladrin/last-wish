@@ -3,9 +3,7 @@
 //    > |       June 2010        | <
 //   /__|========================|__\	[Recall Command] - Current version: 1.2 (July 8, 2013)
 
-using System;
 using System.Collections.Generic;
-using Server;
 using Server.Mobiles;
 using Server.Network;
 

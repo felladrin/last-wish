@@ -1,11 +1,9 @@
 using System;
 using Server.Targeting;
-using Server.Items;
-using Server.Network;
 
 namespace Server.Items
 {
-	public abstract class CookableFood : Item
+    public abstract class CookableFood : Item
 	{
 		private int m_CookingLevel;
 

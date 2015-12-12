@@ -1,10 +1,6 @@
-using System;
-using Server;
-using Server.Network;
-
 namespace Server.Items
 {
-	public class OrigamiPaper : Item
+    public class OrigamiPaper : Item
 	{
 		public override int LabelNumber{ get{ return 1030288; } } // origami paper
 

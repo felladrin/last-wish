@@ -1,10 +1,6 @@
-using System;
-using Server;
-using Server.Items;
-
 namespace Server.Mobiles
 {
-	[CorpseName( "a mistral corpse" )]
+    [CorpseName( "a mistral corpse" )]
 	public class Mistral : BaseCreature
 	{
 		public override double DispelDifficulty{ get{ return 117.5; } }

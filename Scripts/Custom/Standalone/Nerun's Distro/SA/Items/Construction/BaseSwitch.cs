@@ -1,10 +1,9 @@
 using System;
-using Server;
 using Server.Network;
 
 namespace Server.Items
 {
-	public class BaseSwitch : Item
+    public class BaseSwitch : Item
 	{
 		private int m_TurnOn;
 		private int m_TurnOff;

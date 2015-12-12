@@ -1,12 +1,9 @@
-using System;
-using Server;
 using Server.Mobiles;
 using Server.Items;
-using Server.Engines.Quests;
 
 namespace Server.Engines.Quests.Haven
 {
-	public class MansionGuard : BaseQuester
+    public class MansionGuard : BaseQuester
 	{
 		[Constructable]
 		public MansionGuard() : base( "the Mansion Guard" )

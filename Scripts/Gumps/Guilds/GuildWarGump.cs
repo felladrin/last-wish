@@ -1,13 +1,10 @@
-using System;
-using System.Collections;
-using Server;
 using Server.Guilds;
 using Server.Network;
 using System.Collections.Generic;
 
 namespace Server.Gumps
 {
-	public class GuildWarGump : Gump
+    public class GuildWarGump : Gump
 	{
 		private Mobile m_Mobile;
 		private Guild m_Guild;

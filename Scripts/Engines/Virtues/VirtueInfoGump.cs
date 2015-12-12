@@ -1,11 +1,9 @@
-using System;
-using Server;
 using Server.Gumps;
 using Server.Network;
 
 namespace Server
 {
-	public class VirtueInfoGump : Gump
+    public class VirtueInfoGump : Gump
 	{
 		private Mobile m_Beholder;
 		private int m_Desc;

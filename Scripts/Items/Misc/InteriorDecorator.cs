@@ -1,14 +1,11 @@
-using System;
-using Server;
 using Server.Network;
-using Server.Regions;
 using Server.Multis;
 using Server.Gumps;
 using Server.Targeting;
 
 namespace Server.Items
 {
-	public enum DecorateCommand
+    public enum DecorateCommand
 	{
 		None,
 		Turn,

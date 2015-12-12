@@ -1,13 +1,10 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using Server;
 using Server.Multis;
-using Server.Regions;
 
 namespace Server.Items
 {
-	public enum AddonFitResult
+    public enum AddonFitResult
 	{
 		Valid,
 		Blocked,

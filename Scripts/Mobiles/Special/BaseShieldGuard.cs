@@ -1,12 +1,9 @@
-using System;
-using Server;
-using Server.Misc;
 using Server.Items;
 using Server.Guilds;
 
 namespace Server.Mobiles
 {
-	public abstract class BaseShieldGuard : BaseCreature
+    public abstract class BaseShieldGuard : BaseCreature
 	{
 		public BaseShieldGuard() : base( AIType.AI_Melee, FightMode.Aggressor, 14, 1, 0.8, 1.6 )
 		{

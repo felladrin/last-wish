@@ -1,14 +1,10 @@
-using System;
-using Server;
 using Server.Gumps;
 using Server.Network;
 using Server.Mobiles;
-using Server.Targeting;
-using Server.Prompts;
 
 namespace Server.Guilds
 {
-	public class GuildMemberInfoGump : BaseGuildGump
+    public class GuildMemberInfoGump : BaseGuildGump
 	{
 		PlayerMobile m_Member;
 		bool m_ToLeader, m_toKick;

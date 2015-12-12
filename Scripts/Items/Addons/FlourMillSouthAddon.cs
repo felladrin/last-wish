@@ -1,12 +1,10 @@
 using System;
-using System.Collections;
-using Server;
 using Server.Network;
 using System.Collections.Generic;
 
 namespace Server.Items
 {
-	public class FlourMillSouthAddon : BaseAddon, IFlourMill
+    public class FlourMillSouthAddon : BaseAddon, IFlourMill
 	{
 		public override BaseAddonDeed Deed{ get{ return new FlourMillSouthDeed(); } }
 		private int m_Flour;

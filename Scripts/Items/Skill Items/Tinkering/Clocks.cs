@@ -1,9 +1,8 @@
 using System;
-using Server;
 
 namespace Server.Items
 {
-	public enum MoonPhase
+    public enum MoonPhase
 	{
 		NewMoon,
 		WaxingCrescentMoon,

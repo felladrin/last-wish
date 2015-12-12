@@ -1,9 +1,6 @@
-using System;
-using Server;
-
 namespace Server.Engines.Mahjong
 {
-	public class MahjongTile
+    public class MahjongTile
 	{
 		public static MahjongPieceDim GetDimensions( Point2D position, MahjongPieceDirection direction )
 		{

@@ -1,10 +1,9 @@
 using System;
 using System.Collections;
-using Server;
 
 namespace Server.Engines.ConPVP
 {
-	public class RulesetLayout
+    public class RulesetLayout
 	{
 		private static RulesetLayout m_Root;
 

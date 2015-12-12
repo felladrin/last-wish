@@ -1,11 +1,9 @@
 using System;
-using Server;
-using Server.Movement;
 using CalcMoves = Server.Movement.Movement;
 
 namespace Server
 {
-	public class PathFollower
+    public class PathFollower
 	{
 		// Should we use pathfinding? 'false' for not
 		private static bool Enabled = true;

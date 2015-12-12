@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Server.Items;
+﻿using Server.Items;
 using Server.Gumps;
 using Server.Network;
 

@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using Server;
 using Server.Multis;
 using Server.Gumps;
 using System.Collections.Generic;
@@ -8,7 +6,7 @@ using Server.ContextMenus;
 
 namespace Server.Items
 {
-	public class MetalHouseDoor : BaseHouseDoor
+    public class MetalHouseDoor : BaseHouseDoor
 	{
 		[Constructable]
 		public MetalHouseDoor( DoorFacing facing ) : base( facing, 0x675 + (2 * (int)facing), 0x676 + (2 * (int)facing), 0xEC, 0xF3, BaseDoor.GetOffset( facing ) )

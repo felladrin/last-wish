@@ -1,10 +1,9 @@
 using System;
-using Server;
 using Server.Mobiles;
 
 namespace Server.Items
 {
-	public class SlayerGroup
+    public class SlayerGroup
 	{
 		private static SlayerEntry[] m_TotalEntries;
 		private static SlayerGroup[] m_Groups;

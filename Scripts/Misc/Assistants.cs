@@ -1,12 +1,10 @@
 using System;
 using System.Collections.Generic;
-using Server;
 using Server.Network;
-using Server.Gumps;
 
 namespace Server.Misc
 {
-	public static partial class Assistants
+    public static partial class Assistants
 	{
 		private static class Settings
 		{

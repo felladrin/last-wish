@@ -1,14 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Server;
 using Server.Mobiles;
 using Server.Network;
 using Server.Spells;
 
 namespace Server.Items
 {
-	public class Teleporter : Item
+    public class Teleporter : Item
 	{
 		private bool m_Active, m_Creatures, m_CombatCheck, m_CriminalCheck;
 		private Point3D m_PointDest;

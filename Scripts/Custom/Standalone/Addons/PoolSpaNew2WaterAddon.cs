@@ -4,13 +4,10 @@
 // AddonGenerator script by Arya               //
 //                                             //
 /////////////////////////////////////////////////
-using System;
-using Server;
-using Server.Items;
 
 namespace Server.Items
 {
-	public class PoolSpaNew2WaterAddon : BaseAddon
+    public class PoolSpaNew2WaterAddon : BaseAddon
 	{
 		public override BaseAddonDeed Deed
 		{

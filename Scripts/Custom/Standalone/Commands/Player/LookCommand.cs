@@ -3,8 +3,6 @@
 //    > |      February 2010     | < 
 //   /__|========================|__\	Current version: 1.0 (February 6, 2010)
 
-using System;
-using Server;
 using Server.Mobiles;
 using Server.Targeting;
 using Server.Gumps;

@@ -1,13 +1,11 @@
 using System;
 using System.Collections.Generic;
-using Server.Network;
-using Server.Items;
 using Server.Targeting;
 using Server.Mobiles;
 
 namespace Server.Spells.Fourth
 {
-	public class ArchCureSpell : MagerySpell
+    public class ArchCureSpell : MagerySpell
 	{
 		private static SpellInfo m_Info = new SpellInfo(
 				"Arch Cure", "Vas An Nox",

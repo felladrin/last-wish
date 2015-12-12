@@ -1,14 +1,13 @@
 using System;
 using System.Collections;
 using Server.Targeting;
-using Server.Network;
 using Server.Misc;
 using Server.Items;
 using Server.Mobiles;
 
 namespace Server.Spells.Fifth
 {
-	public class PoisonFieldSpell : MagerySpell
+    public class PoisonFieldSpell : MagerySpell
 	{
 		private static SpellInfo m_Info = new SpellInfo(
 				"Poison Field", "In Nox Grav",

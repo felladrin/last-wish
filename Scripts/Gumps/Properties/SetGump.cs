@@ -1,15 +1,13 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
-using Server;
 using Server.Network;
 using Server.HuePickers;
 using Server.Commands;
 
 namespace Server.Gumps
 {
-	public class SetGump : Gump
+    public class SetGump : Gump
 	{
 		private PropertyInfo m_Property;
 		private Mobile m_Mobile;

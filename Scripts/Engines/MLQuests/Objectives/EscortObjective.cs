@@ -1,15 +1,11 @@
 using System;
-using Server;
-using Server.Engines.MLQuests;
 using Server.Mobiles;
 using Server.Gumps;
-using System.Collections.Generic;
 using Server.Misc;
-using Server.Items;
 
 namespace Server.Engines.MLQuests.Objectives
 {
-	public class EscortObjective : BaseObjective
+    public class EscortObjective : BaseObjective
 	{
 		private QuestArea m_Destination;
 

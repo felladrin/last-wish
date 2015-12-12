@@ -1,12 +1,9 @@
 using System;
 using System.Collections;
-using Server.Network;
-using Server.Items;
-using Server.Mobiles;
 
 namespace Server.Spells.Bushido
 {
-	public class Confidence : SamuraiSpell
+    public class Confidence : SamuraiSpell
 	{
 		private static SpellInfo m_Info = new SpellInfo(
 				"Confidence", null,

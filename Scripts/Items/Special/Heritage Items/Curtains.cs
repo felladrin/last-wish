@@ -1,11 +1,9 @@
-using System;
-using Server;
 using Server.Gumps;
 using Server.Network;
 
 namespace Server.Items
 {
-	public class CurtainsComponent : AddonComponent, IDyable
+    public class CurtainsComponent : AddonComponent, IDyable
 	{
 		public override int LabelNumber { get { return 1076280; } } // Curtains
 		public override bool DisplayWeight { get { return false; } }

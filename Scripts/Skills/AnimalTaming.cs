@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using Server;
 using Server.Targeting;
 using Server.Network;
 using Server.Mobiles;
@@ -10,7 +9,7 @@ using Server.Spells.Spellweaving;
 
 namespace Server.SkillHandlers
 {
-	public class AnimalTaming
+    public class AnimalTaming
 	{
 		private static Dictionary<Mobile, Mobile> m_BeingTamed = new Dictionary<Mobile, Mobile>();
 

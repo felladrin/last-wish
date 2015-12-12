@@ -1,12 +1,10 @@
 using System;
 using System.Collections.Generic;
-using Server;
 using Server.Accounting;
-using Server.Items;
 
 namespace Server.Misc
 {
-	public enum GiftResult
+    public enum GiftResult
 	{
 		Backpack,
 		BankBox

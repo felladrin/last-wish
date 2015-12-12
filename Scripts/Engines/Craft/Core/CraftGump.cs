@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using Server.Gumps;
 using Server.Network;
@@ -7,7 +6,7 @@ using Server.Items;
 
 namespace Server.Engines.Craft
 {
-	public class CraftGump : Gump
+    public class CraftGump : Gump
 	{
 		private Mobile m_From;
 		private CraftSystem m_CraftSystem;

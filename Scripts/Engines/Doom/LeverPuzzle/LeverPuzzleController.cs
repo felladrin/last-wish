@@ -1,19 +1,18 @@
 using System;
 using Server.Spells;
-using Server;
 using Server.Network;
 using Server.Mobiles;
 using Server.Commands;
 using System.Collections.Generic;
 
-	/*
-	this is From me to you, Under no terms, Conditions...   K?  to apply you
-	just simply Unpatch/delete, Stick these in, Same location.. Restart
-	*/ 
+/*
+this is From me to you, Under no terms, Conditions...   K?  to apply you
+just simply Unpatch/delete, Stick these in, Same location.. Restart
+*/
 
 namespace Server.Engines.Doom
 {
-	public class LeverPuzzleController : Item
+    public class LeverPuzzleController : Item
 	{
 		private bool m_Enabled;
 		private static bool installed;

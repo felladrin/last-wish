@@ -1,12 +1,9 @@
-using System;
 using System.Collections;
-using Server;
-using Server.Mobiles;
 using Server.Gumps;
 
 namespace Server.Forums
 {
-	public class AccountSearch : Gump
+    public class AccountSearch : Gump
 	{
 		public AccountSearch()
 			: base( 0, 0 )

@@ -1,5 +1,3 @@
-using System;
-using Server.Items;
 using Server.Gumps;
 
 namespace Server.Custom.Quests.LordBritishsBooks

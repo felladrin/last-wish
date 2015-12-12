@@ -1,11 +1,9 @@
 using System;
-using Server;
-using Server.Mobiles;
 using Server.Gumps;
 
 namespace Server.Forums
 {
-	public class InputGump : Gump
+    public class InputGump : Gump
 	{
         public enum Buttons
         {

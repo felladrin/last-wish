@@ -1,14 +1,12 @@
 using System;
 using System.Collections;
-using Server;
 using Server.Targeting;
-using Server.Mobiles;
 using Server.Commands;
 using System.Collections.Generic;
 
 namespace Server.Factions
 {
-	[CustomEnum( new string[]{ "Britain", "Magincia", "Minoc", "Moonglow", "Skara Brae", "Trinsic", "Vesper", "Yew" } )]
+    [CustomEnum( new string[]{ "Britain", "Magincia", "Minoc", "Moonglow", "Skara Brae", "Trinsic", "Vesper", "Yew" } )]
 	public abstract class Town : IComparable
 	{
 		private TownDefinition m_Definition;

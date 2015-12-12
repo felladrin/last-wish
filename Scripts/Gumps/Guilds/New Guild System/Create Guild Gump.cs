@@ -1,12 +1,10 @@
-using System;
-using Server;
 using Server.Gumps;
 using Server.Network;
 using Server.Mobiles;
 
 namespace Server.Guilds
 {
-	public class CreateGuildGump : Gump
+    public class CreateGuildGump : Gump
 	{
 		public CreateGuildGump( PlayerMobile pm ) : this( pm, "Guild Name", "" )
 		{

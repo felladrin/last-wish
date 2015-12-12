@@ -1,21 +1,19 @@
-using System;
 using System.Collections;
-using System.Diagnostics;
 using System.Drawing;
 
 namespace Server.Engines.Reports
 {
-	// Modified from MS sample
+    // Modified from MS sample
 
-	//*********************************************************************
-	//
-	// ChartItem Class
-	//
-	// This class represents a data point in a chart
-	//
-	//*********************************************************************
+    //*********************************************************************
+    //
+    // ChartItem Class
+    //
+    // This class represents a data point in a chart
+    //
+    //*********************************************************************
 
-	public class DataItem 
+    public class DataItem 
 	{
 		private string _label;
 		private string _description;

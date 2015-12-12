@@ -1,15 +1,13 @@
 using System;
 using System.Text;
-using System.Collections;
 using System.Collections.Generic;
-using Server;
 using Server.Gumps;
 using Server.Network;
 using Server.Mobiles;
 
 namespace Server.Engines.ConPVP
 {
-	public class ArenasMoongate : Item
+    public class ArenasMoongate : Item
 	{
 		public override string DefaultName
 		{

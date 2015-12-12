@@ -1,12 +1,11 @@
 using System;
 using System.Text;
-using Server;
 using Server.Mobiles;
 using Server.Engines.CannedEvil;
 
 namespace Server.Misc
 {
-	public class Titles
+    public class Titles
 	{
 		public const int MinFame = 0;
 		public const int MaxFame = 15000;

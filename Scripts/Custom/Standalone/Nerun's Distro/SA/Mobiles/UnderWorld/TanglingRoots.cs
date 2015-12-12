@@ -1,11 +1,8 @@
-using System;
-using System.Collections;
 using Server.Items;
-using Server.Targeting;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a tangling root corpse" )]
+    [CorpseName( "a tangling root corpse" )]
 	public class TanglingRoots : BaseCreature
 	{
 		[Constructable]

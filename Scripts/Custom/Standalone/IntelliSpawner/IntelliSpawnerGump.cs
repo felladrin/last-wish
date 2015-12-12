@@ -4,14 +4,13 @@
 //   /__|========================|__\	Based on RunUO's SpawnerGump.
 
 using System;
-using System.Collections;
 using Server.Network;
 using Server.Gumps;
 using System.Collections.Generic;
 
 namespace Server.Mobiles
 {
-	public class IntelliSpawnerGump : Gump
+    public class IntelliSpawnerGump : Gump
 	{
 		private IntelliSpawner m_IntelliSpawner;
 

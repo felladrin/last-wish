@@ -1,13 +1,11 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using Server;
 using Server.Items;
 using Server.Mobiles;
 
 namespace Server
 {
-	public class LootPack
+    public class LootPack
 	{
 		public static int GetLuckChance( Mobile killer, Mobile victim )
 		{

@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Net.Mail;
 using System.IO;
-using Server;
 using Server.Mobiles;
 using Server.Network;
 using Server.Misc;
@@ -13,7 +12,7 @@ using System.Collections.Generic;
 
 namespace Server.Engines.Help
 {
-	public enum PageType
+    public enum PageType
 	{
 		Bug,
 		Stuck,

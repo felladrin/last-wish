@@ -5,23 +5,17 @@
  */
 
 
-using Server.Accounting;
 using Server.ContextMenus;
 using Server.Gumps;
 using Server.Items;
-using Server.Misc;
-using Server.Mobiles;
 using Server.Multis;
 using Server.Network;
 using Server.Targeting;
-using Server;
 using System.Collections.Generic;
-using System.Collections;
-using System;
 
 namespace Server.Items
 {
-	[Furniture]
+    [Furniture]
 	[FlipableAttribute( 0x4142, 0x4144 )]
     public class Mailbox : Container, ISecurable, IChopable //Note - Needed cause when locked down could not access the context menu, to set who you want to drop into mail box. And chop for deed.
     {

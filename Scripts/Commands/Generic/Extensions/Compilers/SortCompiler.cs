@@ -1,14 +1,11 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Reflection;
 using System.Reflection.Emit;
-using System.Text;
-using Server;
 
 namespace Server.Commands.Generic
 {
-	public sealed class OrderInfo
+    public sealed class OrderInfo
 	{
 		private Property m_Property;
 		private int m_Order;

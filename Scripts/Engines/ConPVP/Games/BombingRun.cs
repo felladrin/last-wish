@@ -2,7 +2,6 @@
 using System;
 using System.Collections;
 using System.Text;
-using Server;
 using Server.Items;
 using Server.Mobiles;
 using Server.Network;
@@ -11,7 +10,7 @@ using Server.Gumps;
 
 namespace Server.Engines.ConPVP
 {
-	public class BRBomb : Item
+    public class BRBomb : Item
 	{
 		private BRGame m_Game;
 		private Mobile m_Thrower;

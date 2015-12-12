@@ -18,15 +18,11 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 */
 
-using System;
 using System.Collections.Generic;
-
-using Server;
-using Server.Mobiles;
 
 namespace Server.Engines.Dueling
 {
-	public class DuelPoints
+    public class DuelPoints
 	{
 		private Mobile m_Mobile;
 		private Dictionary<int, DuelInfo> m_FastestWins;

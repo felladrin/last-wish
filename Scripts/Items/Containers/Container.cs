@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Server.Multis;
 using Server.Mobiles;
@@ -7,7 +6,7 @@ using Server.ContextMenus;
 
 namespace Server.Items
 {
-	public abstract class BaseContainer : Container
+    public abstract class BaseContainer : Container
 	{
 		public override int DefaultMaxWeight
 		{

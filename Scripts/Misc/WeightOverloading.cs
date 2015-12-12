@@ -1,10 +1,9 @@
 using System;
-using Server;
 using Server.Mobiles;
 
 namespace Server.Misc
 {
-	public enum DFAlgorithm
+    public enum DFAlgorithm
 	{
 		Standard,
 		PainSpike

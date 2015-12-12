@@ -1,5 +1,4 @@
 using System;
-using Server;
 using Server.Mobiles;
 using Server.Multis;
 using Server.Spells;
@@ -7,7 +6,7 @@ using Server.Targeting;
 
 namespace Server.Items
 {
-	public class SpecialFishingNet : Item
+    public class SpecialFishingNet : Item
 	{
 		public override int LabelNumber{ get{ return 1041079; } } // a special fishing net
 

@@ -7,15 +7,8 @@
 //                                         //
 // For putting up with a 'tard like me :)  //
 //=========================================//
-using System;
-using System.Collections;
-using Server.Network;
-using Server.Prompts;
-using Server.Items;
 using Server.Mobiles;
-using Server.Multis;
 using Server.Gumps;
-using Server.Misc;
 
 namespace Server.Items
 {

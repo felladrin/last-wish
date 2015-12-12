@@ -1,12 +1,11 @@
 using System;
-using Server;
 using Server.Gumps;
 using Server.Mobiles;
 using Server.Targeting;
 
 namespace Server.SkillHandlers
 {
-	public class AnimalLore
+    public class AnimalLore
 	{
 		public static void Initialize()
 		{

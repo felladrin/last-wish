@@ -1,7 +1,5 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using Server;
 using Server.Items;
 using Server.Factions;
 using Server.Mobiles;
@@ -9,7 +7,7 @@ using Server.Commands;
 
 namespace Server.Engines.Craft
 {
-	public enum ConsumeType
+    public enum ConsumeType
 	{
 		All, Half, None
 	}

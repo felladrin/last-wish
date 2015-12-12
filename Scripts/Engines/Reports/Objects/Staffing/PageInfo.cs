@@ -1,12 +1,9 @@
 using System;
-using System.Collections;
-using Server;
-using Server.Engines;
 using Server.Engines.Help;
 
 namespace Server.Engines.Reports
 {
-	public enum PageResolution
+    public enum PageResolution
 	{
 		None,
 		Handled,

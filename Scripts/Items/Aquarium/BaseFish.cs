@@ -1,10 +1,8 @@
 using System;
-using Server;
-using Server.Items;
 
 namespace Server.Items
 {
-	public class BaseFish : Item
+    public class BaseFish : Item
 	{
 		private static readonly TimeSpan DeathDelay = TimeSpan.FromMinutes( 5 );
 

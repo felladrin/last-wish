@@ -1,11 +1,9 @@
 using System;
-using Server;
-using Server.Network;
 using Server.Engines.PartySystem;
 
 namespace Server.Items
 {
-	public class MoonstoneGate : Moongate
+    public class MoonstoneGate : Moongate
 	{
 		private Mobile m_Caster;
 

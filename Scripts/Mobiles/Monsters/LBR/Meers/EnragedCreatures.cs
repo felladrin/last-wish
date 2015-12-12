@@ -1,10 +1,8 @@
-using System;
-using Server;
 using Server.Network;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a hare corpse" )]
+    [CorpseName( "a hare corpse" )]
 	public class EnragedRabbit : BaseEnraged
 	{
 		public EnragedRabbit( Mobile summoner ) : base( summoner )

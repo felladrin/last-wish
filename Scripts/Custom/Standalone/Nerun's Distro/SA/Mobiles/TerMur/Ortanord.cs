@@ -1,12 +1,9 @@
-using System;
-using Server;
 using Server.Misc;
 using Server.Items;
-using Server.Factions;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a Wisp corpse" )]
+    [CorpseName( "a Wisp corpse" )]
 	public class Ortanord : BaseCreature
 	{
 		public override InhumanSpeech SpeechType{ get{ return InhumanSpeech.Wisp; } }

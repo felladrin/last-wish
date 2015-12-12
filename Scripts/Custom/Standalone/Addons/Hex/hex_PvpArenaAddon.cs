@@ -4,13 +4,10 @@
 // (Yet Another Arya Addon Generator) //
 //                                    //
 ////////////////////////////////////////
-using System;
-using Server;
-using Server.Items;
 
 namespace Server.Items
 {
-	public class hex_PvpArenaAddon : BaseAddon
+    public class hex_PvpArenaAddon : BaseAddon
 	{
         private static int[,] m_AddOnSimpleComponents = new int[,] {
 			  {4650, 0, -3, 1}, {4650, 0, 2, 1}, {4651, -2, -1, 1}// 1	2	3	

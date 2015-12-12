@@ -1,11 +1,8 @@
-using System;
 using Server.Items;
-using Server.Targeting;
-using System.Collections;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a gremlin corpse" )]
+    [CorpseName( "a gremlin corpse" )]
 	public class Gremlin : BaseCreature
 	{
 		[Constructable]

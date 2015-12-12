@@ -1,14 +1,12 @@
 using System;
-using Server;
 using Server.Items;
 using Server.Mobiles;
 using Server.Accounting;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace Server.Engines.VeteranRewards
 {
-	public class RewardSystem
+    public class RewardSystem
 	{
 		private static RewardCategory[] m_Categories;
 		private static RewardList[] m_Lists;

@@ -1,10 +1,8 @@
-using System;
-using Server;
 using Server.Commands;
 
 namespace Server.Misc
 {
-	public class NameVerification
+    public class NameVerification
 	{
 		public static readonly char[] SpaceDashPeriodQuote = new char[]
 			{

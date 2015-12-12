@@ -1,11 +1,6 @@
-using System;
-using Server.Items;
-using Server.Targeting;
-using System.Collections;
-
 namespace Server.Mobiles
 {
-	[CorpseName( "a slasher of veils corpse" )]
+    [CorpseName( "a slasher of veils corpse" )]
 	public class SlasherOfVeils : BaseCreature
 	{
 		[Constructable]

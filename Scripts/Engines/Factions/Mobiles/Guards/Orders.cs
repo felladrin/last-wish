@@ -1,10 +1,8 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace Server.Factions.AI
 {
-	public enum ReactionType
+    public enum ReactionType
 	{
 		Ignore,
 		Warn,

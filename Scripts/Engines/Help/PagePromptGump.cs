@@ -1,11 +1,9 @@
-using System;
-using Server;
 using Server.Gumps;
 using Server.Network;
 
 namespace Server.Engines.Help
 {
-	public class PagePromptGump : Gump
+    public class PagePromptGump : Gump
 	{
 		private Mobile m_From;
 		private PageType m_Type;

@@ -13,12 +13,8 @@ Acknowledgements: 	Based on GuildAllyChat by Eddie Gorgels released 10 November 
 Installation:		Put AllyChat.cs in your Custom folder.
 */
 using System;
-using System.Text;
-using System.Collections;
-using Server;
 using Server.Network;
 using Server.Guilds;
-using Server.Mobiles;
 
 namespace Server.Commands
 {

@@ -1,10 +1,8 @@
 using System;
-using Server;
-using Server.Network;
 
 namespace Server.Items
 {
-	public class UnderworldSwitchWE : BaseSwitch
+    public class UnderworldSwitchWE : BaseSwitch
 	{
 		[Constructable]
 		public UnderworldSwitchWE() : base( 0x1091, 0x1092, 1042901, 1042900, true )

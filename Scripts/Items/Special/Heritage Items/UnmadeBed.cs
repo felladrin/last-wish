@@ -1,11 +1,9 @@
-using System;
-using Server;
 using Server.Gumps;
 using Server.Network;
 
 namespace Server.Items
 {
-	public class UnmadeBedAddon : BaseAddon
+    public class UnmadeBedAddon : BaseAddon
 	{
 		public override BaseAddonDeed Deed { get { return new UnmadeBedDeed(); } }
 

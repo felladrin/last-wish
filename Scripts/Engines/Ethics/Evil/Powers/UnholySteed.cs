@@ -1,11 +1,8 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
-using Server.Mobiles;
 
 namespace Server.Ethics.Evil
 {
-	public sealed class UnholySteed : Power
+    public sealed class UnholySteed : Power
 	{
 		public UnholySteed()
 		{

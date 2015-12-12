@@ -8,14 +8,13 @@
 *Revision Date: 12/04/07              *
 **************************************/
 
-using System;
 using System.IO;
 using Server;
 using Server.Commands;
 
 namespace Joeku.MOTD
 {
-	public class MOTD_Main
+    public class MOTD_Main
 	{
 		public const int Version = 100;
 		public const string ReleaseDate = "December 4, 2007";

@@ -1,11 +1,8 @@
-using System;
-using System.Collections;
-using Server;
 using Server.Items;
 
 namespace Server.Mobiles
 {
-	public class Aminia : BaseCreature
+    public class Aminia : BaseCreature
 	{		
 		[Constructable]
 		public Aminia() : base( AIType.AI_Melee, FightMode.None, 2, 1, 0.5, 2 )

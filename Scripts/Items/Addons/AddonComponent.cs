@@ -1,9 +1,6 @@
-using System;
-using Server;
-
 namespace Server.Items
 {
-	[Server.Engines.Craft.Anvil]
+    [Server.Engines.Craft.Anvil]
 	public class AnvilComponent : AddonComponent
 	{
 		[Constructable]

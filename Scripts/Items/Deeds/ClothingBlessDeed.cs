@@ -1,12 +1,8 @@
-using System;
-using Server.Network;
-using Server.Prompts;
-using Server.Items;
 using Server.Targeting;
 
 namespace Server.Items
 {
-	public class ClothingBlessTarget : Target // Create our targeting class (which we derive from the base target class)
+    public class ClothingBlessTarget : Target // Create our targeting class (which we derive from the base target class)
 	{
 		private ClothingBlessDeed m_Deed;
 

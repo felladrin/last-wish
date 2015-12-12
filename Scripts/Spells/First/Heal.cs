@@ -1,12 +1,10 @@
-using System;
-using Server;
 using Server.Targeting;
 using Server.Network;
 using Server.Mobiles;
 
 namespace Server.Spells.First
 {
-	public class HealSpell : MagerySpell
+    public class HealSpell : MagerySpell
 	{
 		private static SpellInfo m_Info = new SpellInfo(
 				"Heal", "In Mani",

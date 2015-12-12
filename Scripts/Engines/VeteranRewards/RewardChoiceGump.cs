@@ -1,13 +1,11 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using Server;
 using Server.Gumps;
 using Server.Network;
 
 namespace Server.Engines.VeteranRewards
 {
-	public class RewardChoiceGump : Gump
+    public class RewardChoiceGump : Gump
 	{
 		private Mobile m_From;
 

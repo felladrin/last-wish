@@ -1,10 +1,8 @@
-using System;
-using Server;
 using Server.Items;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a chief paroxysmus corpse" )]
+    [CorpseName( "a chief paroxysmus corpse" )]
 	public class ChiefParoxysmus: BaseCreature
 	{
 		[Constructable]

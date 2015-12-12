@@ -1,13 +1,10 @@
-using System;
 using System.Collections.Generic;
-using Server;
 using Server.ContextMenus;
-using Server.Mobiles;
 using Server.Network;
 
 namespace Server.Items
 {
-	public class FishBowl : BaseContainer
+    public class FishBowl : BaseContainer
 	{
 		public override int LabelNumber{ get{ return 1074499; } } // A fish bowl
 

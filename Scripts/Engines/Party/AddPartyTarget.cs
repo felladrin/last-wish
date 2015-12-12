@@ -1,10 +1,8 @@
-using System;
-using Server;
 using Server.Targeting;
 
 namespace Server.Engines.PartySystem
 {
-	public class AddPartyTarget : Target
+    public class AddPartyTarget : Target
 	{
 		public AddPartyTarget( Mobile from ) : base( 8, false, TargetFlags.None )
 		{

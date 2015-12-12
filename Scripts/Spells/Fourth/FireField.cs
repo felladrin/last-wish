@@ -1,14 +1,13 @@
 using System;
 using System.Collections;
 using Server.Targeting;
-using Server.Network;
 using Server.Misc;
 using Server.Items;
 using Server.Mobiles;
 
 namespace Server.Spells.Fourth
 {
-	public class FireFieldSpell : MagerySpell
+    public class FireFieldSpell : MagerySpell
 	{
 		private static SpellInfo m_Info = new SpellInfo(
 				"Fire Field", "In Flam Grav",

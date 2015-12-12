@@ -1,14 +1,12 @@
 using System;
-using Server;
 using Server.Gumps;
 using Server.Network;
 using Server.Mobiles;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace Server.Guilds
 {
-	public abstract class BaseGuildListGump<T> : BaseGuildGump
+    public abstract class BaseGuildListGump<T> : BaseGuildGump
 	{
 		List<T> m_List;
 		IComparer<T> m_Comparer;

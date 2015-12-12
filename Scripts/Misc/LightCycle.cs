@@ -1,11 +1,10 @@
 using System;
-using Server;
 using Server.Network;
 using Server.Commands;
 
 namespace Server
 {
-	public class LightCycle
+    public class LightCycle
 	{
 		public const int DayLevel = 4;
 		public const int NightLevel = 16;

@@ -1,10 +1,9 @@
 using System;
 using System.Collections.Generic;
-using Server;
 
 namespace Server.Engines.Chat
 {
-	public class Channel
+    public class Channel
 	{
 		private string m_Name;
 		private string m_Password;

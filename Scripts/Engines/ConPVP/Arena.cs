@@ -1,11 +1,10 @@
 using System;
 using System.Collections.Generic;
-using Server;
 using Server.Mobiles;
 
 namespace Server.Engines.ConPVP
 {
-	public class ArenaController : Item
+    public class ArenaController : Item
 	{
 		private Arena m_Arena;
 		private bool m_IsPrivate;

@@ -1,10 +1,8 @@
-using System;
-using Server;
 using Server.Items;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a black order high executioner corpse" )] 
+    [CorpseName( "a black order high executioner corpse" )] 
 	public class SerpentsFangHighExecutioner : SerpentsFangAssassin
 	{	
 		public override bool AlwaysMurderer{ get{ return true; } }

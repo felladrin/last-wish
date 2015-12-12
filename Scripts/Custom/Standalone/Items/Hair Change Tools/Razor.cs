@@ -1,13 +1,6 @@
-using System;
-using Server;
-using System.Collections;
-using Server.Targeting;
-using Server.Mobiles;
-using Server.Items;
-
 namespace Server.Items
 {
-	public class Razor : Item
+    public class Razor : Item
 	{
 		[Constructable]
 		public Razor() : base( 0xEC4 )

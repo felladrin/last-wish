@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using Server;
 using Server.Guilds;
 using Server.Mobiles;
 using Server.Network;
@@ -8,7 +6,7 @@ using Server.Factions;
 
 namespace Server.Gumps
 {
-	public class GuildChangeTypeGump : Gump
+    public class GuildChangeTypeGump : Gump
 	{
 		private Mobile m_Mobile;
 		private Guild m_Guild;

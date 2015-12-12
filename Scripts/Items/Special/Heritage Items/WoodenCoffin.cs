@@ -1,11 +1,9 @@
-using System;
-using Server;
 using Server.Gumps;
 using Server.Network;
 
 namespace Server.Items
 {
-	public class WoodenCoffinComponent : AddonComponent
+    public class WoodenCoffinComponent : AddonComponent
 	{
 		public override int LabelNumber { get { return 1076274; } } // Coffin
 

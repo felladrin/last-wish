@@ -1,5 +1,4 @@
 using System;
-using Server;
 using Server.Misc;
 using Server.Items;
 using Server.Mobiles;
@@ -8,7 +7,7 @@ using Server.Regions;
 
 namespace Server.SkillHandlers
 {
-	public class Snooping
+    public class Snooping
 	{
 		public static void Configure()
 		{

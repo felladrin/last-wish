@@ -7,7 +7,6 @@
  * Now the script deletes all items inside houses and playervendors.
 */
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using Server.Accounting;
 using Server.Commands;

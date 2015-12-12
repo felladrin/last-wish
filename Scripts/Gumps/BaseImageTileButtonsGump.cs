@@ -1,11 +1,9 @@
-using System;
-using Server;
 using Server.Network;
 using System.Collections;
 
 namespace Server.Gumps
 {
-	public class ImageTileButtonInfo
+    public class ImageTileButtonInfo
 	{
 		private int m_ItemID;
 		private int m_Hue;
