@@ -36,7 +36,7 @@ namespace Server.Engines.Dueling
 	public class DuelController
 	{
 		public static readonly string Version = "2.1.3";
-		private static readonly string SaveDirectory = Path.Combine(Core.BaseDirectory, "Saves\\Onsite Dueling");
+		private static readonly string SaveDirectory = Path.Combine(Core.BaseDirectory, "Saves/Onsite Dueling");
 		private static readonly string PointsFile = Path.Combine(SaveDirectory, "Points.sav");
 
 		private int m_MaxDistance = 30;
