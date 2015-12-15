@@ -1232,10 +1232,43 @@ namespace Server.Items
 					armor.OnHit( this, damage ); // call OnHit to lose durability
 			}
 
-			return damage;
-		}
+            /* Directional Damage */
+            Direction DefDirection = defender.Direction;
+            Direction DefToAtt = defender.GetDirectionTo(attacker.Location.X, attacker.Location.Y);
+            double mult = 1;
 
-		public virtual int AbsorbDamage( Mobile attacker, Mobile defender, int damage )
+            switch (Math.Abs((int)DefDirection - (int)DefToAtt))
+            {
+                case 0: //Front
+                    mult = .75;
+                    // attacker.SendMessage("Attack Multiplier: {0}", mult); // Debug
+                    break; 
+                case 1: //Front-Side
+                    mult = 1;
+                    // attacker.SendMessage("Attack Multiplier: {0}", mult); // Debug
+                    break;
+                case 2: //Side
+                    mult = 1.25;
+                    // attacker.SendMessage("Attack Multiplier: {0}", mult); // Debug
+                    attacker.SendMessage("You deal more damage for flanking your opponent!");
+                    break;
+                case 3: //Back-Side
+                    mult = 1.5;
+                    // attacker.SendMessage("Attack Multiplier: {0}", mult); // Debug
+                    attacker.SendMessage("You deal increased damage for attaking your opponent from behind!");
+                    break;
+                case 4: //Back
+                    mult = 2;
+                    // attacker.SendMessage("Attack Multiplier: {0}", mult); // Debug
+                    attacker.SendMessage("You deal twice the damage for strucking your opponent in the back!");
+                    break;
+            }
+
+            return (int)(damage * mult);
+            /* Directional Damage */
+        }
+
+        public virtual int AbsorbDamage( Mobile attacker, Mobile defender, int damage )
 		{
 			if ( Core.AOS )
 				return AbsorbDamageAOS( attacker, defender, damage );
