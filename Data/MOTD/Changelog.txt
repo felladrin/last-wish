@@ -18,6 +18,11 @@
 // will not be displayed in-game. Entries with fewer
 // than three lines will not be displayed in-game.
 
+[*]12/14/2015
+Victor
+- Added directional damage. More damage when attacking from behind your opponent or flanking him.
+- Changed to allow player housing in Ilshenar and Malas.
+
 [*]12/12/2015
 Victor
 - Added [Duel command.
