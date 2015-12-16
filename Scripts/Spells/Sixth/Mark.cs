@@ -43,7 +43,8 @@ namespace Server.Spells.Sixth
 			else if ( !SpellHelper.CheckTravel( Caster, TravelCheckType.Mark ) )
 			{
 			}
-			else if ( SpellHelper.CheckMulti( Caster.Location, Caster.Map, !Core.AOS ) )
+			//else if ( SpellHelper.CheckMulti( Caster.Location, Caster.Map, !Core.AOS ) ) // Original
+			else if ( SpellHelper.CheckMulti( Caster.Location, !Core.AOS ) ) // Modificado para o Last Wish
 			{
 				Caster.SendLocalizedMessage( 501942 ); // That location is blocked.
 			}
