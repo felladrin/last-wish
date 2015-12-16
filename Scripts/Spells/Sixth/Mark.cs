@@ -43,10 +43,10 @@ namespace Server.Spells.Sixth
 			else if ( !SpellHelper.CheckTravel( Caster, TravelCheckType.Mark ) )
 			{
 			}
-			// else if ( SpellHelper.CheckMulti( Caster.Location, Caster.Map, !Core.AOS ) )
-			// {
-			// 	Caster.SendLocalizedMessage( 501942 ); // That location is blocked.
-			// }
+			else if ( SpellHelper.CheckMulti( Caster.Location, Caster.Map, !Core.AOS ) )
+			{
+				Caster.SendLocalizedMessage( 501942 ); // That location is blocked.
+			}
 			else if ( !rune.IsChildOf( Caster.Backpack ) )
 			{
 				Caster.LocalOverheadMessage( MessageType.Regular, 0x3B2, 1062422 ); // You must have this rune in your backpack in order to mark it.
