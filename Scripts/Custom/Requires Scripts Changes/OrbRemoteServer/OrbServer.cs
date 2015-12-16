@@ -197,7 +197,7 @@ namespace Server.Engines.OrbRemoteServer
 			Console.WriteLine("\n{0} {1} is listening on port {2}", SERVER_NAME, SERVER_VERSION, SERVER_PORT);
 			// Create Tcp channel using the selected Port number
 			TcpChannel chan = new TcpChannel(SERVER_PORT);
-			ChannelServices.RegisterChannel(chan);	//register channel
+			ChannelServices.RegisterChannel(chan, false);	//register channel
 
 			// register the remote object
 			RemotingConfiguration.RegisterWellKnownServiceType(
