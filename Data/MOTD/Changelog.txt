@@ -22,8 +22,10 @@
 Adrian
 - Raised SkillsCap to 1200.
 - Raised each Skill cap to 120.
+- Added more vendors to Lake Shire (including archer and weaponsmith).
 - Fixed mage vendors containing an absurd amount of necro reagents.
 - Fixed rune-marking prevention on all maps.
+
 
 [*]12/14/2015
 Victor
