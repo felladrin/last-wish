@@ -16,7 +16,7 @@ namespace Server.Commands
         [Description("Opens the shard website in your browser.")]
         private static void OpenWebSite(CommandEventArgs e)
         {
-            e.Mobile.LaunchBrowser("https://felladrin.github.io/last-wish/");
+            e.Mobile.LaunchBrowser("http://felladrin.github.io/last-wish/");
         }
     }
 }
