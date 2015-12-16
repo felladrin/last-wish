@@ -33,10 +33,13 @@ Down near the bottom, in your OnMove section Find and then add in the part in Re
 		if( !Core.SE )
 			return base.OnMove( d );
 
-After you [add PokerDealer
-You need to [props the dealer and set the options.
-Then move over the PokerDealer and [addpokerseat x y z (where x y z is the location you want your seat) (First you should add table and chairs addons)
+Enter [add PokerDealer to add the dealer NPC. Then, you need to [props the dealer and set the options. Add tables and seats as necessary.
+
+Then move over to a seat, enter [addpokerseat and click the Poker Dealer. Repeat the proccess until all seats have been set. (this proccess will create an invisible stool on your location. You may use that as a seat, or you may remove the stool.)
+
 Attention: Do not use your admin character. Join the table only with player characters.
+
+
 
 Recommended setup for each stake:
 
