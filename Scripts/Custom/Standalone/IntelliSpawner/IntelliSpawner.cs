@@ -1,5 +1,5 @@
 //   ___|========================|___
-//   \  |  Written by Felladrin  |  /	[IntelliSpawner] - Current version: 1.3 (December 16, 2015)
+//   \  |  Written by Felladrin  |  /	[IntelliSpawner] - Current version: 1.0.4 (December 17, 2015)
 //    > |       June 2013        | <
 //   /__|========================|__\	Based on RunUO Spawner.
 
@@ -12,6 +12,7 @@ using Server.Commands;
 using Server.Items;
 using Server.Multis;
 using CPA = Server.CommandPropertyAttribute;
+using Server.Network;
 
 /*
 	UsesSpawnerHome true causes normal behavior, while false will
@@ -38,7 +39,7 @@ namespace Server.Mobiles
     {
         public static void Initialize()
         {
-            new ActivateSpawnersAroundPlayers().Start();
+            new ActivationTimer().Start();
         }
 
         private int m_Team;
@@ -848,19 +849,22 @@ namespace Server.Mobiles
             m_Timer.Start();
         }
 
-        private class ActivateSpawnersAroundPlayers : Timer
+        private class ActivationTimer : Timer
         {
-            public ActivateSpawnersAroundPlayers() : base(TimeSpan.Zero, TimeSpan.FromSeconds(10)) { }
+            public ActivationTimer() : base(TimeSpan.Zero, TimeSpan.FromSeconds(5))
+            {
+                Priority = TimerPriority.FiveSeconds;
+            }
 
             protected override void OnTick()
             {
                 List<Item> spawners = new List<Item>();
 
-                foreach (Mobile pm in World.Mobiles.Values)
+                foreach (NetState state in NetState.Instances)
                 {
-                    if (pm is PlayerMobile)
+                    if (state.Mobile != null)
                     {
-                        foreach (Item item in pm.GetItemsInRange(100))
+                        foreach (Item item in state.Mobile.GetItemsInRange(100))
                         {
                             if (item is IntelliSpawner)
                             {

@@ -18,6 +18,10 @@
 // will not be displayed in-game. Entries with fewer
 // than three lines will not be displayed in-game.
 
+[*]12/17/2015
+Victor
+- Improved spawners activation, so you'll see more creatures around.
+
 [*]12/16/2015
 Adrian
 - Raised SkillsCap to 1200.
@@ -25,7 +29,6 @@ Adrian
 - Added more vendors to Lake Shire (including archer and weaponsmith).
 - Fixed mage vendors containing an absurd amount of necro reagents.
 - Fixed rune-marking prevention on all maps.
-
 
 [*]12/14/2015
 Victor
