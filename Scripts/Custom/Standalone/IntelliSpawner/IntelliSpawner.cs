@@ -1,5 +1,5 @@
 //   ___|========================|___
-//   \  |  Written by Felladrin  |  /	[IntelliSpawner] - Current version: 1.2 (December 6, 2015)
+//   \  |  Written by Felladrin  |  /	[IntelliSpawner] - Current version: 1.3 (December 16, 2015)
 //    > |       June 2013        | <
 //   /__|========================|__\	Based on RunUO Spawner.
 
@@ -36,10 +36,14 @@ namespace Server.Mobiles
 {
     public class IntelliSpawner : Item, ISpawner
     {
+        public static void Initialize()
+        {
+            new ActivateSpawnersAroundPlayers().Start();
+        }
+
         private int m_Team;
         private int m_HomeRange;
         private int m_WalkingRange;
-        private int m_TriggerRange;
         private int m_Count;
         private TimeSpan m_MinDelay;
         private TimeSpan m_MaxDelay;
@@ -180,14 +184,14 @@ namespace Server.Mobiles
         public int HomeRange
         {
             get { return m_HomeRange; }
-            set { m_HomeRange = value; UpdateTriggerRange(); InvalidateProperties(); }
+            set { m_HomeRange = value; InvalidateProperties(); }
         }
 
         [CommandProperty(AccessLevel.GameMaster)]
         public int WalkingRange
         {
             get { return m_WalkingRange; }
-            set { m_WalkingRange = value; UpdateTriggerRange(); InvalidateProperties(); }
+            set { m_WalkingRange = value; InvalidateProperties(); }
         }
 
         [CommandProperty(AccessLevel.GameMaster)]
@@ -432,37 +436,6 @@ namespace Server.Mobiles
             InvalidateProperties();
         }
 
-        private void UpdateTriggerRange()
-        {
-            int triggerRange = 0;
-
-            if (m_HomeRange > m_WalkingRange)
-            {
-                triggerRange = m_HomeRange * 3;
-            }
-            else
-            {
-                triggerRange = m_WalkingRange * 3;
-            }
-
-            if (triggerRange < 50)
-            {
-                triggerRange = 50;
-            }
-
-            m_TriggerRange = triggerRange;
-        }
-
-        public int GetTriggerRange()
-        {
-            if (m_TriggerRange == 0)
-            {
-                UpdateTriggerRange();
-            }
-
-            return m_TriggerRange;
-        }
-
         public void OnTick()
         {
             DoTimer();
@@ -477,7 +450,7 @@ namespace Server.Mobiles
                 {
                     Mobile creature = spawned as Mobile;
 
-                    foreach (Mobile m in creature.GetMobilesInRange(GetTriggerRange()))
+                    foreach (Mobile m in creature.GetMobilesInRange(Core.GlobalMaxUpdateRange))
                     {
                         if (ValidTrigger(m))
                         {
@@ -490,7 +463,7 @@ namespace Server.Mobiles
                 {
                     Item item = spawned as Item;
 
-                    foreach (Mobile m in item.GetMobilesInRange(GetTriggerRange()))
+                    foreach (Mobile m in item.GetMobilesInRange(Core.GlobalMaxUpdateRange))
                     {
                         if (ValidTrigger(m))
                         {
@@ -530,7 +503,7 @@ namespace Server.Mobiles
 
         public override void OnMovement(Mobile m, Point3D oldLocation)
         {
-            if (!m_Running && m.InRange(GetWorldLocation(), GetTriggerRange()) && ValidTrigger(m))
+            if (!m_Running && ValidTrigger(m))
             {
                 m_Running = true;
                 Respawn();
@@ -873,6 +846,42 @@ namespace Server.Mobiles
 
             m_Timer = new InternalTimer(this, delay);
             m_Timer.Start();
+        }
+
+        private class ActivateSpawnersAroundPlayers : Timer
+        {
+            public ActivateSpawnersAroundPlayers() : base(TimeSpan.Zero, TimeSpan.FromSeconds(10)) { }
+
+            protected override void OnTick()
+            {
+                List<Item> spawners = new List<Item>();
+
+                foreach (Mobile pm in World.Mobiles.Values)
+                {
+                    if (pm is PlayerMobile)
+                    {
+                        foreach (Item item in pm.GetItemsInRange(100))
+                        {
+                            if (item is IntelliSpawner)
+                            {
+                                spawners.Add(item);
+                            }
+                        }
+                    }
+                }
+
+                foreach (Item item in spawners)
+                {
+                    IntelliSpawner spawner = item as IntelliSpawner;
+
+                    if (!spawner.Running)
+                    {
+                        spawner.Running = true;
+                        spawner.Respawn();
+                        spawner.DoTimer();
+                    }
+                }
+            }
         }
 
         private class InternalTimer : Timer
