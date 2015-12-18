@@ -202,7 +202,7 @@ namespace Server.Custom
                 op.WriteLine("      <b>Active Guilds:</b> {0:n0}<br/>", Statistics.ActiveGuilds);
                 op.WriteLine("      <b>Player Houses:</b> {0:n0}<br/>", Statistics.PlayerHouses);
                 op.WriteLine("      <b>Player Gold:</b> {0:n0}<br/>", Statistics.PlayerGold);
-                op.WriteLine("      <small style='position: absolute;bottom: 10px;right: 10px;'>Auto refreshed every {0} seconds.</small>", UpdateIntervalInSeconds);
+                // op.WriteLine("      <div style='text-align: right; font-size: small;'>Auto refreshed every {0} seconds.</div>", UpdateIntervalInSeconds);
                 op.WriteLine("   </body>");
                 op.WriteLine("</html>");
             }
