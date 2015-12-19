@@ -18,9 +18,16 @@
 // will not be displayed in-game. Entries with fewer
 // than three lines will not be displayed in-game.
 
+[*]12/19/2015
+Victor
+- Added command [P to talk to the party.
+- Added command [VoiceChat to open the voice chat on the browser.
+- Now armors show the sum of resistances in the property list.
+
 [*]12/17/2015
 Victor
 - Improved spawners activation, so you'll see more creatures around.
+- Player have no more robes after ressurrecting.
 
 [*]12/16/2015
 Adrian
