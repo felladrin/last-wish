@@ -1534,7 +1534,13 @@ namespace Server.Items
 
 			base.AddResistanceProperties( list );
 
-			if ( (prop = GetDurabilityBonus()) > 0 )
+            #region Added to show Total Resist
+            int TR = (PhysicalResistance + ColdResistance + FireResistance + PoisonResistance + EnergyResistance);
+            if (TR != 0 && TR != PhysicalResistance && TR != ColdResistance && TR != FireResistance && TR != PoisonResistance && TR != EnergyResistance)
+                list.Add(1060658, "<basefont color=#00FFFF>{0}\t{1}<basefont color=White>", "Total Resist", TR.ToString() + "%");
+            #endregion
+
+            if ( (prop = GetDurabilityBonus()) > 0 )
 				list.Add( 1060410, prop.ToString() ); // durability ~1_val~%
 
 			if ( (prop = ComputeStatReq( StatType.Str )) > 0 )
