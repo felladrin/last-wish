@@ -7,7 +7,7 @@ namespace Server.Custom
 {
 	public static class SetSkillsCap
 	{
-		public static int IndividualSkillCap = 120;  // Cap for each skill. RunUO Default: 100.
+		public static int IndividualSkillCap = 1200;  // Cap for each skill. RunUO Default: 100. Note: "1200" represents "120.0"
 		public static int TotalSkillCap = 7000;      // Cap for the sum of all skills. RunUO Default: 7000. Note: "7000" represents "700.0"
 		
 		public static void Initialize()
