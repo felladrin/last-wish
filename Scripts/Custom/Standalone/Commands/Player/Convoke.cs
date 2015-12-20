@@ -33,10 +33,10 @@ namespace Server.Gumps
             int key = from.Serial.Value;
 
             if (SpellHelper.CheckCombat(from))
-			{
+            {
                 from.SendMessage(38, "You can't do this while in middle a combat.");
-				return;
-			}
+                return;
+            }
 
             if (LastUsed.ContainsKey(key) && (DateTime.Now - Config.UseDelay) < LastUsed[key])
             {
@@ -139,7 +139,20 @@ namespace Server.Gumps
             m_Owner = owner;
             m_Mobiles = list;
 
-            Initialize(page);
+            if (m_Mobiles.Count == 1)
+            {
+                Mobile m = m_Mobiles[0];
+                m.SendGump(new ConvokedGump(owner));
+                object[] arg = new object[] { m };
+                Timer.DelayCall(TimeSpan.FromMinutes(2.0), new TimerStateCallback(CloseConvokedGump), arg);
+
+                owner.SendMessage(68, "Invitation sent to {0}.", m.Name);
+                LastUsed[owner.Serial.Value] = DateTime.Now;
+            }
+            else
+            {
+                Initialize(page);
+            }
         }
 
         public static List<Mobile> BuildList(Mobile owner, string filter)
