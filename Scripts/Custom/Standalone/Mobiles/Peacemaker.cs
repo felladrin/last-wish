@@ -1,8 +1,8 @@
 /*_____________________________________   __________________________________
 ./|       +         .         :      * \./                                  |\.
-|||.        *     :        +--------+   :  ___|=======================|___  |||
-||| : *  .    .  /\  +     |Hegemony| . :  \  |       Written By      |  /  |||
-|||    . .      /&&\   .   +--------+   :   > |       Felladrin       | <   |||
+|||.        *     :   +-------------+   :  ___|=======================|___  |||
+||| : *  .    .  /\   |Ultima Online| . :  \  |       Written By      |  /  |||
+|||    . .      /&&\  +-------------+   :   > |       Felladrin       | <   |||
 |||  +      *  /&&&&\  . .    __  __|   :  /__|=======================|__\  |||
 |||      .    /&&&&&&\   /\  [::][::]   :                                   |||
 |||     *    /&&&&&&&&\ /&&\ \-=-=-=/   :                                   |||
@@ -14,13 +14,13 @@
 ||| |-=-=-=-=-=|:::::::| ////|::::::|   :                                   |||
 ||| |:[]:[]:[]:|=============|:[]:::|   :                                   |||
 ||| |::::::::::|=|=|=|=|=|=|=|::::::|   :                                   |||
-||| |::+----+::|:::::::::::::|::::::|   :        Created: 08/07/2007        |||
+||| |::+----+::|:::::::::::::|::::::|   :        Created: 2007-07-08        |||
 ||| |::|\XX/|::|:::::::::::::|::::::|   :                                   |||
-||| |::|XXXX|::|:::::::::::::|::::::|   :        Updated: 04/08/2013        |||
+||| |::|XXXX|::|:::::::::::::|::::::|   :        Updated: 2015-12-20        |||
 ||| |::|/XX\|::|____________/._.._.._\  :                                   |||
 |||____________________________________ : __________________________________|||
 ||/====================================\:/==================================\||
-''-----------------------------------'___'---------------------------------''
+''-----------------------------------'___'----------------------------------''
 */
 
 using Server.Items;
@@ -30,8 +30,7 @@ namespace Server.Mobiles
     [CorpseName("the corpse of a peacemaker")]
     public class BasePeacemaker : BaseCreature
     {
-        public BasePeacemaker(AIType aiType, int rangeFight)
-            : base(aiType, FightMode.Closest, 10, rangeFight, 0.2, 0.4)
+        public BasePeacemaker(AIType aiType, int rangeFight) : base(aiType, FightMode.Closest, 10, rangeFight, 0.2, 0.4)
         {
             Title = "the peacemaker";
 
@@ -77,17 +76,43 @@ namespace Server.Mobiles
 
             PackGold(100, 200);
         }
+        
+        public override bool AlwaysAttackable{ get { return true; } }
+        
+        public override void AggressiveAction( Mobile aggressor, bool criminal )
+		{
+        	base.AggressiveAction( aggressor, criminal );
+        	aggressor.Criminal = true;
+        }
 
         public override double WeaponAbilityChance { get { return 0.7; } }
 
         public override bool IsEnemy(Mobile m)
         {
-            if (m.Combatant == null || (m is BaseCreature && !((BaseCreature)m).AlwaysMurderer && !m.Criminal) || m is PlayerMobile || m is BasePeacemaker)
-            {
-                return false;
-            }
+        	if (m is BasePeacemaker || m is BaseVendor)
+        		return false;
+        	
+        	if (m.Criminal)
+        		return true;
+        	
+			var baseCreature = m as BaseCreature;
+        	if (baseCreature != null)
+        	{
+        		if (baseCreature.Karma < 0 && baseCreature.FightMode != FightMode.Aggressor && !baseCreature.Controlled)
+        			return true;
+        		
+        		if (baseCreature.AlwaysMurderer)
+        			return true;
+        	}
+        	
+			var playerMobile = m as PlayerMobile;
+        	if (playerMobile != null)
+        	{
+        		if (playerMobile.ShortTermMurders > 0)
+        			return true;
+        	}
 
-            return true;
+            return false;
         }
 
         public override bool HandlesOnSpeech(Mobile from)
@@ -102,47 +127,47 @@ namespace Server.Mobiles
                 if (e.Speech.ToLower().Contains("guard") || e.Speech.ToLower().Contains("peacemaker") || e.Speech.ToLower().Contains("help"))
                 {
                     this.Direction = GetDirectionTo(e.Mobile);
-                    if (e.Mobile.Combatant is BaseVendor || e.Mobile.Combatant is BasePeacemaker || e.Mobile.Combatant is PlayerMobile)
+                    if (IsEnemy(e.Mobile.Combatant))
                     {
-                        this.Warmode = false;
-                        this.Combatant = null;
+                    	this.Say(speech[Utility.Random(speech.Length)]);
+                        this.Warmode = true;
+                        this.Combatant = e.Mobile.Combatant;
                     }
-                    else if (e.Mobile.Combatant == null)
+                    else if (IsEnemy(e.Mobile))
                     {
-                        this.Warmode = false;
-                        this.Combatant = null;
+                    	this.Say(speech[Utility.Random(speech.Length)]);
+                        this.Warmode = true;
+                        this.Combatant = e.Mobile;
                     }
                     else
                     {
-                        this.Say(speech[Utility.Random(speech.Length)]);
-                        this.Warmode = true;
-                        this.Combatant = e.Mobile.Combatant;
+                    	this.Emote("looks around");
+                        this.Warmode = false;
+                        this.Combatant = null;
                     }
                 }
                 base.OnSpeech(e);
             }
         }
 
-        public override bool BardImmune { get { return true; } }
-
         private static string[] speech = new string[]
-		{
-			"To the fight!",
-			"To arms!",
-			"Attack!",
-			"The battle is on!",
-			"To your weapons!",
-			"I have my eye on my enemy!",
-			"Time to die!",
-			"Nothing walks away!",
-			"I have sight of my enemy!",
-			"You will not prevail!",
-			"To my side!",
-			"We must defend our land!",
-			"Fight for our people!",
-			"I see them!",
-			"Destroy them all!"
-		};
+        {
+            "To the fight!",
+            "To arms!",
+            "Attack!",
+            "The battle is on!",
+            "To your weapons!",
+            "I have my eye on my enemy!",
+            "Time to die!",
+            "Nothing walks away!",
+            "I have sight of my enemy!",
+            "You will not prevail!",
+            "To my side!",
+            "We must defend our land!",
+            "Fight for our people!",
+            "I see them!",
+            "Destroy them all!"
+        };
 
         #region Serialization
         public BasePeacemaker(Serial serial) : base(serial) { }
@@ -154,8 +179,7 @@ namespace Server.Mobiles
     public class FighterPeacemaker : BasePeacemaker
     {
         [Constructable]
-        public FighterPeacemaker()
-            : base(AIType.AI_Melee, 1)
+        public FighterPeacemaker() : base(AIType.AI_Melee, 1)
         {
             SetStr(220, 300);
             SetDex(40, 60);
@@ -198,8 +222,7 @@ namespace Server.Mobiles
     public class ArcherPeacemaker : BasePeacemaker
     {
         [Constructable]
-        public ArcherPeacemaker()
-            : base(AIType.AI_Archer, 8)
+        public ArcherPeacemaker() : base(AIType.AI_Archer, 8)
         {
             SetStr(70, 90);
             SetDex(100, 150);
@@ -219,8 +242,7 @@ namespace Server.Mobiles
 
             Container pack = new Backpack();
             pack.Movable = false;
-            Arrow arrows = new Arrow(50);
-            pack.DropItem(arrows);
+            pack.DropItem(new Arrow(50));
 
             SetSkill(SkillName.Tactics, 70.1, 95.0);
             SetSkill(SkillName.Archery, 70.1, 100.0);
@@ -228,7 +250,6 @@ namespace Server.Mobiles
             SetSkill(SkillName.MagicResist, 80.1, 110.0);
             SetSkill(SkillName.Macing, 75.1, 100.0);
             SetSkill(SkillName.Wrestling, 65.1, 100.0);
-            // SetSkill(SkillName.DetectHidden, 70.1, 100.0);
             SetSkill(SkillName.Healing, 65.1, 75.0);
             SetSkill(SkillName.Anatomy, 80.1, 90.0);
         }
@@ -243,8 +264,7 @@ namespace Server.Mobiles
     public class MagePeacemaker : BasePeacemaker
     {
         [Constructable]
-        public MagePeacemaker()
-            : base(AIType.AI_Mage, 5)
+        public MagePeacemaker() : base(AIType.AI_Mage, 5)
         {
             SetStr(40, 60);
             SetDex(40, 60);
