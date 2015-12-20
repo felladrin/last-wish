@@ -28,7 +28,7 @@ namespace Server.Custom
             
             while (m.SkillsTotal > m.SkillsCap)
             {
-            	double diff = (m.SkillsTotal - m.SkillsCap) / 10;	
+            	double diff = ((m.SkillsTotal - m.SkillsCap) / 10) + 1;
             	
             	if (skills[SkillName.Focus].Base > 0)
             	{
