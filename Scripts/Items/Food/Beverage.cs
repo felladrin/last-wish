@@ -834,7 +834,30 @@ namespace Server.Items
 					}
 				}
 			}
-		}
+            else if (targ is StaticTarget) // Added to make it possible to fill containers from static tiles.
+            {
+                StaticTarget src = (StaticTarget)targ;
+
+                if (src == null)
+                    return;
+
+                if (src.ItemID >= 2881 && src.ItemID <= 2884 || src.ItemID == 3707 || src.ItemID == 5453 || src.ItemID >= 13549 && src.ItemID <= 13608)
+                {
+                    if (!from.InRange(src.Location, 2) || !from.InLOS(src))
+                    {
+                        from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 1019045); // I can't reach that.
+                        return;
+                    }
+
+                    this.Content = BeverageType.Water;
+                    this.Poison = null;
+                    this.Poisoner = null;
+                    this.Quantity = this.MaxQuantity;
+
+                    from.SendLocalizedMessage(1010089); // You fill the container with water.
+                }
+            }
+        }
 
 		private static int[] m_SwampTiles = new int[]
 			{
