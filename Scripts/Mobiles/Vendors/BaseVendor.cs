@@ -47,6 +47,14 @@ namespace Server.Mobiles
 		public virtual NpcGuild NpcGuild { get { return NpcGuild.None; } }
 
 		public override bool IsInvulnerable { get { return false; } }
+		
+		public override bool AlwaysAttackable{ get { return true; } }
+        
+        public override void AggressiveAction( Mobile aggressor, bool criminal )
+		{
+        	base.AggressiveAction( aggressor, criminal );
+        	aggressor.Criminal = true;
+        }
 
 		public virtual DateTime NextTrickOrTreat { get { return m_NextTrickOrTreat; } set { m_NextTrickOrTreat = value; } }
 
