@@ -19,10 +19,12 @@ namespace Server.Gumps
         public static void Initialize()
         {
             CommandSystem.Register("Scout", AccessLevel.Counselor, new CommandEventHandler(ScoutList_OnCommand));
+            CommandSystem.Register("GoTo", AccessLevel.Counselor, new CommandEventHandler(ScoutList_OnCommand));
         }
 
         [Usage("Scout")]
-        [Description("Lists all connected clients. Optionally filters results by name.")]
+        [Aliases("GoTo")]
+        [Description("Teleports to a player position.")]
         private static void ScoutList_OnCommand(CommandEventArgs e)
         {
             e.Mobile.SendGump(new ScoutGump(e.Mobile, e.ArgString));
@@ -116,7 +118,15 @@ namespace Server.Gumps
             m_Owner = owner;
             m_Mobiles = list;
 
-            Initialize(page);
+            if (m_Mobiles.Count == 1)
+            {
+                Mobile m = m_Mobiles[0];
+                owner.MoveToWorld(m.Location, m.Map);
+            }
+            else
+            {
+                Initialize(page);
+            }
         }
 
         public static List<Mobile> BuildList(Mobile owner, string filter)
