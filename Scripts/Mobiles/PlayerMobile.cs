@@ -4553,10 +4553,10 @@ namespace Server.Mobiles
 
         public override TimeSpan GetLogoutDelay()
         {
-            if (Young || BedrollLogout || TestCenter.Enabled)
+            // if (Young || BedrollLogout || TestCenter.Enabled)
                 return TimeSpan.Zero;
 
-            return base.GetLogoutDelay();
+            // return base.GetLogoutDelay();
         }
 
         private DateTime m_LastYoungMessage = DateTime.MinValue;
