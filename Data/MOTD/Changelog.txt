@@ -18,6 +18,16 @@
 // will not be displayed in-game. Entries with fewer
 // than three lines will not be displayed in-game.
 
+[*]12/20/2015
+Victor
+- Added earrings and necklaces to loots.
+- Allowed Ship placement in Ilshenar and Malas.
+- Allowed water pitcher refill from any water source.
+- Set NPC Vendors to greet players close-by.
+- Improved the [convoke filter system.
+- Removed log out delay.
+- Lowered Gambling Stone costs.
+
 [*]12/19/2015
 Victor
 - Added command [P to talk to the party.
