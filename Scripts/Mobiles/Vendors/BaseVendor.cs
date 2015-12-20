@@ -36,7 +36,7 @@ namespace Server.Mobiles
 
 		public override bool CanTeach { get { return true; } }
 
-		public override bool BardImmune { get { return true; } }
+		public override bool BardImmune { get { return false; } }
 
 		public override bool PlayerRangeSensitive { get { return true; } }
 
@@ -46,7 +46,7 @@ namespace Server.Mobiles
 
 		public virtual NpcGuild NpcGuild { get { return NpcGuild.None; } }
 
-		public override bool IsInvulnerable { get { return true; } }
+		public override bool IsInvulnerable { get { return false; } }
 
 		public virtual DateTime NextTrickOrTreat { get { return m_NextTrickOrTreat; } set { m_NextTrickOrTreat = value; } }
 
