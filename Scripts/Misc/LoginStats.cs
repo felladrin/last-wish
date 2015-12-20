@@ -2,11 +2,10 @@ using Server.Network;
 
 namespace Server.Misc
 {
-    public class LoginStats
+    public static class LoginStats
     {
         public static void Initialize()
         {
-            // Register our event handler
             EventSink.Login += new LoginEventHandler(EventSink_Login);
         }
 
@@ -24,10 +23,6 @@ namespace Server.Misc
                 userCount, userCount == 1 ? "" : "s",
                 itemCount, itemCount == 1 ? "" : "s",
                 mobileCount, mobileCount == 1 ? "" : "s");
-
-            // Last Wish mod to make individual skillcap 120.
-            foreach (Skill skill in m.Skills)
-                skill.Cap = 120;
         }
     }
 }

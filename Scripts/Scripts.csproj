@@ -195,6 +195,7 @@
     <Compile Include="Custom\Standalone\Addons\Hex\hex_WaterfallPondAddon.cs" />
     <Compile Include="Custom\Standalone\Addons\Kowgan\TvTArenaAddon.cs" />
     <Compile Include="Custom\Standalone\Addons\Kowgan\TvTArenaLobbyAddon.cs" />
+    <Compile Include="Custom\Standalone\Automatic Systems\SetSkillsCap.cs" />
     <Compile Include="Custom\Standalone\Commands\Player\PartyChat.cs" />
     <Compile Include="Custom\Standalone\Commands\Player\VoiceChat.cs" />
     <Compile Include="Custom\Standalone\Items\MailBox.cs" />

@@ -674,11 +674,6 @@ namespace Server.Misc
 
 			newChar.Hunger = 18;
             newChar.Thirst = 12;
-			newChar.Skills.Cap = 12000;
-
-            // Last Wish mod to make individual skillcap 120.
-            foreach (Skill skill in newChar.Skills)
-                skill.Cap = 120;
 
             bool young = false;
 
