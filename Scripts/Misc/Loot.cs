@@ -171,8 +171,11 @@ namespace Server
 		private static Type[] m_JewelryTypes = new Type[]
 			{
 				typeof( GoldRing ),				typeof( GoldBracelet ),
-				typeof( SilverRing ),			typeof( SilverBracelet )
-			};
+				typeof( SilverRing ),			typeof( SilverBracelet ),
+                typeof( GoldEarrings ),         typeof( SilverEarrings ),
+                typeof( GoldNecklace ),         typeof( SilverNecklace ),
+                typeof( GoldBeadNecklace ),     typeof( SilverBeadNecklace )
+            };
 
 		public static Type[] JewelryTypes{ get{ return m_JewelryTypes; } }
 
