@@ -99,9 +99,46 @@ namespace Server.Mobiles
 					info.PriceScalar = priceScalar;
 			}
 		}
-		#endregion
+        #endregion
 
-		private class BulkOrderInfoEntry : ContextMenuEntry
+        #region Felladrin's edit to make vendors greet players.
+        private Serial lastCustomerSerial;
+
+        private DateTime lastGreetTime;
+
+        private static TimeSpan greetInterval = TimeSpan.FromMinutes(5);
+
+        public override void OnMovement(Mobile m, Point3D oldLocation)
+        {
+            if (m is PlayerMobile && m.Alive && !m.Hidden && InLOS(m) && InRange(m, 4) && !Hidden && !Squelched)
+            {
+                Direction = GetDirectionTo(m.Location);
+
+                if ((lastCustomerSerial == null || lastCustomerSerial != m.Serial) && (lastGreetTime == null || lastGreetTime < DateTime.Now - greetInterval))
+                {
+                    Say(Greetings[Utility.Random(Greetings.Length)]);
+                    lastCustomerSerial = m.Serial;
+                    lastGreetTime = DateTime.Now;
+                }
+            }
+        }
+
+        private String[] Greetings = new String[]
+        {
+            "Welcome, friend. Looking for something in particular?",
+            "Hello.",
+            "Hi!",
+            "Heya!",
+            "Greetings. May I help you?",
+            "Oh! What can I do for ya?",
+            "G'day!",
+            "Hello there!",
+            "A costumer, finally!",
+            "Greetings."
+        };
+        #endregion
+
+        private class BulkOrderInfoEntry : ContextMenuEntry
 		{
 			private Mobile m_From;
 			private BaseVendor m_Vendor;
