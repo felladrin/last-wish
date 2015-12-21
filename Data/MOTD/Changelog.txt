@@ -27,6 +27,9 @@ Victor
 - Improved the [convoke filter system.
 - Removed log out delay.
 - Lowered Gambling Stone costs.
+- Vendors are not invulnerable anymore. But attacking them makes you criminal.
+- Improved Peacemakers artificial intelligence.
+- Total skill cap was set back to 700.
 
 [*]12/19/2015
 Victor
