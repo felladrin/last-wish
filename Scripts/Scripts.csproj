@@ -43,6 +43,8 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <UseVSHostingProcess>false</UseVSHostingProcess>
+    <WarningLevel>4</WarningLevel>
+    <Optimize>false</Optimize>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
     <OutputPath>Output\</OutputPath>
@@ -53,6 +55,7 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <UseVSHostingProcess>false</UseVSHostingProcess>
+    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
@@ -3764,13 +3767,14 @@
     <Compile Include="Targets\BladedItemTarget.cs" />
     <Compile Include="Targets\MoveTarget.cs" />
     <Compile Include="Targets\PickMoveTarget.cs" />
+    <Compile Include="Custom\Standalone\Remote Admin Enrichment\CustomRemoteAdminPacketHandlers.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="SpecialSystems\README.TXT" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Server\Server.csproj">
-      <Project>{0b33ceeb-88e1-49a6-8d7d-af6a5a357087}</Project>
+      <Project>{0B33CEEB-88E1-49A6-8D7D-AF6A5A357087}</Project>
       <Name>Server</Name>
     </ProjectReference>
   </ItemGroup>
