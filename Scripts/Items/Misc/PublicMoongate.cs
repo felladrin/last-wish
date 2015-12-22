@@ -36,7 +36,6 @@ namespace Server.Items
 
 		public override bool OnMoveOver( Mobile m )
 		{
-			// Changed so criminals are not blocked by it.
 			if ( m.Player )
 				UseGate( m );
 
@@ -56,12 +55,7 @@ namespace Server.Items
 
 		public bool UseGate( Mobile m )
 		{
-			if ( m.Criminal )
-			{
-				m.SendLocalizedMessage( 1005561, "", 0x22 ); // Thou'rt a criminal and cannot escape so easily.
-				return false;
-			}
-			else if ( SpellHelper.CheckCombat( m ) )
+			if ( SpellHelper.CheckCombat( m ) )
 			{
 				m.SendLocalizedMessage( 1005564, "", 0x22 ); // Wouldst thou flee during the heat of battle??
 				return false;
@@ -443,10 +437,6 @@ namespace Server.Items
 			else if ( Factions.Sigil.ExistsOn( m_Mobile ) && list.Map != Factions.Faction.Facet )
 			{
 				m_Mobile.SendLocalizedMessage( 1019004 ); // You are not allowed to travel there.
-			}
-			else if ( m_Mobile.Criminal )
-			{
-				m_Mobile.SendLocalizedMessage( 1005561, "", 0x22 ); // Thou'rt a criminal and cannot escape so easily.
 			}
 			else if ( SpellHelper.CheckCombat( m_Mobile ) )
 			{
