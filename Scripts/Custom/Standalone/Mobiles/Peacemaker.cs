@@ -16,7 +16,7 @@
 ||| |::::::::::|=|=|=|=|=|=|=|::::::|   :                                   |||
 ||| |::+----+::|:::::::::::::|::::::|   :        Created: 2007-07-08        |||
 ||| |::|\XX/|::|:::::::::::::|::::::|   :                                   |||
-||| |::|XXXX|::|:::::::::::::|::::::|   :        Updated: 2015-12-20        |||
+||| |::|XXXX|::|:::::::::::::|::::::|   :        Updated: 2015-12-21        |||
 ||| |::|/XX\|::|____________/._.._.._\  :                                   |||
 |||____________________________________ : __________________________________|||
 ||/====================================\:/==================================\||
@@ -77,6 +77,7 @@ namespace Server.Mobiles
             PackGold(100, 200);
         }
         
+        #region Mod to allow players to kill them.
         public override bool AlwaysAttackable{ get { return true; } }
         
         public override void AggressiveAction( Mobile aggressor, bool criminal )
@@ -84,6 +85,15 @@ namespace Server.Mobiles
         	base.AggressiveAction( aggressor, criminal );
         	aggressor.Criminal = true;
         }
+        
+        public override bool OnBeforeDeath()
+        {
+			if (Combatant is PlayerMobile)
+        		Combatant.Kills += 1;
+        	
+        	return base.OnBeforeDeath();
+        }
+        #endregion
 
         public override double WeaponAbilityChance { get { return 0.7; } }
 
@@ -122,12 +132,13 @@ namespace Server.Mobiles
 
         public override void OnSpeech(SpeechEventArgs e)
         {
-            if (!e.Handled && e.Mobile.InRange(this.Location, 18))
+        	if (!e.Handled && e.Mobile.InRange(this.Location, 18))
             {
-                if (e.Speech.ToLower().Contains("guard") || e.Speech.ToLower().Contains("peacemaker") || e.Speech.ToLower().Contains("help"))
+                if (e.Speech.ToLower().Contains("guard") || e.Speech.ToLower().Contains("help") || e.Speech.ToLower().Contains("peacemaker"))
                 {
                     this.Direction = GetDirectionTo(e.Mobile);
-                    if (IsEnemy(e.Mobile.Combatant))
+                    
+                    if (e.Mobile.Combatant != null && IsEnemy(e.Mobile.Combatant))
                     {
                     	this.Say(speech[Utility.Random(speech.Length)]);
                         this.Warmode = true;
@@ -146,7 +157,6 @@ namespace Server.Mobiles
                         this.Combatant = null;
                     }
                 }
-                base.OnSpeech(e);
             }
         }
 
