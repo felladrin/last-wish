@@ -18,6 +18,14 @@
 // will not be displayed in-game. Entries with fewer
 // than three lines will not be displayed in-game.
 
+[*]12/21/2015
+Victor
+- Forum gump now opens on login.
+- Spears can now be used with one hand.
+- Fixed crash when calling guards/peacemakers.
+- Criminals can now use the public moongates.
+- Killing a vendor now increases the Kills count.
+
 [*]12/20/2015
 Victor
 - Added earrings and necklaces to loots.
