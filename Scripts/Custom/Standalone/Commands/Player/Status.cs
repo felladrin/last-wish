@@ -28,7 +28,6 @@ namespace Server.Gumps
 
         private static void Status_OnLogin(LoginEventArgs e)
         {
-            e.Mobile.CloseGump(typeof(StatusGump));
             e.Mobile.SendGump(new StatusGump(e.Mobile, 0, null, null));
         }
 
