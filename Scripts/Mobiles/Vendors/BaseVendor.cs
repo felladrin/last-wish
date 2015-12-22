@@ -48,6 +48,7 @@ namespace Server.Mobiles
 
 		public override bool IsInvulnerable { get { return false; } }
 		
+		#region Mod to allow players to kill them.
 		public override bool AlwaysAttackable{ get { return true; } }
         
         public override void AggressiveAction( Mobile aggressor, bool criminal )
@@ -55,6 +56,15 @@ namespace Server.Mobiles
         	base.AggressiveAction( aggressor, criminal );
         	aggressor.Criminal = true;
         }
+        
+        public override bool OnBeforeDeath()
+        {
+			if (Combatant is PlayerMobile)
+        		Combatant.Kills += 1;
+        	
+        	return base.OnBeforeDeath();
+        }
+        #endregion
 
 		public virtual DateTime NextTrickOrTreat { get { return m_NextTrickOrTreat; } set { m_NextTrickOrTreat = value; } }
 
