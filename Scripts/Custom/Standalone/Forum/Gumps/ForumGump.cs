@@ -7,6 +7,16 @@ namespace Server.Forums
 {
     public class ForumGump : Gump
     {
+    	public static void Initialize()
+        {
+            EventSink.Login += new LoginEventHandler(Open_OnLogin);
+        }
+    	
+    	private static void Open_OnLogin(LoginEventArgs e)
+        {
+            e.Mobile.SendGump(new ForumGump(e.Mobile, 0));
+        }
+    	
         public enum Buttons
         {
             CreditsButton = 11,
