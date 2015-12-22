@@ -1,6 +1,6 @@
-﻿//   ___|========================|___   Set Skill Cap - Semantic Version: 1.0.0
+﻿//   ___|========================|___   Set Skill Cap - Semantic Version: 1.0.1
 //   \  |  Written by Felladrin  |  /   Created at: 2015-12-20 (Felladrin)
-//    > |     December 2015      | <    Updated at: 2015-12-20 (Felladrin)
+//    > |     December 2015      | <    Updated at: 2015-12-21 (Felladrin)
 //   /__|========================|__\   Description: Sets the total and individual skill cap.
 
 namespace Server.Custom
@@ -19,6 +19,9 @@ namespace Server.Custom
         {
             Mobile m = args.Mobile;
             
+            if (m.AccessLevel > AccessLevel.Player)
+            	return;
+            
             Skills skills = m.Skills;
 
             foreach (Skill skill in m.Skills)
@@ -34,9 +37,9 @@ namespace Server.Custom
             
             m.SkillsCap = TotalSkillCap;
             
-            while (m.SkillsTotal > m.SkillsCap)
+            for (int j = 0; (m.SkillsTotal > m.SkillsCap) && (j < skills.Length); ++j)
             {
-                double diff = ((m.SkillsTotal - m.SkillsCap) / 10) + 1;
+            	double diff = ((m.SkillsTotal - m.SkillsCap) / 10) + 1;
                 
                 if (skills[SkillName.Focus].Base > 0)
                 {
