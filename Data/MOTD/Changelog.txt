@@ -18,6 +18,10 @@
 // will not be displayed in-game. Entries with fewer
 // than three lines will not be displayed in-game.
 
+[*]12/23/2015
+Victor
+- Skill cap set to 1200.
+
 [*]12/21/2015
 Victor
 - Forum gump now opens on login.
