@@ -3768,6 +3768,8 @@
     <Compile Include="Targets\MoveTarget.cs" />
     <Compile Include="Targets\PickMoveTarget.cs" />
     <Compile Include="Custom\Standalone\Remote Admin Enrichment\CustomRemoteAdminPacketHandlers.cs" />
+    <Compile Include="Custom\Standalone\Addons\TownCenterChristmasTreeAddon.cs" />
+    <Compile Include="Custom\Standalone\Addons\TownCenterChristmasTreeNGAddon.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="SpecialSystems\README.TXT" />
