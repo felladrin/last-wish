@@ -126,7 +126,7 @@ namespace Server.Custom
                 if (NetState.Instances.Count > 0)
                 {
                     op.WriteLine("      <table class='u-full-width'>");
-                    op.WriteLine("         <thead><tr><th>Name</th><th>Title</th><th>Location</th><th>Karma/Fame</th></tr></thead>");
+                    op.WriteLine("         <thead><tr><th>Name</th><th>Title</th><th>Location</th></tr></thead>");
                     op.WriteLine("         <tbody>");
 
                     var index = 0;
@@ -180,14 +180,8 @@ namespace Server.Custom
                         }
                         op.Write(" (");
                         op.Write(m.Map);
-                        op.Write(")</td><td>");
-                        op.Write(m.Karma);
-                        op.Write(" / ");
-                        op.Write(m.Fame);
-                        op.WriteLine("</td></tr>");
+                        op.Write(")</td></tr>");
                     }
-
-                    op.WriteLine("         <tr>");
                     op.WriteLine("         </tbody>");
                     op.WriteLine("      </table>");
                 }
@@ -202,7 +196,6 @@ namespace Server.Custom
                 op.WriteLine("      <b>Active Guilds:</b> {0:n0}<br/>", Statistics.ActiveGuilds);
                 op.WriteLine("      <b>Player Houses:</b> {0:n0}<br/>", Statistics.PlayerHouses);
                 op.WriteLine("      <b>Player Gold:</b> {0:n0}<br/>", Statistics.PlayerGold);
-                // op.WriteLine("      <div style='text-align: right; font-size: small;'>Auto refreshed every {0} seconds.</div>", UpdateIntervalInSeconds);
                 op.WriteLine("   </body>");
                 op.WriteLine("</html>");
             }
