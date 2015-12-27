@@ -18,6 +18,14 @@
 // will not be displayed in-game. Entries with fewer
 // than three lines will not be displayed in-game.
 
+[*]12/27/2015
+Victor
+- Disabled house decay. Your house will be there forever.
+- Pets/summons AI improved, so they will follow you precisely. Also they won't stay on the same tile anymore.
+- Now blue players can perform beneficial actions on non-blues outside Felucca.
+- Improved Interior Decorator and lowered its price. You can buy it from the architect.
+- Disabled veteran rewards.
+
 [*]12/23/2015
 Victor
 - Skill cap set to 1200.
