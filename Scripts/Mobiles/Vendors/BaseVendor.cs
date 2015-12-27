@@ -132,7 +132,7 @@ namespace Server.Mobiles
             {
                 Direction = GetDirectionTo(m.Location);
 
-                if ((lastCustomerSerial == null || lastCustomerSerial != m.Serial) && (lastGreetTime == null || lastGreetTime < DateTime.Now - greetInterval))
+                if ((lastCustomerSerial != m.Serial) && (lastGreetTime < DateTime.Now - greetInterval))
                 {
                     Say(Greetings[Utility.Random(Greetings.Length)]);
                     lastCustomerSerial = m.Serial;
@@ -209,7 +209,7 @@ namespace Server.Mobiles
 		}
 
 		public BaseVendor( string title )
-			: base( AIType.AI_Vendor, FightMode.None, 2, 1, 0.5, 2 )
+            : base( AIType.AI_Vendor, FightMode.None, 2, 1, 0.2, 0.4)
 		{
 			LoadSBInfo();
 
