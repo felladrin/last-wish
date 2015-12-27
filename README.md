@@ -26,9 +26,10 @@ Here's all commands you need to execute in order to have the server ready:
     cd last-wish
     mcs -optimize+ -unsafe -t:exe -out:RunUO.exe -win32icon:Server/runuo.ico -nowarn:219,414 -d:MONO -recurse:Server/*.cs -reference:System.Runtime.Remoting.dll,OrbServerSDK.dll,UOArchitectInterface.dll
     cp RunUO.exe.config.Linux RunUO.exe.config
+    chmod +x cron.sh
     mono RunUO.exe
 
-If you want to run it as a background task use `nohup mono RunUO.exe >> console.log &` . Then, before logging out, type: `disown` to detach the proccess from the terminal.
+If you want to manually run it as a background task use `nohup mono RunUO.exe >> console.log &` . Then, before logging out, type: `disown` to detach the proccess from the terminal. But the best option is setup a Cron job to run `cron.sh` periodically (e.g. every 3 minutes). The cron.sh is a simple bash script that checks if RunUO.exe is already running, and if not, it starts it.
 
 ## First administrative actions to take in-game
 
