@@ -1,406 +1,314 @@
-// Homeowner Tools editions by Djervy.
-using Server;
 using Server.Network;
 using Server.Multis;
-using Server.Spells;
 using Server.Gumps;
 using Server.Targeting;
 
 namespace Server.Items
 {
     public enum DecorateCommand
-    {
-        None,
-        Turn,
-        Up,
-        Down,
-        North,
-        East,
-        South,
-        West,
-        Lock,
-        Secure,
-        Release,
-        Trash,
-        Close
-    }
+	{
+		None,
+		Turn,
+		Up,
+		Down
+	}
 
-    public class InteriorDecorator : Item
-    {
-        private DecorateCommand m_Command;
+	public class InteriorDecorator : Item
+	{
+		private DecorateCommand m_Command;
 
-        [CommandProperty(AccessLevel.GameMaster)]
-        public DecorateCommand Command
-        {
-            get { return m_Command; }
-            set
-            {
-                m_Command = value;
-                InvalidateProperties();
-            }
-        }
+		[CommandProperty( AccessLevel.GameMaster )]
+		public DecorateCommand Command{ get{ return m_Command; } set{ m_Command = value; InvalidateProperties(); } }
 
-        [Constructable]
-        public InteriorDecorator()
-            : base(0x1EBA)
-        {
-            Name = "Homeowner Tools";
-            Weight = 1.0;
-        }
+		[Constructable]
+		public InteriorDecorator() : base( 0xFC1 )
+		{
+			Weight = 1.0;
+			LootType = LootType.Blessed;
+		}
 
-        public InteriorDecorator(Serial serial)
-            : base(serial)
-        {
-        }
+		public override int LabelNumber{ get{ return 1041280; } } // an interior decorator
 
-        public override void GetProperties(ObjectPropertyList list)
-        {
-            list.Add(Name);
-            list.Add("For Easier Home Management");
-        }
+		public InteriorDecorator( Serial serial ) : base( serial )
+		{
+		}
 
-        public override void Serialize(GenericWriter writer)
-        {
-            base.Serialize(writer);
-            writer.Write(0); // version
-        }
+		public override void GetProperties( ObjectPropertyList list )
+		{
+			base.GetProperties( list );
 
-        public override void Deserialize(GenericReader reader)
-        {
-            base.Deserialize(reader);
-            reader.ReadInt();
-        }
+			if ( m_Command != DecorateCommand.None )
+				list.Add( 1018322 + (int)m_Command ); // Turn/Up/Down
+		}
 
-        public override void OnDoubleClick(Mobile from)
-        {
-            if (!CheckUse(this, from))
-                return;
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
 
-            from.CloseGump(typeof(InternalGump));
-            from.SendGump(new InternalGump(this));
-        }
+			writer.Write( (int) 0 ); // version
+		}
 
-        public static bool InHouse(Mobile from)
-        {
-            BaseHouse house = BaseHouse.FindHouseAt(from);
-            return (house != null && house.IsCoOwner(from));
-        }
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
 
-        public static bool CheckUse(InteriorDecorator tool, Mobile from)
-        {
-            if (tool == null)
-                return false;
-            
-            if (!InHouse(from))
-            {
-                from.SendLocalizedMessage(502092); // You must be in your house to do this.
-                return false;
-            }
+			int version = reader.ReadInt();
+		}
 
-            return true;
-        }
+		public override void OnDoubleClick( Mobile from )
+		{
+			if ( !CheckUse( this, from ) )
+				return;
+			
+			if ( from.FindGump( typeof( InteriorDecorator.InternalGump ) ) == null )
+				from.SendGump( new InternalGump( this ) );
 
-        private class InternalGump : Gump
-        {
-            private InteriorDecorator m_Decorator;
+			if ( m_Command != DecorateCommand.None )
+				from.Target = new InternalTarget( this );
+		}
 
-            public InternalGump(InteriorDecorator decorator)
-                : base(150, 50)
-            {
-                m_Decorator = decorator;
+		public static bool InHouse( Mobile from )
+		{
+			BaseHouse house = BaseHouse.FindHouseAt( from );
 
-                AddBackground(0, 0, 170, 555, 2600);
+			return ( house != null && house.IsCoOwner( from ) );
+		}
 
-                AddButton(40, 45, 2151, 2152, 1, GumpButtonType.Reply, 0);
-                AddHtmlLocalized(80, 50, 70, 40, 1018323, false, false); // Turn
+		public static bool CheckUse( InteriorDecorator tool, Mobile from )
+		{
+			/*if ( tool.Deleted || !tool.IsChildOf( from.Backpack ) )
+				from.SendLocalizedMessage( 1042001 ); // That must be in your pack for you to use it.
+			else*/
+			if ( !InHouse( from ) )
+				from.SendLocalizedMessage( 502092 ); // You must be in your house to do this.
+			else
+				return true;
 
-                AddButton(40, 85, 2151, 2152, 2, GumpButtonType.Reply, 0);
-                AddHtmlLocalized(80, 90, 70, 40, 1018324, false, false); // Up
+			return false;
+		}
 
-                AddButton(40, 125, 2151, 2152, 3, GumpButtonType.Reply, 0);
-                AddHtmlLocalized(80, 130, 70, 40, 1018325, false, false); // Down
+		private class InternalGump : Gump
+		{
+			private InteriorDecorator m_Decorator;
 
-                AddButton(40, 165, 2151, 2152, 4, GumpButtonType.Reply, 0);
-                AddHtmlLocalized(80, 170, 70, 40, 1075389, false, false); // north
+			public InternalGump( InteriorDecorator decorator ) : base( 150, 50 )
+			{
+				m_Decorator = decorator;
 
-                AddButton(40, 205, 2151, 2152, 5, GumpButtonType.Reply, 0);
-                AddHtmlLocalized(80, 210, 70, 40, 1075387, false, false); // east
+				AddBackground( 0, 0, 200, 200, 2600 );
 
-                AddButton(40, 245, 2151, 2152, 6, GumpButtonType.Reply, 0);
-                AddHtmlLocalized(80, 250, 70, 40, 1075386, false, false); // south
+				AddButton( 50, 45, ( decorator.Command == DecorateCommand.Turn ? 2154 : 2152 ), 2154, 1, GumpButtonType.Reply, 0 );
+				AddHtmlLocalized( 90, 50, 70, 40, 1018323, false, false ); // Turn
 
-                AddButton(40, 285, 2151, 2152, 7, GumpButtonType.Reply, 0);
-                AddHtmlLocalized(80, 290, 70, 40, 1075390, false, false); // west
+				AddButton( 50, 95, ( decorator.Command == DecorateCommand.Up ? 2154 : 2152 ), 2154, 2, GumpButtonType.Reply, 0 );
+				AddHtmlLocalized( 90, 100, 70, 40, 1018324, false, false ); // Up
 
-                AddButton(40, 325, 2151, 2152, 8, GumpButtonType.Reply, 0);
-                AddHtml(80, 330, 70, 40, "Lock", false, false); // lock
+				AddButton( 50, 145, ( decorator.Command == DecorateCommand.Down ? 2154 : 2152 ), 2154, 3, GumpButtonType.Reply, 0 );
+				AddHtmlLocalized( 90, 150, 70, 40, 1018325, false, false ); // Down
+			}
 
-                AddButton(40, 365, 2151, 2152, 9, GumpButtonType.Reply, 0);
-                AddHtml(80, 370, 70, 40, "Secure", false, false); // secure
+			public override void OnResponse( NetState sender, RelayInfo info )
+			{
+				DecorateCommand command = DecorateCommand.None;
 
-                AddButton(40, 405, 2151, 2152, 10, GumpButtonType.Reply, 0);
-                AddHtml(80, 410, 70, 40, "Release", false, false); // release
+				switch ( info.ButtonID )
+				{
+					case 1: command = DecorateCommand.Turn; break;
+					case 2: command = DecorateCommand.Up; break;
+					case 3: command = DecorateCommand.Down; break;
+				}
 
-                AddButton(40, 445, 2151, 2152, 11, GumpButtonType.Reply, 0);
-                AddHtml(80, 450, 70, 40, "Trash", false, false); // trash
+				if ( command != DecorateCommand.None )
+				{
+					m_Decorator.Command = command;
+					sender.Mobile.SendGump( new InternalGump( m_Decorator ) );
+					sender.Mobile.Target = new InternalTarget( m_Decorator );
+				}
+				else
+					Target.Cancel( sender.Mobile );
+			}
+		}
 
-                AddButton(40, 485, 2472, 2472, 12, GumpButtonType.Reply, 0);
-                AddHtml(80, 490, 70, 40, "Close", false, false); // close
-            }
+		private class InternalTarget : Target
+		{
+			private InteriorDecorator m_Decorator;
 
-            public override void OnResponse(NetState sender, RelayInfo info)
-            {
-                Mobile from = sender.Mobile;
+			public InternalTarget( InteriorDecorator decorator ) : base( -1, false, TargetFlags.None )
+			{
+				CheckLOS = false;
 
-                DecorateCommand command = DecorateCommand.None;
+				m_Decorator = decorator;
+			}
 
-                switch (info.ButtonID)
-                {
-                    case 1:
-                        command = DecorateCommand.Turn;
-                        break;
-                    case 2:
-                        command = DecorateCommand.Up;
-                        break;
-                    case 3:
-                        command = DecorateCommand.Down;
-                        break;
-                    case 4:
-                        command = DecorateCommand.North;
-                        break;
-                    case 5:
-                        command = DecorateCommand.East;
-                        break;
-                    case 6:
-                        command = DecorateCommand.South;
-                        break;
-                    case 7:
-                        command = DecorateCommand.West;
-                        break;
-                    case 8:
-                        command = DecorateCommand.Lock;
-                        break;
-                    case 9:
-                        command = DecorateCommand.Secure;
-                        break;
-                    case 10:
-                        command = DecorateCommand.Release;
-                        break;
-                    case 11:
-                        command = DecorateCommand.Trash;
-                        break;
-                    case 12:
-                        command = DecorateCommand.Close;
-                        break;
-                }
+			protected override void OnTargetNotAccessible( Mobile from, object targeted )
+			{
+				OnTarget( from, targeted );
+			}
 
-                if (command == DecorateCommand.Lock)
-                {
-                    int[] commandi = { 0x0023 };
-                    from.DoSpeech("", commandi, 0, 52);
-                }
-                else if (command == DecorateCommand.Secure)
-                {
-                    int[] commandi = { 0x0025 };
-                    from.DoSpeech("", commandi, 0, 52);
-                }
-                else if (command == DecorateCommand.Release)
-                {
-                    int[] commandi = { 0x0024 };
-                    from.DoSpeech("", commandi, 0, 52);
-                }
-                else if (command == DecorateCommand.Trash)
-                {
-                    int[] commandi = { 0x0028 };
-                    from.DoSpeech("", commandi, 0, 52);
-                }
-                else if (command == DecorateCommand.Close)
-                {
-                    from.CloseGump(typeof(InternalGump));
-                }
-                else if (command != DecorateCommand.None)
-                {
-                    m_Decorator.Command = command;
-                    sender.Mobile.Target = new InternalTarget(m_Decorator);
-                }
+			protected override void OnTarget( Mobile from, object targeted )
+			{
+				if ( targeted is Item && InteriorDecorator.CheckUse( m_Decorator, from ) )
+				{
+					BaseHouse house = BaseHouse.FindHouseAt( from );
+					Item item = (Item)targeted;
+					
+					bool isDecorableComponent = false;
 
-                if (command != DecorateCommand.Close)
-                {
-                    from.CloseGump(typeof(InternalGump));
-                    from.SendGump(new InternalGump(m_Decorator));
-                }
-            }
-        }
+					if ( item is AddonComponent || item is AddonContainerComponent || item is BaseAddonContainer )
+					{
+						object addon = null;
+						int count = 0;
 
-        private class InternalTarget : Target
-        {
-            private InteriorDecorator m_Decorator;
+						if ( item is AddonComponent )
+						{
+							AddonComponent component = (AddonComponent) item;
+							count = component.Addon.Components.Count;
+							addon = component.Addon;
+						}
+						else if ( item is AddonContainerComponent )
+						{
+							AddonContainerComponent component = (AddonContainerComponent) item;
+							count = component.Addon.Components.Count;
+							addon = component.Addon;
+						}
+						else if ( item is BaseAddonContainer )
+						{
+							BaseAddonContainer container = (BaseAddonContainer) item;
+							count = container.Components.Count;
+							addon = container;
+						}
 
-            public InternalTarget(InteriorDecorator decorator)
-                : base(-1, false, TargetFlags.None)
-            {
-                CheckLOS = false;
-                m_Decorator = decorator;
-            }
+						if ( count == 1 && Core.SE )
+							isDecorableComponent = true;
 
-            protected override void OnTargetNotAccessible(Mobile from, object targeted)
-            {
-                OnTarget(from, targeted);
-            }
+						if ( m_Decorator.Command == DecorateCommand.Turn )
+						{
+							FlipableAddonAttribute[] attributes = (FlipableAddonAttribute[]) addon.GetType().GetCustomAttributes( typeof( FlipableAddonAttribute ), false );
 
-            protected override void OnTarget(Mobile from, object targeted)
-            {
-                if (targeted is Item && InteriorDecorator.CheckUse(m_Decorator, from))
-                {
-                    BaseHouse house = BaseHouse.FindHouseAt(from);
-                    Item item = (Item)targeted;
+							if ( attributes.Length > 0 )
+								isDecorableComponent = true;
+						}
+					}
 
-                    if (house == null || !house.IsCoOwner(from))
-                    {
-                        from.SendLocalizedMessage(502092); // You must be in your house to do this.
-                    }
-                    else if (item.Parent != null || !house.IsInside(item))
-                    {
-                        from.SendLocalizedMessage(1042270); // That is not in your house.
-                    }
-                    else if (item is VendorRentalContract)
-                    {
-                        from.SendLocalizedMessage(1062491); // You cannot use the house decorator on that object.
-                    }
-                    else
-                    {
-                        switch (m_Decorator.Command)
-                        {
-                            case DecorateCommand.Up:
-                                Up(item, from);
-                                break;
-                            case DecorateCommand.Down:
-                                Down(item, from);
-                                break;
-                            case DecorateCommand.Turn:
-                                Turn(item, from);
-                                break;
-                            case DecorateCommand.North:
-                                North(item, from, house);
-                                break;
-                            case DecorateCommand.East:
-                                East(item, from, house);
-                                break;
-                            case DecorateCommand.South:
-                                South(item, from, house);
-                                break;
-                            case DecorateCommand.West:
-                                West(item, from, house);
-                                break;
-                        }
-                    }
-                }
+					if ( house == null || !house.IsCoOwner( from ) )
+					{
+						from.SendLocalizedMessage( 502092 ); // You must be in your house to do this.
+					}
+					else if ( item.Parent != null || !house.IsInside( item ) )
+					{
+						from.SendLocalizedMessage( 1042270 ); // That is not in your house.
+					}
+					else if ( !house.IsLockedDown( item ) && !house.IsSecure( item ) && !isDecorableComponent )
+					{
+						if ( item is AddonComponent && m_Decorator.Command == DecorateCommand.Up )
+							from.SendLocalizedMessage( 1042274 ); // You cannot raise it up any higher.
+						else if ( item is AddonComponent && m_Decorator.Command == DecorateCommand.Down )
+							from.SendLocalizedMessage( 1042275 ); // You cannot lower it down any further.
+						else
+							from.SendLocalizedMessage( 1042271 ); // That is not locked down.
+					}
+					else if ( item is VendorRentalContract )
+					{
+						from.SendLocalizedMessage( 1062491 ); // You cannot use the house decorator on that object.
+					}
+					else if ( item.TotalWeight + item.PileWeight > 100 )
+					{
+						from.SendLocalizedMessage( 1042272 ); // That is too heavy.
+					}
+					else
+					{
+						switch ( m_Decorator.Command )
+						{
+							case DecorateCommand.Up:	Up( item, from );	break;
+							case DecorateCommand.Down:	Down( item, from );	break;
+							case DecorateCommand.Turn:	Turn( item, from );	break;
+						}
+					}
+				}
+				
+				from.Target = new InternalTarget( m_Decorator );
+			}
+			
+			protected override void OnTargetCancel( Mobile from, TargetCancelType cancelType )
+			{
+				if ( cancelType == TargetCancelType.Canceled )
+					from.CloseGump( typeof( InteriorDecorator.InternalGump ) );
+			}
 
-                from.Target = new InternalTarget(m_Decorator);
-            }
+			private static void Turn( Item item, Mobile from )
+			{
+				if ( item is AddonComponent || item is AddonContainerComponent || item is BaseAddonContainer )
+				{
+					object addon = null;
 
-            private static void Turn(Item item, Mobile from)
-            {
-                FlipableAttribute[] attributes = (FlipableAttribute[])item.GetType().GetCustomAttributes(typeof(FlipableAttribute), false);
+					if ( item is AddonComponent )
+						addon = ((AddonComponent) item).Addon;
+					else if ( item is AddonContainerComponent )
+						addon = ((AddonContainerComponent) item).Addon;
+					else if ( item is BaseAddonContainer )
+						addon = (BaseAddonContainer) item;
 
-                if (attributes.Length > 0)
-                    attributes[0].Flip(item);
-                else
-                    from.SendLocalizedMessage(1042273); // You cannot turn that.
-            }
+					FlipableAddonAttribute[] aAttributes = (FlipableAddonAttribute[]) addon.GetType().GetCustomAttributes( typeof( FlipableAddonAttribute ), false );
 
-            private static void Up(Item item, Mobile from)
-            {
-                int floorZ = GetFloorZ(item);
+					if ( aAttributes.Length > 0 )
+					{
+						aAttributes[ 0 ].Flip( from, (Item) addon );
+						return;
+					}
+				}
 
-                if (floorZ > int.MinValue && item.Z < (floorZ + 15)) // Confirmed : no height checks here
-                    item.Location = new Point3D(item.Location, item.Z + 1);
-                else
-                    from.SendLocalizedMessage(1042274); // You cannot raise it up any higher.
-            }
+				FlipableAttribute[] attributes = (FlipableAttribute[]) item.GetType().GetCustomAttributes( typeof( FlipableAttribute ), false );
 
-            private static void Down(Item item, Mobile from)
-            {
-                int floorZ = GetFloorZ(item);
+				if ( attributes.Length > 0 )
+					attributes[ 0 ].Flip( item );
+				else
+					from.SendLocalizedMessage( 1042273 ); // You cannot turn that.
+			}
 
-                if (floorZ > int.MinValue && item.Z > GetFloorZ(item))
-                    item.Location = new Point3D(item.Location, item.Z - 1);
-                else
-                    from.SendLocalizedMessage(1042275); // You cannot lower it down any further.
-            }
+			private static void Up( Item item, Mobile from )
+			{
+				int floorZ = GetFloorZ( item );
 
-            private static void North(Item item, Mobile from, BaseHouse house)
-            {
-                Point3D m_PointDest = new Point3D(item.X, item.Y - 1, item.Z);
+				if ( floorZ > int.MinValue && item.Z < (floorZ + 15) ) // Confirmed : no height checks here
+					item.Location = new Point3D( item.Location, item.Z + 1 );
+				else
+					from.SendLocalizedMessage( 1042274 ); // You cannot raise it up any higher.
+			}
 
-                if (!SpellHelper.CheckMulti(m_PointDest, from.Map))
-                    from.SendMessage("You cannot move it north any further.");
-                else if (house.IsInside(new Point3D(item.X, item.Y - 1, item.Z), item.ItemData.Height))
-                    item.Y = (item.Y - 1);
-                else
-                    from.SendMessage("You cannot move it north any further.");
-            }
+			private static void Down( Item item, Mobile from )
+			{
+				int floorZ = GetFloorZ( item );
 
-            private static void East(Item item, Mobile from, BaseHouse house)
-            {
-                Point3D m_PointDest = new Point3D(item.X + 1, item.Y, item.Z);
+				if ( floorZ > int.MinValue && item.Z > GetFloorZ( item ) )
+					item.Location = new Point3D( item.Location, item.Z - 1 );
+				else
+					from.SendLocalizedMessage( 1042275 ); // You cannot lower it down any further.
+			}
 
-                if (!SpellHelper.CheckMulti(m_PointDest, from.Map))
-                    from.SendMessage("You cannot move it east any further.");
-                else if (house.IsInside(new Point3D(item.X + 1, item.Y, item.Z), item.ItemData.Height))
-                    item.X = (item.X + 1);
-                else
-                    from.SendMessage("You cannot move it east any further.");
-            }
+			private static int GetFloorZ( Item item )
+			{
+				Map map = item.Map;
 
-            private static void South(Item item, Mobile from, BaseHouse house)
-            {
-                Point3D m_PointDest = new Point3D(item.X, item.Y + 1, item.Z);
+				if ( map == null )
+					return int.MinValue;
 
-                if (!SpellHelper.CheckMulti(m_PointDest, from.Map))
-                    from.SendMessage("You cannot move it south any further.");
-                else if (house.IsInside(new Point3D(item.X, item.Y + 1, item.Z), item.ItemData.Height))
-                    item.Y = (item.Y + 1);
-                else
-                    from.SendMessage("You cannot move it south any further.");
-            }
+				StaticTile[] tiles = map.Tiles.GetStaticTiles( item.X, item.Y, true );
 
-            private static void West(Item item, Mobile from, BaseHouse house)
-            {
-                Point3D m_PointDest = new Point3D(item.X - 1, item.Y, item.Z);
+				int z = int.MinValue;
 
-                if (!SpellHelper.CheckMulti(m_PointDest, from.Map))
-                    from.SendMessage("You cannot move it west any further.");
-                else if (house.IsInside(new Point3D(item.X - 1, item.Y, item.Z), item.ItemData.Height))
-                    item.X = (item.X - 1);
-                else
-                    from.SendMessage("You cannot move it west any further.");
-            }
+				for ( int i = 0; i < tiles.Length; ++i )
+				{
+					StaticTile tile = tiles[i];
+					ItemData id = TileData.ItemTable[tile.ID & TileData.MaxItemValue];
 
-            private static int GetFloorZ(Item item)
-            {
-                Map map = item.Map;
+					int top = tile.Z; // Confirmed : no height checks here
 
-                if (map == null)
-                    return int.MinValue;
+					if ( id.Surface && !id.Impassable && top > z && top <= item.Z )
+						z = top;
+				}
 
-                StaticTile[] tiles = map.Tiles.GetStaticTiles(item.X, item.Y, true);
-
-                int z = int.MinValue;
-
-                for (int i = 0; i < tiles.Length; ++i)
-                {
-                    StaticTile tile = tiles[i];
-                    ItemData id = TileData.ItemTable[tile.ID & TileData.MaxItemValue];
-
-                    int top = tile.Z; // Confirmed : no height checks here
-
-                    if (id.Surface && !id.Impassable && top > z && top <= item.Z)
-                        z = top;
-                }
-
-                return z;
-            }
-        }
-    }
+				return z;
+			}
+		}
+	}
 }
