@@ -2559,10 +2559,7 @@ namespace Server.Mobiles
 
         public override bool CheckShove(Mobile shoved)
         {
-            if (m_IgnoreMobiles || TransformationSpellHelper.UnderTransformation(shoved, typeof(WraithFormSpell)))
-                return true;
-            else
-                return base.CheckShove(shoved);
+            return true;
         }
 
         protected override void OnMapChange(Map oldMap)
