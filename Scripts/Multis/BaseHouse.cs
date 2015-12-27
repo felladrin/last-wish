@@ -51,7 +51,7 @@ namespace Server.Multis
 		}
 		#endregion
 
-        public const bool DecayEnabled = false;
+        public static bool DecayEnabled = false;
 
 		public static void Decay_OnTick()
 		{
