@@ -218,7 +218,6 @@
     <Compile Include="Custom\Standalone\Automatic Systems\AutoIgniteLights.cs" />
     <Compile Include="Custom\Requires Scripts Changes\Automatic Systems\AutoSheatheWeapon.cs" />
     <Compile Include="Custom\Standalone\Automatic Systems\AutoSpeedBooster.cs" />
-    <Compile Include="Custom\Standalone\Automatic Systems\ConsoleCommands.cs" />
     <Compile Include="Custom\Standalone\Automatic Systems\DisconnectPet.cs" />
     <Compile Include="Custom\Standalone\Automatic Systems\Interest System.cs" />
     <Compile Include="Custom\Standalone\Automatic Systems\Kudos.cs" />
