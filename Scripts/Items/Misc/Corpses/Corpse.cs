@@ -1289,6 +1289,8 @@ namespace Server.Items
 				Hue = 0;
 				ProcessDelta();
 
+                Titles.AwardKarma( from, -50, true );
+
 				if ( IsCriminalAction( from ) )
 					from.CriminalAction( true );
 			}
