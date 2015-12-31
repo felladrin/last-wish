@@ -18,9 +18,14 @@
 // will not be displayed in-game. Entries with fewer
 // than three lines will not be displayed in-game.
 
+[*]12/31/2015
+Victor
+- Now player loses karma when he cuts a human corpse in pieces.
+- Now when a player get back his corpse, if it's empty, it's deleted.
+- Now players won't need to wait one hour to demolish a house right after placing it.
+
 [*]12/30/2015
 Victor
-
 - Added Mail System.
 - Added Bomberman Game System.
 
