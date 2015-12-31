@@ -1115,14 +1115,7 @@ namespace Server.Items
 					{
 						SetFlag( CorpseFlag.Carved, true );
 
-						if ( ItemID == 0x2006 )
-						{
-							ProcessDelta();
-							SendRemovePacket();
-							ItemID = Utility.Random( 0xECA, 9 ); // bone graphic
-							Hue = 0;
-							ProcessDelta();
-						}
+                        this.Delete();
 
 						from.SendLocalizedMessage( 1062471 ); // You quickly gather all of your belongings.
 					}
