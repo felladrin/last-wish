@@ -1,86 +1,115 @@
-//   ___|========================|___
-//   \  |  Written by Felladrin  |  /	This script was released on RunUO Forums under the GPL licensing terms.
-//    > |       June 2010        | <
-//   /__|========================|__\	[Recall Command] - Current version: 1.2 (July 8, 2013)
+// Recall Command v1.3.0
+// Author: Felladrin
+// Created at 2010-06-20
+// Updated at 2015-12-31
 
 using System.Collections.Generic;
+using Server;
+using Server.Commands;
+using Server.Misc;
 using Server.Mobiles;
-using Server.Network;
+using Server.Spells;
 
-namespace Server.Commands
+namespace Felladrin.Commands
 {
-    public class Recall
+    public static class Recall
     {
+        public static class Config
+        {
+            public static bool Enabled = true;                                       // Is this command enabled?
+            public static bool AllowUsageIfIsOverloaded = false;                     // Should we allow players to use this command if they are overloaded?
+            public static bool AllowUsageIfIsInCombat = true;                        // Should we allow players to use this command if they are in combat?
+            public static bool DecreaseFameIfUsedInCombat = false;                   // Should we decrease the player fame if he use this command to flee from combat?
+            public static bool SpecialEffects = true;                                // Should we use special effects after teleporting the player?
+            public static bool BringFollowers = true;                                // Should we also teleport the player's followers? 
+            public static bool AffectOnlyControlledFollowers = true;                 // Should we only teleport the player's followers that are controlled? 
+            public static Point3D TargetLocation = new Point3D(1202, 1116, -25);     // To what coordinates should we teleport the player?
+            public static Map TargetMap = Map.Ilshenar;                              // To what map should we teleport the player?
+        }
+
         public static void Initialize()
         {
-            CommandSystem.Register("Recall", AccessLevel.Player, new CommandEventHandler(Recall_OnCommand));
+            if (Config.Enabled)
+            {
+                CommandSystem.Register("Recall", AccessLevel.Player, new CommandEventHandler(Recall_OnCommand));
+            }
         }
 
         [Usage("Recall")]
-        [Description("Takes you back to where it all began.")]
-        private static void Recall_OnCommand(CommandEventArgs e)
+        [Description("Teleports you to a safe location.")]
+        static void Recall_OnCommand(CommandEventArgs e)
         {
             Mobile m = e.Mobile;
 
-            if (Server.Misc.WeightOverloading.IsOverloaded(m))
+            if (!Config.AllowUsageIfIsOverloaded && WeightOverloading.IsOverloaded(m))
             {
                 m.SendMessage("You can't recall because you are carrying too much weight!");
                 return;
             }
 
-            SendEffects(m);
-
-            CityInfo city = new CityInfo("Lake Shire", "Center", 1202, 1116, -25, Map.Ilshenar);
-
-            m.MoveToWorld(city.Location, city.Map);
-
-            m.Direction = Direction.North;
-
-            PlayerMobile master = (PlayerMobile)m;
-            List<Mobile> pets = master.AllFollowers;
-
-            if (pets.Count > 0)
+            if (!Config.AllowUsageIfIsInCombat)
             {
-                for (int i = 0; i < pets.Count; ++i)
+                m.SendMessage("You can't recall during the heat of battle!");
+                return;
+            }
+
+            m.MoveToWorld(Config.TargetLocation, Config.TargetMap);
+
+            if (Config.BringFollowers)
+            {
+                PlayerMobile master = (PlayerMobile)m;
+                List<Mobile> followers = master.AllFollowers;
+
+                if (followers.Count > 0)
                 {
-                    Mobile pet = (Mobile)pets[i];
-
-                    if (pet is IMount)
+                    foreach (var follower in followers)
                     {
-                        if (((IMount)pet).Rider != master)
+                        if (Config.AffectOnlyControlledFollowers)
                         {
-                            ((IMount)pet).Rider = null; // make sure it's dismounted
+                            var baseCreature = follower as BaseCreature;
+                            if (baseCreature != null)
+                            {
+                                if (!baseCreature.Controlled)
+                                    continue;
+                            } 
                         }
-                        else
-                        {
-                            continue;
-                        }
-                    }
 
-                    SendEffects(pet);
-                    pet.MoveToWorld(master.Location, master.Map);
+                        var mount = follower as IMount;
+                        if (mount != null)
+                        {
+                            if (mount.Rider != master)
+                            {
+                                mount.Rider = null;
+                            }
+                        }
+
+                        follower.MoveToWorld(master.Location, master.Map);
+                    }
                 }
             }
 
-            SendEffects(m);
+            if (Config.SpecialEffects)
+            {
+                Effects.SendLocationEffect(new Point3D(m.X + 1, m.Y, m.Z + 4), m.Map, 0x3728, 13);
+                Effects.SendLocationEffect(new Point3D(m.X + 1, m.Y, m.Z), m.Map, 0x3728, 13);
+                Effects.SendLocationEffect(new Point3D(m.X + 1, m.Y, m.Z - 4), m.Map, 0x3728, 13);
+                Effects.SendLocationEffect(new Point3D(m.X, m.Y + 1, m.Z + 4), m.Map, 0x3728, 13);
+                Effects.SendLocationEffect(new Point3D(m.X, m.Y + 1, m.Z), m.Map, 0x3728, 13);
+                Effects.SendLocationEffect(new Point3D(m.X, m.Y + 1, m.Z - 4), m.Map, 0x3728, 13);
+                Effects.SendLocationEffect(new Point3D(m.X + 1, m.Y + 1, m.Z + 11), m.Map, 0x3728, 13);
+                Effects.SendLocationEffect(new Point3D(m.X + 1, m.Y + 1, m.Z + 7), m.Map, 0x3728, 13);
+                Effects.SendLocationEffect(new Point3D(m.X + 1, m.Y + 1, m.Z + 3), m.Map, 0x3728, 13);
+                Effects.SendLocationEffect(new Point3D(m.X + 1, m.Y + 1, m.Z - 1), m.Map, 0x3728, 13);
 
-            m.Emote("*" + m.Name + " appears in a puff of smoke*");
-        }
+                m.PlaySound(0x228);
 
-        private static void SendEffects(Mobile m)
-        {
-            Effects.SendLocationEffect(new Point3D(m.X + 1, m.Y, m.Z + 4), m.Map, 0x3728, 13);
-            Effects.SendLocationEffect(new Point3D(m.X + 1, m.Y, m.Z), m.Map, 0x3728, 13);
-            Effects.SendLocationEffect(new Point3D(m.X + 1, m.Y, m.Z - 4), m.Map, 0x3728, 13);
-            Effects.SendLocationEffect(new Point3D(m.X, m.Y + 1, m.Z + 4), m.Map, 0x3728, 13);
-            Effects.SendLocationEffect(new Point3D(m.X, m.Y + 1, m.Z), m.Map, 0x3728, 13);
-            Effects.SendLocationEffect(new Point3D(m.X, m.Y + 1, m.Z - 4), m.Map, 0x3728, 13);
-            Effects.SendLocationEffect(new Point3D(m.X + 1, m.Y + 1, m.Z + 11), m.Map, 0x3728, 13);
-            Effects.SendLocationEffect(new Point3D(m.X + 1, m.Y + 1, m.Z + 7), m.Map, 0x3728, 13);
-            Effects.SendLocationEffect(new Point3D(m.X + 1, m.Y + 1, m.Z + 3), m.Map, 0x3728, 13);
-            Effects.SendLocationEffect(new Point3D(m.X + 1, m.Y + 1, m.Z - 1), m.Map, 0x3728, 13);
+                m.Emote("*appears in a puff of smoke*");
+            }
 
-            m.PlaySound(0x228);
+            if (Config.DecreaseFameIfUsedInCombat && SpellHelper.CheckCombat(m))
+            {
+                Titles.AwardFame(m, -(m.Fame / 20), true);
+            }
         }
     }
 }
