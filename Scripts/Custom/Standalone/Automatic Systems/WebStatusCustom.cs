@@ -166,21 +166,22 @@ namespace Server.Custom
                         op.Write("</td><td>");
                         op.Write(Titles.GetSkillTitle(m));
                         op.Write("</td><td>");
-                        if (m.Region.Name != null)
+                        if (m.Map == Map.Felucca)
                         {
-                            op.Write(m.Region.Name);
+                            op.Write("Somewhere in Felucca");
                         }
                         else
                         {
-                            op.Write(m.X);
-                            op.Write(", ");
-                            op.Write(m.Y);
-                            op.Write(", ");
-                            op.Write(m.Z);
+                            if (m.Region.Name != null)
+                            {
+                                op.Write("{0} ({1})", m.Region.Name, m.Map);
+                            }
+                            else
+                            {
+                                op.Write("{0}, {1}, {2} ({3})", m.X, m.Y, m.Z, m.Map);
+                            }
                         }
-                        op.Write(" (");
-                        op.Write(m.Map);
-                        op.Write(")</td></tr>");
+                        op.Write("</td></tr>");
                     }
                     op.WriteLine("         </tbody>");
                     op.WriteLine("      </table>");
