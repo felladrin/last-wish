@@ -276,7 +276,7 @@ namespace Server.Multis
 			Delete();
 		}
 
-		public virtual TimeSpan RestrictedPlacingTime { get { return TimeSpan.FromHours( 1.0 ); } }
+		public virtual TimeSpan RestrictedPlacingTime { get { return TimeSpan.Zero; } }
 
 		[CommandProperty( AccessLevel.GameMaster )]
 		public virtual double BonusStorageScalar { get { return (Core.ML ? 1.2 : 1.0); } }
