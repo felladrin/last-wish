@@ -2247,6 +2247,7 @@ namespace System.CustomizableVendor
             m_IsBanker = true;
             Frozen = true;
             CantWalk = true;
+            Blessed = true;
 
             //default is Gold
             m_Currency = new Currency();
