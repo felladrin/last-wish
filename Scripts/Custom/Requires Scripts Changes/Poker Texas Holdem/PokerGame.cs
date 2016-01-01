@@ -110,14 +110,12 @@ namespace Server.Poker
 						}
 					case PlayerAction.Raise:
 						{
-							PokerMessage( player.Mobile, String.Format( "I raise by {0}.", player.Bet ) );
-							m_CurrentBet += player.Bet;
-							int diff = m_CurrentBet - player.RoundBet;
-							player.Gold -= diff;
-							player.RoundGold += diff;
-							player.RoundBet += diff;
-							m_CommunityGold += diff;
-							player.Bet = diff;
+							PokerMessage( player.Mobile, String.Format( "I raise to {0}.", player.Bet ) );
+							m_CurrentBet = player.Bet;
+							player.Gold -= player.Bet;
+							player.RoundGold += player.Bet;
+							player.RoundBet += player.Bet;
+							m_CommunityGold += player.Bet;
 							resetTurns = true;
 
 							break;
