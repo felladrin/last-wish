@@ -7,7 +7,7 @@ namespace Server.Commands
     public class CommandLogging
 	{
 		private static StreamWriter m_Output;
-		private static bool m_Enabled = true;
+		private static bool m_Enabled = false;
 
 		public static bool Enabled{ get{ return m_Enabled; } set{ m_Enabled = value; } }
 
