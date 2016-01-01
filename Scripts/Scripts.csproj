@@ -252,7 +252,6 @@
     <Compile Include="Custom\Standalone\Commands\Player\Equip.cs" />
     <Compile Include="Custom\Standalone\Commands\Player\Event.cs" />
     <Compile Include="Custom\Standalone\Commands\Player\GuildChat.cs" />
-    <Compile Include="Custom\Standalone\Commands\Player\LookCommand.cs" />
     <Compile Include="Custom\Standalone\Commands\Player\MoveItems.cs" />
     <Compile Include="Custom\Standalone\Commands\Player\MyHouses.cs" />
     <Compile Include="Custom\Standalone\Commands\Player\Notoriety.cs" />
@@ -3791,6 +3790,7 @@
     <Compile Include="Custom\Standalone\Bomberman\Items\Upgrades\DetonatorUpgrade.cs" />
     <Compile Include="Custom\Standalone\Bomberman\Items\Upgrades\SpeedUpgrade.cs" />
     <Compile Include="Custom\Standalone\Bomberman\Misc\Blast.cs" />
+    <Compile Include="Custom\Standalone\Commands\Player\Look.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="SpecialSystems\README.TXT" />

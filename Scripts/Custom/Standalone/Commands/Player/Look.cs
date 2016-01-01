@@ -17,8 +17,8 @@ namespace Felladrin.Commands
     {
         public static class Config
         {
-            public static bool Enabled = true;
-            public static bool DisplayHealthStatus = true;
+            public static bool Enabled = true;                // Is this command enabled?
+            public static bool DisplayHealthStatus = true;    // Should we also display the health status along the player profile?
         }
 
         public static void Initialize()
