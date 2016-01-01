@@ -122,7 +122,7 @@ namespace Server.Poker
 
 					if ( bet < m_Game.Dealer.BigBlind )
 					{
-						from.SendMessage( 0x22, "Your must bet at least {0}gp.", m_Game.BigBlind );
+                        from.SendMessage( 0x22, "You must bet at least {0}gp.", m_Game.Dealer.BigBlind );
 
 						from.CloseGump( typeof( PokerBetGump ) );
 						from.SendGump( new PokerBetGump( m_Game, m_Player, m_CanCall ) );
@@ -152,9 +152,9 @@ namespace Server.Poker
 					try { bet = Convert.ToInt32( info.GetTextEntry( (int)Buttons.txtBet ).Text ); }
 					catch { }
 
-					if ( bet < 100 )
+                    if ( bet < m_Game.CurrentBet*2 )
 					{
-						from.SendMessage( 0x22, "If you are going to raise a bet, it needs to be by at least 100gp." );
+                        from.SendMessage(0x22, "If you are going to raise a bet, it needs to be by at least {0}gp.", m_Game.CurrentBet*2);
 
 						from.CloseGump( typeof( PokerBetGump ) );
 						from.SendGump( new PokerBetGump( m_Game, m_Player, m_CanCall ) );

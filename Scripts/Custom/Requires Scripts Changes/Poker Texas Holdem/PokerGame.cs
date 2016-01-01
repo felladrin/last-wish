@@ -247,13 +247,13 @@ namespace Server.Poker
 					m_Players.Round.Add( player );
 			}
 
-			if ( m_DealerButton == null ) //First round / more player
+            if ( m_DealerButton == null || m_SmallBlind == null ) //First round / more player
 			{
-				if ( m_Players.Round.Count == 2 ) //Only use dealer button and small blind
+                if ( m_Players.Round.Count == 2 ) //Only use small blind and big blind
 				{
-					m_DealerButton = m_Players.Round[0];
-					m_SmallBlind = m_Players.Round[1];
-					m_BigBlind = null;
+                    m_DealerButton = null;
+                    m_SmallBlind = m_Players.Round[0];
+                    m_BigBlind = m_Players.Round[1];
 				}
 				else if ( m_Players.Round.Count > 2 )
 				{
@@ -266,20 +266,20 @@ namespace Server.Poker
 			}
 			else
 			{
-				if ( m_Players.Round.Count == 2 ) //Only use dealer button and small blind
+                if ( m_Players.Round.Count == 2 ) //Only use small blind and big blind
 				{
-					if ( m_DealerButton == m_Players.Round[0] )
+                    if ( m_BigBlind == m_Players.Round[1] )
 					{
-						m_DealerButton = m_Players.Round[1];
-						m_SmallBlind = m_Players.Round[0];
+                        m_SmallBlind = m_Players.Round[1];
+                        m_BigBlind = m_Players.Round[0];
 					}
 					else
 					{
-						m_DealerButton = m_Players.Round[0];
-						m_SmallBlind = m_Players.Round[1];
+                        m_SmallBlind = m_Players.Round[0];
+                        m_BigBlind = m_Players.Round[1];
 					}
 
-					m_BigBlind = null;
+                    m_DealerButton = null;
 				}
 				else if ( m_Players.Round.Count > 2 )
 				{

@@ -53,20 +53,40 @@ namespace Server.Poker
 
 			if ( Peek() == null ) //No turns yet for this round
 			{
-				if ( m_Game.State == PokerGameState.PreFlop )
-				{
-					PokerPlayer blind = m_Game.BigBlind == null ? m_Game.SmallBlind : m_Game.BigBlind;
+                if (m_Players.Count == 2) //Only use small blind and big blind
+                {
+                    if ( m_Game.State == PokerGameState.PreFlop )
+                    {
+                        PokerPlayer blind = m_Game.BigBlind;
 
-					if ( blind != null )
-						return ( m_Round.IndexOf( blind ) == m_Round.Count - 1 ? m_Round[0] : m_Round[m_Round.IndexOf( blind ) + 1] );
-				}
+                        if ( blind != null )
+                            return ( m_Round.IndexOf( blind ) == m_Round.Count - 1 ? m_Round[0] : m_Round[m_Round.IndexOf( blind ) + 1] );
+                    }
 
-				PokerPlayer dealer = m_Game.DealerButton;
+                    PokerPlayer dealer = m_Game.SmallBlind;
 
-				if ( dealer == null )
-					return null;
+                    if ( dealer == null )
+                        return null;
 
-				return ( m_Round.IndexOf( dealer ) == m_Round.Count - 1 ? m_Round[0] : m_Round[m_Round.IndexOf( dealer ) + 1] );
+                    return ( m_Round.IndexOf( dealer ) == m_Round.Count - 1 ? m_Round[0] : m_Round[m_Round.IndexOf( dealer ) + 1] );
+                }
+                else
+                {
+                    if ( m_Game.State == PokerGameState.PreFlop )
+                    {
+                        PokerPlayer blind = m_Game.BigBlind == null ? m_Game.SmallBlind : m_Game.BigBlind;
+
+                        if ( blind != null )
+                            return ( m_Round.IndexOf( blind ) == m_Round.Count - 1 ? m_Round[0] : m_Round[m_Round.IndexOf( blind ) + 1] );
+                    }
+
+                    PokerPlayer dealer = m_Game.DealerButton;
+
+                    if ( dealer == null )
+                        return null;
+
+                    return ( m_Round.IndexOf( dealer ) == m_Round.Count - 1 ? m_Round[0] : m_Round[m_Round.IndexOf( dealer ) + 1] );
+                }
 			}
 
 			return ( m_Round.IndexOf( Peek() ) == m_Round.Count - 1 ? m_Round[0] : m_Round[m_Round.IndexOf( Peek() ) + 1] );
