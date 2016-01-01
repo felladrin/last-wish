@@ -1,76 +1,113 @@
-//   ___|========================|___
-//   \  |  Written by Felladrin  |  /	This script was released on RunUO Forums under the GPL licensing terms.
-//    > |      February 2010     | < 
-//   /__|========================|__\	Current version: 1.0 (February 6, 2010)
+// Look Command v1.1.0
+// Author: Felladrin
+// Created at 2010-02-12
+// Updated at 2016-01-01
 
-using Server.Mobiles;
-using Server.Targeting;
+using Server;
+using Server.Commands;
 using Server.Gumps;
+using Server.Mobiles;
 using Server.Network;
+using Server.Targeting;
+using System.Text.RegularExpressions;
 
-namespace Server.Commands
+namespace Felladrin.Commands
 {
-    public class lookCommand
+    public static class Look
     {
+        public static class Config
+        {
+            public static bool Enabled = true;
+            public static bool DisplayHealthStatus = true;
+        }
+
         public static void Initialize()
         {
-            CommandSystem.Register("Look", AccessLevel.Player, new CommandEventHandler(look_OnCommand));
+            if (Config.Enabled)
+                CommandSystem.Register("Look", AccessLevel.Player, new CommandEventHandler(look_OnCommand));
         }
 
         [Usage("Look")]
-        [Description("Used to look at someone who is near you or to change your's character description.")]
+        [Description("Looks at someone and opens their profile description. Target yourself to edit your own profile.")]
         public static void look_OnCommand(CommandEventArgs e)
         {
-            e.Mobile.Target = new lookTarget();
+            e.Mobile.Target = new LookTarget();
             e.Mobile.SendMessage("Who would you like to look at?");
         }
-    }
 
-    public class lookTarget : Target
-    {
-        public lookTarget()
-            : base(-1, false, TargetFlags.None)
+        public class LookTarget : Target
         {
-        }
-
-        protected override void OnTarget(Mobile from, object targeted)
-        {
-            if (from is PlayerMobile && targeted is PlayerMobile)
+            public LookTarget() : base(-1, false, TargetFlags.None)
             {
-                if (from.Equals(targeted))
+            }
+
+            protected override void OnTarget(Mobile from, object targeted)
+            {
+                PlayerMobile target = targeted as PlayerMobile;
+                if (target != null)
                 {
-                    ((Mobile)targeted).DisplayPaperdollTo(from);
-                    from.Send(new DisplayProfile(!from.ProfileLocked, from, "Description of " + from.RawName, from.Profile, "Use the space above to describe your character."));
+                    if (from.Equals(target))
+                    {
+                        target.DisplayPaperdollTo(from);
+                        from.Send(new DisplayProfile(!from.ProfileLocked, from, "Description of " + from.RawName, from.Profile, "Use the space above to describe your character."));
+                    }
+                    else
+                    {
+                        target.SendMessage("You notice that {0} is looking at you.", from.Name);
+                        target.DisplayPaperdollTo(from);
+                        from.CloseGump(typeof(LookGump));
+                        from.SendGump(new LookGump(target));
+                    }
                 }
                 else
-                {
-                    ((Mobile)targeted).SendMessage("You notice that {0} is looking at you.", from.Name);
-                    ((Mobile)targeted).DisplayPaperdollTo(from);
-                    from.CloseGump(typeof(lookGump));
-                    from.SendGump(new lookGump(from, (Mobile)targeted));
-                }
+                    from.SendMessage("There's nothing special about it, it isn't worth looking...");
             }
-            else
-                from.SendMessage("There's nothing special about it, it isn't worth looking...");
         }
-    }
 
-    public class lookGump : Gump
-    {
-        private const int Width = 300;
-        private const int Height = 200;
-
-        public lookGump(Mobile m, Mobile target)
-            : base(100, 100)
+        public class LookGump : Gump
         {
-            AddPage(0);
+            const int Width = 300;
+            const int Height = 200;
 
-            AddBackground(0, 0, Width, Height, 0xDAC);
+            public LookGump(Mobile target) : base(100, 100)
+            {
+                AddPage(0);
+                AddBackground(0, 0, Width, Height, 0xDAC);
 
-            AddPage(1);
+                AddPage(1);
+                AddHtml(0, 10, Width, 25, "<CENTER>" + "Observing " + target.Name, false, false);
+                AddHtml(20, 30, Width - 40, Height - 50, NewLinesToHtmlBr(target.Profile) + HealthStatus(target), true, true);
+            }
 
-            AddHtml(0, 10, Width, 25, "<CENTER>" + "Observing " + target.Name, false, false);
-            AddHtml(20, 30, Width - 40, Height - 50, target.Profile, true, true);
+            static string NewLinesToHtmlBr(string str)
+            {
+                return Regex.Replace(str, @"\r\n?|\n", "<br/>");
+            }
+
+            static string HealthStatus(Mobile m)
+            {
+                if (!Config.DisplayHealthStatus)
+                    return null;
+
+                string healthStatus = "<br/><br/>";
+
+                healthStatus += m.Female ? "She" : "He";
+
+                if (m.Hits == m.HitsMax)
+                    healthStatus += " seems perfectly healthy.";
+                else if (m.Hits > m.HitsMax * 0.8)
+                    healthStatus += " looks slightly injured.";
+                else if (m.Hits > m.HitsMax * 0.6)
+                    healthStatus += " looks injured.";
+                else if (m.Hits > m.HitsMax * 0.4)
+                    healthStatus += " looks badly injured.";
+                else if (m.Hits > m.HitsMax * 0.2)
+                    healthStatus += " looks deadly injured.";
+                else
+                    healthStatus += " looks almost dead.";
+
+                return healthStatus;
+            }
         }
     }
 }
