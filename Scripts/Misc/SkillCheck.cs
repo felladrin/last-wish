@@ -91,7 +91,7 @@ namespace Server.Misc
 
             if (value < minSkill)
                 return false; // Too difficult
-            else if (value >= maxSkill)
+            else if (value >= skill.Cap)
                 return true; // No challenge
 
             double chance = (value - minSkill) / (maxSkill - minSkill);
@@ -154,7 +154,7 @@ namespace Server.Misc
 
             if (value < minSkill)
                 return false; // Too difficult
-            else if (value >= maxSkill)
+            else if (value >= skill.Cap)
                 return true; // No challenge
 
             double chance = (value - minSkill) / (maxSkill - minSkill);
