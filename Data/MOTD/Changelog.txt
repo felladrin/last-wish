@@ -20,7 +20,16 @@
 
 [*]01/01/2016
 Victor
-- Improvements to Poker.
+- [Look command now shows health status below the profile description.
+- Now the [AddToParty command will auto-invite if there's only one result on the player list filter.
+- Convoke command now sends a message instead of showing an empty gump, if no users were found to convoke.
+- Added alias [Forums to the command [Forum.
+- Reward Vendor is now invulnerable, so players won't be able to kill them anymore.
+- Fixed message that was telling the skillcap was 700 when you try to train with an npc and you have already reached the skillcap and has no skill set to down.
+
+[*]01/01/2016
+Adrian
+- Improved Poker Game System.
 
 [*]12/31/2015
 Victor
