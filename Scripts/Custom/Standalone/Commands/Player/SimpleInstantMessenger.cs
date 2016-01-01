@@ -366,7 +366,7 @@ namespace Server.Gumps
 
                     focus.SendGump(new SIMGumpSend(Author, Message));
 
-                    CommandLogging.WriteLine(from, "{0} {1} telling {2} \"{3}\" ", from.AccessLevel, CommandLogging.Format(from), CommandLogging.Format(focus), text.Text);
+                    // CommandLogging.WriteLine(from, "{0} {1} telling {2} \"{3}\" ", from.AccessLevel, CommandLogging.Format(from), CommandLogging.Format(focus), text.Text);
                 }
 
                 from.SendGump(new SIMGumpChatPlayer(from, m_State));
