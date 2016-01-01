@@ -70,7 +70,8 @@ namespace Server.Forums
 			m_PlayerStatistics = new Hashtable();
 
 			Server.EventSink.WorldSave += new WorldSaveEventHandler( EventSink_WorldSave );
-			CommandSystem.Register( "Forum", AccessLevel.Player, new CommandEventHandler( ViewForums_OnCommand ) );
+            CommandSystem.Register( "Forum", AccessLevel.Player, new CommandEventHandler( ViewForums_OnCommand ) );
+            CommandSystem.Register( "Forums", AccessLevel.Player, new CommandEventHandler( ViewForums_OnCommand ) );
 			
 			Console.Write( "Ingame Forums: " );
 			
@@ -90,7 +91,8 @@ namespace Server.Forums
 			}
 		}
 
-		[Usage( "Forum" )]
+        [Usage( "Forum" )]
+        [Aliases( "Forums" )]
 		[Description( "Opens the forum." )]
 		public static void ViewForums_OnCommand( CommandEventArgs e )
 		{
