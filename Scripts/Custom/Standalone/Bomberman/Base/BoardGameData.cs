@@ -8,7 +8,7 @@ namespace Solaris.BoardGames
 	//this data class is used to keep track of player scores for various boardgames
 	public class BoardGameData
 	{
-		public const string SAVE_PATH = @"Saves\BoardGame Data";
+		public const string SAVE_PATH = "Saves/BoardGame Data";
 		public const string FILENAME = "boardgames.bin";
 		
 		protected static List<BoardGameData> _GameData;
