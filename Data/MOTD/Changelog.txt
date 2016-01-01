@@ -18,9 +18,9 @@
 // will not be displayed in-game. Entries with fewer
 // than three lines will not be displayed in-game.
 
-[*]01/01/2015
+[*]01/01/2016
 Victor
-- Improvements to Heads Up Poker.
+- Improvements to Poker.
 
 [*]12/31/2015
 Victor
