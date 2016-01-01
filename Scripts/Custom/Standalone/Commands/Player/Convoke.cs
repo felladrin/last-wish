@@ -139,7 +139,11 @@ namespace Server.Gumps
             m_Owner = owner;
             m_Mobiles = list;
 
-            if (m_Mobiles.Count == 1)
+            if (m_Mobiles.Count == 0)
+            {
+                owner.SendMessage(38, "There are no players available to invite.");
+            }
+            else if (m_Mobiles.Count == 1)
             {
                 Mobile m = m_Mobiles[0];
                 m.SendGump(new ConvokedGump(owner));
