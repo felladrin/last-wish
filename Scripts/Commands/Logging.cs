@@ -15,29 +15,32 @@ namespace Server.Commands
 
 		public static void Initialize()
 		{
-			EventSink.Command += new CommandEventHandler( EventSink_Command );
+            if (m_Enabled)
+            {
+                EventSink.Command += new CommandEventHandler( EventSink_Command );
 
-			if ( !Directory.Exists( "Logs" ) )
-				Directory.CreateDirectory( "Logs" );
+                if ( !Directory.Exists( "Logs" ) )
+                    Directory.CreateDirectory( "Logs" );
 
-			string directory = "Logs/Commands";
+                string directory = "Logs/Commands";
 
-			if ( !Directory.Exists( directory ) )
-				Directory.CreateDirectory( directory );
+                if ( !Directory.Exists( directory ) )
+                    Directory.CreateDirectory( directory );
 
-			try
-			{
-				m_Output = new StreamWriter( Path.Combine( directory, String.Format( "{0}.log", DateTime.UtcNow.ToLongDateString() ) ), true );
+                try
+                {
+                    m_Output = new StreamWriter(Path.Combine(directory, String.Format("{0}.log", DateTime.UtcNow.ToLongDateString())), true);
 
-				m_Output.AutoFlush = true;
+                    m_Output.AutoFlush = true;
 
-				m_Output.WriteLine( "##############################" );
-				m_Output.WriteLine( "Log started on {0}", DateTime.UtcNow );
-				m_Output.WriteLine();
-			}
-			catch
-			{
-			}
+                    m_Output.WriteLine("##############################");
+                    m_Output.WriteLine("Log started on {0}", DateTime.UtcNow);
+                    m_Output.WriteLine();
+                }
+                catch
+                {
+                }
+            }
 		}
 
 		public static object Format( object o )
