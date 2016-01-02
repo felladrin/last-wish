@@ -181,6 +181,9 @@ namespace Server.Forums
                             ForumCore.Threads.Sort(new DateSort());
                             m_Player.CloseGump(typeof(ForumGump));
                             m_Player.SendGump(new ForumGump(m_Player, 0));
+
+                            if (!te.StaffMessage)
+                                World.Broadcast(0x482, false, "{0} has just posted a message on the forum! Type [Forum to read it.", m_Player.Name);
                         }
                         else
                         {
@@ -194,8 +197,10 @@ namespace Server.Forums
                             ForumCore.Threads.Sort(new DateSort());
                             m_Player.CloseGump(typeof(ForumGump));
                             m_Player.SendGump(new ForumGump(m_Player, 0));
+
+                            if (!m_ThreadEntry.StaffMessage)
+                                World.Broadcast(0x482, false, "{0} has just posted a message on the forum! Type [Forum to read it.", m_Player.Name);
                         }
-                        Server.Commands.CommandHandlers.BroadcastMessage(AccessLevel.Player, Utility.RandomMinMax(2, 600), String.Format("{0} has just posted a message on the forum! Type [Forum to read it.", m_Player.Name));
                         break;
                     }
                 case 7:
@@ -333,7 +338,9 @@ namespace Server.Forums
 
                     m_PG.Post();
                     from.SendMessage("The message has been posted.");
-                    World.Broadcast(Utility.RandomMinMax(2, 600), false, String.Format("{0} has just posted a message on the forum! Type [Forum to read it.", from.Name));
+
+                    if (!m_PG.m_ThreadEntry.StaffMessage)
+                        World.Broadcast(0x482, false, "{0} has just posted a message on the forum! Type [Forum to read it.", from.Name);
                 }
             }
         }
