@@ -3791,6 +3791,7 @@
     <Compile Include="Custom\Standalone\Bomberman\Items\Upgrades\SpeedUpgrade.cs" />
     <Compile Include="Custom\Standalone\Bomberman\Misc\Blast.cs" />
     <Compile Include="Custom\Standalone\Commands\Player\Look.cs" />
+    <Compile Include="Custom\Standalone\Commands\Player\ResetSkill.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="SpecialSystems\README.TXT" />

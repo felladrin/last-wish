@@ -6,7 +6,7 @@
 // with "[*]" and be at least three lines long.
 // 
 // Example:
-//   [*]12/2/2007
+//   [*]Dec 2/2007
 //   Joeku
 //   This is an example entry.
 // 
@@ -18,7 +18,11 @@
 // will not be displayed in-game. Entries with fewer
 // than three lines will not be displayed in-game.
 
-[*]01/01/2016
+[*]Jan 2, 2016
+Victor
+- Added command [ResetSkill to set a skill back to 0.
+
+[*]Jan 1, 2016
 Victor
 - [Look command now shows health status below the profile description.
 - Now the [AddToParty command will auto-invite if there's only one result on the player list filter.
@@ -29,22 +33,22 @@ Victor
 - Now [Autodefend just need to be disabled once if you don't like it. Next time you login, it will continue disabled until you enable it again.
 - Fixed message that was telling the skillcap was 700 when you try to train with an npc and you have already reached the skillcap and has no skill set to down.
 
-[*]01/01/2016
+[*]Jan 1, 2016
 Adrian
 - Improved Poker Game System.
 
-[*]12/31/2015
+[*]Dec 31, 2015
 Victor
 - Now player loses karma when he cuts a human corpse in pieces.
 - Now when a player get back his corpse, if it's empty, it's deleted.
 - Now players won't need to wait one hour to demolish a house right after placing it.
 
-[*]12/30/2015
+[*]Dec 30, 2015
 Victor
 - Added Mail System.
 - Added Bomberman Game System.
 
-[*]12/27/2015
+[*]Dec 27, 2015
 Victor
 - Disabled house decay. Your house will be there forever.
 - Pets/summons AI improved, so they will follow you precisely. Also they won't stay on the same tile anymore.
@@ -52,11 +56,11 @@ Victor
 - Improved Interior Decorator and lowered its price. You can buy it from the architect.
 - Disabled veteran rewards.
 
-[*]12/23/2015
+[*]Dec 23, 2015
 Victor
 - Skill cap set to 1200.
 
-[*]12/21/2015
+[*]Dec 21, 2015
 Victor
 - Forum gump now opens on login.
 - Spears can now be used with one hand.
@@ -64,7 +68,7 @@ Victor
 - Criminals can now use the public moongates.
 - Killing a vendor now increases the Kills count.
 
-[*]12/20/2015
+[*]Dec 20, 2015
 Victor
 - Added earrings and necklaces to loots.
 - Allowed Ship placement in Ilshenar and Malas.
@@ -77,18 +81,18 @@ Victor
 - Improved Peacemakers artificial intelligence.
 - Total skill cap was set back to 700.
 
-[*]12/19/2015
+[*]Dec 19, 2015
 Victor
 - Added command [P to talk to the party.
 - Added command [VoiceChat to open the voice chat on the browser.
 - Now armors show the sum of resistances in the property list.
 
-[*]12/17/2015
+[*]Dec 17, 2015
 Victor
 - Improved spawners activation, so you'll see more creatures around.
 - Player have no more robes after ressurrecting.
 
-[*]12/16/2015
+[*]Dec 16, 2015
 Adrian
 - Raised SkillsCap to 1200.
 - Raised each Skill cap to 120.
@@ -96,12 +100,12 @@ Adrian
 - Fixed mage vendors containing an absurd amount of necro reagents.
 - Fixed rune-marking prevention on all maps.
 
-[*]12/14/2015
+[*]Dec 14, 2015
 Victor
 - Added directional damage. More damage when attacking from behind your opponent or flanking him.
 - Changed to allow player housing in Ilshenar and Malas.
 
-[*]12/12/2015
+[*]Dec 12, 2015
 Victor
 - Added [Duel command.
 - Added [Changelog command.
@@ -111,12 +115,12 @@ Victor
 - Changed to make blood remain 1 minute on ground.
 - Changed Light Cycle for darker nights.
 
-[*]12/8/2015
+[*]Dec 8, 2015
 Adrian
 - Added Keeper Of Necro NPC (Necromancer Vendor).
 - Changed to allow gargoyles fly at full speed.
 
-[*]12/6/2015
+[*]Dec 6, 2015
 Victor
 - Added Vendor Tile, to create a shopping mall made by players.
 - Added items: Linked Gates and Linked Bags.
@@ -132,7 +136,7 @@ Victor
 - Added Bloody Bandages System.
 - Added [Sleep command and also some Bed Addons.
 
-[*]12/5/2015
+[*]Dec 5, 2015
 Victor
 - Now players corpse bones will decay only after 1 day.
 - Added [Convoke command.
@@ -147,12 +151,12 @@ Victor
 - Added [Where command.
 - Added [AddToParty command.
 
-[*]12/4/2015
+[*]Dec 4, 2015
 Victor
 - Added [Forum command.
 - Removed time restriction for deleting characters.
 
-[*]12/3/2015
+[*]Dec 3, 2015
 Victor
 - Added Container Rename System.
 - Now Max Followers is based on Character Intelligence.
@@ -187,7 +191,7 @@ Victor
 - Added Tiny Chat System.
 - Added Simple Instant Messenger System.
 
-[*]12/2/2015
+[*]Dec 2, 2015
 Victor
 - Populated the World.
 - Added Ter Mur location and moongates.
