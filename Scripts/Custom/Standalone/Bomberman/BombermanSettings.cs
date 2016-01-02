@@ -18,7 +18,7 @@ namespace Solaris.BoardGames
 	public class BombermanSettings
 	{
 		//min, max, and default bomberman playing field settings
-		public const int MAX_BOARD_SIZE = 65;
+		public const int MAX_BOARD_SIZE = 21;
 		public const int MIN_BOARD_SIZE = 11;
 		public const int DEFAULT_BOARD_SIZE = 21;
 
