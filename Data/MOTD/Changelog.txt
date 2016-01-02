@@ -26,6 +26,7 @@ Victor
 - Added alias [Forums to the command [Forum.
 - Reward Vendor is now invulnerable, so players won't be able to kill them anymore.
 - Now Recall and Gate Travel spells can be used by criminal players.
+- Now [Autodefend just need to be disabled once if you don't like it. Next time you login, it will continue disabled until you enable it again.
 - Fixed message that was telling the skillcap was 700 when you try to train with an npc and you have already reached the skillcap and has no skill set to down.
 
 [*]01/01/2016

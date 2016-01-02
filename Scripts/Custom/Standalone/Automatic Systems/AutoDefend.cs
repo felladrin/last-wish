@@ -1,70 +1,85 @@
-﻿//   ___|========================|___
-//   \  |  Written by Felladrin  |  /
-//    > |     October 2013       | <
-//   /__|========================|__\
+﻿// AutoDefend v1.1.0
+// Author: Felladrin
+// Created at 2013-10-14
+// Updated at 2016-01-02
 
-using Server.Commands;
 using System.Collections.Generic;
+using Server;
+using Server.Accounting;
+using Server.Commands;
+using Server.Mobiles;
 
-namespace Server.Items
+namespace Felladrin.Misc
 {
-    public class AutoDefend
+    public static class AutoDefend
     {
         public static class Config
         {
-            public static bool AllowPlayerToggle = true; // Should we allow player to use a command to toggle the auto-defend?
+            public static bool Enabled = true;              // Is this system enabled?
+            public static bool AllowPlayerToggle = true;    // Should we allow player to use a command to toggle the auto-defend?
         }
-        
+
         public static void Initialize()
         {
-            EventSink.AggressiveAction += new AggressiveActionEventHandler(EventSink_AggressiveAction);
-
-            if (Config.AllowPlayerToggle)
+            if (Config.Enabled)
             {
-                CommandSystem.Register("AutoDefend", AccessLevel.Player, new CommandEventHandler(OnToggleAutoDefend));
-                EventSink.Logout += new LogoutEventHandler(OnPlayerLogout);
+                EventSink.AggressiveAction += AggressiveActionEvent;
+                EventSink.Login += LoginEvent;
+
+                if (Config.AllowPlayerToggle)
+                    CommandSystem.Register("AutoDefend", AccessLevel.Player, new CommandEventHandler(OnToggleAutoDefend));
             }
         }
 
-        private static List<int> DisabledPlayers = new List<int>();
-
-        public static void EventSink_AggressiveAction(AggressiveActionEventArgs e)
+        public static void AggressiveActionEvent(AggressiveActionEventArgs e)
         {
-            if (e.Aggressed.Player && Config.AllowPlayerToggle && !DisabledPlayers.Contains(e.Aggressed.Serial.Value))
+            if (e.Aggressed.Player && e.Aggressor != e.Aggressed.Combatant && !DisabledPlayers.Contains(e.Aggressed.Serial.Value))
             {
-                e.Aggressed.Warmode = true;
-                e.Aggressed.Combatant = e.Aggressor;
+                if (e.Aggressed.Combatant == null)
+                {
+                    e.Aggressed.Warmode = true;
+                    e.Aggressed.Combatant = e.Aggressor;
+                }
+                else if (e.Aggressor.GetDistanceToSqrt(e.Aggressed) < e.Aggressed.Combatant.GetDistanceToSqrt(e.Aggressed))
+                {
+                    e.Aggressed.Warmode = true;
+                    e.Aggressed.Combatant = e.Aggressor;
+                }
             }
         }
 
-        private static void OnPlayerLogout(LogoutEventArgs e)
+        public static void LoginEvent(LoginEventArgs e)
         {
-            Mobile m = e.Mobile;
+            PlayerMobile pm = e.Mobile as PlayerMobile;
+            Account acc = pm.Account as Account;
 
-            int key = m.Serial.Value;
-
-            if (DisabledPlayers.Contains(key))
-                DisabledPlayers.Remove(key);
+            if (acc.GetTag("AutoDefend") == "Disabled")
+            {
+                DisabledPlayers.Add(pm.Serial.Value);
+            }
         }
 
         [Usage("AutoDefend")]
         [Description("Enables or disables the auto-defend feature.")]
-        private static void OnToggleAutoDefend(CommandEventArgs e)
+        static void OnToggleAutoDefend(CommandEventArgs e)
         {
-            Mobile m = e.Mobile;
+            PlayerMobile pm = e.Mobile as PlayerMobile;
+            Account acc = pm.Account as Account;
 
-            int key = m.Serial.Value;
-
-            if (DisabledPlayers.Contains(key))
+            if (acc.GetTag("AutoDefend") == null || acc.GetTag("AutoDefend") == "Enabled")
             {
-                DisabledPlayers.Remove(key);
-                m.SendMessage(68, "You have enabled the auto-defend feature.");
+                DisabledPlayers.Add(pm.Serial.Value);
+                acc.SetTag("AutoDefend", "Disabled");
+                pm.SendMessage(38, "You have disabled the auto-defend feature for your account.");
             }
             else
             {
-                DisabledPlayers.Add(key);
-                m.SendMessage(38, "You have disabled the auto-defend feature.");
+                DisabledPlayers.Remove(pm.Serial.Value);
+                acc.SetTag("AutoDefend", "Enabled");
+                pm.SendMessage(68, "You have enabled the auto-defend feature for your account.");
             }
         }
+
+        static List<int> DisabledPlayers = new List<int>();
     }
 }
