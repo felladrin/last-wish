@@ -1,7 +1,7 @@
-// Recall Command v1.3.0
+// Recall Command v1.3.1
 // Author: Felladrin
 // Created at 2010-06-20
-// Updated at 2015-12-31
+// Updated at 2016-01-01
 
 using System.Collections.Generic;
 using Server;
@@ -64,6 +64,15 @@ namespace Felladrin.Commands
                 {
                     foreach (var follower in followers)
                     {
+                        var mount = follower as IMount;
+                        if (mount != null)
+                        {
+                            if (mount.Rider == master)
+                                continue;
+
+                            mount.Rider = null;
+                        }
+
                         if (Config.AffectOnlyControlledFollowers)
                         {
                             var baseCreature = follower as BaseCreature;
@@ -72,15 +81,6 @@ namespace Felladrin.Commands
                                 if (!baseCreature.Controlled)
                                     continue;
                             } 
-                        }
-
-                        var mount = follower as IMount;
-                        if (mount != null)
-                        {
-                            if (mount.Rider != master)
-                            {
-                                mount.Rider = null;
-                            }
                         }
 
                         follower.MoveToWorld(master.Location, master.Map);
