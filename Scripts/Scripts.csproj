@@ -585,7 +585,6 @@
     <Compile Include="Custom\Standalone\Nerun%27s Distro\SA\Mobiles\UnderWorld\Spiders\TrapdoorSpider.cs" />
     <Compile Include="Custom\Standalone\Nerun%27s Distro\SA\Mobiles\UnderWorld\Spiders\WolfSpider.cs" />
     <Compile Include="Custom\Standalone\Nerun%27s Distro\SA\Mobiles\UnderWorld\TanglingRoots.cs" />
-    <Compile Include="Custom\Standalone\ProTag Extension - TinyChat\TinyChat.cs" />
     <Compile Include="Custom\Standalone\ProTag\ProTag.cs" />
     <Compile Include="Custom\Standalone\Items\Brick.cs" />
     <Compile Include="Custom\Standalone\Quests\Lord British%27s Books\Items\LBBbookOfChaos1.cs" />
@@ -3792,6 +3791,7 @@
     <Compile Include="Custom\Standalone\Bomberman\Misc\Blast.cs" />
     <Compile Include="Custom\Standalone\Commands\Player\Look.cs" />
     <Compile Include="Custom\Standalone\Commands\Player\ResetSkill.cs" />
+    <Compile Include="Custom\Standalone\TinyChat\TinyChat.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="SpecialSystems\README.TXT" />
