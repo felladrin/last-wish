@@ -3880,6 +3880,15 @@ namespace Server.Mobiles
                     return false;
             }
 
+            #region Party Visibility
+            // Check if they are not null, for safety.
+            // Check if they have a party, then check it against our party
+            // If the parties are the same reference, we can see them.
+            // Only one of the two parties logically needs to be null-checked.
+            if( m != null && m.Party != null && m.Party == this.Party )
+                return true;
+            #endregion
+
             return base.CanSee(m);
         }
 
@@ -3945,7 +3954,7 @@ namespace Server.Mobiles
                 list.Add(1060847, "{0}\t{1}", titleStart, titleEnd);
             }
 
-            // Added to change health status under the name.
+            // Added to show health status under the name.
             if (!Blessed && Hits != HitsMax && Hits != 0)
             {
                 /*
