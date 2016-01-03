@@ -31,7 +31,7 @@ namespace Server.Gumps
             m_Letter = text;
             owner.CloseGump(typeof(LetterGump));
 
-            int gumpX = 0; int gumpY = 0; bool initialState = false;
+            int gumpX = 0; int gumpY = 0;
 
             m_Owner = owner;
 

@@ -26,7 +26,7 @@ namespace Server.Gumps
             m_From = from;
             owner.CloseGump(typeof(WriteLetterGump));
 
-            int gumpX = 0; int gumpY = 0; bool initialState = false;
+            int gumpX = 0; int gumpY = 0;
 
             m_Owner = owner;
 
