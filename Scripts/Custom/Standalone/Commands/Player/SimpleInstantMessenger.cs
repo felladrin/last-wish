@@ -109,7 +109,11 @@ namespace Server.Gumps
             m_Owner = owner;
             m_Mobiles = list;
 
-            if (m_Mobiles.Count == 1)
+            if (m_Mobiles.Count == 0)
+            {
+                owner.SendMessage(38, "Sorry, we could not find the player you are looking for.");
+            }
+            else if (m_Mobiles.Count == 1)
             {
                 owner.SendGump(new SIMGumpChatPlayer(owner, m_Mobiles[0].NetState));
             }
@@ -137,7 +141,10 @@ namespace Server.Gumps
                 {
                     if (filter != null && (m.Name == null || m.Name.ToLower().IndexOf(filter) < 0))
                         continue;
-
+                    
+                    if (m == owner)
+                        continue;
+                    
                     list.Add(m);
                 }
             }
@@ -358,12 +365,11 @@ namespace Server.Gumps
 
                 if (text != null)
                 {
-                    focus.SendMessage(0x482, "{0} tells you:", from.Name);
-                    focus.SendMessage(0x482, text.Text);
-
                     string Author = from.Name;
                     string Message = text.Text;
 
+                    from.SendMessage(0x482, "You tell {0}: {1}", focus.Name, Message);
+                    focus.SendMessage(0x482, "{0} tells you: {1}", Author, Message);
                     focus.SendGump(new SIMGumpSend(Author, Message));
 
                     // CommandLogging.WriteLine(from, "{0} {1} telling {2} \"{3}\" ", from.AccessLevel, CommandLogging.Format(from), CommandLogging.Format(focus), text.Text);
