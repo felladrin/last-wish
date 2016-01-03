@@ -584,7 +584,6 @@
     <Compile Include="Custom\Standalone\Nerun%27s Distro\SA\Mobiles\UnderWorld\Spiders\TrapdoorSpider.cs" />
     <Compile Include="Custom\Standalone\Nerun%27s Distro\SA\Mobiles\UnderWorld\Spiders\WolfSpider.cs" />
     <Compile Include="Custom\Standalone\Nerun%27s Distro\SA\Mobiles\UnderWorld\TanglingRoots.cs" />
-    <Compile Include="Custom\Standalone\ProTag\ProTag.cs" />
     <Compile Include="Custom\Standalone\Items\Brick.cs" />
     <Compile Include="Custom\Standalone\Quests\Lord British%27s Books\Items\LBBbookOfChaos1.cs" />
     <Compile Include="Custom\Standalone\Quests\Lord British%27s Books\Items\LBBbookOfChaos2.cs" />
