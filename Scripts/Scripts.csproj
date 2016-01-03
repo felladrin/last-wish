@@ -425,7 +425,6 @@
     <Compile Include="Custom\Requires Scripts Changes\Onsite Dueling\Timers\DuelTimer.cs" />
     <Compile Include="Custom\Requires Scripts Changes\Onsite Dueling\Timers\LogoutTimeoutTimer.cs" />
     <Compile Include="Custom\Requires Scripts Changes\Onsite Dueling\Timers\TimeoutTimer.cs" />
-    <Compile Include="Custom\Standalone\ProTag Extension - AFK Command\AFK.cs" />
     <Compile Include="Custom\Standalone\Commands\Player\Emote.cs" />
     <Compile Include="Custom\Standalone\Commands\Player\SimpleInstantMessenger.cs" />
     <Compile Include="Custom\Standalone\IntelliSpawner\IntelliSpawner.cs" />
@@ -3792,6 +3791,7 @@
     <Compile Include="Custom\Standalone\Commands\Player\Look.cs" />
     <Compile Include="Custom\Standalone\Commands\Player\ResetSkill.cs" />
     <Compile Include="Custom\Standalone\TinyChat\TinyChat.cs" />
+    <Compile Include="Custom\Standalone\Commands\Player\AFK.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="SpecialSystems\README.TXT" />
