@@ -1,7 +1,7 @@
-﻿// AutoDefend v1.1.1
+﻿// AutoDefend v1.1.2
 // Author: Felladrin
 // Started: 2013-10-14
-// Updated: 2016-01-02
+// Updated: 2016-01-03
 
 using System.Collections.Generic;
 using Server;
@@ -31,6 +31,8 @@ namespace Felladrin.Engines
                     CommandSystem.Register("AutoDefend", AccessLevel.Player, new CommandEventHandler(OnCommand));
             }
         }
+
+        static HashSet<int> DisabledPlayers = new HashSet<int>();
 
         public static void OnAggressiveAction(AggressiveActionEventArgs e)
         {
@@ -90,7 +92,5 @@ namespace Felladrin.Engines
                 pm.SendMessage(68, "You have enabled the auto-defend feature for your account.");
             }
         }
-
-        static List<int> DisabledPlayers = new List<int>();
     }
 }
