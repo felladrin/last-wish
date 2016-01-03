@@ -256,6 +256,9 @@ namespace Felladrin.Commands
                         if (m == owner || m.AccessLevel > AccessLevel.Player)
                             continue;
 
+                        if (owner.Party != null && owner.Party == m.Party)
+                            continue;
+
                         list.Add(m);
                     }
                 }
