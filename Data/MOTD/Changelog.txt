@@ -22,6 +22,7 @@
 Victor
 - Added command [ResetSkill to set a skill back to 0.
 - Now players in the same party can see each other even when they are hidden.
+- Now when you use [P without any argument, it shows your party fellows names and informs who is leading the party.
 
 [*]Jan 1, 2016
 Victor
