@@ -1,7 +1,7 @@
-﻿// AutoDefend v1.1.0
+﻿// AutoDefend v1.1.1
 // Author: Felladrin
-// Created at 2013-10-14
-// Updated at 2016-01-02
+// Started: 2013-10-14
+// Updated: 2016-01-02
 
 using System.Collections.Generic;
 using Server;
@@ -9,29 +9,30 @@ using Server.Accounting;
 using Server.Commands;
 using Server.Mobiles;
 
-namespace Felladrin.Misc
+namespace Felladrin.Engines
 {
     public static class AutoDefend
     {
         public static class Config
         {
-            public static bool Enabled = true;              // Is this system enabled?
-            public static bool AllowPlayerToggle = true;    // Should we allow player to use a command to toggle the auto-defend?
+            public static bool Enabled = true;           // Is this system enabled?
+            public static bool CommandEnabled = true;    // Should we enable the command to allow players to enable/disable this system for their account?
         }
 
         public static void Initialize()
         {
             if (Config.Enabled)
             {
-                EventSink.AggressiveAction += AggressiveActionEvent;
-                EventSink.Login += LoginEvent;
+                EventSink.AggressiveAction += OnAggressiveAction;
+                EventSink.Login += OnLogin;
+                EventSink.Logout += OnLogout;
 
-                if (Config.AllowPlayerToggle)
-                    CommandSystem.Register("AutoDefend", AccessLevel.Player, new CommandEventHandler(OnToggleAutoDefend));
+                if (Config.CommandEnabled)
+                    CommandSystem.Register("AutoDefend", AccessLevel.Player, new CommandEventHandler(OnCommand));
             }
         }
 
-        public static void AggressiveActionEvent(AggressiveActionEventArgs e)
+        public static void OnAggressiveAction(AggressiveActionEventArgs e)
         {
             if (e.Aggressed.Player && e.Aggressor != e.Aggressed.Combatant && !DisabledPlayers.Contains(e.Aggressed.Serial.Value))
             {
@@ -48,7 +49,7 @@ namespace Felladrin.Misc
             }
         }
 
-        public static void LoginEvent(LoginEventArgs e)
+        public static void OnLogin(LoginEventArgs e)
         {
             PlayerMobile pm = e.Mobile as PlayerMobile;
             Account acc = pm.Account as Account;
@@ -56,12 +57,22 @@ namespace Felladrin.Misc
             if (acc.GetTag("AutoDefend") == "Disabled")
             {
                 DisabledPlayers.Add(pm.Serial.Value);
+                pm.SendMessage("Auto-Defend is Disabled for your account.");
             }
+            else
+            {
+                pm.SendMessage("Auto-Defend is Enabled for your account.");
+            }
+        }
+
+        public static void OnLogout(LogoutEventArgs e)
+        {
+            DisabledPlayers.Remove(e.Mobile.Serial.Value);
         }
 
         [Usage("AutoDefend")]
         [Description("Enables or disables the auto-defend feature.")]
-        static void OnToggleAutoDefend(CommandEventArgs e)
+        static void OnCommand(CommandEventArgs e)
         {
             PlayerMobile pm = e.Mobile as PlayerMobile;
             Account acc = pm.Account as Account;
