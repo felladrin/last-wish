@@ -6,12 +6,12 @@
 
 using System;
 using System.Collections.Generic;
-using Server.Engines.PartySystem;
-using Server.Gumps;
-using Server.Network;
-using Server.Factions;
 using Server;
 using Server.Commands;
+using Server.Engines.PartySystem;
+using Server.Factions;
+using Server.Gumps;
+using Server.Network;
 
 namespace Felladrin.Commands
 {
@@ -35,7 +35,6 @@ namespace Felladrin.Commands
         {
             e.Mobile.CloseGump(typeof(AddToPartyGump));
             e.Mobile.SendGump(new AddToPartyGump(e.Mobile, e.ArgString));
-            e.Mobile.SendMessage("Who would you like to add to your party?");
         }
 
         public class PartyInvitationGump : Gump
@@ -231,6 +230,7 @@ namespace Felladrin.Commands
                 else
                 {
                     InitializeGump(page);
+                    owner.SendMessage("Who would you like to add to your party?");
                 }
             }
 
