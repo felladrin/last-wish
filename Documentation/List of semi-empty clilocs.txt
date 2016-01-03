@@ -1,0 +1,76 @@
+1041522 ~1~~2~~3~
+1042971 ~1_NOTHING~
+1049150 LEATHER/HIDES(~1_AMT~)
+1049644 [~1_stuff~]
+1050039 ~1_NUMBER~ ~2_ITEMNAME~
+1050045 ~1_PREFIX~~2_NAME~~3_SUFFIX~
+1053099 ~1_oretype~ ~2_armortype~
+1060451 ~1_skillname~ +~2_val~
+1060452 ~1_skillname~ +~2_val~
+1060453 ~1_skillname~ +~2_val~
+1060454 ~1_skillname~ +~2_val~
+1060455 ~1_skillname~ +~2_val~
+1060658 ~1_val~: ~2_val~
+1060659 ~1_val~: ~2_val~
+1060660 ~1_val~: ~2_val~
+1060661 ~1_val~: ~2_val~
+1060662 ~1_val~: ~2_val~
+1060663 ~1_val~: ~2_val~
+1060776 ~1_val~, ~2_val~
+1060847 ~1_val~ ~2_val~
+1062613 "~1_NAME~"
+1063468 ~1_skillname~ +~2_val~
+1063483 ~1_MATERIAL~ ~2_ITEMNAME~
+1070722 ~1_NOTHING~
+1076226 ~1_ACTUAL_TID~ ~2_BOOL_TO_HUE~
+1076228 ~1_DUMMY~ ~2_DUMMY~
+1077467 ~1_name~!
+1080155 ~1_VAL~pts
+1113149 ~1_bonus~ ~2_type~: ~3_given~/~4_needed~
+1113249 ~1_NUMBER~ ~2_ITEMNAME~
+1113302 <CENTER>~1_VAL~</CENTER>
+1114057 ~1_val~
+1114773 ~1_VAL~<br>~2_VAL~
+1114774 ~1_VAL~<br>~2_VAL~<br>~3_VAL~
+1114775 ~1_VAL~<br>~2_VAL~<br>~3_VAL~<br>~4_VAL~
+1114776 ~1_VAL~<br>~2_VAL~<br>~3_VAL~<br>~4_VAL~<br>~5_VAL~
+1114778 ~1_VAL~
+1114779 ~1_VAL~
+1116436 ~1_PROCESS~ ~2_STAPLE~
+1116453 ~1_val~: ~2_val~/~3_val~
+1116454 ~1_val~: ~2_val~/~3_val~
+1116455 ~1_val~: ~2_val~/~3_val~
+1116456 ~1_val~: ~2_val~/~3_val~
+1116457 ~1_val~: ~2_val~/~3_val~
+1116458 ~1_val~: ~2_val~/~3_val~
+1116459 ~1_val~: ~2_val~/~3_val~
+1116460 ~1_val~: ~2_val~/~3_val~
+1116481 <CENTER>~1_VAL~~2_VAL~</CENTER>
+1116560 ~1_val~ ~2_val~
+1116690 ~1_val~ ~2_val~ ~3_val~
+1116691 ~1_val~ ~2_val~ ~3_val~
+1116692 ~1_val~ ~2_val~ ~3_val~
+1116693 ~1_val~ ~2_val~ ~3_val~
+1116694 ~1_val~ ~2_val~ ~3_val~
+1149934 ~1_VAL~%
+1149953 ~1_VAL~: ~2_VAL~%
+1150312 "~1_NAME~"
+1150340 ~1_NAME~ (~2_type~)
+1150541 ~1_TOKEN~
+1151112 ~1_COUNT~ ~2_UNITS~
+1151113 ~1_COUNT~ ~2_UNITS~
+1151115 ~1_COUNT~ ~2_UNITS~ ~3_COUNT~ ~4_UNITS~
+1151117 ~1_COUNT~ ~2_UNITS~ ~3_COUNT~ ~4_UNITS~ ~5_COUNT~ ~6_UNITS~
+1151119 ~1_COUNT~ ~2_UNITS~ ~3_COUNT~ ~4_UNITS~ ~5_COUNT~ ~6_UNITS~ ~7_COUNT~ ~8_UNITS~
+1151121 ~1_COUNT~ ~2_UNITS~ ~3_COUNT~ ~4_UNITS~ ~5_COUNT~ ~6_UNITS~ ~7_COUNT~ ~8_UNITS~ ~9_COUNT~ ~10_UNITS~
+1151408 ~1NT_val~
+1151413 ~1_skillname~ +~2_val~
+1151487 ~1NT_PREFIX~~2NT_NAME~~3NT_SUFFIX~
+1151496 ~1_NUMBER~ ~2NT_ITEMNAME~
+1151757 ~1_PREFIX~ ~2_ITEM~
+1153153 ~1_year~
+1153627 ~1_WIN~:~2_LOSE~
+1153783 ~1_NAME~ ~2_PROC~%
+1153966 ~1_OBJTYPE~ ~2_BONUSLEVEL~
+1153967 ~1_BONUSTYPE~ ~2_OBJTYPE~ ~3_BONUSLEVEL~
+1154645 <center>~1_val~</center>
