@@ -3791,6 +3791,11 @@
     <Compile Include="Custom\Standalone\Commands\Player\ResetSkill.cs" />
     <Compile Include="Custom\Standalone\TinyChat\TinyChat.cs" />
     <Compile Include="Custom\Standalone\Commands\Player\AFK.cs" />
+    <Compile Include="Custom\Standalone\Commands\Player\MyStats.cs" />
+    <Compile Include="Custom\Standalone\Commands\Player\BondInfo.cs" />
+    <Compile Include="Custom\Standalone\Commands\Player\OrganizeMe.cs" />
+    <Compile Include="Custom\Standalone\Commands\Staff\SoundPicker.cs" />
+    <Compile Include="Custom\Standalone\Commands\Staff\ClilocGump.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="SpecialSystems\README.TXT" />
