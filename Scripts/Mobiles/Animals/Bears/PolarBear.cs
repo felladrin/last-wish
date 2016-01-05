@@ -1,11 +1,12 @@
+// Ridable Polar Bear Mod by Milva.
 namespace Server.Mobiles
 {
     [CorpseName( "a polar bear corpse" )]
 	[TypeAlias( "Server.Mobiles.Polarbear" )]
-	public class PolarBear : BaseCreature
+    public class PolarBear : BaseMount
 	{
 		[Constructable]
-		public PolarBear() : base( AIType.AI_Animal, FightMode.Aggressor, 10, 1, 0.2, 0.4 )
+        public PolarBear() : base("a ridable polar bear", 0xD5, 0x3EC5, AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4) 
 		{
 			Name = "a polar bear";
 			Body = 213;
@@ -54,14 +55,14 @@ namespace Server.Mobiles
 		{
 			base.Serialize( writer );
 
-			writer.Write( (int) 0 );
+            writer.Write(0);
 		}
 
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
 
-			int version = reader.ReadInt();
+			reader.ReadInt();
 		}
 	}
 }
