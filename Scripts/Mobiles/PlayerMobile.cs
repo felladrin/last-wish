@@ -4726,9 +4726,10 @@ namespace Server.Mobiles
                     m_SpeechLog = new SpeechLog();
 
                 m_SpeechLog.Add(e.Mobile, e.Speech);
+
+                Felladrin.Commands.History.Refresh(this);
             }
         }
-
         #endregion
 
         #region Champion Titles

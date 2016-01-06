@@ -18,6 +18,11 @@
 // will not be displayed in-game. Entries with fewer
 // than three lines will not be displayed in-game.
 
+[*]Jan 6, 2016
+Victor
+- Added command [History to open a gump with the history of everything you've said and heard from other players.
+- Now the chat messages are always on the same color and on the chat history gump has colored names on it.
+
 [*]Jan 4, 2016
 Victor
 - Added command [MyStats to check your character stats.

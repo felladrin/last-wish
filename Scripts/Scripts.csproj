@@ -3796,6 +3796,7 @@
     <Compile Include="Custom\Standalone\Commands\Player\OrganizeMe.cs" />
     <Compile Include="Custom\Standalone\Commands\Staff\SoundPicker.cs" />
     <Compile Include="Custom\Standalone\Commands\Staff\ClilocGump.cs" />
+    <Compile Include="Custom\Standalone\Commands\Player\History.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="SpecialSystems\README.TXT" />
