@@ -1,7 +1,7 @@
-﻿// TinyChat v1.3.0
+﻿// TinyChat v1.4.0
 // Author: Felladrin
 // Started: 2013-07-03
-// Updated: 2016-01-03
+// Updated: 2016-01-06
 
 using System.Collections.Generic;
 using Server;
@@ -19,9 +19,10 @@ namespace Felladrin.Engines
         public static class Config
         {
             public static bool Enabled = true;               // Is this system enabled?
-            public static bool ReverseMode = true;           // Should we display new messages on the top of the history?
             public static bool OpenHistoryOnLogin = true;    // Should we display the history when player logs in?
-            public static int HistorySize = 50;              // How many messages should we keep on history?
+            public static bool AutoColoredNames = true;      // Should we auto color the players names?
+            public static int HistorySize = 50;              // How many messages should we keep in the history?
+            public static int MessageHue = 1154;             // What is the hue of the chat messages?
         }
 
         public static void Initialize()
@@ -140,7 +141,7 @@ namespace Felladrin.Engines
                 History.RemoveAt(0);
             }
 
-            History.Add(string.Format("[{0}] {1}: {2}", System.DateTime.UtcNow.ToString("HH:mm"), sender.Name, message));
+            History.Add(string.Format("[{0}] <basefont color=#{1}>{2}<basefont color=white> {3}", System.DateTime.UtcNow.ToString("HH:mm"), (Config.AutoColoredNames ? (sender.Name.GetHashCode()>>8).ToString() : "FFF"), sender.Name, Utility.FixHtml(message)));
 
             foreach (NetState ns in NetState.Instances)
             {
@@ -149,7 +150,7 @@ namespace Felladrin.Engines
                 if (player == null || DisabledPlayers.Contains(player.Serial.Value))
                     continue;
 
-                player.SendMessage(sender.SpeechHue, string.Format("<{0}> {1}", sender.Name, message));
+                player.SendMessage(Config.MessageHue, string.Format("<{0}> {1}", sender.Name, message));
 
                 if (player.HasGump(typeof(ChatHistoryGump)))
                 {
@@ -170,14 +171,7 @@ namespace Felladrin.Engines
 
             foreach (string msg in History)
             {
-                if (Config.ReverseMode)
-                {
-                    HTML = Utility.FixHtml(msg) + " <br/>" + HTML;
-                }
-                else
-                {
-                    HTML += Utility.FixHtml(msg) + " <br/>";
-                }
+                HTML = msg + " <br/>" + HTML;
             }
 
             return HTML;
