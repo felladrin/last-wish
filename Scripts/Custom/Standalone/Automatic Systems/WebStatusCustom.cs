@@ -1,28 +1,26 @@
-#region References
 using System;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
-
+using Server;
 using Server.Guilds;
-using Server.Network;
 using Server.Misc;
-#endregion
+using Server.Network;
 
-namespace Server.Custom
+namespace Felladrin.Automations
 {
     public class StatusPage : Timer
     {
         public static readonly bool Enabled = Core.Unix;
         public static readonly int UpdateIntervalInSeconds = 60;
 
-        private static HttpListener _Listener;
+        static HttpListener _Listener;
 
-        private static string _StatusPage = String.Empty;
-        private static byte[] _StatusBuffer = new byte[0];
+        static string _StatusPage = String.Empty;
+        static byte[] _StatusBuffer = new byte[0];
 
-        private static readonly object _StatusLock = new object();
+        static readonly object _StatusLock = new object();
 
         public static void Initialize()
         {
@@ -36,7 +34,7 @@ namespace Server.Custom
             Listen();
         }
 
-        private static void Listen()
+        static void Listen()
         {
             if (!HttpListener.IsSupported)
             {
@@ -60,7 +58,7 @@ namespace Server.Custom
             }
         }
 
-        private static void ListenerCallback(IAsyncResult result)
+        static void ListenerCallback(IAsyncResult result)
         {
             try
             {
@@ -77,13 +75,15 @@ namespace Server.Custom
                 context.Response.OutputStream.Write(buffer, 0, buffer.Length);
                 context.Response.OutputStream.Close();
             }
-            catch
-            { }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
 
             Listen();
         }
 
-        private static string Encode(string input)
+        static string Encode(string input)
         {
             var sb = new StringBuilder(input);
 
@@ -164,7 +164,14 @@ namespace Server.Custom
                         }
 
                         op.Write("</td><td>");
-                        op.Write(Titles.GetSkillTitle(m));
+                        if (m.AccessLevel == AccessLevel.Player)
+                        {
+                            op.Write(Titles.GetSkillTitle(m));
+                        }
+                        else
+                        {
+                            op.Write("Shard {0}", Enum.GetName(typeof(AccessLevel), m.AccessLevel));
+                        }
                         op.Write("</td><td>");
                         if (m.Map == Map.Felucca)
                         {
