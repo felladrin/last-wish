@@ -1,17 +1,18 @@
-﻿//   ___|========================|___
-//   \  |  Written by Felladrin  |  /   This script was released on RunUO Community under the GPL licensing terms.
-//    > |      August 2013       | <
-//   /__|========================|__\   [Boundless Bag of Seeds] - Current version: 1.0 (August 17, 2013)
+﻿// Boundless Bag v1.0.1
+// Author: Felladrin
+// Started: 2013-08-17
+// Updated: 2016-01-09
 
 using System;
+using Server;
 using Server.Engines.Plants;
 
-namespace Server.Items
+namespace Felladrin.Items
 {
     class BoundlessBagOfSeeds : BoundlessBag
     {
         [Constructable]
-        public BoundlessBagOfSeeds() : base()
+        public BoundlessBagOfSeeds()
         {
             Name = "Boundless Bag of Seeds";
             Hue = 378;
@@ -21,7 +22,7 @@ namespace Server.Items
         {
             get
             {
-                return new Type[]
+                return new []
                 {
                     typeof(Seed)
                 };
@@ -33,13 +34,13 @@ namespace Server.Items
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
-            writer.Write((int)0);
+            writer.Write(0);
         }
 
         public override void Deserialize(GenericReader reader)
         {
             base.Deserialize(reader);
-            int version = reader.ReadInt();
+            reader.ReadInt();
         }
     }
 }

@@ -1,11 +1,13 @@
-﻿//   ___|========================|___
-//   \  |  Written by Felladrin  |  /   This script was released on RunUO Community under the GPL licensing terms.
-//    > |      August 2013       | <
-//   /__|========================|__\   [Boundless Bag] - Current version: 1.0 (August 17, 2013)
+﻿// Boundless Bag v1.0.1
+// Author: Felladrin
+// Started: 2013-08-17
+// Updated: 2016-01-09
 
 using System;
+using Server;
+using Server.Items;
 
-namespace Server.Items
+namespace Felladrin.Items
 {
     class BoundlessBag : BaseContainer, IDyable
     {
@@ -19,10 +21,10 @@ namespace Server.Items
             list.Add("Items Inside: {0}", GetAmount(AllowedItemTypes));
         }
 
-        public override bool OnDragDrop(Mobile from, Item item)
+        public override bool OnDragDrop(Mobile from, Item dropped)
         {
-            if (InTypeList(item, AllowedItemTypes))
-                return base.OnDragDrop(from, item);
+            if (InTypeList(dropped, AllowedItemTypes))
+                return base.OnDragDrop(from, dropped);
 
             from.SendMessage(38, "It does not fit in this bag.");
             return false;
@@ -42,7 +44,7 @@ namespace Server.Items
             if (Deleted)
                 return false;
 
-            if (this.Parent == from.Backpack)
+            if (Parent == from.Backpack)
             {
                 Hue = sender.DyedHue;
                 return true;
@@ -78,13 +80,13 @@ namespace Server.Items
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
-            writer.Write((int)0);
+            writer.Write(0);
         }
 
         public override void Deserialize(GenericReader reader)
         {
             base.Deserialize(reader);
-            int version = reader.ReadInt();
+            reader.ReadInt();
         }
     }
 }
