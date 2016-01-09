@@ -3931,6 +3931,18 @@ namespace Server.Mobiles
 
         public override bool NewGuildDisplay { get { return Server.Guilds.Guild.NewGuildSystem; } }
 
+        private string m_Country;
+        public string Country
+        {
+            get
+            {
+                if (m_Country == null)
+                    m_Country = LanguageStatistics.GetCountry(Language);
+
+                return m_Country;
+            }
+        }
+
         // Added to change health status under the name.
         public override void OnHitsChange(int oldValue)
         {
@@ -3952,26 +3964,32 @@ namespace Server.Mobiles
                 string titleStart = skillTitle.Substring(0, skillTitle.IndexOf(' '));
                 string titleEnd = skillTitle.Substring(skillTitle.IndexOf(' ') + 1);
                 list.Add(1060847, "{0}\t{1}", titleStart, titleEnd);
-            }
 
-            // Added to show health status under the name.
-            if (!Blessed && Hits != HitsMax && Hits != 0)
-            {
-                /*
+                // Added to show health status under the name.
+                if (!Blessed && Hits != HitsMax && Hits != 0)
+                {
+                    /*
                 if (Hits == HitsMax)
                     list.Add("<basefont color=#00FF00>Healthy<basefont color=White>");
                 else
                 */
-                if (Hits > HitsMax * 0.8)
-                    list.Add("<basefont color=#FFFF00>Slightly Injured<basefont color=White>");
-                else if (Hits > HitsMax * 0.6)
-                    list.Add("<basefont color=#FFCC00>Injured<basefont color=White>");
-                else if (Hits > HitsMax * 0.4)
-                    list.Add("<basefont color=#FF9900>Badly Injured<basefont color=White>");
-                else if (Hits > HitsMax * 0.2)
-                    list.Add("<basefont color=#FF6600>Deadly Injured<basefont color=White>");
-                else
-                    list.Add("<basefont color=#FF0000>Almost Dead<basefont color=White>");
+                    if (Hits > HitsMax * 0.8)
+                        list.Add("<basefont color=#FFFF00>Slightly Injured<basefont color=White>");
+                    else if (Hits > HitsMax * 0.6)
+                        list.Add("<basefont color=#FFCC00>Injured<basefont color=White>");
+                    else if (Hits > HitsMax * 0.4)
+                        list.Add("<basefont color=#FF9900>Badly Injured<basefont color=White>");
+                    else if (Hits > HitsMax * 0.2)
+                        list.Add("<basefont color=#FF6600>Deadly Injured<basefont color=White>");
+                    else
+                        list.Add("<basefont color=#FF0000>Almost Dead<basefont color=White>");
+                }
+
+                // Added to show country under the name.
+                if (Country != null)
+                {
+                    list.Add(1060658, "{0}\t{1}", "From", Country);
+                }
             }
 
             if (Map == Faction.Facet)
@@ -3995,6 +4013,7 @@ namespace Server.Mobiles
                 }
             }
 
+            /*
             if (Core.ML)
             {
                 for (int i = AllFollowers.Count - 1; i >= 0; i--)
@@ -4008,6 +4027,7 @@ namespace Server.Mobiles
                     }
                 }
             }
+            */
         }
 
         public override void OnSingleClick(Mobile from)
