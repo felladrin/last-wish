@@ -18,6 +18,11 @@
 // will not be displayed in-game. Entries with fewer
 // than three lines will not be displayed in-game.
 
+[*]Jan 9, 2016
+Victor
+- Country name is now displayed under the character name.
+- Added item Boundless Bag of Seeds, to store seeds without limit.
+
 [*]Jan 6, 2016
 Victor
 - Added command [History to open a gump with the history of everything you've said and heard from other players.
