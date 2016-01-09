@@ -281,7 +281,6 @@
     <Compile Include="Custom\Standalone\Commands\Staff\GMRecall.cs" />
     <Compile Include="Custom\Standalone\Commands\Staff\GuildAdmin.cs" />
     <Compile Include="Custom\Standalone\Commands\Staff\Mark.cs" />
-    <Compile Include="Custom\Standalone\Commands\Staff\RemoteNotworkConsole.cs" />
     <Compile Include="Custom\Standalone\Commands\Staff\Rest.cs" />
     <Compile Include="Custom\Standalone\Commands\Staff\Say.cs" />
     <Compile Include="Custom\Standalone\Commands\Staff\Scout.cs" />
