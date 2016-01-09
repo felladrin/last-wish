@@ -1,7 +1,7 @@
-﻿// History Command v1.0.0
+﻿// History Command v1.0.1
 // Author: Felladrin
 // Started: 2016-01-06
-// Updated: 2016-01-06
+// Updated: 2016-01-09
 
 using System;
 using System.Collections.Generic;
@@ -23,6 +23,7 @@ namespace Felladrin.Commands
             public static bool AutoRefreshEnabled = true;    // Is the auto refresh enabled?
             public static bool AutoColoredNames = true;      // Should we auto color the players names?
             public static bool OpenGumpOnLogin = false;      // Should we display the gump when player logs in?
+            public static int MaxMessagesPerPage = 19;       // How many messages should we display per page?
         }
 
         public static void Initialize()
@@ -76,6 +77,7 @@ namespace Felladrin.Commands
         public static void Refresh(Mobile m)
         {
             PlayerMobile pm = m as PlayerMobile;
+
             if (pm != null && pm.HasGump(typeof(HistoryAutoRefreshGump)))
             {
                 pm.CloseGump(typeof(HistoryAutoRefreshGump));
@@ -85,26 +87,17 @@ namespace Felladrin.Commands
 
         public class HistoryGump : Gump
         {
-            public static readonly int MaxEntriesPerPage = 19;
-
             public virtual string Title { get { return "History - Auto Refresh: OFF"; } }
 
             Mobile m_Player;
             List<SpeechLogEntry> m_Log;
             int m_Page;
 
-            public HistoryGump(Mobile player, SpeechLog log)
-                : this(player, new List<SpeechLogEntry>(log))
-            {
-            }
+            public HistoryGump(Mobile player, SpeechLog log) : this(player, new List<SpeechLogEntry>(log)) { }
 
-            public HistoryGump(Mobile player, List<SpeechLogEntry> log)
-                : this(player, log, 0)
-            {
-            }
+            HistoryGump(Mobile player, List<SpeechLogEntry> log) : this(player, log, 0) { }
 
-            public HistoryGump(Mobile player, List<SpeechLogEntry> log, int page)
-                : base(500, 30)
+            HistoryGump(Mobile player, List<SpeechLogEntry> log, int page) : base(500, 30)
             {
                 m_Player = player;
                 m_Log = log;
@@ -117,7 +110,7 @@ namespace Felladrin.Commands
 
                 AddHtml(10, 10, 280, 20, String.Format("<basefont color=#A0A0FF><center>{0}</i></center></basefont>", Title), false, false);
 
-                int lastPage = (log.Count - 1) / MaxEntriesPerPage;
+                int lastPage = (log.Count - 1) / Config.MaxMessagesPerPage;
 
                 string sLog;
 
@@ -127,14 +120,12 @@ namespace Felladrin.Commands
                 }
                 else
                 {
-                    m_Log.Reverse();
-
-                    int min = Math.Max((page * MaxEntriesPerPage) - 1, 0);
-                    int max = Math.Min(min + MaxEntriesPerPage, log.Count);
+                    int bottom = log.Count - page * Config.MaxMessagesPerPage;
+                    int top = Math.Max( bottom - Config.MaxMessagesPerPage, 0 );
 
                     StringBuilder builder = new StringBuilder();
 
-                    for (int i = min; i < max; i++)
+                    for (int i = bottom-1; i >= top; i--)
                     {
                         SpeechLogEntry entry = log[i];
 
@@ -145,8 +136,10 @@ namespace Felladrin.Commands
                         string speech = entry.Speech;
                         string time = entry.Created.ToString("HH:mm");
 
-                        if (i != min)
+                        if (i != bottom-1)
+                        {
                             builder.Append("<br/>");
+                        }
 
                         builder.AppendFormat("[{0}] <basefont color=#{1}>{2}<basefont color=white> {3} ", time, color, name, Utility.FixHtml(speech));
                     }
@@ -157,12 +150,16 @@ namespace Felladrin.Commands
                 AddHtml(10, 40, 280, 350, sLog, false, true);
 
                 if (page > 0)
+                {
                     AddButton(10, 395, 0xFAE, 0xFB0, 1, GumpButtonType.Reply, 0); // Previous page
+                }
 
                 AddLabel(45, 395, 0x481, String.Format("Current page: {0}/{1}", page + 1, lastPage + 1));
 
                 if (page < lastPage)
+                {
                     AddButton(261, 395, 0xFA5, 0xFA7, 2, GumpButtonType.Reply, 0); // Next page
+                }
             }
 
             public override void OnResponse(NetState sender, RelayInfo info)
@@ -174,14 +171,18 @@ namespace Felladrin.Commands
                     case 1: // Previous page
                         {
                             if (m_Page - 1 >= 0)
+                            {
                                 from.SendGump(new HistoryGump(m_Player, m_Log, m_Page - 1));
+                            }
 
                             break;
                         }
                     case 2: // Next page
                         {
-                            if ((m_Page + 1) * MaxEntriesPerPage < m_Log.Count)
+                            if ((m_Page + 1) * Config.MaxMessagesPerPage < m_Log.Count)
+                            {
                                 from.SendGump(new HistoryGump(m_Player, m_Log, m_Page + 1));
+                            }
 
                             break;
                         }
