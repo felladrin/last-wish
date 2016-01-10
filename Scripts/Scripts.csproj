@@ -3797,6 +3797,7 @@
     <Compile Include="Custom\Standalone\Commands\Staff\ClilocGump.cs" />
     <Compile Include="Custom\Standalone\Commands\Player\History.cs" />
     <Compile Include="Custom\Standalone\Automatic Systems\AutoGarbageCollector.cs" />
+    <Compile Include="Custom\Standalone\Commands\Staff\SearchImage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="SpecialSystems\README.TXT" />
