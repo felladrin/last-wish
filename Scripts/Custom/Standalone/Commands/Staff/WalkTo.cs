@@ -1,152 +1,128 @@
-//   ___|========================|___
-//   \  |  Written by Felladrin  |  /   This script was released on RunUO Forums under the GPL licensing terms.
-//    > |      August 2013       | <
-//   /__|========================|__\   [WalkTo Command] - Current version: 1.0 (August 21, 2013)
+// WalkTo Command v1.1.0
+// Author: Felladrin
+// Started: 2013-08-21
+// Updated: 2016-01-10
 
 using System;
+using Server;
+using Server.Commands;
 using Server.Items;
 using Server.Mobiles;
+using Server.Spells;
 using Server.Targeting;
 
-namespace Server.Commands
+namespace Felladrin.Commands
 {
-    public class WalkTo
+    public static class WalkTo
     {
-        public class Config
+        public static class Config
         {
-            public static TimeSpan AutoDeleteDelay = TimeSpan.FromSeconds(30); // Time to auto-delete each waypoint added.
-            public static bool MultipleWaypoints = true; // Allows to make a complex path for the mobile to follow.
+            public static bool Enabled = true;                                   // Is this command enabled?
+            public static TimeSpan AutoDeleteDelay = TimeSpan.FromMinutes(1);    // What's the delay to auto-delete waypoints created by this command?
         }
 
         public static void Initialize()
         {
-            CommandSystem.Register("WalkTo", AccessLevel.GameMaster, new CommandEventHandler(WalkTo_OnCommand));
+            if (Config.Enabled)
+                CommandSystem.Register("WalkTo", AccessLevel.GameMaster, new CommandEventHandler(OnCommand));
         }
 
         [Usage("WalkTo")]
-        [Description("Commands a NPC to walk to target.")]
-        private static void WalkTo_OnCommand(CommandEventArgs e)
+        [Description("Commands a NPC to walk to a targeted spot. If Multiple Waypoints Mode is enabled, you can sequentially target spots to make the creature follow a complex path.")]
+        static void OnCommand(CommandEventArgs e)
         {
-            e.Mobile.Target = new CreatureTarget();
+            e.Mobile.Target = new WalkToTarget();
             e.Mobile.SendMessage(68, "What creature you want to make walk?");
         }
 
-        private class CreatureTarget : Target
+        class WalkToTarget : Target
         {
-            public CreatureTarget() : base(-1, true, TargetFlags.None)
-            {
-            }
+            public WalkToTarget() : base(-1, true, TargetFlags.None) { }
 
-            protected override void OnTarget(Mobile from, object target)
+            protected override void OnTarget(Mobile from, object targeted)
             {
-                if (target is BaseCreature)
-                {
-                    BaseCreature bc = target as BaseCreature;
-                    bc.CurrentSpeed = 0.2;
-                    bc.Frozen = false;
-                    from.SendMessage(68, "Now select where it should walk to.");
-                    from.Target = new WalkToTarget(bc);
-                }
-                else
+                BaseCreature baseCreature = targeted as BaseCreature;
+
+                if (baseCreature == null)
                 {
                     from.SendMessage(38, "You can only move NPCs!");
-                }
-            }
-        }
-
-        private class WalkToTarget : Target
-        {
-            private BaseCreature creature;
-
-            public WalkToTarget(BaseCreature bc) : base(-1, true, TargetFlags.None)
-            {
-                creature = bc;
-            }
-
-            protected override void OnTarget(Mobile from, object target)
-            {
-                IPoint3D p = target as IPoint3D;
-
-                if (p == null)
                     return;
-
-                Spells.SpellHelper.GetSurfaceTop(ref p);
-
-                Point3D toLoc = new Point3D(p);
-
-                WayPoint wp = new WalkWayPoint();
-
-                wp.MoveToWorld(toLoc, from.Map);
-
-                creature.CurrentWayPoint = wp;
-
-                if (Config.MultipleWaypoints)
-                {
-                    from.SendMessage(68, "Select another spot before it reaches the last way point!");
-                    from.Target = new AddWayPointTarget(wp);
                 }
-                else
-                {
-                    from.SendMessage(68, "You can now select another spot to change the its destination.");
-                    from.Target = new WalkToTarget(creature);
-                }
+
+                from.SendMessage(68, "Now select where it should walk to.");
+                from.Target = new AddWalkWayPointTarget(baseCreature);
             }
         }
 
-        private class AddWayPointTarget : Target
+        class AddWalkWayPointTarget : Target
         {
-            private WayPoint prevWayPoint;
+            WayPoint prevWayPoint;
+            BaseCreature baseCreature;
 
-            public AddWayPointTarget(WayPoint wp) : base(-1, true, TargetFlags.None)
+            public AddWalkWayPointTarget(BaseCreature bc, WayPoint wp = null) : base(-1, true, TargetFlags.None)
             {
                 prevWayPoint = wp;
+                baseCreature = bc;
             }
 
-            protected override void OnTarget(Mobile from, object target)
+            protected override void OnTarget(Mobile from, object targeted)
             {
-                IPoint3D p = target as IPoint3D;
+                IPoint3D spot = targeted as IPoint3D;
 
-                if (p == null)
+                if (spot == null)
                     return;
 
-                Spells.SpellHelper.GetSurfaceTop(ref p);
+                SpellHelper.GetSurfaceTop(ref spot);
 
-                Point3D toLoc = new Point3D(p);
+                Point3D location = new Point3D(spot);
 
-                WayPoint wp = new WalkWayPoint(prevWayPoint);
+                WayPoint wp = (prevWayPoint != null) ? new WalkWayPoint(prevWayPoint) : new WalkWayPoint();
 
-                wp.MoveToWorld(toLoc, from.Map);
+                wp.MoveToWorld(location, from.Map);
 
-                from.Target = new AddWayPointTarget(wp);
+                baseCreature.Frozen = false;
+                baseCreature.CantWalk = false;
+                baseCreature.CurrentSpeed = 0.2;
+
+                if (baseCreature.CurrentWayPoint == null)
+                    baseCreature.CurrentWayPoint = wp;
+
+                Timer.DelayCall(Config.AutoDeleteDelay, delegate
+                    {
+                        wp.Delete();
+
+                        if (baseCreature.CurrentWayPoint == null)
+                            baseCreature.CurrentSpeed = baseCreature.PassiveSpeed;
+                    }
+                );
+
+                from.Target = new AddWalkWayPointTarget(baseCreature, wp);
             }
         }
 
-        private class WalkWayPoint : WayPoint
+        class WalkWayPoint : WayPoint
         {
-            public WalkWayPoint() : base()
-            {
-                Name = "Walk Way Point";
-                Timer.DelayCall(Config.AutoDeleteDelay, delegate { Delete(); });
-            }
+            public override string DefaultName { get { return "Walk Way Point"; } }
 
-            public WalkWayPoint(WayPoint prev) : base(prev)
-            {
-                Name = "Walk Way Point";
-                Timer.DelayCall(Config.AutoDeleteDelay, delegate { Delete(); });
-            }
+            public override bool DisplayWeight { get { return false; } }
+
+            public WalkWayPoint() { }
+
+            public WalkWayPoint(WayPoint prev) : base(prev) { }
 
             public WalkWayPoint(Serial serial) : base(serial) { }
 
             public override void Serialize(GenericWriter writer)
             {
                 base.Serialize(writer);
-                writer.Write((int)0);
+                writer.Write(0);
             }
 
             public override void Deserialize(GenericReader reader)
             {
                 base.Deserialize(reader);
-                int version = reader.ReadInt();
+                reader.ReadInt();
+                Delete();
             }
         }
     }
