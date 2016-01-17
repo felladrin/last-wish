@@ -180,8 +180,6 @@ namespace Server.Items
             m_Wax = reader.ReadInt();
         }
 
-        AdresseeEntry entry;
-
         public AdresseeEntry AddEntry(Mobile Owner)
         {
 

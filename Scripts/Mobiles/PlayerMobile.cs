@@ -2659,7 +2659,7 @@ namespace Server.Mobiles
 
         public override void OnWarmodeChanged()
         {
-            AutoSheatheWeapon.From(this);
+            Felladrin.Automations.AutoSheatheWeapon.From(this);
 
             if (!Warmode)
                 Timer.DelayCall(TimeSpan.FromSeconds(10), new TimerCallback(RecoverAmmo));
@@ -3931,17 +3931,23 @@ namespace Server.Mobiles
 
         public override bool NewGuildDisplay { get { return Server.Guilds.Guild.NewGuildSystem; } }
 
-        private string m_Country;
+        #region Display country under character name
+        string m_Country;
+        bool m_TriedToGetCountry;
         public string Country
         {
             get
             {
-                if (m_Country == null)
-                    m_Country = LanguageStatistics.GetCountry(Language);
+                if (!m_TriedToGetCountry && m_Country == null)
+                {
+                    m_Country = Felladrin.Utilities.Country.GetNameFromCode(Language);
+                    m_TriedToGetCountry = true;
+                }
 
                 return m_Country;
             }
         }
+        #endregion
 
         // Added to change health status under the name.
         public override void OnHitsChange(int oldValue)
@@ -3966,14 +3972,11 @@ namespace Server.Mobiles
                 list.Add(1060847, "{0}\t{1}", titleStart, titleEnd);
 
                 // Added to show health status under the name.
-                if (!Blessed && Hits != HitsMax && Hits != 0)
+                if (Alive && !Blessed && Hits != HitsMax)
                 {
-                    /*
-                if (Hits == HitsMax)
-                    list.Add("<basefont color=#00FF00>Healthy<basefont color=White>");
-                else
-                */
-                    if (Hits > HitsMax * 0.8)
+                    if (Hits == HitsMax)
+                        list.Add("<basefont color=#00FF00>Healthy<basefont color=White>");
+                    else if (Hits > HitsMax * 0.8)
                         list.Add("<basefont color=#FFFF00>Slightly Injured<basefont color=White>");
                     else if (Hits > HitsMax * 0.6)
                         list.Add("<basefont color=#FFCC00>Injured<basefont color=White>");
@@ -3985,11 +3988,12 @@ namespace Server.Mobiles
                         list.Add("<basefont color=#FF0000>Almost Dead<basefont color=White>");
                 }
 
-                // Added to show country under the name.
+                #region Display country under character name
                 if (Country != null)
                 {
                     list.Add(1060658, "{0}\t{1}", "From", Country);
                 }
+                #endregion
             }
 
             if (Map == Faction.Facet)

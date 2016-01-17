@@ -199,7 +199,6 @@
     <Compile Include="Custom\Standalone\Addons\Kowgan\TvTArenaAddon.cs" />
     <Compile Include="Custom\Standalone\Addons\Kowgan\TvTArenaLobbyAddon.cs" />
     <Compile Include="Custom\Standalone\Automatic Systems\SetSkillCap.cs" />
-    <Compile Include="Custom\Standalone\Commands\Player\PartyChat.cs" />
     <Compile Include="Custom\Standalone\Commands\Player\VoiceChat.cs" />
     <Compile Include="Custom\Standalone\Items\MailBox.cs" />
     <Compile Include="Custom\Standalone\Addons\PoolSpaNew2WaterAddon.cs" />
@@ -219,7 +218,6 @@
     <Compile Include="Custom\Requires Scripts Changes\Automatic Systems\AutoSheatheWeapon.cs" />
     <Compile Include="Custom\Standalone\Automatic Systems\AutoSpeedBooster.cs" />
     <Compile Include="Custom\Standalone\Automatic Systems\DisconnectPet.cs" />
-    <Compile Include="Custom\Standalone\Automatic Systems\Interest System.cs" />
     <Compile Include="Custom\Standalone\Automatic Systems\Kudos.cs" />
     <Compile Include="Custom\Requires Scripts Changes\Automatic Systems\MaxFollowersIntelBased.cs" />
     <Compile Include="Custom\Standalone\Automatic Systems\PlayMusicOnLogin.cs" />
@@ -265,10 +263,8 @@
     <Compile Include="Custom\Standalone\Commands\Staff\AddRug.cs" />
     <Compile Include="Custom\Standalone\Commands\Staff\AddStairs.cs" />
     <Compile Include="Custom\Standalone\Commands\Staff\AddTable.cs" />
-    <Compile Include="Custom\Standalone\Commands\Staff\AltCommand.cs" />
     <Compile Include="Custom\Standalone\Commands\Staff\Caps.cs" />
     <Compile Include="Custom\Standalone\Commands\Staff\ChangeSeason.cs" />
-    <Compile Include="Custom\Standalone\Commands\Staff\ClearOtherFacets.cs" />
     <Compile Include="Custom\Standalone\Commands\Staff\CloneMe.cs" />
     <Compile Include="Custom\Standalone\Commands\Staff\DelChar.cs" />
     <Compile Include="Custom\Standalone\Commands\Staff\FindBoat.cs" />
@@ -286,7 +282,6 @@
     <Compile Include="Custom\Standalone\Commands\Staff\Scout.cs" />
     <Compile Include="Custom\Standalone\Commands\Staff\SendGump.cs" />
     <Compile Include="Custom\Standalone\Commands\Staff\SetDecayTime.cs" />
-    <Compile Include="Custom\Standalone\Commands\Staff\ShardLiveShow.cs" />
     <Compile Include="Custom\Standalone\Commands\Staff\Tame.cs" />
     <Compile Include="Custom\Standalone\Commands\Staff\WalkTo.cs" />
     <Compile Include="Custom\Standalone\Commands\Staff\WaterWalk.cs" />
@@ -3788,7 +3783,6 @@
     <Compile Include="Custom\Standalone\Bomberman\Misc\Blast.cs" />
     <Compile Include="Custom\Standalone\Commands\Player\Look.cs" />
     <Compile Include="Custom\Standalone\Commands\Player\ResetSkill.cs" />
-    <Compile Include="Custom\Standalone\TinyChat\TinyChat.cs" />
     <Compile Include="Custom\Standalone\Commands\Player\AFK.cs" />
     <Compile Include="Custom\Standalone\Commands\Player\MyStats.cs" />
     <Compile Include="Custom\Standalone\Commands\Player\BondInfo.cs" />
@@ -3798,6 +3792,11 @@
     <Compile Include="Custom\Standalone\Commands\Player\History.cs" />
     <Compile Include="Custom\Standalone\Automatic Systems\AutoGarbageCollector.cs" />
     <Compile Include="Custom\Standalone\Commands\Staff\SearchImage.cs" />
+    <Compile Include="Custom\Standalone\Automatic Systems\Country.cs" />
+    <Compile Include="Custom\Standalone\TinyChat\GlobalChat.cs" />
+    <Compile Include="Custom\Standalone\Commands\Staff\ShowOff.cs" />
+    <Compile Include="Custom\Standalone\Commands\Staff\Alt.cs" />
+    <Compile Include="Custom\Standalone\Commands\Player\PartyMessage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="SpecialSystems\README.TXT" />

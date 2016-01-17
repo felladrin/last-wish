@@ -9,7 +9,7 @@ using Server.Accounting;
 using Server.Commands;
 using Server.Mobiles;
 
-namespace Felladrin.Engines
+namespace Felladrin.Automations
 {
     public static class AutoDefend
     {

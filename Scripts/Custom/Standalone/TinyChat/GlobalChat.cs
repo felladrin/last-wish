@@ -1,4 +1,4 @@
-﻿// TinyChat v1.4.0
+﻿// Global Chat v1.4.0
 // Author: Felladrin
 // Started: 2013-07-03
 // Updated: 2016-01-06
@@ -8,13 +8,12 @@ using Server;
 using Server.Accounting;
 using Server.Commands;
 using Server.Gumps;
-using Server.Misc;
 using Server.Mobiles;
 using Server.Network;
 
 namespace Felladrin.Engines
 {
-    public static class TinyChat
+    public static class GlobalChat
     {
         public static class Config
         {
@@ -179,8 +178,7 @@ namespace Felladrin.Engines
 
         public class ChatHistoryGump : Gump
         {
-            public ChatHistoryGump()
-                : base(110, 100)
+            public ChatHistoryGump() : base(110, 100)
             {
                 Closable = true;
                 Dragable = true;
@@ -193,7 +191,7 @@ namespace Felladrin.Engines
 
                 AddImageTiled(10, 10, 400, 20, 2624);
                 AddAlphaRegion(10, 10, 400, 20);
-                AddLabel(15, 10, 73, ServerList.ServerName + " Chat History - Viewing the last " + Config.HistorySize + " messages");
+                AddLabel(15, 10, 73, "Global Chat History - Viewing the last " + Config.HistorySize + " messages");
 
                 AddImageTiled(10, 40, 400, 200, 2624);
                 AddAlphaRegion(10, 40, 400, 200);

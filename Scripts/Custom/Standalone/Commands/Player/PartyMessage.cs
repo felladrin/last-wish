@@ -1,5 +1,4 @@
-// Party Chat Command v1.0.1
-// Description: Sends a message to the party.
+// Party Message Command v1.0.1
 // Author: Felladrin
 // Started: 2015-12-19
 // Updated: 2016-01-02
@@ -11,7 +10,7 @@ using System.Collections.Generic;
 
 namespace Felladrin.Commands
 {
-    public static class PartyChatCommand
+    public static class PartyMessage
     {
         public static void Initialize()
         {

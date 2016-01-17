@@ -229,19 +229,6 @@ namespace Server.Misc
 			return String.Format( "Unknown code {0}", code );
 		}
 
-        // Added by Felladrin to get the country of the player.
-        public static string GetCountry(string code)
-        {
-            if (code == null || code.Length != 3)
-                return code;
-
-            for (int i = 0; i < InternationalCodes.Length; i++)
-                if (code == InternationalCodes[i].Code)
-                    return InternationalCodes[i].Country;
-
-            return code;
-        }
-
 		private static bool DefaultLocalNames = false;
 		private static bool ShowAlternatives = true;
 		private static bool CountAccounts = true; // will consider only first character's valid language
