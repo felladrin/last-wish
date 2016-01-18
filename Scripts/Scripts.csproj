@@ -244,7 +244,6 @@
     <Compile Include="Custom\Standalone\Commands\Player\BoatControl.cs" />
     <Compile Include="Custom\Standalone\Commands\Player\ChangeCharacter.cs" />
     <Compile Include="Custom\Requires Scripts Changes\Commands\Player\ContainerRename.cs" />
-    <Compile Include="Custom\Standalone\Commands\Player\Convoke.cs" />
     <Compile Include="Custom\Standalone\Commands\Player\Dismantle.cs" />
     <Compile Include="Custom\Standalone\Commands\Player\Dump.cs" />
     <Compile Include="Custom\Standalone\Commands\Player\Equip.cs" />
@@ -3797,6 +3796,7 @@
     <Compile Include="Custom\Standalone\Commands\Staff\ShowOff.cs" />
     <Compile Include="Custom\Standalone\Commands\Staff\Alt.cs" />
     <Compile Include="Custom\Standalone\Commands\Player\PartyMessage.cs" />
+    <Compile Include="Custom\Standalone\Commands\Player\Summon.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="SpecialSystems\README.TXT" />
