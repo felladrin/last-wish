@@ -989,7 +989,7 @@ namespace Server.Mobiles
 
                 Mobile from = this;
 
-                MaxFollowersIntelBased.Evaluate(from);
+                Felladrin.Automations.MaxFollowersBasedOnIntelligence.Evaluate(from);
 
                 #region Ethics
                 Ethics.Ethic ethic = Ethics.Ethic.Find(from);
