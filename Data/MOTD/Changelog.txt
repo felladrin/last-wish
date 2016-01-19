@@ -18,6 +18,11 @@
 // will not be displayed in-game. Entries with fewer
 // than three lines will not be displayed in-game.
 
+[*]Jan 19, 2016
+Victor
+- Improved Donation Box to better organize items inside.
+- [Convoke command is now [Summon.
+
 [*]Jan 9, 2016
 Victor
 - Country name is now displayed under the character name.
