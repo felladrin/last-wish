@@ -35,7 +35,7 @@ namespace Felladrin.Engines
             }
         }
 
-        static List<string> History = new List<string>();
+        static readonly List<string> History = new List<string>();
 
         static HashSet<int> DisabledPlayers = new HashSet<int>();
 
@@ -43,18 +43,17 @@ namespace Felladrin.Engines
         [Description("Enables or Disables the Chat.")]
         static void OnCommandToggle(CommandEventArgs e)
         {
-            PlayerMobile pm = e.Mobile as PlayerMobile;
-            Account acc = pm.Account as Account;
+            var pm = e.Mobile as PlayerMobile;
+            var acc = pm.Account as Account;
 
             if (acc.GetTag("Chat") == null || acc.GetTag("Chat") == "Enabled")
             {
                 DisabledPlayers.Add(pm.Serial.Value);
                 acc.SetTag("Chat", "Disabled");
                 pm.SendMessage(38, "You have disabled the chat for your account.");
+
                 if (pm.HasGump(typeof(ChatHistoryGump)))
-                {
                     pm.CloseGump(typeof(ChatHistoryGump));
-                }
             }
             else
             {
@@ -67,9 +66,9 @@ namespace Felladrin.Engines
 
         [Usage("ChatHistory")]
         [Description("Opens the Chat History.")]
-        public static void OnCommandHistory(CommandEventArgs e)
+        static void OnCommandHistory(CommandEventArgs e)
         {
-            PlayerMobile pm = e.Mobile as PlayerMobile;
+            var pm = e.Mobile as PlayerMobile;
 
             if (DisabledPlayers.Contains(pm.Serial.Value))
             {
@@ -78,9 +77,7 @@ namespace Felladrin.Engines
             }
 
             if (pm.HasGump(typeof(ChatHistoryGump)))
-            {
                 pm.CloseGump(typeof(ChatHistoryGump));
-            }
 
             pm.SendGump(new ChatHistoryGump());
         }
@@ -89,7 +86,7 @@ namespace Felladrin.Engines
         [Description("Broadcasts a message to all players online. If no message is provided, it opens the Chat History.")]
         static void OnCommandChat(CommandEventArgs e)
         {
-            PlayerMobile pm = e.Mobile as PlayerMobile;
+            var pm = e.Mobile as PlayerMobile;
 
             if (DisabledPlayers.Contains(pm.Serial.Value))
             {
@@ -100,9 +97,7 @@ namespace Felladrin.Engines
             if (e.ArgString.Length == 0)
             {
                 if (pm.HasGump(typeof(ChatHistoryGump)))
-                {
                     pm.CloseGump(typeof(ChatHistoryGump));
-                }
 
                 pm.SendGump(new ChatHistoryGump());
             }
@@ -112,10 +107,10 @@ namespace Felladrin.Engines
             }
         }
 
-        public static void OnLogin(LoginEventArgs e)
+        static void OnLogin(LoginEventArgs e)
         {
-            PlayerMobile pm = e.Mobile as PlayerMobile;
-            Account acc = pm.Account as Account;
+            var pm = e.Mobile as PlayerMobile;
+            var acc = pm.Account as Account;
 
             if (acc.GetTag("Chat") == "Disabled")
             {
@@ -127,24 +122,20 @@ namespace Felladrin.Engines
                 pm.SendMessage("Chat is Enabled for your account.");
 
                 if (Config.OpenHistoryOnLogin)
-                {
                     pm.SendGump(new ChatHistoryGump());
-                }
             }
         }
 
         static void Broadcast(Mobile sender, string message)
         {
             if (History.Count > Config.HistorySize)
-            {
                 History.RemoveAt(0);
-            }
 
             History.Add(string.Format("[{0}] <basefont color=#{1}>{2}<basefont color=white> {3}", System.DateTime.UtcNow.ToString("HH:mm"), (Config.AutoColoredNames ? (sender.Name.GetHashCode()>>8).ToString() : "FFF"), sender.Name, Utility.FixHtml(message)));
 
             foreach (NetState ns in NetState.Instances)
             {
-                PlayerMobile player = ns.Mobile as PlayerMobile;
+                var player = ns.Mobile as PlayerMobile;
 
                 if (player == null || DisabledPlayers.Contains(player.Serial.Value))
                     continue;
@@ -162,16 +153,12 @@ namespace Felladrin.Engines
         static string GenerateHistoryHTML()
         {
             if (History.Count == 0)
-            {
                 return "No messages were sent since the last restart.";
-            }
 
             string HTML = "";
 
             foreach (string msg in History)
-            {
                 HTML = msg + " <br/>" + HTML;
-            }
 
             return HTML;
         }
@@ -186,13 +173,10 @@ namespace Felladrin.Engines
                 Resizable = false;
 
                 AddPage(0);
-
                 AddBackground(0, 0, 420, 250, 5054);
-
                 AddImageTiled(10, 10, 400, 20, 2624);
                 AddAlphaRegion(10, 10, 400, 20);
                 AddLabel(15, 10, 73, "Global Chat History - Viewing the last " + Config.HistorySize + " messages");
-
                 AddImageTiled(10, 40, 400, 200, 2624);
                 AddAlphaRegion(10, 40, 400, 200);
                 AddHtml(15, 40, 395, 200, GenerateHistoryHTML(), false, true);
