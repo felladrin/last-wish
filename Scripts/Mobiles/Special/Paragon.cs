@@ -163,7 +163,7 @@ namespace Server.Mobiles
             // 	return false;
 
             // Added to avoid creation of paragons with these conditions:
-            if (bc.Region is Regions.TownRegion || bc.Fame < 1500 || bc is BasePeacemaker || bc.FightMode <= FightMode.Aggressor) return false;
+            if (bc.Region is Regions.TownRegion || bc.Fame < 1500 || bc.FightMode <= FightMode.Aggressor) return false;
 
             if (bc is BaseChampion || bc is Harrower || bc is BaseVendor || bc is BaseEscortable || bc is Clone || bc.IsParagon) return false;
 
