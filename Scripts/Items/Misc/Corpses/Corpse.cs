@@ -914,7 +914,7 @@ namespace Server.Items
 			if ( !base.CheckLift( from, item, ref reject ) )
 				return false;
 
-            if (Server.Custom.AutoSplit.Gold(from, item))
+            if (Felladrin.Automations.AutoSplitGold.Split(from, item))
                 return false;
 
             return CanLoot( from,item );
