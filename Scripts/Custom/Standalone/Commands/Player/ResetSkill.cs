@@ -1,8 +1,7 @@
-// ResetSkill Command v1.0.0
-// Description: Allows the player to set a given skill back to 0.
+// ResetSkill Command v1.0.1
 // Author: Felladrin
 // Started: 2016-01-02
-// Updated: 2016-01-02
+// Updated: 2016-01-21
 
 using System;
 using Server;
@@ -29,9 +28,11 @@ namespace Felladrin.Commands
         {
             Mobile m = arg.Mobile;
 
+            string skillNames = string.Join(", ", Enum.GetNames(typeof(SkillName)));
+
             if (arg.Length != 1)
             {
-                m.SendMessage("SetSkill <skill name>");
+                m.SendMessage("Usage: SetSkill <skill name>. List of skill names: {0}.", skillNames);
             }
             else
             {
@@ -40,12 +41,14 @@ namespace Felladrin.Commands
                 {
                     Skill skill = m.Skills[skillName];
                     if (skill != null)
+                    {
                         skill.Base = 0;
+                        m.SendMessage("You've successfully reset your {0}.", skill.Name);
+                    }
                 }
                 else
                 {
-                    m.SendLocalizedMessage(1005631); // You have specified an invalid skill to set.
-                    m.SendMessage("List of Skill Names: {0}.", string.Join(", ", Enum.GetNames(typeof(SkillName))));
+                    m.SendMessage("You have specified an invalid skill to set. List of skill names: {0}.", skillNames);
                 }
             }
         }
