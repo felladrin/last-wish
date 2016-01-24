@@ -1,26 +1,34 @@
-//   ___|========================|___
-//   \  |  Written by Felladrin  |  /   This script was released on RunUO Forums under the GPL licensing terms.
-//    > |      August 2013       | <
-//   /__|========================|__\   [Time Command] - Current version: 1.0 (August 18, 2013)
+// Time Command v1.1.0
+// Author: Felladrin
+// Started: 2013-08-18
+// Updated: 2016-01-21
 
-namespace Server.Commands
+// Installation:
+// Drop this script anywhere inside your Scripts folder.
+// Delete the default Time Command file: Scripts/Commands/ShardTime.cs
+
+using Server;
+using Server.Commands;
+using Server.Items;
+
+namespace Felladrin.Commands
 {
-    public class TimeCommand
+    public static class Time
     {
         public static void Initialize()
         {
-            CommandSystem.Register("Time", AccessLevel.Player, new CommandEventHandler(Time_OnCommand));
+            CommandSystem.Register("Time", AccessLevel.Player, new CommandEventHandler(OnCommand));
         }
 
         [Usage("Time")]
-        [Description("Returns the game's time and the server's local time.")]
-        public static void Time_OnCommand(CommandEventArgs e)
+        [Description("Informs the in-game time of your current region and also the real-world time (UTC).")]
+        public static void OnCommand(CommandEventArgs e)
         {
-            Mobile from = e.Mobile;
+            var m = e.Mobile;
             int currentHour, currentMinute;
-            Items.Clock.GetTime(from.Map, from.X, from.Y, out currentHour, out currentMinute);
-            from.SendMessage("Game current time is {0}", System.DateTime.Parse(currentHour + ":" + currentMinute).ToString("HH:mm"));
-            from.SendMessage("Server local time is {0}", System.DateTime.UtcNow.ToString("HH:mm"));
+            Clock.GetTime(m.Map, m.X, m.Y, out currentHour, out currentMinute);
+            m.SendMessage("It's {0} now in {1}.", System.DateTime.Parse(currentHour + ":" + currentMinute).ToString("HH:mm"), (m.Region.Name ?? m.Map.Name));
+            m.SendMessage("Real-World UTC: {0}.", System.DateTime.UtcNow.ToString("HH:mm"));
         }
     }
 }
