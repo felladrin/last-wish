@@ -1,31 +1,13 @@
-/*_____________________________________   __________________________________
-./|       +         .         :      * \./                                  |\.
-|||.        *     :   +-------------+   :  ___|=======================|___  |||
-||| : *  .    .  /\   |Ultima Online| . :  \  |       Written By      |  /  |||
-|||    . .      /&&\  +-------------+   :   > |       Felladrin       | <   |||
-|||  +      *  /&&&&\  . .    __  __|   :  /__|=======================|__\  |||
-|||      .    /&&&&&&\   /\  [::][::]   :                                   |||
-|||     *    /&&&&&&&&\ /&&\ \-=-=-=/   :                                   |||
-|||  .      /&&&&&&&&&&\&&&&\ |::::|    :                                   |||
-|||      +  |-=-=-=-=-=|    |_| __ |__  :           "Peacemaker"            |||
-|||         |::[]::[]::|   [::][::][::] :                                   |||
-|||  __  __ |__::::::::|    \-=-=-=-=/  :                                   |||
-||| [::][::][::]:::::::|  ___|:::[]:|   :                                   |||
-||| |-=-=-=-=-=|:::::::| ////|::::::|   :                                   |||
-||| |:[]:[]:[]:|=============|:[]:::|   :                                   |||
-||| |::::::::::|=|=|=|=|=|=|=|::::::|   :                                   |||
-||| |::+----+::|:::::::::::::|::::::|   :        Created: 2007-07-08        |||
-||| |::|\XX/|::|:::::::::::::|::::::|   :                                   |||
-||| |::|XXXX|::|:::::::::::::|::::::|   :        Updated: 2015-12-21        |||
-||| |::|/XX\|::|____________/._.._.._\  :                                   |||
-|||____________________________________ : __________________________________|||
-||/====================================\:/==================================\||
-''-----------------------------------'___'----------------------------------''
-*/
+// Peacemaker v1.6.0
+// Author: Felladrin
+// Started: 2007-07-08
+// Updated: 2016-01-23
 
+using Server;
 using Server.Items;
+using Server.Mobiles;
 
-namespace Server.Mobiles
+namespace Felladrin.Mobiles
 {
     [CorpseName("the corpse of a peacemaker")]
     public class BasePeacemaker : BaseCreature
@@ -34,8 +16,8 @@ namespace Server.Mobiles
         {
             Title = "the peacemaker";
 
-            Fame = 6000;
-            Karma = 3000;
+            Fame = 1000;
+            Karma = 1000;
 
             SpeechHue = Utility.RandomDyedHue();
 
@@ -56,9 +38,7 @@ namespace Server.Mobiles
                 Name = NameList.RandomName("male");
 
                 if (Utility.RandomBool())
-                {
                     Utility.AssignRandomFacialHair(this, HairHue);
-                }
             }
 
             SetResistance(ResistanceType.Physical, 55, 70);
@@ -76,91 +56,90 @@ namespace Server.Mobiles
 
             PackGold(100, 200);
         }
-        
-        #region Mod to allow players to kill them.
+
+        public override void OnBeforeSpawn( Point3D location, Map m ) { IsParagon = false; }
+
         public override bool AlwaysAttackable{ get { return true; } }
-        
-        public override void AggressiveAction( Mobile aggressor, bool criminal )
-		{
-        	base.AggressiveAction( aggressor, criminal );
-        	aggressor.Criminal = true;
+
+        public override void AggressiveAction(Mobile aggressor, bool criminal)
+        {
+            base.AggressiveAction(aggressor, criminal);
+            aggressor.Criminal = true;
         }
-        
+
         public override bool OnBeforeDeath()
         {
-			if (Combatant is PlayerMobile)
-        		Combatant.Kills += 1;
+            if (Combatant is PlayerMobile)
+                Combatant.Kills += 1;
         	
-        	return base.OnBeforeDeath();
+            return base.OnBeforeDeath();
         }
-        #endregion
 
         public override double WeaponAbilityChance { get { return 0.7; } }
 
         public override bool IsEnemy(Mobile m)
         {
-        	if (m is BasePeacemaker || m is BaseVendor)
-        		return false;
+            if (m is BasePeacemaker || m is BaseVendor)
+                return false;
         	
-        	if (m.Criminal)
-        		return true;
+            if (m.Criminal)
+                return true;
         	
-			var baseCreature = m as BaseCreature;
-        	if (baseCreature != null)
-        	{
-        		if (baseCreature.Karma < 0 && baseCreature.FightMode != FightMode.Aggressor && !baseCreature.Controlled)
-        			return true;
+            var baseCreature = m as BaseCreature;
+
+            if (baseCreature != null)
+            {
+                if (baseCreature.Karma < 0 && baseCreature.FightMode != FightMode.Aggressor && !baseCreature.Controlled)
+                    return true;
         		
-        		if (baseCreature.AlwaysMurderer)
-        			return true;
-        	}
+                if (baseCreature.AlwaysMurderer)
+                    return true;
+            }
         	
-			var playerMobile = m as PlayerMobile;
-        	if (playerMobile != null)
-        	{
-        		if (playerMobile.ShortTermMurders > 0)
-        			return true;
-        	}
+            var playerMobile = m as PlayerMobile;
+
+            if (playerMobile != null)
+            {
+                if (playerMobile.ShortTermMurders > 0)
+                    return true;
+            }
 
             return false;
         }
 
-        public override bool HandlesOnSpeech(Mobile from)
-        {
-            return true;
-        }
+        public override bool HandlesOnSpeech(Mobile from) { return true; }
 
         public override void OnSpeech(SpeechEventArgs e)
         {
-        	if (!e.Handled && e.Mobile.InRange(this.Location, 18))
+            if (e.Handled || !e.Mobile.InRange(Location, 18))
+                return;
+
+            if (e.Speech.ToLower().Contains("guard") || e.Speech.ToLower().Contains("help") || e.Speech.ToLower().Contains("peacemaker"))
             {
-                if (e.Speech.ToLower().Contains("guard") || e.Speech.ToLower().Contains("help") || e.Speech.ToLower().Contains("peacemaker"))
+                Direction = GetDirectionTo(e.Mobile);
+
+                if (e.Mobile.Combatant != null && IsEnemy(e.Mobile.Combatant))
                 {
-                    this.Direction = GetDirectionTo(e.Mobile);
-                    
-                    if (e.Mobile.Combatant != null && IsEnemy(e.Mobile.Combatant))
-                    {
-                    	this.Say(speech[Utility.Random(speech.Length)]);
-                        this.Warmode = true;
-                        this.Combatant = e.Mobile.Combatant;
-                    }
-                    else if (IsEnemy(e.Mobile))
-                    {
-                    	this.Say(speech[Utility.Random(speech.Length)]);
-                        this.Warmode = true;
-                        this.Combatant = e.Mobile;
-                    }
-                    else
-                    {
-                    	this.Emote("looks around");
-                        this.Warmode = false;
-                        this.Combatant = null;
-                    }
+                    Say(speech[Utility.Random(speech.Length)]);
+                    Warmode = true;
+                    Combatant = e.Mobile.Combatant;
+                }
+                else if (IsEnemy(e.Mobile))
+                {
+                    Say(speech[Utility.Random(speech.Length)]);
+                    Warmode = true;
+                    Combatant = e.Mobile;
+                }
+                else
+                {
+                    Emote("looks around");
+                    Warmode = false;
+                    Combatant = null;
                 }
             }
         }
 
-        private static string[] speech = new string[]
+        static string[] speech =
         {
             "To the fight!",
             "To arms!",
@@ -179,11 +158,19 @@ namespace Server.Mobiles
             "Destroy them all!"
         };
 
-        #region Serialization
         public BasePeacemaker(Serial serial) : base(serial) { }
-        public override void Serialize(GenericWriter writer) { base.Serialize(writer); writer.Write((int)0); }
-        public override void Deserialize(GenericReader reader) { base.Deserialize(reader); int version = reader.ReadInt(); }
-        #endregion
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write(0);
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            reader.ReadInt();
+        }
     }
 
     public class FighterPeacemaker : BasePeacemaker
@@ -198,12 +185,24 @@ namespace Server.Mobiles
             Item weapon;
             switch (Utility.Random(6))
             {
-                case 0: weapon = new Broadsword(); break;
-                case 1: weapon = new Cutlass(); break;
-                case 2: weapon = new Katana(); break;
-                case 3: weapon = new Longsword(); break;
-                case 4: weapon = new Scimitar(); break;
-                default: weapon = new VikingSword(); break;
+                case 0:
+                    weapon = new Broadsword();
+                    break;
+                case 1:
+                    weapon = new Cutlass();
+                    break;
+                case 2:
+                    weapon = new Katana();
+                    break;
+                case 3:
+                    weapon = new Longsword();
+                    break;
+                case 4:
+                    weapon = new Scimitar();
+                    break;
+                default:
+                    weapon = new VikingSword();
+                    break;
             }
             AddItem(weapon);
 
@@ -211,22 +210,30 @@ namespace Server.Mobiles
 
             SetDamageType(ResistanceType.Physical, 100);
 
-            SetSkill(SkillName.Tactics, 70.1, 95.0);
-            SetSkill(SkillName.Swords, 70.1, 100.0);
-            SetSkill(SkillName.Fencing, 65.1, 100.0);
-            SetSkill(SkillName.MagicResist, 80.1, 110.0);
-            SetSkill(SkillName.Macing, 75.1, 100.0);
-            SetSkill(SkillName.Wrestling, 65.1, 100.0);
-            SetSkill(SkillName.Parry, 70.1, 100.0);
-            SetSkill(SkillName.Healing, 65.1, 75.0);
-            SetSkill(SkillName.Anatomy, 80.1, 90.0);
+            SetSkill(SkillName.Tactics, 70, 95);
+            SetSkill(SkillName.Swords, 70, 100);
+            SetSkill(SkillName.Fencing, 65, 100);
+            SetSkill(SkillName.MagicResist, 80, 110);
+            SetSkill(SkillName.Macing, 75, 100);
+            SetSkill(SkillName.Wrestling, 65, 100);
+            SetSkill(SkillName.Parry, 70, 100);
+            SetSkill(SkillName.Healing, 65, 75);
+            SetSkill(SkillName.Anatomy, 80, 90);
         }
 
-        #region Serialization
         public FighterPeacemaker(Serial serial) : base(serial) { }
-        public override void Serialize(GenericWriter writer) { base.Serialize(writer); writer.Write((int)0); }
-        public override void Deserialize(GenericReader reader) { base.Deserialize(reader); int version = reader.ReadInt(); }
-        #endregion
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write(0);
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            reader.ReadInt();
+        }
     }
 
     public class ArcherPeacemaker : BasePeacemaker
@@ -241,34 +248,45 @@ namespace Server.Mobiles
             Item weapon;
             switch (Utility.Random(4))
             {
-                case 0: weapon = new BarbedLongbow(); break;
-                case 1: weapon = new CompositeBow(); break;
-                case 2: weapon = new JukaBow(); break;
-                default: weapon = new Bow(); break;
+                case 0:
+                    weapon = new BarbedLongbow();
+                    break;
+                case 1:
+                    weapon = new CompositeBow();
+                    break;
+                case 2:
+                    weapon = new JukaBow();
+                    break;
+                default:
+                    weapon = new Bow();
+                    break;
             }
             AddItem(weapon);
 
-            AddItem(new Quiver());
-
-            Container pack = new Backpack();
-            pack.Movable = false;
-            pack.DropItem(new Arrow(50));
-
-            SetSkill(SkillName.Tactics, 70.1, 95.0);
-            SetSkill(SkillName.Archery, 70.1, 100.0);
-            SetSkill(SkillName.Fencing, 65.1, 100.0);
-            SetSkill(SkillName.MagicResist, 80.1, 110.0);
-            SetSkill(SkillName.Macing, 75.1, 100.0);
-            SetSkill(SkillName.Wrestling, 65.1, 100.0);
-            SetSkill(SkillName.Healing, 65.1, 75.0);
-            SetSkill(SkillName.Anatomy, 80.1, 90.0);
+            SetSkill(SkillName.Tactics, 70, 95);
+            SetSkill(SkillName.Archery, 70, 100);
+            SetSkill(SkillName.Fencing, 65, 100);
+            SetSkill(SkillName.MagicResist, 80, 110);
+            SetSkill(SkillName.Macing, 75, 100);
+            SetSkill(SkillName.Wrestling, 65, 100);
+            SetSkill(SkillName.Healing, 65, 75);
+            SetSkill(SkillName.Anatomy, 80, 90);
         }
 
-        #region Serialization
+
         public ArcherPeacemaker(Serial serial) : base(serial) { }
-        public override void Serialize(GenericWriter writer) { base.Serialize(writer); writer.Write((int)0); }
-        public override void Deserialize(GenericReader reader) { base.Deserialize(reader); int version = reader.ReadInt(); }
-        #endregion
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write(0);
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            reader.ReadInt();
+        }
     }
 
     public class MagePeacemaker : BasePeacemaker
@@ -280,13 +298,17 @@ namespace Server.Mobiles
             SetDex(40, 60);
             SetInt(220, 300);
 
-            Item weapon;
+            BaseWeapon weapon;
             switch (Utility.Random(2))
             {
-                case 0: weapon = new Scepter(); break;
-                default: weapon = new MagicWand(); break;
+                case 0:
+                    weapon = new Scepter();
+                    break;
+                default:
+                    weapon = new MagicWand();
+                    break;
             }
-            ((BaseWeapon)weapon).Attributes.SpellChanneling = 1;
+            weapon.Attributes.SpellChanneling = 1;
             AddItem(weapon);
 
             SetDamageType(ResistanceType.Physical, 0);
@@ -301,19 +323,27 @@ namespace Server.Mobiles
             else
                 SetDamageType(ResistanceType.Poison, 40);
 
-            SetSkill(SkillName.EvalInt, 90.1, 100.0);
-            SetSkill(SkillName.Magery, 90.1, 100.0);
-            SetSkill(SkillName.Necromancy, 0, 110.0);
-            SetSkill(SkillName.SpiritSpeak, 90.0, 110.0);
-            SetSkill(SkillName.MagicResist, 150.5, 200.0);
-            SetSkill(SkillName.Tactics, 50.1, 70.0);
-            SetSkill(SkillName.Macing, 60.1, 80.0);
+            SetSkill(SkillName.EvalInt, 90, 100);
+            SetSkill(SkillName.Magery, 90, 100);
+            SetSkill(SkillName.Necromancy, 0, 110);
+            SetSkill(SkillName.SpiritSpeak, 90, 110);
+            SetSkill(SkillName.MagicResist, 90, 120);
+            SetSkill(SkillName.Tactics, 50, 70);
+            SetSkill(SkillName.Macing, 60, 80);
         }
 
-        #region Serialization
         public MagePeacemaker(Serial serial) : base(serial) { }
-        public override void Serialize(GenericWriter writer) { base.Serialize(writer); writer.Write((int)0); }
-        public override void Deserialize(GenericReader reader) { base.Deserialize(reader); int version = reader.ReadInt(); }
-        #endregion
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write(0);
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            reader.ReadInt();
+        }
     }
 }
