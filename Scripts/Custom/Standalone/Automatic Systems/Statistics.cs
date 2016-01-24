@@ -1,30 +1,32 @@
-﻿//   ___|========================|___
-//   \  |  Written by Felladrin  |  /   Shard Statistics - Current version: 1.4 (December 3, 2015)
-//    > |      August 2013       | <
-//   /__|========================|__\   Description: Collects and displays shard statistics.
+﻿// Statistics v1.4.1
+// Author: Felladrin
+// Started: 2013-08-13
+// Updated: 2016-01-23
 
 using System;
-using System.Diagnostics;
 using System.Collections.Generic;
-
-using Server.Items;
-using Server.Gumps;
-using Server.Guilds;
-using Server.Mobiles;
-using Server.Network;
-using Server.Commands;
+using System.Diagnostics;
+using Server;
 using Server.Accounting;
+using Server.Commands;
 using Server.Engines.PartySystem;
+using Server.Guilds;
+using Server.Gumps;
+using Server.Items;
+using Server.Misc;
+using Server.Mobiles;
+using Server.Multis;
+using Server.Network;
 
-namespace Server
+namespace Felladrin.Automations
 {
-    class Statistics
+    static class Statistics
     {
-        public class Config
+        public static class Config
         {
             public static bool Enabled = true;                            // Is this system enabled?
             public static bool ConsoleReport = false;                     // Should we report statistics on console?
-            public static int Interval = 1;                               // What's the statistics update interval, in minutes?
+            public static TimeSpan Interval = TimeSpan.FromMinutes(1);    // How often should we update statistics?
             public static AccessLevel CanSeeStats = AccessLevel.Player;   // What's the level required to see statistics in-game?
             public static AccessLevel CanUpdateStats = AccessLevel.Seer;  // What's the level required to update statistics in-game?
         }
@@ -44,22 +46,22 @@ namespace Server
         public static int PlayersOnline { get { return m_PlayersOnline; } }
         public static int StaffOnline { get { return m_StaffOnline; } }
 
-        private static TimeSpan m_ShardAge;
-        private static TimeSpan m_Uptime;
-        private static TimeSpan m_TotalGameTime;
-        private static DateTime m_LastRestart;
-        private static DateTime m_LastStatsUpdate;
-        private static int m_ActiveAccounts;
-        private static int m_ActiveStaffMembers;
-        private static int m_ActiveGuilds;
-        private static int m_ActiveParties;
-        private static int m_PlayersInParty;
-        private static int m_PlayerHouses;
-        private static int m_PlayerGold;
-        private static int m_PlayersOnline;
-        private static int m_StaffOnline;
+        static TimeSpan m_ShardAge;
+        static TimeSpan m_Uptime;
+        static TimeSpan m_TotalGameTime;
+        static DateTime m_LastRestart;
+        static DateTime m_LastStatsUpdate;
+        static int m_ActiveAccounts;
+        static int m_ActiveStaffMembers;
+        static int m_ActiveGuilds;
+        static int m_ActiveParties;
+        static int m_PlayersInParty;
+        static int m_PlayerHouses;
+        static int m_PlayerGold;
+        static int m_PlayersOnline;
+        static int m_StaffOnline;
 
-        private static List<String> StatsList = new List<String>();
+        static readonly List<String> StatsList = new List<String>();
 
         public static void Initialize()
         {
@@ -67,13 +69,13 @@ namespace Server
             {
                 CommandSystem.Register("Statistics", Config.CanSeeStats, new CommandEventHandler(SeeStatistics_OnCommand));
                 CommandSystem.Register("UpdateStatistics", Config.CanUpdateStats, new CommandEventHandler(UpdateStatistics_OnCommand));
-                Timer.DelayCall(TimeSpan.Zero, TimeSpan.FromMinutes(Config.Interval), CollectStats);
+                Timer.DelayCall(TimeSpan.Zero, Config.Interval, CollectStats);
             }
         }
 
         [Usage("Statistics")]
         [Description("Shows shard statistics.")]
-        private static void SeeStatistics_OnCommand(CommandEventArgs e)
+        static void SeeStatistics_OnCommand(CommandEventArgs e)
         {
             Mobile m = e.Mobile;
             m.CloseGump(typeof(StatisticsGump));
@@ -82,19 +84,19 @@ namespace Server
 
         [Usage("UpdateStatistics")]
         [Description("Updates shard statistics.")]
-        private static void UpdateStatistics_OnCommand(CommandEventArgs e)
+        static void UpdateStatistics_OnCommand(CommandEventArgs e)
         {
-            Mobile m = e.Mobile;
-            Console.WriteLine("Statistics: {0} ({1}) has updated statistics in-game.", m.RawName, m.AccessLevel.ToString());
+            var m = e.Mobile;
+            Console.WriteLine("Statistics: {0} ({1}) has updated statistics in-game.", m.RawName, m.AccessLevel);
             CollectStats();
             m.SendMessage(68, "Statistics updated successful.");
             m.CloseGump(typeof(StatisticsGump));
             m.SendGump(new StatisticsGump());
         }
 
-        private static void CollectStats()
+        static void CollectStats()
         {
-            Stopwatch watch = Stopwatch.StartNew();
+            var watch = Stopwatch.StartNew();
 
             m_StaffOnline = 0;
             m_PlayersOnline = 0;
@@ -105,12 +107,12 @@ namespace Server
             m_TotalGameTime = TimeSpan.Zero;
             StatsList.Clear();
 
-            List<Party> parties = new List<Party>();
-            DateTime shardCreation = DateTime.UtcNow;
+            var parties = new List<Party>();
+            var shardCreation = DateTime.UtcNow;
 
             foreach (Item i in World.Items.Values)
             {
-                if (i is Multis.BaseHouse)
+                if (i is BaseHouse)
                     m_PlayerHouses++;
             }
 
@@ -119,32 +121,24 @@ namespace Server
                 if (m is PlayerMobile)
                 {
                     if (m.AccessLevel == AccessLevel.Player)
-                    {
                         m_PlayerGold += m.TotalGold + m.BankBox.TotalGold;
-                    }
                     else
-                    {
                         m_ActiveStaffMembers++;
-                    }
                 }
             }
 
             foreach (NetState ns in NetState.Instances)
             {
-                Mobile m = ns.Mobile;
+                var m = ns.Mobile;
 
                 if (m != null)
                 {
                     if (m.AccessLevel == AccessLevel.Player)
-                    {
                         m_PlayersOnline++;
-                    }
                     else
-                    {
                         m_StaffOnline++;
-                    }
 
-                    Party p = Party.Get(m);
+                    var p = Party.Get(m);
 
                     if (p != null)
                     {
@@ -169,7 +163,7 @@ namespace Server
             m_LastRestart = Clock.ServerStart;
             m_LastStatsUpdate = DateTime.UtcNow;
             m_ActiveAccounts = Accounts.Count;
-            m_ActiveGuilds = Guild.List.Count;
+            m_ActiveGuilds = BaseGuild.List.Count;
             m_ActiveParties = parties.Count;
 
             StatsList.Add(String.Format("Shard Age: {0:n0} days, {1:n0} hours and {2:n0} minutes", m_ShardAge.Days, m_ShardAge.Hours, m_ShardAge.Minutes));
@@ -207,8 +201,7 @@ namespace Server
 
         public class StatisticsGump : Gump
         {
-            public StatisticsGump()
-                : base(110, 100)
+            public StatisticsGump() : base(110, 100)
             {
                 Closable = true;
                 Dragable = true;
@@ -216,13 +209,10 @@ namespace Server
                 Resizable = false;
 
                 AddPage(0);
-
                 AddBackground(0, 0, 420, 250, 5054);
-
                 AddImageTiled(10, 10, 400, 20, 2624);
                 AddAlphaRegion(10, 10, 400, 20);
-                AddLabel(15, 10, 73, Misc.ServerList.ServerName + " Statistics - Last Update: " + m_LastStatsUpdate);
-
+                AddLabel(15, 10, 73, ServerList.ServerName + " Statistics - Last Update: " + m_LastStatsUpdate);
                 AddImageTiled(10, 40, 400, 200, 2624);
                 AddAlphaRegion(10, 40, 400, 200);
                 AddHtml(15, 40, 395, 200, String.Join("<br>", StatsList.ToArray()), false, true);
