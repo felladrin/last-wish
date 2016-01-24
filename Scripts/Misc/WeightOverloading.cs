@@ -85,24 +85,7 @@ namespace Server.Misc
 				}
 			}
 
-			if ( ((from.Stam * 100) / Math.Max( from.StamMax, 1 )) < 10 )
-				--from.Stam;
-
-			if ( from.Stam == 0 )
-			{
-				from.SendLocalizedMessage( 500110 ); // You are too fatigued to move.
-				e.Blocked = true;
-				return;
-			}
-
-			if ( from is PlayerMobile )
-			{
-				int amt = ( from.Mounted ? 48 : 16 );
-				PlayerMobile pm = (PlayerMobile)from;
-
-				if ( (++pm.StepsTaken % amt) == 0 )
-					--from.Stam;
-			}
+            Felladrin.Automations.RunningFatigue.Apply(from);
 
 			Spells.Ninjitsu.DeathStrike.AddStep( from );
 		}
