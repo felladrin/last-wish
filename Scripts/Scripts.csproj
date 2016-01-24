@@ -134,7 +134,6 @@
     <Compile Include="Context Menus\EjectPlayer.cs" />
     <Compile Include="Context Menus\OpenBankEntry.cs" />
     <Compile Include="Context Menus\TeachEntry.cs" />
-    <Compile Include="Custom\Requires Scripts Changes\Automatic Systems\AutoSplit.cs" />
     <Compile Include="Custom\Requires Scripts Changes\Automatic Systems\FoodDecay.cs" />
     <Compile Include="Custom\Requires Scripts Changes\Commands\Player\Time.cs" />
     <Compile Include="Custom\Requires Scripts Changes\Poker Texas Holdem\Card.cs" />
@@ -221,7 +220,6 @@
     <Compile Include="Custom\Standalone\Automatic Systems\Kudos.cs" />
     <Compile Include="Custom\Standalone\Automatic Systems\PlayMusicOnLogin.cs" />
     <Compile Include="Custom\Standalone\Automatic Systems\Statistics.cs" />
-    <Compile Include="Custom\Standalone\Automatic Systems\UniqueNames.cs" />
     <Compile Include="Custom\Standalone\Automatic Systems\WebStatusCustom.cs" />
     <Compile Include="Custom\Standalone\BugTracker\AddCommentGump.cs" />
     <Compile Include="Custom\Standalone\BugTracker\AddIssueGump.cs" />
@@ -243,14 +241,12 @@
     <Compile Include="Custom\Standalone\Commands\Player\BoatControl.cs" />
     <Compile Include="Custom\Standalone\Commands\Player\ChangeCharacter.cs" />
     <Compile Include="Custom\Requires Scripts Changes\Commands\Player\ContainerRename.cs" />
-    <Compile Include="Custom\Standalone\Commands\Player\Dismantle.cs" />
     <Compile Include="Custom\Standalone\Commands\Player\Dump.cs" />
     <Compile Include="Custom\Standalone\Commands\Player\Equip.cs" />
     <Compile Include="Custom\Standalone\Commands\Player\Event.cs" />
     <Compile Include="Custom\Standalone\Commands\Player\GuildChat.cs" />
     <Compile Include="Custom\Standalone\Commands\Player\MoveItems.cs" />
     <Compile Include="Custom\Standalone\Commands\Player\MyHouses.cs" />
-    <Compile Include="Custom\Standalone\Commands\Player\Notoriety.cs" />
     <Compile Include="Custom\Standalone\Commands\Player\PasswordChanger.cs" />
     <Compile Include="Custom\Standalone\Commands\Player\PraySin.cs" />
     <Compile Include="Custom\Standalone\Commands\Player\Recall.cs" />
@@ -3791,12 +3787,16 @@
     <Compile Include="Custom\Standalone\Automatic Systems\AutoGarbageCollector.cs" />
     <Compile Include="Custom\Standalone\Commands\Staff\SearchImage.cs" />
     <Compile Include="Custom\Standalone\Automatic Systems\Country.cs" />
-    <Compile Include="Custom\Standalone\TinyChat\GlobalChat.cs" />
     <Compile Include="Custom\Standalone\Commands\Staff\ShowOff.cs" />
     <Compile Include="Custom\Standalone\Commands\Staff\Alt.cs" />
     <Compile Include="Custom\Standalone\Commands\Player\PartyMessage.cs" />
     <Compile Include="Custom\Standalone\Commands\Player\Summon.cs" />
     <Compile Include="Custom\Requires Scripts Changes\Automatic Systems\MaxFollowersBasedOnIntelligence.cs" />
+    <Compile Include="Custom\Requires Scripts Changes\Automatic Systems\AutoSplitGold.cs" />
+    <Compile Include="Custom\Requires Scripts Changes\Automatic Systems\RunningFatigue.cs" />
+    <Compile Include="Custom\Standalone\Commands\Player\TurnBackToDeed.cs" />
+    <Compile Include="Custom\Standalone\Global Chat\GlobalChat.cs" />
+    <Compile Include="Custom\Standalone\Automatic Systems\UniqueCharacterNames.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="SpecialSystems\README.TXT" />
