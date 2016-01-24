@@ -1,21 +1,32 @@
-﻿//   ___|========================|___   Set Skill Cap - Semantic Version: 1.0.1
-//   \  |  Written by Felladrin  |  /   Created at: 2015-12-20 (Felladrin)
-//    > |     December 2015      | <    Updated at: 2015-12-21 (Felladrin)
-//   /__|========================|__\   Description: Sets the total and individual skill cap.
+﻿// Set Skill Cap v1.0.2
+// Author: Felladrin
+// Started: 2015-12-20
+// Updated: 2016-01-22
 
-namespace Server.Custom
+using Server;
+
+namespace Felladrin.Automations
 {
     public static class SetSkillCap
     {
-        public static int IndividualSkillCap = 1200; // Cap for each skill. RunUO Default: 1000. Note: "1000" represents "100.0"
-        public static int TotalSkillCap = 12000;      // Cap for the sum of all skills. RunUO Default: 7000. Note: "7000" represents "700.0"
-        
+        public static class Config
+        {
+            public static bool Enabled = true;             // Is this system enabled?
+            public static int IndividualSkillCap = 120;    // Cap for each skill. Default: 100.
+            public static int TotalSkillCap = 1200;        // Cap for the sum of all skills. Default: 700.
+        }
+
         public static void Initialize()
         {
-            EventSink.Login += new LoginEventHandler(EventSink_Login);
+            if (Config.Enabled)
+            {
+                Config.IndividualSkillCap *= 10;
+                Config.TotalSkillCap *= 10;
+                EventSink.Login += OnLogin;
+            }
         }
         
-        private static void EventSink_Login(LoginEventArgs args)
+        static void OnLogin(LoginEventArgs args)
         {
             Mobile m = args.Mobile;
             
@@ -25,17 +36,13 @@ namespace Server.Custom
             Skills skills = m.Skills;
 
             foreach (Skill skill in m.Skills)
-                skill.CapFixedPoint = IndividualSkillCap;
+                skill.CapFixedPoint = Config.IndividualSkillCap;
                 
             for (int i = 0; i < skills.Length; ++i)
-            {
-                if (skills[i].BaseFixedPoint > IndividualSkillCap)
-                {
-                    skills[i].BaseFixedPoint = IndividualSkillCap;
-                }
-            }
+                if (skills[i].BaseFixedPoint > Config.IndividualSkillCap)
+                    skills[i].BaseFixedPoint = Config.IndividualSkillCap;
             
-            m.SkillsCap = TotalSkillCap;
+            m.SkillsCap = Config.TotalSkillCap;
             
             for (int j = 0; (m.SkillsTotal > m.SkillsCap) && (j < skills.Length); ++j)
             {
@@ -62,7 +69,7 @@ namespace Server.Custom
                 }
                 
                 int lowestSkillId = -1;
-                double lowestSkillBase = IndividualSkillCap;
+                double lowestSkillBase = Config.IndividualSkillCap;
                 
                 for ( int i = 0; i < skills.Length; ++i )
                 {
