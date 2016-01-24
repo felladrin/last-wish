@@ -18,13 +18,13 @@
 // will not be displayed in-game. Entries with fewer
 // than three lines will not be displayed in-game.
 
-[*]Jan 19, 2016
+[*]Jan 24, 2016
 Victor
 - Now you spend stamina when running by foot.
 - Added [TurnBackToDeed command to turn back to deed a furniture form your house. It's the same as using an axe to chop it.
 - Kudos need to be deleted to update the system. As soon you login, since now, you'll start gaining new kudos.
 
-[*]Jan 24, 2016
+[*]Jan 19, 2016
 Victor
 - Improved Donation Box to better organize items inside.
 - [Convoke command is now [Summon.
