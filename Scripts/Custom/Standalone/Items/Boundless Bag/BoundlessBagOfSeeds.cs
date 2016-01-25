@@ -1,7 +1,7 @@
-﻿// Boundless Bag v1.0.1
+﻿// Boundless Bag Of Seeds v1.0.2
 // Author: Felladrin
 // Started: 2013-08-17
-// Updated: 2016-01-09
+// Updated: 2016-01-24
 
 using System;
 using Server;
@@ -18,16 +18,7 @@ namespace Felladrin.Items
             Hue = 378;
         }
 
-        public override Type[] AllowedItemTypes
-        {
-            get
-            {
-                return new []
-                {
-                    typeof(Seed)
-                };
-            }
-        }
+        public override Type[] AllowedItemTypes { get { return new [] { typeof(Seed) }; } }
 
         public BoundlessBagOfSeeds(Serial serial) : base(serial) { }
 

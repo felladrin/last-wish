@@ -1,7 +1,7 @@
-﻿// Boundless Bag v1.0.1
+﻿// Boundless Bag v1.0.2
 // Author: Felladrin
 // Started: 2013-08-17
-// Updated: 2016-01-09
+// Updated: 2016-01-24
 
 using System;
 using Server;
@@ -44,16 +44,14 @@ namespace Felladrin.Items
             if (Deleted)
                 return false;
 
-            if (Parent == from.Backpack)
-            {
-                Hue = sender.DyedHue;
-                return true;
-            }
-            else
+            if (Parent != from.Backpack)
             {
                 from.SendMessage(38, "It must be in your backpack for you to dye it.");
                 return false;
             }
+
+            Hue = sender.DyedHue;
+            return true;
         }
 
         public static bool InTypeList(Item item, Type[] types)
