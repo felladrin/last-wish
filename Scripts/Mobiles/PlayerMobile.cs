@@ -3932,29 +3932,27 @@ namespace Server.Mobiles
         public override bool NewGuildDisplay { get { return Server.Guilds.Guild.NewGuildSystem; } }
 
         #region Display country under character name
-        string m_Country;
-        bool m_TriedToGetCountry;
+        [CommandProperty(AccessLevel.GameMaster)]
         public string Country
         {
             get
             {
-                if (!m_TriedToGetCountry && m_Country == null)
-                {
+                if (m_Country == null && Language != null)
                     m_Country = Felladrin.Utilities.Country.GetNameFromCode(Language);
-                    m_TriedToGetCountry = true;
-                }
 
                 return m_Country;
             }
         }
+        string m_Country;
         #endregion
 
-        // Added to change health status under the name.
+        #region Display health status under character's name
         public override void OnHitsChange(int oldValue)
         {
             base.OnHitsChange(oldValue);
             InvalidateProperties();
         }
+        #endregion
 
         public override void GetProperties(ObjectPropertyList list)
         {
@@ -3971,8 +3969,15 @@ namespace Server.Mobiles
                 string titleEnd = skillTitle.Substring(skillTitle.IndexOf(' ') + 1);
                 list.Add(1060847, "{0}\t{1}", titleStart, titleEnd);
 
-                // Added to show health status under the name.
-                if (Alive && !Blessed && Hits != HitsMax)
+                #region Display country under character's name
+                if (Country != null)
+                {
+                    list.Add(1060658, "{0}\t{1}", "From", Country);
+                }
+                #endregion
+
+                #region Display health status under character's name
+                if (Alive && !Blessed)
                 {
                     if (Hits == HitsMax)
                         list.Add("<basefont color=#00FF00>Healthy<basefont color=White>");
@@ -3986,12 +3991,6 @@ namespace Server.Mobiles
                         list.Add("<basefont color=#FF6600>Deadly Injured<basefont color=White>");
                     else
                         list.Add("<basefont color=#FF0000>Almost Dead<basefont color=White>");
-                }
-
-                #region Display country under character name
-                if (Country != null)
-                {
-                    list.Add(1060658, "{0}\t{1}", "From", Country);
                 }
                 #endregion
             }
