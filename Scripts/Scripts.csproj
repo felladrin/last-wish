@@ -211,7 +211,6 @@
     <Compile Include="Custom\Standalone\Addons\TreasurePiles\TreasurePile3Addon.cs" />
     <Compile Include="Custom\Standalone\Addons\TreasurePiles\TreasurePileAddon.cs" />
     <Compile Include="Custom\Standalone\Items\WaterBarrelAddon.cs" />
-    <Compile Include="Custom\Standalone\Automatic Systems\Announce Login Logout Death.cs" />
     <Compile Include="Custom\Standalone\Automatic Systems\AutoDefend.cs" />
     <Compile Include="Custom\Standalone\Automatic Systems\AutoIgniteLights.cs" />
     <Compile Include="Custom\Requires Scripts Changes\Automatic Systems\AutoSheatheWeapon.cs" />
@@ -572,7 +571,6 @@
     <Compile Include="Custom\Standalone\Nerun%27s Distro\SA\Mobiles\UnderWorld\Spiders\TrapdoorSpider.cs" />
     <Compile Include="Custom\Standalone\Nerun%27s Distro\SA\Mobiles\UnderWorld\Spiders\WolfSpider.cs" />
     <Compile Include="Custom\Standalone\Nerun%27s Distro\SA\Mobiles\UnderWorld\TanglingRoots.cs" />
-    <Compile Include="Custom\Standalone\Items\Brick.cs" />
     <Compile Include="Custom\Standalone\Quests\Lord British%27s Books\Items\LBBbookOfChaos1.cs" />
     <Compile Include="Custom\Standalone\Quests\Lord British%27s Books\Items\LBBbookOfChaos2.cs" />
     <Compile Include="Custom\Standalone\Quests\Lord British%27s Books\Items\LBBbookOfChaos3.cs" />
@@ -3797,6 +3795,11 @@
     <Compile Include="Custom\Standalone\Commands\Player\TurnBackToDeed.cs" />
     <Compile Include="Custom\Standalone\Global Chat\GlobalChat.cs" />
     <Compile Include="Custom\Standalone\Automatic Systems\UniqueCharacterNames.cs" />
+    <Compile Include="Custom\Standalone\Automatic Systems\BroadcastPlayerLogin.cs" />
+    <Compile Include="Custom\Standalone\Automatic Systems\BroadcastPlayerLogout.cs" />
+    <Compile Include="Custom\Standalone\Automatic Systems\BroadcastPlayerDeath.cs" />
+    <Compile Include="Custom\Standalone\Items\Bricks.cs" />
+    <Compile Include="Custom\Standalone\Automatic Systems\CloneCharacterOnLogout.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="SpecialSystems\README.TXT" />
