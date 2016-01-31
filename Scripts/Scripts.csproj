@@ -3800,6 +3800,7 @@
     <Compile Include="Custom\Standalone\Automatic Systems\BroadcastPlayerDeath.cs" />
     <Compile Include="Custom\Standalone\Items\Bricks.cs" />
     <Compile Include="Custom\Standalone\Automatic Systems\CloneCharacterOnLogout.cs" />
+    <Compile Include="Custom\Standalone\Commands\Player\ChangeHairStyle.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="SpecialSystems\README.TXT" />

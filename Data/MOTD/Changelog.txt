@@ -1,22 +1,26 @@
 // MOTD v1
 // Author: Joeku
 // December 4, 2007
-// 
+//
 // To create an entry for the MOTD, it must start
 // with "[*]" and be at least three lines long.
-// 
+//
 // Example:
 //   [*]Dec 2/2007
 //   Joeku
 //   This is an example entry.
-// 
+//
 // The first line is the date, the second
 // line is the author of the entry, and all lines
 // afterward make up the body of the entry.
-// 
+//
 // Blank and commented (starting with "//") lines
 // will not be displayed in-game. Entries with fewer
 // than three lines will not be displayed in-game.
+
+[*]Jan 31, 2016
+Victor
+- Added command [ChangeHairStyle to change your hair style and color.
 
 [*]Jan 24, 2016
 Victor
