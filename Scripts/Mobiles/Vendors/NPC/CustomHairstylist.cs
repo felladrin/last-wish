@@ -152,7 +152,7 @@ namespace Server.Mobiles
 
 			for ( int i = 0; i < sellList.Length; ++i )
 			{
-				if ( balance >= sellList[i].Price && (!sellList[i].FacialHair || !isFemale) )
+				if (/* balance >= sellList[i].Price && */(!sellList[i].FacialHair || !isFemale) )
 						++canAfford;
 			}
 
@@ -166,7 +166,7 @@ namespace Server.Mobiles
 
 			for ( int i = 0; i < sellList.Length; ++i )
 			{
-				if ( balance >= sellList[i].Price && (!sellList[i].FacialHair || !isFemale) )
+                if (/* balance >= sellList[i].Price && */(!sellList[i].FacialHair || !isFemale) )
 				{
 					if ( sellList[i].TitleString != null )
 						AddHtml( 140, 75 + (index * 25), 300, 20, sellList[i].TitleString, false, false );
