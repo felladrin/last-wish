@@ -3946,6 +3946,7 @@ namespace Server.Mobiles
         string m_Country;
         #endregion
 
+        /*
         #region Display health status under character's name
         public override void OnHitsChange(int oldValue)
         {
@@ -3953,6 +3954,7 @@ namespace Server.Mobiles
             InvalidateProperties();
         }
         #endregion
+        */
 
         public override void GetProperties(ObjectPropertyList list)
         {
@@ -3976,6 +3978,7 @@ namespace Server.Mobiles
                 }
                 #endregion
 
+                /*
                 #region Display health status under character's name
                 if (Alive && !Blessed)
                 {
@@ -3993,6 +3996,7 @@ namespace Server.Mobiles
                         list.Add("<basefont color=#FF0000>Almost Dead<basefont color=White>");
                 }
                 #endregion
+                */
             }
 
             if (Map == Faction.Facet)
