@@ -3801,6 +3801,15 @@
     <Compile Include="Custom\Standalone\Items\Bricks.cs" />
     <Compile Include="Custom\Standalone\Automatic Systems\CloneCharacterOnLogout.cs" />
     <Compile Include="Custom\Standalone\Commands\Player\ChangeHairStyle.cs" />
+    <Compile Include="Custom\Standalone\Encryption\Configuration.cs" />
+    <Compile Include="Custom\Standalone\Encryption\Encryption12OCT2009.cs" />
+    <Compile Include="Custom\Standalone\Encryption\GameEncryption.cs" />
+    <Compile Include="Custom\Standalone\Encryption\IClientEncryption.cs" />
+    <Compile Include="Custom\Standalone\Encryption\LoginEncryption.cs" />
+    <Compile Include="Custom\Standalone\Encryption\LoginKey.cs" />
+    <Compile Include="Custom\Standalone\Encryption\NoEncryption.cs" />
+    <Compile Include="Custom\Standalone\Encryption\TwofishBase.cs" />
+    <Compile Include="Custom\Standalone\Encryption\TwofishEncryption.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="SpecialSystems\README.TXT" />
