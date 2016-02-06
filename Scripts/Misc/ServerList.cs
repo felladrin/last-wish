@@ -172,7 +172,7 @@ namespace Server.Misc
 		private static IPAddress FindPublicAddress()
 		{
 			try {
-				WebRequest req = HttpWebRequest.Create( "http://uo.cx/ip.php" );
+                WebRequest req = HttpWebRequest.Create( "http://services.servuo.com/ip.php" );
 
 				req.Timeout = 15000;
 
