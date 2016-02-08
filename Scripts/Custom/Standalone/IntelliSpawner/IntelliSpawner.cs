@@ -1,7 +1,7 @@
-// IntelliSpawner 1.0.5
+// IntelliSpawner 1.0.6
 // Author: Felladrin
 // Started: 2013-06-19
-// Updated: 2016-02-05
+// Updated: 2016-02-08
 
 using System;
 using System.Collections.Generic;
@@ -448,44 +448,28 @@ namespace Server.Mobiles
 
         public void Defrag()
         {
-            for (int i = 0; i < m_Spawned.Count; ++i)
+            bool updateProperties = false;
+
+            foreach (var spawnable in new List<ISpawnable>(m_Spawned))
             {
-                ISpawnable e = m_Spawned[i];
+                var item = spawnable as Item;
+                var baseCreature = spawnable as BaseCreature;
+                var mobile = spawnable as Mobile;
 
                 bool toRemove = false;
 
-                var item = e as Item;
-                if (item != null && (item.Deleted || item.Parent != null))
-                {
-                    toRemove = true;
-                }
-                else
-                {
-                    var mobile = e as Mobile;
-                    if (mobile != null)
-                    {
-                        if (mobile.Deleted)
-                        {
-                            toRemove = true;
-                        }
-                        else
-                        {
-                            var baseCreature = mobile as BaseCreature;
-                            if (baseCreature != null && (baseCreature.Controlled || baseCreature.IsStabled))
-                            {
-                                toRemove = true;
-                            }
-                        }
-                    }
-                }
+                toRemove |= item != null && (item.Deleted || item.Parent != null);
+                toRemove |= baseCreature != null && (baseCreature.Controlled || baseCreature.IsStabled);
+                toRemove |= mobile != null && mobile.Deleted;
+
+                updateProperties |= toRemove;
 
                 if (toRemove)
-                {
-                    InvalidateProperties();
-                    m_Spawned.RemoveAt(i);
-                    --i;
-                }
+                    m_Spawned.Remove(spawnable);
             }
+
+            if (updateProperties)
+                InvalidateProperties();
         }
 
         bool ISpawner.UnlinkOnTaming
