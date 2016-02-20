@@ -2,8 +2,6 @@
 
 **An open source RunUO Freeshard hoping to fulfill one last wish.**
 
-Live Shard Website: <https://felladrin.github.io/last-wish/>
-
 Anyone is free to join and even run their own version of Last Wish.
 
 It follows the original Ultima Online concept, with just some special scripts to make it a little more friendly.
